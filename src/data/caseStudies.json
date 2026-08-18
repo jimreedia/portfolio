@@ -1,0 +1,128 @@
+[
+  {
+    "id": "agentic-ai-chat",
+    "title": "Agentic AI Chat",
+    "description": "Leveraging AI experiences to create valuable outcomes for customers.",
+    "outcome": "Led 0→1 design · [Outcome placeholder]",
+    "tags": ["AI", "Enterprise"],
+    "url": "/case-study/agentic-ai-chat",
+    "featured": true,
+    "images": [
+      "/assets/case-studies/agentic-ai-chat/01.png",
+      "/assets/case-studies/agentic-ai-chat/02.png",
+      "/assets/case-studies/agentic-ai-chat/03.png"
+    ]
+  },
+  {
+    "id": "ai-recommendations",
+    "title": "AI Recommendations",
+    "description": "Using machine learning to create valuable outcomes for customers.",
+    "outcome": "Led 0→1 design · [Outcome placeholder]",
+    "tags": ["AI", "Data Platforms"],
+    "url": "/case-study/ai-recommendations",
+    "featured": true,
+    "images": [
+      "/assets/case-studies/ai-recommendations/01.png",
+      "/assets/case-studies/ai-recommendations/02.png",
+      "/assets/case-studies/ai-recommendations/03.png"
+    ]
+  },
+  {
+    "id": "genomic-data-platform",
+    "title": "Genomic Data Platform",
+    "description": "Tools for scientists to analyze genomic data for pharmaceutical and clinical needs.",
+    "outcome": "Led 0→1 design · [Outcome placeholder]",
+    "tags": ["Data Platforms", "Enterprise"],
+    "url": "/case-study/genomic-data-platform",
+    "featured": true,
+    "images": [
+      "/assets/case-studies/genomic-data-platform/01.png",
+      "/assets/case-studies/genomic-data-platform/02.png",
+      "/assets/case-studies/genomic-data-platform/03.png"
+    ]
+  },
+  {
+    "id": "developer-experience",
+    "title": "Developer Experience",
+    "description": "Guiding software developers through a cloud-based data platform experience.",
+    "outcome": "[Role placeholder] · [Outcome placeholder]",
+    "tags": ["Data Platforms", "Enterprise"],
+    "url": "/case-study/developer-experience",
+    "featured": false,
+    "images": [
+      "/assets/case-studies/developer-experience/01.png",
+      "/assets/case-studies/developer-experience/02.png",
+      "/assets/case-studies/developer-experience/03.png"
+    ]
+  },
+  {
+    "id": "machine-learning-for-operators",
+    "title": "Machine Learning for Operators",
+    "description": "Enabling operations engineers to train AI models for accuracy.",
+    "outcome": "[Role placeholder] · [Outcome placeholder]",
+    "tags": ["AI", "Enterprise"],
+    "url": "/case-study/machine-learning-for-operators",
+    "featured": false,
+    "images": [
+      "/assets/case-studies/machine-learning-for-operators/01.png",
+      "/assets/case-studies/machine-learning-for-operators/02.png",
+      "/assets/case-studies/machine-learning-for-operators/03.png"
+    ]
+  },
+  {
+    "id": "operational-insights",
+    "title": "Operational Insights",
+    "description": "Solutions to help development teams monitor and analyze operational data.",
+    "outcome": "[Role placeholder] · [Outcome placeholder]",
+    "tags": ["Data Platforms", "Enterprise"],
+    "url": "/case-study/operational-insights",
+    "featured": false,
+    "images": [
+      "/assets/case-studies/operational-insights/01.png",
+      "/assets/case-studies/operational-insights/02.png",
+      "/assets/case-studies/operational-insights/03.png"
+    ]
+  },
+  {
+    "id": "mobile-emergency-system",
+    "title": "Mobile Emergency System",
+    "description": "A next-generation 911 service enables collaboration between emergency dispatchers and responders.",
+    "outcome": "[Role placeholder] · [Outcome placeholder]",
+    "tags": ["Mobile", "Enterprise"],
+    "url": "/case-study/mobile-emergency-system",
+    "featured": false,
+    "images": [
+      "/assets/case-studies/mobile-emergency-system/01.png",
+      "/assets/case-studies/mobile-emergency-system/02.png",
+      "/assets/case-studies/mobile-emergency-system/03.png"
+    ]
+  },
+  {
+    "id": "additive-manufacturing",
+    "title": "Additive Manufacturing",
+    "description": "Enabling people at work, optimizing innovative technologies and processes.",
+    "outcome": "[Role placeholder] · [Outcome placeholder]",
+    "tags": ["Enterprise"],
+    "url": "/case-study/additive-manufacturing",
+    "featured": false,
+    "images": [
+      "/assets/case-studies/additive-manufacturing/01.png",
+      "/assets/case-studies/additive-manufacturing/02.png",
+      "/assets/case-studies/additive-manufacturing/03.png"
+    ]
+  },
+  {
+    "id": "analytics-big-data",
+    "title": "Analytics & Big Data",
+    "description": "Enterprise SaaS and platform applications for big data and analytics.",
+    "outcome": "[Role placeholder] · [Outcome placeholder]",
+    "tags": ["Data Platforms", "Enterprise"],
+    "url": "/case-study/analytics-big-data",
+    "featured": false,
+    "images": [
+      "/assets/case-studies/analytics-big-data/01.png",
+      "/assets/case-studies/analytics-big-data/02.png",
+      "/assets/case-studies/analytics-big-data/03.png"
+    ]
+  }
+]
