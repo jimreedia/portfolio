@@ -12,5 +12,8 @@ Branch naming: `type/kebab-slug`, matching the task.
 - `feature/` — new sections or capabilities
 - `fix/` — bug fixes
 - `docs/` — planning-doc-only changes
+- `chore/` — build/tooling/repo config changes that aren't a feature, bug fix, or doc
 
-Examples already in this repo: `feature/homepage-redesign`, `fix/vite-base`, `docs/add-planning-notes`.
+Examples already in this repo: `feature/homepage-redesign`, `fix/vite-base`, `docs/add-planning-notes`, `chore/ignore-docs-build-output`.
+
+Worktrees live in `../worktrees/<branch-slug>`, a sibling directory to the repo (e.g. `../worktrees/chore-ignore-docs-build-output`).
