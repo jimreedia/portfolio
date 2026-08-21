@@ -1,14 +1,21 @@
+import Nav from './components/Nav'
+import BrandImagery from './components/BrandImagery'
+import Intro from './components/Intro'
+import FeaturedCaseStudies from './components/FeaturedCaseStudies'
+import Profile from './components/Profile'
+import MoreCaseStudies from './components/MoreCaseStudies'
+import Footer from './components/Footer'
+
 export default function App() {
   return (
-    <main style={{
-      fontFamily: 'system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial',
-      padding: 48,
-      maxWidth: 800,
-      margin: '0 auto'
-    }}>
-      <h1>Hello, World!</h1>
-      <p>This is a minimal React app built with Vite and configured to deploy to GitHub Pages (docs/).</p>
-      <p>Run <code>npm run build</code> to generate the static site into the <code>docs/</code> folder.</p>
-    </main>
+    <>
+      <Nav />
+      <BrandImagery />
+      <Intro />
+      <FeaturedCaseStudies />
+      <Profile />
+      <MoreCaseStudies />
+      <Footer />
+    </>
   )
 }
