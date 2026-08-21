@@ -6,7 +6,9 @@
 
 ## Purpose
 
-This document defines the layout, content structure, interaction behaviors, and visual design guidance for the homepage of jimreed.net, a React application hosted on GitHub Pages at https://jimreedia.github.io/portfolio/. Typography and color values are placeholder and subject to revision after structural review. The coding agent should implement structure and behavior faithfully; the designer will refine visual design in a subsequent pass.
+This document defines the layout, content structure, interaction behaviors, and visual design guidance for the homepage of a React application hosted on GitHub Pages. Typography and color values are placeholder and subject to revision after structural review. The coding agent should implement structure and behavior faithfully; the designer will refine visual design in a subsequent pass.
+
+**Hosting note (added during plan review):** Development and initial deploy target the GitHub Pages subpath `https://jimreedia.github.io/portfolio/` (`vite.config.js` uses `base: './'`, no `CNAME`). The custom domain `jimreed.net` will be added via `CNAME` when the site goes live. Until then, **all asset references must be subpath-safe** — see the Image Asset Locations note below. Do not hardcode root-absolute paths (e.g. `/assets/...`).
 
 ---
 
@@ -261,13 +263,15 @@ Use the following three case studies. Pull titles and descriptions from jimreed.
 
 The outcome/role line (e.g., "Led 0→1 design · Shipped to enterprise customers") is a placeholder field in `caseStudies.json`. Render it; the designer will populate values.
 
+**Link target (resolved during plan review):** Case study cards/CTAs link to the internal route in each entry's `url` field (e.g. `/case-study/agentic-ai-chat`, per the existing `caseStudies.json`), not to the live jimreed.net site. No router is wired up yet, so these links are inert placeholders until routing is built in a later pass — do not use `href="#"`.
+
 ---
 
 ### Image Carousel (per case study)
 
 **Dimensions:** 55% width on desktop, 100% width on mobile. Aspect ratio 16:9. Overflow hidden with `border-radius: 8px`.
 
-**Images per carousel:** 3–4 (sourced from `caseStudies.json`). Placeholder: solid color tile with centered label text.
+**Images per carousel:** 3–4 (sourced from `caseStudies.json`). **Placeholder (confirmed during plan review):** the `images` arrays in `caseStudies.json` reference files that don't exist yet in `public/`. Render solid-color tiles with centered label text for every slide instead of `<img>` tags, using the array length to determine slide count. Swap to real `<img>` rendering once image assets are provided.
 
 **Navigation:** Manual only. No auto-advance.
 
@@ -494,7 +498,9 @@ Designer has generated placeholder content `/src/data/caseStudies.json` as the s
 | Profile photo | `/public/assets/jimreed_head_512x512.png` |
 | Case study images | `/public/assets/case-studies/[id]/` |
 
-**Placeholder strategy:** Use placeholder images provided. Do not use third-party placeholder image services.
+**Placeholder strategy:** Use placeholder images provided. Do not use third-party placeholder image services. Case study images are not yet provided — see Section 3's Image Carousel note for the color-tile fallback.
+
+**Subpath-safe asset references (added during plan review):** Because the site currently deploys to a GitHub Pages subpath (not domain root), any reference to a file in `public/` must be built from `import.meta.env.BASE_URL` (e.g. `` `${import.meta.env.BASE_URL}assets/brand/pacman.png` ``) rather than a hardcoded root-absolute string like `/assets/brand/pacman.png`. A hardcoded root-absolute path will 404 under the `/portfolio/` subpath. This applies to the brand illustrations, profile photo, and any future case study images.
 
 ---
 
