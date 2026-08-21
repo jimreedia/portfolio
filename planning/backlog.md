@@ -16,8 +16,6 @@
 - [ ] Hide the entire More Case Studies section until we're ready to work on it (keep the component/code in place, just don't render it for now)
 - [ ] More case studies thumbnail images
 - [ ] Case study tags: review/adjust the tagging strategy if needed, then populate real tag values for each case study
-- [ ] Stop committing docs/ build output (GitHub Pages runs via the Actions workflow, not manual main/docs) — do this after feature/homepage-redesign merges, to avoid docs/ conflicts between the two branches
-
 ## In Progress
 
 (none)
@@ -25,3 +23,4 @@
 ## Done
 
 - [x] Homepage build (6 sections + nav) — branch: feature/homepage-redesign
+- [x] Stop committing docs/ build output — branch: chore/ignore-docs-build-output
