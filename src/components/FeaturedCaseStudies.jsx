@@ -1,14 +1,12 @@
-import useSectionReveal from '../hooks/useSectionReveal'
 import Carousel from './Carousel'
 import { getFeatured } from '../lib/caseStudies'
 
 export default function FeaturedCaseStudies() {
-  const [ref, visible] = useSectionReveal()
   const caseStudies = getFeatured()
 
   return (
     <section className="featured" id="featured-work">
-      <div className={`section__inner section-animate ${visible ? 'visible' : ''}`} ref={ref}>
+      <div className="section__inner">
         {caseStudies.map((cs, i) => (
           <div
             key={cs.id}

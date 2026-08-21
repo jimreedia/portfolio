@@ -1,11 +1,7 @@
-import useSectionReveal from '../hooks/useSectionReveal'
-
 export default function Intro() {
-  const [ref, visible] = useSectionReveal()
-
   return (
     <section className="intro">
-      <div className={`section__inner section-animate ${visible ? 'visible' : ''}`} ref={ref}>
+      <div className="section__inner">
         <h1 className="intro__headline">I design for experts.</h1>
         <p className="intro__subhead">
           Complex domains, high stakes, no shortcuts.

@@ -71,19 +71,6 @@ ul {
   list-style: none;
 }
 
-/* Section entrance animation (IntersectionObserver-driven) */
-@media (prefers-reduced-motion: no-preference) {
-  .section-animate {
-    opacity: 0;
-    transform: translateY(24px);
-    transition: opacity 500ms ease, transform 500ms ease;
-  }
-  .section-animate.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 @media (prefers-reduced-motion: no-preference) {
   @keyframes bounce-down {
     0% { transform: translateY(0); }

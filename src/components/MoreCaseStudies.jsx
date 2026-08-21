@@ -1,13 +1,11 @@
-import useSectionReveal from '../hooks/useSectionReveal'
 import { getMore } from '../lib/caseStudies'
 
 export default function MoreCaseStudies() {
-  const [ref, visible] = useSectionReveal()
   const caseStudies = getMore()
 
   return (
     <section className="more-work" id="more-work">
-      <div className={`section__inner section-animate ${visible ? 'visible' : ''}`} ref={ref}>
+      <div className="section__inner">
         <h2 className="more-work__header">More Case Studies</h2>
         <div className="more-work__grid">
           {caseStudies.map((cs) => (

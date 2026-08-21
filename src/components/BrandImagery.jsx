@@ -1,12 +1,9 @@
-import useSectionReveal from '../hooks/useSectionReveal'
 import { assetUrl } from '../lib/caseStudies'
 
 export default function BrandImagery() {
-  const [ref, visible] = useSectionReveal()
-
   return (
     <section className="brand-imagery" id="top">
-      <div className={`section__inner section-animate ${visible ? 'visible' : ''}`} ref={ref}>
+      <div className="section__inner">
         <img
           className="brand-imagery__illustration"
           src={assetUrl('assets/brand/pacman.png')}

@@ -1,4 +1,3 @@
-import useSectionReveal from '../hooks/useSectionReveal'
 import { assetUrl } from '../lib/caseStudies'
 
 const BULLETS = [
@@ -10,11 +9,9 @@ const BULLETS = [
 ]
 
 export default function Profile() {
-  const [ref, visible] = useSectionReveal()
-
   return (
     <section className="profile" id="profile">
-      <div className={`section__inner section-animate ${visible ? 'visible' : ''}`} ref={ref}>
+      <div className="section__inner">
         <img
           className="profile__photo"
           src={assetUrl('assets/jimreed_head_512x512.png')}
