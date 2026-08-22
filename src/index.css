@@ -37,7 +37,8 @@ html {
 }
 
 html, body, #root {
-  height: 100%;
+  height: auto;
+  min-height: 100%;
   margin: 0;
 }
 
@@ -198,6 +199,7 @@ ul {
 /* Section 1: Brand Imagery */
 .brand-imagery {
   background: var(--color-surface-dark);
+  position: relative;
 }
 
 .brand-imagery .section__inner {
@@ -221,6 +223,39 @@ ul {
     width: 100%;
     max-width: 320px;
   }
+}
+
+.brand-imagery__cta {
+  position: absolute;
+  left: 50%;
+  bottom: 32px;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  opacity: 0.6;
+  transition: opacity 150ms ease;
+}
+
+.brand-imagery__cta-arrow,
+.brand-imagery__cta-label {
+  color: var(--color-text-muted-dark);
+  transition: color 150ms ease;
+}
+
+.brand-imagery__cta:hover {
+  opacity: 1;
+}
+
+.brand-imagery__cta:hover .brand-imagery__cta-arrow,
+.brand-imagery__cta:hover .brand-imagery__cta-label {
+  color: var(--color-accent);
+}
+
+.brand-imagery__cta-label {
+  font-size: 12px;
+  font-weight: 500;
 }
 
 /* Section 2: Intro */
@@ -257,30 +292,6 @@ ul {
   line-height: 1.7;
   max-width: 60ch;
   margin: 36px 0 0;
-}
-
-.intro__cta {
-  margin-top: 52px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-}
-
-.intro__cta-arrow,
-.intro__cta-label {
-  color: var(--color-text-muted);
-  transition: color 150ms ease;
-}
-
-.intro__cta:hover .intro__cta-arrow,
-.intro__cta:hover .intro__cta-label {
-  color: var(--color-accent);
-}
-
-.intro__cta-label {
-  font-size: 14px;
-  font-weight: 500;
 }
 
 @media (max-width: 767px) {
