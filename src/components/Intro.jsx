@@ -14,12 +14,6 @@ export default function Intro() {
           operations, data platforms, and AI, designing tools that expert users actually
           rely on.
         </p>
-        <a href="#featured-work" className="intro__cta">
-          <svg className="intro__cta-arrow cta-arrow" width="32" height="20" viewBox="0 0 32 20" fill="none" aria-hidden="true">
-            <path d="M4 4L16 16L28 4" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
-          <span className="intro__cta-label">Explore the work</span>
-        </a>
       </div>
     </section>
   )
