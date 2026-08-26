@@ -1,24 +1,33 @@
 import { useState } from 'react'
+import { assetUrl } from '../lib/caseStudies'
 
 const SWIPE_THRESHOLD = 50
 
-export default function Carousel({ images, title, overlayText = 'View Case Study →' }) {
+export default function Carousel({ images, title }) {
   const [index, setIndex] = useState(0)
+  const [animate, setAnimate] = useState(true)
   const [touchStartX, setTouchStartX] = useState(null)
 
   const count = images.length
-  const atStart = index === 0
-  const atEnd = index === count - 1
+  const slides = [...images, images[0]]
 
-  const goPrev = () => setIndex((i) => Math.max(0, i - 1))
-  const goNext = () => setIndex((i) => Math.min(count - 1, i + 1))
+  const goNext = () => {
+    setAnimate(true)
+    setIndex((i) => i + 1)
+  }
+
+  const handleTransitionEnd = () => {
+    if (index === count) {
+      setAnimate(false)
+      setIndex(0)
+    }
+  }
 
   const handleTouchStart = (e) => setTouchStartX(e.touches[0].clientX)
   const handleTouchEnd = (e) => {
     if (touchStartX === null) return
     const delta = e.changedTouches[0].clientX - touchStartX
-    if (delta > SWIPE_THRESHOLD) goPrev()
-    else if (delta < -SWIPE_THRESHOLD) goNext()
+    if (Math.abs(delta) > SWIPE_THRESHOLD) goNext()
     setTouchStartX(null)
   }
 
@@ -31,31 +40,28 @@ export default function Carousel({ images, title, overlayText = 'View Case Study
       >
         <div
           className="carousel__track"
-          style={{ transform: `translateX(-${index * 100}%)` }}
+          style={{
+            transform: `translateX(-${index * 100}%)`,
+            transition: animate ? 'transform 300ms ease' : 'none',
+          }}
+          onTransitionEnd={handleTransitionEnd}
         >
-          {images.map((_, i) => (
+          {slides.map((src, i) => (
             <div className="carousel__slide" key={i}>
-              <div className="carousel__slide-tile">{`Image ${i + 1} of ${count}`}</div>
+              <img
+                className="carousel__slide-image"
+                src={assetUrl(src)}
+                alt={`${title} screenshot ${(i % count) + 1} of ${count}`}
+                loading={i === 0 ? 'eager' : 'lazy'}
+              />
             </div>
           ))}
         </div>
 
-        <div className="carousel__overlay">{overlayText}</div>
-
-        <button
-          type="button"
-          className="carousel__arrow carousel__arrow--prev"
-          onClick={goPrev}
-          disabled={atStart}
-          aria-label={`Previous image for ${title}`}
-        >
-          ‹
-        </button>
         <button
           type="button"
           className="carousel__arrow carousel__arrow--next"
           onClick={goNext}
-          disabled={atEnd}
           aria-label={`Next image for ${title}`}
         >
           ›
@@ -66,7 +72,7 @@ export default function Carousel({ images, title, overlayText = 'View Case Study
         {images.map((_, i) => (
           <span
             key={i}
-            className={`carousel__dot ${i === index ? 'carousel__dot--active' : ''}`}
+            className={`carousel__dot ${i === index % count ? 'carousel__dot--active' : ''}`}
           />
         ))}
       </div>
