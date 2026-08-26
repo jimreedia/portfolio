@@ -325,6 +325,7 @@ ul {
 
 .featured-row__text {
   width: 40%;
+  margin-bottom: 24px;
 }
 
 @media (max-width: 767px) {
@@ -340,19 +341,10 @@ ul {
   }
 }
 
-.case-study__number {
-  display: block;
-  font-family: var(--font-mono);
-  font-size: 13px;
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  color: var(--color-accent);
-}
-
 .case-study__title {
   font-size: 30px;
   font-weight: 600;
-  margin: 12px 0 0;
+  margin: 0;
 }
 
 .case-study__description {
@@ -367,7 +359,7 @@ ul {
   font-size: 13px;
   font-weight: 500;
   letter-spacing: 0.04em;
-  color: var(--color-accent);
+  color: var(--color-text-muted);
   margin: 20px 0 0;
 }
 
