@@ -8,9 +8,9 @@
     "url": "/case-study/agentic-ai-chat",
     "featured": true,
     "images": [
-      "/assets/case-studies/agentic-ai-chat/01.png",
-      "/assets/case-studies/agentic-ai-chat/02.png",
-      "/assets/case-studies/agentic-ai-chat/03.png"
+      "/assets/case-studies/agentic-ai-chat/LinkedIn_portfolio_cover-no-inset.png",
+      "/assets/case-studies/agentic-ai-chat/LinkedIn_chat_home.png",
+      "/assets/case-studies/agentic-ai-chat/LinkedIn_logs_explorer_chat.png"
     ]
   },
   {
@@ -22,9 +22,8 @@
     "url": "/case-study/ai-recommendations",
     "featured": true,
     "images": [
-      "/assets/case-studies/ai-recommendations/01.png",
-      "/assets/case-studies/ai-recommendations/02.png",
-      "/assets/case-studies/ai-recommendations/03.png"
+      "/assets/case-studies/ai-recommendations/AI-Recommendations_cover-resize-no-inset.png",
+      "/assets/case-studies/ai-recommendations/AI-Recommendations_mapping-designer-redesign.png"
     ]
   },
   {
@@ -36,7 +35,7 @@
     "url": "/case-study/genomic-data-platform",
     "featured": true,
     "images": [
-      "/assets/case-studies/genomic-data-platform/01.png",
+      "/assets/case-studies/genomic-data-platform/Cohorts_portfolio_cover-resize-no-inset.png",
       "/assets/case-studies/genomic-data-platform/02.png",
       "/assets/case-studies/genomic-data-platform/03.png"
     ]

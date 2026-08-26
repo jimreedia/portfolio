@@ -5,7 +5,6 @@
 - [ ] Recolor graphics
   - [ ] Pacman graphic
   - [ ] Animated hand/gear graphic
-- [ ] Add featured case study images (currently color-tile placeholders)
 - [ ] Adjust crop of headshot photo
 - [ ] Adjust typography
 - [ ] Hide "View Case Study →" links on Featured Case Studies until case study pages are built (keep the rest of each row visible)
@@ -25,3 +24,4 @@
 - [x] Homepage build (6 sections + nav) — branch: feature/homepage-redesign
 - [x] Stop committing docs/ build output — branch: chore/ignore-docs-build-output
 - [x] Remove case study numbers (01/02/03) from Featured Case Studies — branch: fix/remove-case-study-numbers
+- [x] Add featured case study images (currently color-tile placeholders) — branch: fix/add-case-study-images
