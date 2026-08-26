@@ -16,7 +16,6 @@ export default function FeaturedCaseStudies() {
               <Carousel images={cs.images} title={cs.title} />
             </div>
             <div className="featured-row__text">
-              <span className="case-study__number">{String(i + 1).padStart(2, '0')}</span>
               <h3 className="case-study__title">{cs.title}</h3>
               <p className="case-study__description">{cs.description}</p>
               <span className="case-study__outcome">{cs.outcome}</span>
