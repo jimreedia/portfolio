@@ -12,6 +12,7 @@
 - [ ] More case studies thumbnail images
 - [ ] Case study tags: review/adjust the tagging strategy if needed, then populate real tag values for each case study
 - [ ] In Nav component, replace the "Jim Reed" title text with an icon; add a favicon so it renders in the browser tab
+- [ ] Refine case study content — the initial build seeds each page from jimreed.net with a Problem/Approach/Outcomes skeleton. Raise it to a senior/principal standard: reframe "Approach" around key decisions and tradeoffs (not a list of process activities), surface a one-line outcome in the hero, make individual contribution explicit in the prose, give captions design rationale rather than labels, add a "Reflection / what I'd do differently" section, and replace all `[bracketed]` placeholders (timelines, outcome metrics, team) with real content.
 - [ ] Unify color tokens around two overarching dark/light pairings — one anchored on `--color-surface-dark` (#0D0D12, currently Brand Imagery, carousel background, Footer) and one anchored on `--color-surface-navy` (#1A2744, currently Profile) — each with its own consistent light/text counterparts, rather than collapsing navy into the near-black dark. Exploratory: audit all `--color-surface-*`/`--color-text-*` token usage in index.css, assign each element to the appropriate pairing, and propose the token set; implementation will target specific elements chosen at that time.
 ## In Progress
 
