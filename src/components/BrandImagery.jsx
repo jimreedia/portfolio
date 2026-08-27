@@ -1,6 +1,9 @@
 import { assetUrl } from '../lib/caseStudies'
+import { useSectionNav } from '../lib/navigation'
 
 export default function BrandImagery() {
+  const goToSection = useSectionNav()
+
   return (
     <section className="brand-imagery" id="top">
       <div className="section__inner">
@@ -15,12 +18,16 @@ export default function BrandImagery() {
           alt="An animated hand pointing at a gear, representing interaction design"
         />
       </div>
-      <a href="#featured-work" className="brand-imagery__cta">
+      <button
+        type="button"
+        className="brand-imagery__cta"
+        onClick={() => goToSection('featured-work')}
+      >
         <span className="brand-imagery__cta-label">view case studies</span>
         <svg className="brand-imagery__cta-arrow cta-arrow" width="18" height="11" viewBox="0 0 32 20" fill="none" aria-hidden="true">
           <path d="M4 4L16 16L28 4" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
-      </a>
+      </button>
     </section>
   )
 }

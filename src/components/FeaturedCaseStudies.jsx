@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import Carousel from './Carousel'
 import { getFeatured } from '../lib/caseStudies'
 
@@ -19,7 +20,7 @@ export default function FeaturedCaseStudies() {
               <h3 className="case-study__title">{cs.title}</h3>
               <p className="case-study__description">{cs.description}</p>
               <span className="case-study__outcome">{cs.outcome}</span>
-              <a href={cs.url} className="case-study__cta">View Case Study →</a>
+              <Link to={cs.url} className="case-study__cta">View Case Study →</Link>
             </div>
           </div>
         ))}

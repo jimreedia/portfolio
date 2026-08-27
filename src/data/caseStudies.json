@@ -7,10 +7,55 @@
     "tags": ["AI", "Enterprise"],
     "url": "/case-study/agentic-ai-chat",
     "featured": true,
+    "role": "Product Designer, LinkedIn",
+    "timeline": "[Timeline placeholder]",
+    "team": "Embedded with product engineers",
     "images": [
       "/assets/case-studies/agentic-ai-chat/LinkedIn_portfolio_cover-no-inset.png",
       "/assets/case-studies/agentic-ai-chat/LinkedIn_chat_home.png",
       "/assets/case-studies/agentic-ai-chat/LinkedIn_logs_explorer_chat.png"
+    ],
+    "sections": [
+      {
+        "heading": "Overview",
+        "body": [
+          "Site reliability and on-call engineers respond to performance incidents under time pressure, jumping between alerts, metrics, logs, and deployment tools across many tabs. I led design of a conversational AI assistant that lives inside those existing views so engineers can investigate without leaving their workflow."
+        ]
+      },
+      {
+        "heading": "The problem",
+        "body": [
+          "Incident response is high-pressure and fragmented. The information an engineer needs is spread across disconnected tools, and stitching it together by hand is slow and cognitively taxing exactly when speed matters most."
+        ]
+      },
+      {
+        "heading": "Approach",
+        "body": [
+          "The work spanned four connected efforts:"
+        ],
+        "items": [
+          "AI in context — a conversational assistant that sits alongside adjacent UI rather than in a separate destination, so the engineer and the agent work over the same views.",
+          "UI principles — an audit of existing panels plus storyboards to make the rationale for panel placement legible to the team.",
+          "Elements and interactions — specifying plugins, contextual input, and inline artifacts such as charts so answers arrive in place.",
+          "Branding — a custom icon set using sparkle glyphs for AI and telescope forms for observability, with variants per surface."
+        ]
+      },
+      {
+        "heading": "Outcomes",
+        "body": [
+          "A trusted AI surface for incident work."
+        ],
+        "items": [
+          "Meaningful reduction in time spent finding the root cause of performance incidents",
+          "Faster incident triage",
+          "Lower cognitive load during on-call",
+          "[Outcome metric placeholder]"
+        ]
+      }
+    ],
+    "gallery": [
+      { "src": "/assets/case-studies/agentic-ai-chat/LinkedIn_chat_home.png", "caption": "Chat home — the assistant available in context. [Caption placeholder]" },
+      { "src": "/assets/case-studies/agentic-ai-chat/LinkedIn_logs_explorer_chat.png", "caption": "Logs explorer with the assistant alongside. [Caption placeholder]" }
     ]
   },
   {
@@ -21,9 +66,49 @@
     "tags": ["AI", "Data Platforms"],
     "url": "/case-study/ai-recommendations",
     "featured": true,
+    "role": "Principal UX Designer, Informatica",
+    "timeline": "[Timeline placeholder]",
+    "team": "ML engineers, UX researchers, UX partners, executive stakeholders",
     "images": [
       "/assets/case-studies/ai-recommendations/AI-Recommendations_cover-resize-no-inset.png",
       "/assets/case-studies/ai-recommendations/AI-Recommendations_mapping-designer-redesign.png"
+    ],
+    "sections": [
+      {
+        "heading": "Overview",
+        "body": [
+          "Informatica wanted to bring machine-learning recommendations into its cloud and desktop data-integration tools without disrupting how people already worked. I led design of an interaction model that suggests the next transformation step as users build data workflows."
+        ]
+      },
+      {
+        "heading": "The problem",
+        "body": [
+          "Recommendations are only useful if they meet users inside their existing flow. The design needed an interaction model that felt native to both a modern cloud product and a long-established desktop product, for two very different users.",
+          "We identified two personas: the Data Integration Developer, and the Citizen Integrator — a non-technical subject-matter expert."
+        ]
+      },
+      {
+        "heading": "Approach",
+        "body": [
+          "The reference point was predictive text in a messaging app: present, helpful, easy to ignore. I worked across disciplines to train an ML model on anonymized customer data and to shape how its output appeared."
+        ],
+        "items": [
+          "Sketches and renderings to find a model for inline recommendations",
+          "Animated behaviors and prototypes to communicate the interaction",
+          "Storyboards for the panel concepts",
+          "Precision tracking — comparing user choices against predictions to improve model accuracy over time"
+        ]
+      },
+      {
+        "heading": "Outcomes",
+        "body": [
+          "Users responded positively to the feature. The model reads the sequence of transformations in a workflow and recommends the next step from prior usage patterns. The work also carried a visual redesign that modernized the product.",
+          "[Outcome metric placeholder]"
+        ]
+      }
+    ],
+    "gallery": [
+      { "src": "/assets/case-studies/ai-recommendations/AI-Recommendations_mapping-designer-redesign.png", "caption": "Mapping designer redesign with inline recommendations. [Caption placeholder]" }
     ]
   },
   {
@@ -34,94 +119,349 @@
     "tags": ["Data Platforms", "Enterprise"],
     "url": "/case-study/genomic-data-platform",
     "featured": true,
+    "role": "Senior Staff Interaction Designer, Illumina",
+    "timeline": "[Timeline placeholder]",
+    "team": "UX researchers, bioinformatics subject-matter experts, product stakeholders",
     "images": [
       "/assets/case-studies/genomic-data-platform/Cohorts_portfolio_cover-resize-no-inset.png",
       "/assets/case-studies/genomic-data-platform/02.png",
       "/assets/case-studies/genomic-data-platform/03.png"
+    ],
+    "sections": [
+      {
+        "heading": "Overview",
+        "body": [
+          "Cohorts, part of Illumina Connected Analytics, lets customers aggregate and analyze genomic and clinical data across private, public, and partner datasets, then compare subject groups to accelerate biomarker and drug discovery. I led interaction design for research scientists working to discover biomarkers of interest."
+        ]
+      },
+      {
+        "heading": "The problem",
+        "body": [
+          "Genomic analysis carries dense, specialized terminology and established mental models. The product had to fit how bioinformaticians already reason about genetic variants, not impose a new vocabulary on them."
+        ]
+      },
+      {
+        "heading": "Approach",
+        "body": [
+          "Research led the design at every stage."
+        ],
+        "items": [
+          "Evidence-based personas from stakeholder and subject-matter-expert interviews",
+          "Card sorting with experts to learn the terminology and mental models for analyzing genomic data",
+          "Interviews with bioinformaticians using digital workflows to evaluate variants, validating low-fidelity concepts and interaction models",
+          "Storyboards to communicate workflows to stakeholders, and interactive Figma prototypes to pressure-test decisions"
+        ]
+      },
+      {
+        "heading": "Outcomes",
+        "body": [
+          "Customer feedback surfaced an unmet need to discover relevant genes, which led to new features including comparison heat maps. User testing drove customizable plots and radar charts for viewing variant-type distribution by gene. The visual language and interaction patterns were carried across related applications for a cohesive platform.",
+          "[Outcome metric placeholder]"
+        ]
+      }
+    ],
+    "gallery": [
+      { "src": "/assets/case-studies/genomic-data-platform/01.png", "caption": "[Caption placeholder]" },
+      { "src": "/assets/case-studies/genomic-data-platform/02.png", "caption": "[Caption placeholder]" },
+      { "src": "/assets/case-studies/genomic-data-platform/03.png", "caption": "[Caption placeholder]" }
     ]
   },
   {
     "id": "developer-experience",
     "title": "Developer Experience",
     "description": "Guiding software developers through a cloud-based data platform experience.",
-    "outcome": "[Role placeholder] · [Outcome placeholder]",
+    "outcome": "Senior Staff UX Designer + acting TPM · Led MVP to launch",
     "tags": ["Data Platforms", "Enterprise"],
     "url": "/case-study/developer-experience",
     "featured": false,
+    "role": "Senior Staff UX Interaction Designer and acting Technical Product Manager, GE Digital",
+    "timeline": "[Timeline placeholder]",
+    "team": "Agile product team",
     "images": [
       "/assets/case-studies/developer-experience/01.png",
       "/assets/case-studies/developer-experience/02.png",
       "/assets/case-studies/developer-experience/03.png"
+    ],
+    "sections": [
+      {
+        "heading": "Overview",
+        "body": [
+          "I led design — and for a stretch, product management — for a new web portal and administration console for a cloud platform's services, built from scratch with an agile team."
+        ]
+      },
+      {
+        "heading": "The problem",
+        "body": [
+          "Developers needed a way to find, understand, and adopt cloud services that didn't exist yet. The design centered on a primary user, \"Elaine the Software Architect,\" and the decisions she makes along her journey."
+        ]
+      },
+      {
+        "heading": "Approach",
+        "body": [
+          "A persona-driven strategy tied every feature to a point in Elaine's path."
+        ],
+        "items": [
+          "Product storyboards to identify the critical features along the journey",
+          "Wireframes and After Effects motion prototypes to test interaction paradigms",
+          "An adoption strategy aimed at developers, built on instructional web videos",
+          "Directing a lean video crew to produce hands-on coding-tip content"
+        ]
+      },
+      {
+        "heading": "Outcomes",
+        "body": [
+          "We shipped an MVP catalog of cloud services quickly, demoed it to analysts including Gartner, and launched the full product months later. I then moved into a product manager role, presenting at GE's Minds + Machines and Industrial Internet events.",
+          "[Outcome metric placeholder]"
+        ]
+      }
     ]
   },
   {
     "id": "machine-learning-for-operators",
     "title": "Machine Learning for Operators",
     "description": "Enabling operations engineers to train AI models for accuracy.",
-    "outcome": "[Role placeholder] · [Outcome placeholder]",
+    "outcome": "Senior Staff UX Designer · [Outcome placeholder]",
     "tags": ["AI", "Enterprise"],
     "url": "/case-study/machine-learning-for-operators",
     "featured": false,
+    "role": "Senior Staff UX Interaction Designer, GE Digital",
+    "timeline": "[Timeline placeholder]",
+    "team": "Product managers and international scrum teams across California, Bangalore, and New York; UX researchers",
     "images": [
       "/assets/case-studies/machine-learning-for-operators/01.png",
       "/assets/case-studies/machine-learning-for-operators/02.png",
       "/assets/case-studies/machine-learning-for-operators/03.png"
+    ],
+    "sections": [
+      {
+        "heading": "Overview",
+        "body": [
+          "Training an accurate AI model normally takes a data scientist. The operations engineers closest to industrial sensor data don't have that background. This work aimed to get machine-learning techniques into the hands of industrialists by reducing the complexity of the process."
+        ]
+      },
+      {
+        "heading": "The problem",
+        "body": [
+          "The people with the deepest understanding of the equipment and its data were locked out of model training by tooling that assumed data-science expertise."
+        ]
+      },
+      {
+        "heading": "Approach",
+        "body": [
+          "Design followed the iterative shape of the data-science process itself."
+        ],
+        "items": [
+          "Product strategy with stakeholders and scrum teams across three regions to align roadmaps and keep the experience consistent",
+          "Contextual observation of reliability engineers, data analysts, and data scientists on customer sites",
+          "Data curation and exploration tools so users could evaluate data before and after training",
+          "Prognostic equipment dashboards designed for low-light industrial environments",
+          "Monitoring tools to detect data drift and flag when a model needs retraining"
+        ]
+      },
+      {
+        "heading": "Outcomes",
+        "body": [
+          "[Outcomes placeholder — the live case study does not state measurable results.]"
+        ]
+      }
     ]
   },
   {
     "id": "operational-insights",
     "title": "Operational Insights",
     "description": "Solutions to help development teams monitor and analyze operational data.",
-    "outcome": "[Role placeholder] · [Outcome placeholder]",
+    "outcome": "Principal UX Designer · Shipped; positive customer feedback",
     "tags": ["Data Platforms", "Enterprise"],
     "url": "/case-study/operational-insights",
     "featured": false,
+    "role": "Principal UX Designer, Informatica",
+    "timeline": "[Timeline placeholder]",
+    "team": "One UX designer (Jim Reed) and one UX researcher",
     "images": [
       "/assets/case-studies/operational-insights/01.png",
       "/assets/case-studies/operational-insights/02.png",
       "/assets/case-studies/operational-insights/03.png"
+    ],
+    "sections": [
+      {
+        "heading": "Overview",
+        "body": [
+          "Small teams — typically five or fewer developers and one manager — both build data jobs and monitor the daily flow of data through them. I designed a monitoring experience shaped around how those teams actually check in on their work."
+        ]
+      },
+      {
+        "heading": "The problem",
+        "body": [
+          "The \"Monday-morning check\" of data-integration jobs is a glance, not an analysis session. Traditional dashboard visualizations like pie charts didn't match what people needed in that first look."
+        ]
+      },
+      {
+        "heading": "Approach",
+        "body": [
+          "Interviews and workflow observations produced a two-tier model for the dashboard."
+        ],
+        "items": [
+          "Big numbers, first glance — large, actionable \"fast facts\" (Rows Processed, Number of Jobs) with stacked column charts for job-status breakdowns",
+          "Analysis views, second glance — detailed visualizations, including line charts to correlate metrics with projects or folders over time",
+          "A proposed Slack app for collaborative operations monitoring, inspired by teams' pieced-together workflows",
+          "Color coding for AI predictions — blue for actual values, green for predicted",
+          "Dropping an early logo-based mockup that wouldn't scale to hundreds of connector types"
+        ]
+      },
+      {
+        "heading": "Outcomes",
+        "body": [
+          "Post-launch feedback confirmed the design met customers' needs, with users specifically calling out that it showed \"the right kinds of metrics.\"",
+          "[Outcome metric placeholder]"
+        ]
+      }
     ]
   },
   {
     "id": "mobile-emergency-system",
     "title": "Mobile Emergency System",
     "description": "A next-generation 911 service enables collaboration between emergency dispatchers and responders.",
-    "outcome": "[Role placeholder] · [Outcome placeholder]",
+    "outcome": "Principal Product Designer · [Outcome placeholder]",
     "tags": ["Mobile", "Enterprise"],
     "url": "/case-study/mobile-emergency-system",
     "featured": false,
+    "role": "Principal Product Designer, BlackBerry AtHoc",
+    "timeline": "[Timeline placeholder]",
+    "team": "[Team placeholder]",
     "images": [
       "/assets/case-studies/mobile-emergency-system/01.png",
       "/assets/case-studies/mobile-emergency-system/02.png",
       "/assets/case-studies/mobile-emergency-system/03.png"
+    ],
+    "sections": [
+      {
+        "heading": "Overview",
+        "body": [
+          "A next-generation 911 service that lets emergency dispatchers, operators, responders, and citizens share critical information during an incident. I designed the system across iOS, Android, and desktop."
+        ]
+      },
+      {
+        "heading": "The problem",
+        "body": [
+          "Emergencies demand fast, multi-directional communication between people in very different roles and contexts. The design goal was to make a genuinely complex system feel simple to use under stress."
+        ]
+      },
+      {
+        "heading": "Approach",
+        "body": [
+          "Storyboard sketches formed the base for the UX flows, followed by wireframes and high-fidelity mockups."
+        ],
+        "items": [
+          "Motion studies to animate the UI for different emergency scenarios and keep transitions seamless",
+          "Mood boards to set the aesthetic direction for emergency alerting",
+          "Emergency situation tracking — citizens check in with location data and receive operator alerts",
+          "Interactive maps — operators publish layers and pins so responders and civilians can track incidents and cordons"
+        ]
+      },
+      {
+        "heading": "Outcomes",
+        "body": [
+          "[Outcomes placeholder — the live case study does not state measurable results.]"
+        ]
+      }
     ]
   },
   {
     "id": "additive-manufacturing",
     "title": "Additive Manufacturing",
     "description": "Enabling people at work, optimizing innovative technologies and processes.",
-    "outcome": "[Role placeholder] · [Outcome placeholder]",
+    "outcome": "Senior Staff UX Designer · [Outcome placeholder]",
     "tags": ["Enterprise"],
     "url": "/case-study/additive-manufacturing",
     "featured": false,
+    "role": "Senior Staff UX Interaction Designer, GE Digital",
+    "timeline": "[Timeline placeholder]",
+    "team": "[Team placeholder]",
     "images": [
       "/assets/case-studies/additive-manufacturing/01.png",
       "/assets/case-studies/additive-manufacturing/02.png",
       "/assets/case-studies/additive-manufacturing/03.png"
+    ],
+    "sections": [
+      {
+        "heading": "Overview",
+        "body": [
+          "Customers running industrial 3D laser printers needed visibility into how their machines were operating. I designed a dashboard that gathers sensor data and surfaces statistical calculations per printer and across a facility."
+        ]
+      },
+      {
+        "heading": "The problem",
+        "body": [
+          "An early design showed the Availability Score as a donut chart. User testing found it confusing — the printers themselves already use a similar visualization to show print progress, so the metric read as something it wasn't."
+        ]
+      },
+      {
+        "heading": "Approach",
+        "body": [
+          "Contextual research at a facility producing aircraft-engine parts grounded the work — observing the manufacturing process and interviewing operators in place."
+        ],
+        "items": [
+          "A journey map of roles, tasks, and key personas to identify product opportunities",
+          "Replacing the donut chart with a simple number and color indicator after concept testing",
+          "Mobile concepts, since operators work on call and need remote status monitoring"
+        ]
+      },
+      {
+        "heading": "Outcomes",
+        "body": [
+          "The shipped dashboard shows an Availability Score for each printer's productivity plus aggregate facility-level metrics.",
+          "[Outcome metric placeholder]"
+        ]
+      }
     ]
   },
   {
     "id": "analytics-big-data",
     "title": "Analytics & Big Data",
     "description": "Enterprise SaaS and platform applications for big data and analytics.",
-    "outcome": "[Role placeholder] · [Outcome placeholder]",
+    "outcome": "Senior Staff UX Designer · [Outcome placeholder]",
     "tags": ["Data Platforms", "Enterprise"],
     "url": "/case-study/analytics-big-data",
     "featured": false,
+    "role": "Senior Staff UX Interaction Designer, GE Digital",
+    "timeline": "[Timeline placeholder]",
+    "team": "Subject-matter experts and stakeholders in collaborative design sessions",
     "images": [
       "/assets/case-studies/analytics-big-data/01.png",
       "/assets/case-studies/analytics-big-data/02.png",
       "/assets/case-studies/analytics-big-data/03.png"
+    ],
+    "sections": [
+      {
+        "heading": "Overview",
+        "body": [
+          "Research with data scientists and data engineers kept pointing at the same thing: data exploration and cleansing is a critical part of the data-science process. I conceived Data Explorer to give teams visualization tools for evaluating data before and after analytic processing."
+        ]
+      },
+      {
+        "heading": "The problem",
+        "body": [
+          "Teams had no good way to see their data — its shape, its quality — at the points in the workflow where that visibility matters most."
+        ]
+      },
+      {
+        "heading": "Approach",
+        "body": [
+          "I ran collaborative design sessions with subject-matter experts, sketching and mapping task flows with diagrams and sticky notes. Running UX workshops and involving stakeholders directly is a good way to give everyone ownership of the design.",
+          "Alongside Data Explorer, a searchable, sortable catalog of data and analytic techniques lets users sequence techniques and business logic together in a tool called the Orchestration Editor."
+        ],
+        "items": [
+          "Sketches",
+          "Storyboards",
+          "User task flows"
+        ]
+      },
+      {
+        "heading": "Outcomes",
+        "body": [
+          "[Outcomes placeholder — the live case study does not state measurable results.]"
+        ]
+      }
     ]
   }
 ]
