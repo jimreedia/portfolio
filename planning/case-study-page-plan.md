@@ -57,30 +57,47 @@ wider (up to ~920px) on desktop ≥ 1024px. Top padding clears the 64px sticky n
   - Labels in DM Mono 12px uppercase; values in Plus Jakarta Sans 15px.
   - Rows are omitted when their value is empty.
 
-### 2. Narrative sections
+### 2. Narrative sections (images woven into the text)
 
 Rendered from `cs.sections` (array). Each entry:
 
 - `heading` (`h2`, 26px / 22px mobile)
+- `image` — optional `{ src, alt }`, rendered full-bleed **between the heading and
+  the body text** (matches the current jimreed.net layout: heading → image →
+  explanation). Annotation banners are baked into the image asset, so there is no
+  separate caption. Clicking the image opens the lightbox (see §4).
 - `body` — array of paragraph strings (17px, line-height 1.7)
 - `items` — optional bullet list; en-dash bullet in `--color-accent`, matching the
   Profile section's list style
 
-Seeded headings: **Overview**, **The problem**, **Approach**, **Outcomes**.
-This set is a convention, not enforced — the component renders whatever
-`sections` contains.
+`agentic-ai-chat` is the first case study built to this model — sections
+**Overview · AI in Context · UI Principles · Elements and Interactions · User
+Needs · Branding**, text and images pulled from the live site. The other case
+studies still use the older `heading` + `body` + `items` + bottom `gallery` shape;
+the component renders whatever a given entry provides.
 
-### 3. Image gallery
+### 3. Image gallery (legacy shape, still supported)
 
-Rendered from `cs.gallery` (array of `{ src, caption }`), when present. Each is a
-`<figure>` with a full-width image and an optional `<figcaption>` (13px,
-`--color-text-muted`). Stacked vertically, 32px gap.
+Rendered from `cs.gallery` (array of `{ src, caption }`), when present, after the
+narrative sections. Each is a `<figure>` with a full-width clickable image
+(opens the lightbox) and an optional `<figcaption>` (13px, `--color-text-muted`).
+Case studies migrated to inline section images (`agentic-ai-chat`) drop `gallery`.
 
-Only the three featured case studies have real named image assets, so only they
-carry a `gallery` array for now. The other six render narrative only until their
-images are added to `public/assets/case-studies/<id>/`.
+### 4. Lightbox
 
-### 4. Prev / next navigation
+`src/components/Lightbox.jsx` — a full-screen viewer over every image on the page.
+The series is assembled in order: **hero → each section image → each gallery
+image**. Any image (including the hero) opens it at that image's position.
+
+- Controls: on-screen ‹ / › arrows (disabled at the ends — the series does not
+  wrap), a close ✕, and a `n / total` counter.
+- Keyboard: `←` / `→` to page, `Esc` to close. Backdrop click closes.
+- Touch: horizontal swipe pages.
+- Body scroll is locked while open; focus moves to the close button and is
+  restored to the trigger on close.
+- `prefers-reduced-motion`: the 150ms backdrop fade is skipped.
+
+### 5. Prev / next navigation
 
 - A row with two links: **← Previous / {title}** and **Next → / {title}**.
 - Order and wrap-around follow the `caseStudies.json` array order (`getNeighbors`).
@@ -100,8 +117,9 @@ unchanged; `images` still feeds the homepage carousel):
 | `role` | string | e.g. "Product Designer, LinkedIn" |
 | `timeline` | string | `[Timeline placeholder]` for all entries — the live site gives no dates |
 | `team` | string | short phrase |
-| `sections` | `{ heading, body: string[], items?: string[] }[]` | narrative |
-| `gallery` | `{ src, caption }[]` | optional; featured entries only for now |
+| `hero` | `{ src, alt }` | optional; the top-of-page image. Falls back to `images[0]` |
+| `sections` | `{ heading, body: string[], image?: {src,alt}, items?: string[] }[]` | narrative; `image` renders inline after the heading |
+| `gallery` | `{ src, caption }[]` | optional; legacy bottom gallery, used where sections have no inline images |
 
 Seed content was drawn from the live jimreed.net case study pages during
 planning and paraphrased. Anything the live site doesn't provide uses the
@@ -115,11 +133,12 @@ New helpers in `src/lib/caseStudies.js`: `getById(id)`, `getNeighbors(id)`.
 
 | Breakpoint | Changes |
 |---|---|
-| < 768px | Meta block → 1 column; prev/next → stacked column; reduced page padding; smaller title/heading sizes |
+| < 768px | Meta block → 1 column; prev/next → stacked column; reduced page padding; smaller title/heading sizes; lightbox arrows hug the edges |
 | 768–1023px | Content column 760px; images match column width |
-| ≥ 1024px | Cover + gallery images extend ~80px past the text column on each side |
+| ≥ 1024px | Hero, section, and gallery images extend ~80px past the text column on each side |
 
-Reduced motion: the page adds no new animation. Link hover is color-only and
+Reduced motion: the only animation is the lightbox's 150ms backdrop fade, which is
+skipped under `prefers-reduced-motion`. Link hover is color-only and
 lives outside the `prefers-reduced-motion` guard.
 
 ---

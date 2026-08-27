@@ -15,47 +15,70 @@
       "/assets/case-studies/agentic-ai-chat/LinkedIn_chat_home.png",
       "/assets/case-studies/agentic-ai-chat/LinkedIn_logs_explorer_chat.png"
     ],
+    "hero": {
+      "src": "/assets/case-studies/agentic-ai-chat/LinkedIn-agentic-chat-home.png",
+      "alt": "Observe Agent chat home screen, embedded in the observability product"
+    },
     "sections": [
       {
         "heading": "Overview",
         "body": [
-          "Site reliability and on-call engineers respond to performance incidents under time pressure, jumping between alerts, metrics, logs, and deployment tools across many tabs. I led design of a conversational AI assistant that lives inside those existing views so engineers can investigate without leaving their workflow."
+          "As Product Designer at LinkedIn, I collaborated closely with product engineers to design a front-end conversational experience for an AI agent for observability products used by 10,000 employees. The result was a major decrease in the time it takes developers to find root causes for performance incidents such as service disruptions and network latency.",
+          "Outcome: faster incident triage, lower cognitive load, a trusted AI surface."
         ]
       },
       {
-        "heading": "The problem",
+        "heading": "AI in Context",
+        "image": {
+          "src": "/assets/case-studies/agentic-ai-chat/LinkedIn-agent-in-context.png",
+          "alt": "The agent conversation shown alongside a logs explorer view, sharing context with the surrounding UI"
+        },
         "body": [
-          "Incident response is high-pressure and fragmented. The information an engineer needs is spread across disconnected tools, and stitching it together by hand is slow and cognitively taxing exactly when speed matters most."
+          "One product design goal was to create a conversational assistant that feels native to LinkedIn engineers, and seamlessly integrated with existing views so that user and agent can chat in context with adjacent UI elements."
         ]
       },
       {
-        "heading": "Approach",
+        "heading": "UI Principles",
+        "image": {
+          "src": "/assets/case-studies/agentic-ai-chat/LinkedIn-side-panel-principles.png",
+          "alt": "Storyboard of side-panel placement options, showing how the chat panel shares screen space with the existing application"
+        },
         "body": [
-          "The work spanned four connected efforts:"
-        ],
-        "items": [
-          "AI in context — a conversational assistant that sits alongside adjacent UI rather than in a separate destination, so the engineer and the agent work over the same views.",
-          "UI principles — an audit of existing panels plus storyboards to make the rationale for panel placement legible to the team.",
-          "Elements and interactions — specifying plugins, contextual input, and inline artifacts such as charts so answers arrive in place.",
-          "Branding — a custom icon set using sparkle glyphs for AI and telescope forms for observability, with variants per surface."
+          "To help the team decide how the chat experience shares screen real estate with the existing application, and to establish meaningful placement of side panels, I conducted an audit of existing panels and used a basic storyboard to communicate the design rationale for panel placement."
         ]
       },
       {
-        "heading": "Outcomes",
+        "heading": "Elements and Interactions",
+        "image": {
+          "src": "/assets/case-studies/agentic-ai-chat/LinkedIn-interaction-specs.png",
+          "alt": "Interaction specs for chat input, plugins menu, contextual tags, and inline chart artifacts"
+        },
         "body": [
-          "A trusted AI surface for incident work."
-        ],
-        "items": [
-          "Meaningful reduction in time spent finding the root cause of performance incidents",
-          "Faster incident triage",
-          "Lower cognitive load during on-call",
-          "[Outcome metric placeholder]"
+          "To help developers move fast, I spec'd critical elements and interactions with a thoughtful design language. Critical components include plugins, contextual input, and inline artifacts such as charts. These components enable better contextual input and quicker answers for the user."
+        ]
+      },
+      {
+        "heading": "User Needs",
+        "image": {
+          "src": "/assets/case-studies/agentic-ai-chat/LinkedIn-user-needs.png",
+          "alt": "User-needs statements from a Site Reliability Engineer persona, framed as \"I want to…\" jobs"
+        },
+        "body": [
+          "The primary persona is a Site Reliability Engineer (SRE) or an on-call engineer in mid-incident. Before designing anything, I outlined some basic user needs to align the team on what we were building.",
+          "Common context: high-pressure, multi-tab workflows, fragmented tooling across alerts, metrics, logs, and deployments."
+        ]
+      },
+      {
+        "heading": "Branding",
+        "image": {
+          "src": "/assets/case-studies/agentic-ai-chat/LinkedIn-icon-design.png",
+          "alt": "Icon design work: a comparison audit of sparkle glyphs and the final telescope-plus-sparkle mark in its variations"
+        },
+        "body": [
+          "I created custom graphical icons instead of using a generic bot icon. A custom icon reinforces the custom solution as a trusted tool.",
+          "Icon design work started with a comparison audit to uncover best practices and recognizable patterns. The final design used sparkle glyphs to indicate AI and the shape of a telescope to indicate Observe. I created variations for multiple experience channels such as the application UI and Slack."
         ]
       }
-    ],
-    "gallery": [
-      { "src": "/assets/case-studies/agentic-ai-chat/LinkedIn_chat_home.png", "caption": "Chat home — the assistant available in context. [Caption placeholder]" },
-      { "src": "/assets/case-studies/agentic-ai-chat/LinkedIn_logs_explorer_chat.png", "caption": "Logs explorer with the assistant alongside. [Caption placeholder]" }
     ]
   },
   {

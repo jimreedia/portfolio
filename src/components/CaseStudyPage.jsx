@@ -1,5 +1,7 @@
+import { useState } from 'react'
 import { Link, Navigate, useParams } from 'react-router-dom'
 import { assetUrl, getById, getNeighbors } from '../lib/caseStudies'
+import Lightbox from './Lightbox'
 
 function backLink(label, extraClass = '') {
   return (
@@ -12,8 +14,34 @@ function backLink(label, extraClass = '') {
 export default function CaseStudyPage() {
   const { id } = useParams()
   const cs = getById(id)
+  const [lightboxIndex, setLightboxIndex] = useState(null)
 
   if (!cs) return <Navigate to="/" replace />
+
+  const heroImage = cs.hero
+    ? cs.hero
+    : cs.images?.[0]
+      ? { src: cs.images[0], alt: `${cs.title} — overview` }
+      : null
+
+  const sections = cs.sections || []
+  const gallery = cs.gallery || []
+
+  // Ordered list backing the lightbox: hero first, then each section image in
+  // narrative order, then any gallery images.
+  const lightboxImages = []
+  if (heroImage) lightboxImages.push(heroImage)
+  const sectionImageIndex = {}
+  sections.forEach((section, i) => {
+    if (section.image) {
+      sectionImageIndex[i] = lightboxImages.length
+      lightboxImages.push(section.image)
+    }
+  })
+  const galleryStart = lightboxImages.length
+  gallery.forEach((shot) => {
+    lightboxImages.push({ src: shot.src, alt: shot.caption || cs.title })
+  })
 
   const { prev, next } = getNeighbors(id)
   const meta = [
@@ -32,10 +60,15 @@ export default function CaseStudyPage() {
           <p className="case-study__lead">{cs.description}</p>
         </header>
 
-        {cs.images?.[0] && (
-          <figure className="case-study__media case-study__cover">
-            <img src={assetUrl(cs.images[0])} alt={`${cs.title} cover`} />
-          </figure>
+        {heroImage && (
+          <button
+            type="button"
+            className="case-study__media case-study__cover case-study__media-button"
+            onClick={() => setLightboxIndex(0)}
+            aria-label="Open image viewer"
+          >
+            <img src={assetUrl(heroImage.src)} alt={heroImage.alt || `${cs.title} cover`} />
+          </button>
         )}
 
         {meta.length > 0 && (
@@ -49,27 +82,52 @@ export default function CaseStudyPage() {
           </dl>
         )}
 
-        {cs.sections?.map((section) => (
+        {sections.map((section, i) => (
           <section className="case-study__section" key={section.heading}>
             <h2 className="case-study__section-heading">{section.heading}</h2>
-            {section.body?.map((paragraph, i) => (
-              <p className="case-study__body" key={i}>{paragraph}</p>
+            {section.image && (
+              <button
+                type="button"
+                className="case-study__media case-study__section-image case-study__media-button"
+                onClick={() => setLightboxIndex(sectionImageIndex[i])}
+                aria-label={`Open image viewer: ${section.heading}`}
+              >
+                <img
+                  src={assetUrl(section.image.src)}
+                  alt={section.image.alt || section.heading}
+                  loading="lazy"
+                />
+              </button>
+            )}
+            {section.body?.map((paragraph, j) => (
+              <p className="case-study__body" key={j}>{paragraph}</p>
             ))}
             {section.items?.length > 0 && (
               <ul className="case-study__list">
-                {section.items.map((item, i) => (
-                  <li key={i}>{item}</li>
+                {section.items.map((item, j) => (
+                  <li key={j}>{item}</li>
                 ))}
               </ul>
             )}
           </section>
         ))}
 
-        {cs.gallery?.length > 0 && (
+        {gallery.length > 0 && (
           <section className="case-study__gallery">
-            {cs.gallery.map((shot, i) => (
+            {gallery.map((shot, i) => (
               <figure className="case-study__media" key={i}>
-                <img src={assetUrl(shot.src)} alt={shot.caption || `${cs.title} — image ${i + 1}`} />
+                <button
+                  type="button"
+                  className="case-study__media-button"
+                  onClick={() => setLightboxIndex(galleryStart + i)}
+                  aria-label="Open image viewer"
+                >
+                  <img
+                    src={assetUrl(shot.src)}
+                    alt={shot.caption || `${cs.title} — image ${i + 1}`}
+                    loading="lazy"
+                  />
+                </button>
                 {shot.caption && <figcaption>{shot.caption}</figcaption>}
               </figure>
             ))}
@@ -93,6 +151,15 @@ export default function CaseStudyPage() {
 
         {backLink('Back to all work', 'case-study__back--center')}
       </article>
+
+      {lightboxIndex !== null && (
+        <Lightbox
+          images={lightboxImages}
+          index={lightboxIndex}
+          onIndexChange={setLightboxIndex}
+          onClose={() => setLightboxIndex(null)}
+        />
+      )}
     </main>
   )
 }
