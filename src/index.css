@@ -481,9 +481,19 @@ ul {
   flex-shrink: 0;
   width: 240px;
   height: 240px;
-  border-radius: 50%;
   object-fit: cover;
-  border: 3px solid var(--color-accent);
+  border: 8px solid var(--color-surface-dark);
+}
+
+.profile__name {
+  font-size: 28px;
+  font-weight: 600;
+  margin: 0 0 16px;
+}
+
+.profile__bullets {
+  margin: 0;
+  padding: 0;
 }
 
 .profile__bullets li {

@@ -2,8 +2,7 @@ import { assetUrl } from '../lib/caseStudies'
 
 const BULLETS = [
   'Product Designer with 15+ years in complex enterprise domains',
-  'Led 0-to-1 design for AI, genomics, and data platform products',
-  'Currently designing internal data and observability products at LinkedIn',
+  'Led 0→1 design for AI, genomics, and data platform products',
   'Collaborates closely with engineers, data scientists, and domain experts',
   'Based in San Francisco',
 ]
@@ -14,10 +13,11 @@ export default function Profile() {
       <div className="section__inner">
         <img
           className="profile__photo"
-          src={assetUrl('assets/jimreed_head_512x512.png')}
+          src={assetUrl('assets/Jim-Reed-headshot.png')}
           alt="Portrait of Jim Reed"
         />
         <div>
+          <h2 className="profile__name">Jim Reed</h2>
           <ul className="profile__bullets">
             {BULLETS.map((bullet) => (
               <li key={bullet}>{bullet}</li>
@@ -29,7 +29,7 @@ export default function Profile() {
             rel="noreferrer"
             className="profile__linkedin-btn"
           >
-            Connect on LinkedIn →
+            Connect with Jim on LinkedIn →
           </a>
         </div>
       </div>
