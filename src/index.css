@@ -722,24 +722,24 @@ ul {
 }
 
 /*
- * Images shrink to fit the content width but are never scaled up past their
- * native size. The wrapper is `fit-content` so it hugs the (possibly smaller)
- * image, which keeps the caption and the zoom badge aligned to the image edge.
- * `--media-cap` is the widest the image may display; the desktop rule widens it
- * to allow a slight bleed past the text column.
+ * On the page, images render at their native size, centered, and only ever scale
+ * DOWN to fit — never up. (The source assets vary in width; see the backlog note
+ * on standardizing them.) The wrapper spans the available width; the image caps
+ * at the wrapper and centers itself. On desktop the wrapper bleeds ~80px past the
+ * text column on each side, giving the larger images more room.
  */
 .case-study__media {
-  --media-cap: 100%;
   display: block;
-  margin: 0 auto;
-  width: fit-content;
-  max-width: var(--media-cap);
+  width: 100%;
+  margin: 0;
 }
 
 .case-study__media img {
+  display: block;
   width: auto;
   height: auto;
   max-width: 100%;
+  margin: 0 auto;
   border-radius: 8px;
 }
 
@@ -748,43 +748,24 @@ ul {
   font-size: 13px;
   line-height: 1.5;
   color: var(--color-text-muted);
+  text-align: center;
 }
 
 /* Clickable image that opens the lightbox */
 .case-study__media-button {
   display: block;
-  width: fit-content;
-  max-width: 100%;
-  position: relative;
+  width: 100%;
   cursor: zoom-in;
-  border-radius: 8px;
 }
 
 .case-study__media-button img {
   border: 1px solid rgba(0, 0, 0, 0.08);
+  transition: box-shadow 150ms ease;
 }
 
-.case-study__media-button::after {
-  content: '\2922';
-  position: absolute;
-  top: 12px;
-  right: 12px;
-  width: 32px;
-  height: 32px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 16px;
-  color: #fff;
-  background: rgba(13, 13, 18, 0.6);
-  border-radius: 6px;
-  opacity: 0;
-  transition: opacity 150ms ease;
-}
-
-.case-study__media-button:hover::after,
-.case-study__media-button:focus-visible::after {
-  opacity: 1;
+.case-study__media-button:hover img,
+.case-study__media-button:focus-visible img {
+  box-shadow: 0 4px 20px rgba(13, 13, 18, 0.14);
 }
 
 .case-study__cover {
@@ -795,19 +776,12 @@ ul {
   margin-bottom: 20px;
 }
 
-/* Small images sit at native size, centered; large images may bleed ~80px past
-   the text column on each side before they start scaling down. In normal flow the
-   margin/transform pair keeps a wider-than-column image centered; gallery figures
-   are flex items, so their parent's `align-items: center` already handles it. */
 @media (min-width: 1024px) {
   .case-study__cover,
-  .case-study__section-image {
-    --media-cap: calc(100% + 160px);
-    margin-left: 50%;
-    transform: translateX(-50%);
-  }
-  .case-study__gallery .case-study__media {
-    --media-cap: calc(100% + 160px);
+  .case-study__section-image,
+  .case-study__gallery {
+    width: calc(100% + 160px);
+    margin-left: -80px;
   }
 }
 

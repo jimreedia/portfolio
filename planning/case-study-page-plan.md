@@ -139,14 +139,18 @@ New helpers in `src/lib/caseStudies.js`: `getById(id)`, `getNeighbors(id)`.
 
 ### Image sizing
 
-On the page, images are **never scaled up past their native pixels** — a
-`fit-content` wrapper with `max-width: var(--media-cap)` and `img { width: auto }`.
-Images smaller than the cap sit at native size, centered; larger images scale
-down to the cap. `--media-cap` is raised on desktop for the bleed. Because the
-current source images are only ~600–1300px wide, several render narrower than the
-column on wide screens — the tradeoff for not upscaling (see the backlog item on
-re-exporting the image set). The lightbox uses the same downscale-only rule against
-the viewport box, which is why images look consistent there.
+On the page, images are **never scaled up past their native pixels**. The wrapper
+(`.case-study__media`) spans the available width; `img { width: auto; max-width:
+100%; margin: 0 auto }` renders each image at its natural size and centers it,
+scaling down only when it would exceed the wrapper. On desktop (≥1024px) the
+wrapper for cover / section / gallery images widens to `calc(100% + 160px)` with
+`margin-left: -80px`, so larger images bleed ~80px past the text column on each
+side. Because the current source images are only ~600–1300px wide, the smaller
+ones (`user-needs` 595px, `icon-design` 679px, `side-panel-principles` 685px)
+render narrower than the column on wide screens — the tradeoff for not upscaling
+(see the backlog item on re-exporting the image set). The lightbox applies the
+same downscale-only rule against the viewport box, which is why images look
+consistent there.
 
 Reduced motion: the only animation is the lightbox's 150ms backdrop fade, which is
 skipped under `prefers-reduced-motion`. Link hover is color-only and
