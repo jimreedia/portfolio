@@ -134,8 +134,19 @@ New helpers in `src/lib/caseStudies.js`: `getById(id)`, `getNeighbors(id)`.
 | Breakpoint | Changes |
 |---|---|
 | < 768px | Meta block → 1 column; prev/next → stacked column; reduced page padding; smaller title/heading sizes; lightbox arrows hug the edges |
-| 768–1023px | Content column 760px; images match column width |
-| ≥ 1024px | Hero, section, and gallery images extend ~80px past the text column on each side |
+| 768–1023px | Content column 760px; image display cap = column width |
+| ≥ 1024px | Image display cap = column width + ~160px (a slight bleed past the text column, centered) |
+
+### Image sizing
+
+On the page, images are **never scaled up past their native pixels** — a
+`fit-content` wrapper with `max-width: var(--media-cap)` and `img { width: auto }`.
+Images smaller than the cap sit at native size, centered; larger images scale
+down to the cap. `--media-cap` is raised on desktop for the bleed. Because the
+current source images are only ~600–1300px wide, several render narrower than the
+column on wide screens — the tradeoff for not upscaling (see the backlog item on
+re-exporting the image set). The lightbox uses the same downscale-only rule against
+the viewport box, which is why images look consistent there.
 
 Reduced motion: the only animation is the lightbox's 150ms backdrop fade, which is
 skipped under `prefers-reduced-motion`. Link hover is color-only and

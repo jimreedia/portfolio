@@ -721,14 +721,25 @@ ul {
   .case-study__lead { font-size: 19px; }
 }
 
+/*
+ * Images shrink to fit the content width but are never scaled up past their
+ * native size. The wrapper is `fit-content` so it hugs the (possibly smaller)
+ * image, which keeps the caption and the zoom badge aligned to the image edge.
+ * `--media-cap` is the widest the image may display; the desktop rule widens it
+ * to allow a slight bleed past the text column.
+ */
 .case-study__media {
+  --media-cap: 100%;
   display: block;
-  margin: 0;
-  width: 100%;
+  margin: 0 auto;
+  width: fit-content;
+  max-width: var(--media-cap);
 }
 
 .case-study__media img {
-  width: 100%;
+  width: auto;
+  height: auto;
+  max-width: 100%;
   border-radius: 8px;
 }
 
@@ -742,7 +753,8 @@ ul {
 /* Clickable image that opens the lightbox */
 .case-study__media-button {
   display: block;
-  width: 100%;
+  width: fit-content;
+  max-width: 100%;
   position: relative;
   cursor: zoom-in;
   border-radius: 8px;
@@ -780,15 +792,22 @@ ul {
 }
 
 .case-study__section-image {
-  margin: 0 0 20px;
+  margin-bottom: 20px;
 }
 
+/* Small images sit at native size, centered; large images may bleed ~80px past
+   the text column on each side before they start scaling down. In normal flow the
+   margin/transform pair keeps a wider-than-column image centered; gallery figures
+   are flex items, so their parent's `align-items: center` already handles it. */
 @media (min-width: 1024px) {
   .case-study__cover,
-  .case-study__section-image,
-  .case-study__gallery {
-    width: calc(100% + 160px);
-    margin-left: -80px;
+  .case-study__section-image {
+    --media-cap: calc(100% + 160px);
+    margin-left: 50%;
+    transform: translateX(-50%);
+  }
+  .case-study__gallery .case-study__media {
+    --media-cap: calc(100% + 160px);
   }
 }
 
@@ -870,6 +889,7 @@ ul {
 .case-study__gallery {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 32px;
   margin: 48px 0;
 }
