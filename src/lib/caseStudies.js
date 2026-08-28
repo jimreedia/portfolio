@@ -13,14 +13,16 @@ export function getById(id) {
   return caseStudies.find((c) => c.id === id)
 }
 
-// Previous / next case study in list order, wrapping at the ends.
+// Previous / next case study, wrapping at the ends. Scoped to featured case
+// studies for now, since the More Case Studies section is hidden.
 export function getNeighbors(id) {
-  const i = caseStudies.findIndex((c) => c.id === id)
+  const list = getFeatured()
+  const i = list.findIndex((c) => c.id === id)
   if (i === -1) return { prev: null, next: null }
-  const n = caseStudies.length
+  const n = list.length
   return {
-    prev: caseStudies[(i - 1 + n) % n],
-    next: caseStudies[(i + 1) % n],
+    prev: list[(i - 1 + n) % n],
+    next: list[(i + 1) % n],
   }
 }
 
