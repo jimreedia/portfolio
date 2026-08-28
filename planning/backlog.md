@@ -17,10 +17,9 @@
 - [ ] Unify color tokens around two overarching dark/light pairings — one anchored on `--color-surface-dark` (#0D0D12, currently Brand Imagery, carousel background, Footer) and one anchored on `--color-surface-navy` (#1A2744, currently Profile) — each with its own consistent light/text counterparts, rather than collapsing navy into the near-black dark. Exploratory: audit all `--color-surface-*`/`--color-text-*` token usage in index.css, assign each element to the appropriate pairing, and propose the token set; implementation will target specific elements chosen at that time.
 ## In Progress
 
-- [ ] Design and build case study pages — branch: fix/case-study-pages-init
-
 ## Done
 
+- [x] Design and build case study pages — branch: fix/case-study-pages-init
 - [x] Homepage build (6 sections + nav) — branch: feature/homepage-redesign
 - [x] Stop committing docs/ build output — branch: chore/ignore-docs-build-output
 - [x] Remove case study numbers (01/02/03) from Featured Case Studies — branch: fix/remove-case-study-numbers
