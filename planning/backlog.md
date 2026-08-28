@@ -6,10 +6,8 @@
   - [ ] Pacman graphic
   - [ ] Animated hand/gear graphic
 - [ ] Adjust typography
-- [ ] Hide "View Case Study →" links on Featured Case Studies until case study pages are built (keep the rest of each row visible)
 - [ ] Scroll-linked section transitions (parallax) — deferred from the homepage build; replaces the one-shot fade-up that was removed
-- [ ] Hide the entire More Case Studies section until we're ready to work on it (keep the component/code in place, just don't render it for now)
-- [ ] More case studies thumbnail images
+- [ ] Restore the More Case Studies section (currently hidden — component/code still in place in `MoreCaseStudies.jsx`, just not rendered by `Home.jsx`, and the "More Work" nav link is removed). Re-render it, re-add the nav link + section id to `Nav.jsx`, and add real thumbnail images for each card (replacing the title-text placeholder in `.more-work__thumb`). Also widen the case study page prev/next nav back to all case studies (`getNeighbors` in `caseStudies.js` is currently scoped to featured only).
 - [ ] Case study tags: review/adjust the tagging strategy if needed, then populate real tag values for each case study
 - [ ] In Nav component, replace the "Jim Reed" title text with an icon; add a favicon so it renders in the browser tab
 - [ ] Case study image assets: consider re-exporting all case-study images at one width (e.g. 1600px) so the in-page display is consistent and never soft. The page now uses a max-width strategy — images render at native size, centered, and only scale down to fit the column — so a mixed-size set is acceptable, but the current sources (~600–1300px wide) look undersized on wide screens. Decide between (a) one standard export width or (b) keeping varied sizes but raising the floor. Also revisit whether the annotation banners should stay baked into the pixels or move to HTML captions.
@@ -19,6 +17,7 @@
 
 ## Done
 
+- [x] Hide the entire More Case Studies section until we're ready to work on it — branch: chore/hide-more-case-studies
 - [x] Design and build case study pages — branch: fix/case-study-pages-init
 - [x] Homepage build (6 sections + nav) — branch: feature/homepage-redesign
 - [x] Stop committing docs/ build output — branch: chore/ignore-docs-build-output
