@@ -89,49 +89,96 @@
     "tags": ["AI", "Data Platforms"],
     "url": "/case-study/ai-recommendations",
     "featured": true,
-    "role": "Principal UX Designer, Informatica",
+    "role": "Principal User Experience Designer, Informatica",
     "timeline": "[Timeline placeholder]",
-    "team": "ML engineers, UX researchers, UX partners, executive stakeholders",
+    "team": "Machine learning engineers, UX researchers, UX partners, executive leadership",
     "images": [
       "/assets/case-studies/ai-recommendations/AI-Recommendations_cover-resize-no-inset.png",
       "/assets/case-studies/ai-recommendations/AI-Recommendations_mapping-designer-redesign.png"
     ],
+    "hero": {
+      "src": "/assets/case-studies/ai-recommendations/Informatica-AI-hero.png",
+      "alt": "The data-integration mapping canvas with an AI recommendations panel suggesting next transformations"
+    },
     "sections": [
       {
-        "heading": "Overview",
-        "body": [
-          "Informatica wanted to bring machine-learning recommendations into its cloud and desktop data-integration tools without disrupting how people already worked. I led design of an interaction model that suggests the next transformation step as users build data workflows."
+        "blocks": [
+          { "type": "text", "value": "As Principal User Experience Designer at Informatica, I designed a new product feature using artificial intelligence to predict and recommend best practices in data workflows." }
         ]
       },
       {
-        "heading": "The problem",
-        "body": [
-          "Recommendations are only useful if they meet users inside their existing flow. The design needed an interaction model that felt native to both a modern cloud product and a long-established desktop product, for two very different users.",
-          "We identified two personas: the Data Integration Developer, and the Citizen Integrator — a non-technical subject-matter expert."
+        "heading": "AI for Customer Value",
+        "blocks": [
+          { "type": "text", "value": "The AI model is trained on anonymized mappings across multiple customer tenants. A mapping is a data transformation workflow that moves data from a source to a target with user-specified transformations in between. I collaborated with machine learning engineers and UX researchers to identify user behaviors and determine the most appropriate interaction model and user experience for both cloud and desktop products." },
+          { "type": "image", "src": "/assets/case-studies/ai-recommendations/AI-Recommendations_mapping-designers.png", "alt": "The mapping designer shown in both the desktop client and the cloud product" },
+          { "type": "text", "value": "The machine learning model determines best practices by analyzing matching sequences within transformations, and based on prior usage patterns produces recommendations for the “next set” of transforms to add during development." },
+          { "type": "image", "src": "/assets/case-studies/ai-recommendations/AI-Recommendations-prediction-menu.png", "alt": "The transformation menu with AI-recommended options marked by a distinct icon" }
         ]
       },
       {
-        "heading": "Approach",
-        "body": [
-          "The reference point was predictive text in a messaging app: present, helpful, easy to ignore. I worked across disciplines to train an ML model on anonymized customer data and to shape how its output appeared."
-        ],
-        "items": [
-          "Sketches and renderings to find a model for inline recommendations",
-          "Animated behaviors and prototypes to communicate the interaction",
-          "Storyboards for the panel concepts",
-          "Precision tracking — comparing user choices against predictions to improve model accuracy over time"
+        "heading": "Inline Recommendations",
+        "blocks": [
+          { "type": "text", "value": "I advocated to integrate the AI recommendations so that the experience was seamless within existing user workflows, and the best example I found to tell this story was predictive text in text apps." },
+          { "type": "image", "src": "/assets/case-studies/ai-recommendations/AI-Recommendations-predictive-text.png", "alt": "A messaging app suggesting the next words inline, used as an analogy for inline transformation recommendations" },
+          { "type": "text", "value": "Predictive text is seamlessly integrated with the existing user workflow and not disruptive or jarring." }
         ]
       },
       {
-        "heading": "Outcomes",
-        "body": [
-          "Users responded positively to the feature. The model reads the sequence of transformations in a workflow and recommends the next step from prior usage patterns. The work also carried a visual redesign that modernized the product.",
-          "[Outcome metric placeholder]"
+        "heading": "Sketches and Renderings",
+        "blocks": [
+          { "type": "text", "value": "Early conceptual sketches and renderings helped identify conceptual models for the inline recommendations." },
+          { "type": "image", "src": "/assets/case-studies/ai-recommendations/AI-Recommendations_concept-sketches.png", "alt": "Hand sketches exploring where and how recommendations could appear in the mapping canvas" },
+          { "type": "image", "src": "/assets/case-studies/ai-recommendations/AI-Recommendations_concept-renderings.png", "alt": "Higher-fidelity renderings of the recommendation menu and inline affordances" }
+        ]
+      },
+      {
+        "heading": "Animated Behaviors",
+        "blocks": [
+          { "type": "text", "value": "In addition to creating interactive prototypes, I use animation to help define interaction paradigms — it's an effective way to communicate concepts to stakeholders and developers." },
+          { "type": "image", "src": "/assets/case-studies/ai-recommendations/AI-Recommendations_animated-behaviors.gif", "alt": "An animated prototype showing a recommendation appearing and being accepted in the mapping canvas" }
+        ]
+      },
+      {
+        "heading": "Storyboards",
+        "blocks": [
+          { "type": "text", "value": "Early storyboards helped identify interaction models for a panel concept." },
+          { "type": "image", "src": "/assets/case-studies/ai-recommendations/AI-Recommendations_storyboard.png", "alt": "A storyboard walking through when recommendations surface, how they are explained, and how they are accepted or dismissed" }
+        ]
+      },
+      {
+        "heading": "Branded Explorations",
+        "blocks": [
+          { "type": "image", "src": "/assets/case-studies/ai-recommendations/Informatica-brand.png", "alt": "Visual explorations applying Informatica's CLAIRE AI branding to the recommendations panel" }
+        ]
+      },
+      {
+        "heading": "Personas",
+        "blocks": [
+          { "type": "text", "value": "My user-centered design approach identified the primary persona as the Data Integration Developer. The business objectives introduced another target persona identified by the technology research and consulting firm Gartner: the Citizen Integrator, a non-technical subject-matter expert who needs data integration tools without code." },
+          { "type": "image", "src": "/assets/case-studies/ai-recommendations/AI-Recommendations_personas.png", "alt": "The two target personas: the Data Integration Developer and the non-technical Citizen Integrator" }
+        ]
+      },
+      {
+        "heading": "Customer Delight",
+        "blocks": [
+          { "type": "text", "value": "While conducting user research, I observed customers using the newly released features. Users think the end results are pretty cool." },
+          { "type": "image", "src": "/assets/case-studies/ai-recommendations/AI-Recommendations_customer-delight.png", "alt": "A customer quote: “Since the last upgrade they added this function that's pretty cool.”" }
+        ]
+      },
+      {
+        "heading": "Precision Model",
+        "blocks": [
+          { "type": "text", "value": "To ensure the accuracy of the model, I designed a simple method to measure user choices against the generated predictions and convinced cross-functional teams to implement the tracking. When there are false positives, the model updates to reflect the most common user decisions." },
+          { "type": "image", "src": "/assets/case-studies/ai-recommendations/AI-Recommendations-precision-model.png", "alt": "A diagram contrasting a true-positive and a false-positive prediction, feeding user selections back to improve the model" }
+        ]
+      },
+      {
+        "heading": "Visual Redesign",
+        "blocks": [
+          { "type": "text", "value": "I worked closely with UX partners to redesign the product look and feel, then convinced executive leadership that modernizing the UI was a sound business goal." },
+          { "type": "image", "src": "/assets/case-studies/ai-recommendations/Informatica-redesign.png", "alt": "Before-and-after of the mapping designer showing the modernized visual design language" }
         ]
       }
-    ],
-    "gallery": [
-      { "src": "/assets/case-studies/ai-recommendations/AI-Recommendations_mapping-designer-redesign.png", "caption": "Mapping designer redesign with inline recommendations. [Caption placeholder]" }
     ]
   },
   {
@@ -150,43 +197,77 @@
       "/assets/case-studies/genomic-data-platform/02.png",
       "/assets/case-studies/genomic-data-platform/03.png"
     ],
+    "hero": {
+      "src": "/assets/case-studies/genomic-data-platform/Cohorts-survival-comparison.png",
+      "alt": "The Cohorts survival-comparison view: a Kaplan–Meier curve comparing subject groups with a p-value matrix"
+    },
     "sections": [
       {
-        "heading": "Overview",
-        "body": [
-          "Cohorts, part of Illumina Connected Analytics, lets customers aggregate and analyze genomic and clinical data across private, public, and partner datasets, then compare subject groups to accelerate biomarker and drug discovery. I led interaction design for research scientists working to discover biomarkers of interest."
+        "blocks": [
+          { "type": "text", "value": "Cohorts, by Illumina Connected Analytics, lets customers aggregate and analyze genomic and clinical data using private, public and partner data sets, and then compare groups of subjects to accelerate biomarker and drug discovery." }
         ]
       },
       {
-        "heading": "The problem",
-        "body": [
-          "Genomic analysis carries dense, specialized terminology and established mental models. The product had to fit how bioinformaticians already reason about genetic variants, not impose a new vocabulary on them."
+        "heading": "Personas",
+        "blocks": [
+          { "type": "text", "value": "As Senior Staff Interaction Designer at Illumina, I created personas based on interviews with stakeholders and subject matter experts. These evidence-based personas were used to identify user behaviors, tasks, and workflows. The key persona is the research scientist whose goal is to discover biomarkers of interest for pharmaceutical or clinical cures." },
+          { "type": "image", "src": "/assets/case-studies/genomic-data-platform/Cohorts-personas.png", "alt": "Personas for the genomics scientist, bioinformatician, and developer/admin, with goals and a pain-point quote" }
         ]
       },
       {
-        "heading": "Approach",
-        "body": [
-          "Research led the design at every stage."
-        ],
-        "items": [
-          "Evidence-based personas from stakeholder and subject-matter-expert interviews",
-          "Card sorting with experts to learn the terminology and mental models for analyzing genomic data",
-          "Interviews with bioinformaticians using digital workflows to evaluate variants, validating low-fidelity concepts and interaction models",
-          "Storyboards to communicate workflows to stakeholders, and interactive Figma prototypes to pressure-test decisions"
+        "heading": "Card Sorting",
+        "blocks": [
+          { "type": "text", "value": "The discovery phase is one of my favorite parts of the design process. I collaborated with UX researchers and conducted a series of card sorting activities with subject matter experts and stakeholders to better understand the terminology and mental models for analyzing genomic data." },
+          { "type": "image", "src": "/assets/case-studies/genomic-data-platform/Cohorts-card-sort.png", "alt": "A remote card sorting session grouping genomic analysis terms into workflow phases" }
         ]
       },
       {
-        "heading": "Outcomes",
-        "body": [
-          "Customer feedback surfaced an unmet need to discover relevant genes, which led to new features including comparison heat maps. User testing drove customizable plots and radar charts for viewing variant-type distribution by gene. The visual language and interaction patterns were carried across related applications for a cohesive platform.",
-          "[Outcome metric placeholder]"
+        "heading": "User Interviews",
+        "blocks": [
+          { "type": "text", "value": "Early low-fidelity conceptual designs helped identify interaction models, and user interviews helped validate the concepts. I conducted several user interviews with bioinformaticians currently using digital workflows to evaluate genetic variants." },
+          { "type": "image", "src": "/assets/case-studies/genomic-data-platform/Cohorts-user-interviews.png", "alt": "Low-fidelity cohort-builder prototypes shown to bioinformaticians in interview sessions" }
+        ]
+      },
+      {
+        "heading": "Storyboards",
+        "blocks": [
+          { "type": "text", "value": "Storyboards help communicate to product stakeholders the high-level design of the user workflows and interaction models." },
+          { "type": "image", "src": "/assets/case-studies/genomic-data-platform/Cohorts-storyboards.png", "alt": "A storyboard grid walking through building a cohort, visualizing distributions, and comparing survival outcomes" }
+        ]
+      },
+      {
+        "heading": "Prototypes",
+        "blocks": [
+          { "type": "text", "value": "Prototypes are invaluable UX tools for communicating the experience design decisions to stakeholders and users. In this screenshot from Figma, the blue arrows, nicknamed “noodles,” are the interactive connections within the prototype." },
+          { "type": "image", "src": "/assets/case-studies/genomic-data-platform/Cohorts-Figma-prototype.png", "alt": "A Figma prototype canvas with many screens connected by blue interaction arrows" }
+        ]
+      },
+      {
+        "heading": "Enhancing the Experience",
+        "blocks": [
+          { "type": "text", "value": "This end-to-end design journey included several user research studies and ongoing synthesis of customer feedback from scientific users in the field." },
+          { "type": "image", "src": "/assets/case-studies/genomic-data-platform/Cohorts-customer-feedback.png", "alt": "A recorded customer call with a researcher describing the need for a gene-discovery heat map" },
+          { "type": "text", "value": "In this example, I used direct customer feedback to uncover an unmet user need to discover genes that are relevant to their scientific studies. My resulting mockups specified new user-centered features such as a comparison heat map." },
+          { "type": "image", "src": "/assets/case-studies/genomic-data-platform/Cohorts-heatmap.png", "alt": "A gene comparison heat map showing variant frequency and type across genes for two cohorts" }
+        ]
+      },
+      {
+        "heading": "User-Centered Design",
+        "blocks": [
+          { "type": "text", "value": "I use insights from user testing to identify incremental product improvements. For example, allowing users to customize a data visualization plot based on their research needs." },
+          { "type": "image", "src": "/assets/case-studies/genomic-data-platform/Cohorts-user-study.png", "alt": "A user-testing session where a participant asks to invert the y-axis so rare variants are visible" },
+          { "type": "text", "value": "User testing also uncovered unmet user needs to view the distribution of variants by type, and since there were several types to measure per gene, the radar charts were an appropriate and intuitive data visualization." },
+          { "type": "image", "src": "/assets/case-studies/genomic-data-platform/Cohorts-radar-charts.png", "alt": "A grid of radar charts showing structural-variant type distribution per gene" }
+        ]
+      },
+      {
+        "heading": "Cross-Product Design",
+        "blocks": [
+          { "type": "text", "value": "I applied the visual design language and interaction patterns to related apps to ensure that the platform of products have a cohesive look and feel." },
+          { "type": "image", "src": "/assets/case-studies/genomic-data-platform/Multiomics-proteomics.png", "alt": "The Connected Multiomics proteomics viewer with a volcano plot and per-protein box plots" },
+          { "type": "image", "src": "/assets/case-studies/genomic-data-platform/Multiomics-spatial.png", "alt": "The Connected Multiomics spatial viewer showing a tissue slice with a UMAP and transcript counts" }
         ]
       }
-    ],
-    "gallery": [
-      { "src": "/assets/case-studies/genomic-data-platform/01.png", "caption": "[Caption placeholder]" },
-      { "src": "/assets/case-studies/genomic-data-platform/02.png", "caption": "[Caption placeholder]" },
-      { "src": "/assets/case-studies/genomic-data-platform/03.png", "caption": "[Caption placeholder]" }
     ]
   },
   {

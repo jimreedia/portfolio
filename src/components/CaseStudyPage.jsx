@@ -11,6 +11,19 @@ function backLink(label, extraClass = '') {
   )
 }
 
+// A section is an ordered list of blocks (text / image / list). Older entries use
+// separate `body` / `image(s)` / `items` fields — normalize those into blocks,
+// images first, so there is a single render path.
+function toBlocks(section) {
+  if (section.blocks) return section.blocks
+  const blocks = []
+  const imgs = section.images || (section.image ? [section.image] : [])
+  imgs.forEach((img) => blocks.push({ type: 'image', ...img }))
+  ;(section.body || []).forEach((value) => blocks.push({ type: 'text', value }))
+  if (section.items?.length) blocks.push({ type: 'list', items: section.items })
+  return blocks
+}
+
 export default function CaseStudyPage() {
   const { id } = useParams()
   const cs = getById(id)
@@ -24,20 +37,24 @@ export default function CaseStudyPage() {
       ? { src: cs.images[0], alt: `${cs.title} — overview` }
       : null
 
-  const sections = cs.sections || []
   const gallery = cs.gallery || []
 
-  // Ordered list backing the lightbox: hero first, then each section image in
-  // narrative order, then any gallery images.
+  // Flat, ordered list backing the lightbox: hero first, then every in-narrative
+  // image in reading order, then any gallery images. Image blocks are tagged with
+  // their index into this list as they are collected.
   const lightboxImages = []
   if (heroImage) lightboxImages.push(heroImage)
-  const sectionImageIndex = {}
-  sections.forEach((section, i) => {
-    if (section.image) {
-      sectionImageIndex[i] = lightboxImages.length
-      lightboxImages.push(section.image)
-    }
-  })
+
+  const renderedSections = (cs.sections || []).map((section) => ({
+    heading: section.heading,
+    blocks: toBlocks(section).map((block) => {
+      if (block.type !== 'image') return block
+      const lightboxIdx = lightboxImages.length
+      lightboxImages.push({ src: block.src, alt: block.alt })
+      return { ...block, lightboxIdx }
+    }),
+  }))
+
   const galleryStart = lightboxImages.length
   gallery.forEach((shot) => {
     lightboxImages.push({ src: shot.src, alt: shot.caption || cs.title })
@@ -50,6 +67,18 @@ export default function CaseStudyPage() {
     ['Team', cs.team],
     ['Domain', cs.tags?.join(' · ')],
   ].filter(([, value]) => value)
+
+  const imageButton = (src, alt, lightboxIdx, label) => (
+    <button
+      key={lightboxIdx}
+      type="button"
+      className="case-study__media case-study__section-image case-study__media-button"
+      onClick={() => setLightboxIndex(lightboxIdx)}
+      aria-label={label}
+    >
+      <img src={assetUrl(src)} alt={alt || ''} loading="lazy" />
+    </button>
+  )
 
   return (
     <main className="case-study">
@@ -82,33 +111,31 @@ export default function CaseStudyPage() {
           </dl>
         )}
 
-        {sections.map((section, i) => (
-          <section className="case-study__section" key={section.heading}>
-            <h2 className="case-study__section-heading">{section.heading}</h2>
-            {section.image && (
-              <button
-                type="button"
-                className="case-study__media case-study__section-image case-study__media-button"
-                onClick={() => setLightboxIndex(sectionImageIndex[i])}
-                aria-label={`Open image viewer: ${section.heading}`}
-              >
-                <img
-                  src={assetUrl(section.image.src)}
-                  alt={section.image.alt || section.heading}
-                  loading="lazy"
-                />
-              </button>
+        {renderedSections.map((section, i) => (
+          <section className="case-study__section" key={section.heading || i}>
+            {section.heading && (
+              <h2 className="case-study__section-heading">{section.heading}</h2>
             )}
-            {section.body?.map((paragraph, j) => (
-              <p className="case-study__body" key={j}>{paragraph}</p>
-            ))}
-            {section.items?.length > 0 && (
-              <ul className="case-study__list">
-                {section.items.map((item, j) => (
-                  <li key={j}>{item}</li>
-                ))}
-              </ul>
-            )}
+            {section.blocks.map((block, j) => {
+              if (block.type === 'text') {
+                return <p className="case-study__body" key={j}>{block.value}</p>
+              }
+              if (block.type === 'list') {
+                return (
+                  <ul className="case-study__list" key={j}>
+                    {block.items.map((item, k) => (
+                      <li key={k}>{item}</li>
+                    ))}
+                  </ul>
+                )
+              }
+              return imageButton(
+                block.src,
+                block.alt || section.heading,
+                block.lightboxIdx,
+                section.heading ? `Open image viewer: ${section.heading}` : 'Open image viewer'
+              )
+            })}
           </section>
         ))}
 

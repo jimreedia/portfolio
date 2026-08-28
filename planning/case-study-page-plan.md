@@ -61,33 +61,38 @@ wider (up to ~920px) on desktop ≥ 1024px. Top padding clears the 64px sticky n
 
 Rendered from `cs.sections` (array). Each entry:
 
-- `heading` (`h2`, 26px / 22px mobile)
-- `image` — optional `{ src, alt }`, rendered full-bleed **between the heading and
-  the body text** (matches the current jimreed.net layout: heading → image →
-  explanation). Annotation banners are baked into the image asset, so there is no
-  separate caption. Clicking the image opens the lightbox (see §4).
-- `body` — array of paragraph strings (17px, line-height 1.7)
-- `items` — optional bullet list; en-dash bullet in `--color-accent`, matching the
-  Profile section's list style
+- `heading` — optional (`h2`, 26px / 22px mobile). Omit it for a lead-in
+  paragraph with no header (the intro paragraph on each live page).
+- `blocks` — an ordered list of content blocks, rendered in sequence so images sit
+  exactly where they do in the narrative:
+  - `{ "type": "text", "value": "…" }` — a paragraph (17px, line-height 1.7)
+  - `{ "type": "image", "src": "…", "alt": "…" }` — a full-bleed image that opens
+    the lightbox (see §4). Annotation banners are baked into the asset, so there is
+    no separate caption.
+  - `{ "type": "list", "items": [ … ] }` — an en-dash bullet list
+- Legacy fields `body` (string[]), `image` / `images` ({src,alt}), and `items`
+  (string[]) are still accepted — the component normalizes them into `blocks`
+  (images first, then paragraphs, then the list).
 
-`agentic-ai-chat` is the first case study built to this model — sections
-**Overview · AI in Context · UI Principles · Elements and Interactions · User
-Needs · Branding**, text and images pulled from the live site. The other case
-studies still use the older `heading` + `body` + `items` + bottom `gallery` shape;
-the component renders whatever a given entry provides.
+All three featured case studies — `agentic-ai-chat`, `ai-recommendations`,
+`genomic-data-platform` — use this model, with headings, text, and images taken
+from the live jimreed.net pages. The six non-featured entries still use the
+legacy `body` + `items` shape.
 
 ### 3. Image gallery (legacy shape, still supported)
 
 Rendered from `cs.gallery` (array of `{ src, caption }`), when present, after the
 narrative sections. Each is a `<figure>` with a full-width clickable image
 (opens the lightbox) and an optional `<figcaption>` (13px, `--color-text-muted`).
-Case studies migrated to inline section images (`agentic-ai-chat`) drop `gallery`.
+The featured case studies weave their images into `blocks` instead and carry no
+`gallery`.
 
 ### 4. Lightbox
 
 `src/components/Lightbox.jsx` — a full-screen viewer over every image on the page.
-The series is assembled in order: **hero → each section image → each gallery
-image**. Any image (including the hero) opens it at that image's position.
+The series is assembled in reading order: **hero → every section image block →
+each gallery image**. Any image (including the hero) opens it at that image's
+position.
 
 - Controls: on-screen ‹ / › arrows (disabled at the ends — the series does not
   wrap), a close ✕, and a `n / total` counter.
@@ -118,12 +123,14 @@ unchanged; `images` still feeds the homepage carousel):
 | `timeline` | string | `[Timeline placeholder]` for all entries — the live site gives no dates |
 | `team` | string | short phrase |
 | `hero` | `{ src, alt }` | optional; the top-of-page image. Falls back to `images[0]` |
-| `sections` | `{ heading, body: string[], image?: {src,alt}, items?: string[] }[]` | narrative; `image` renders inline after the heading |
-| `gallery` | `{ src, caption }[]` | optional; legacy bottom gallery, used where sections have no inline images |
+| `sections` | `{ heading?, blocks: Block[] }[]` | narrative; `Block` is `{type:"text",value}` / `{type:"image",src,alt}` / `{type:"list",items}`. Legacy `body`/`image(s)`/`items` still normalize into blocks. |
+| `gallery` | `{ src, caption }[]` | optional; legacy bottom gallery, for entries without in-narrative images |
 
-Seed content was drawn from the live jimreed.net case study pages during
-planning and paraphrased. Anything the live site doesn't provide uses the
-existing `[bracketed placeholder]` convention (e.g. `[Outcome metric placeholder]`).
+The three featured entries carry full narrative + images taken from the live
+jimreed.net pages. The six non-featured entries were seeded with a shorter
+Problem/Approach/Outcomes skeleton; anything the live site doesn't provide uses
+the existing `[bracketed placeholder]` convention (e.g. `[Outcome metric placeholder]`).
+Curated image assets live in `public/assets/case-studies/<id>/`.
 
 New helpers in `src/lib/caseStudies.js`: `getById(id)`, `getNeighbors(id)`.
 
