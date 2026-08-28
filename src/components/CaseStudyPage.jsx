@@ -63,9 +63,7 @@ export default function CaseStudyPage() {
   const { prev, next } = getNeighbors(id)
   const meta = [
     ['Role', cs.role],
-    ['Timeline', cs.timeline],
     ['Team', cs.team],
-    ['Domain', cs.tags?.join(' · ')],
   ].filter(([, value]) => value)
 
   const imageButton = (src, alt, lightboxIdx, label) => (

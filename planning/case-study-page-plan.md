@@ -49,13 +49,14 @@ wider (up to ~920px) on desktop ≥ 1024px. Top padding clears the 64px sticky n
 - **Title** (`h1`): 52px / 36px mobile, weight 600.
 - **Lead:** the case study `description`, 22px / 19px mobile, `--color-text-muted`.
 - **Cover image:** `hero` (or `images[0]`), sits directly on the page background — no frame, shadow, radius, or crop. Native size, centered, bleeds past the column on desktop.
-- **Meta block:** a `<dl>` grid (2 columns desktop, 1 mobile) with:
+- **Meta block:** a single-column `<dl>` between two hairline rules:
   - **Role** — `role`
-  - **Timeline** — `timeline` (`[Timeline placeholder]` for now)
   - **Team** — `team`
-  - **Domain** — `tags` joined with " · "
   - Labels in DM Mono 12px uppercase; values in Plus Jakarta Sans 15px.
   - Rows are omitted when their value is empty.
+  - Role and Team wording is a first pass — deeper content design (individual
+    contribution, team composition, and whether Outcome/Status belongs here) is
+    tracked in the "refine case study content" backlog item.
 
 ### 2. Narrative sections (images woven into the text)
 
@@ -120,7 +121,6 @@ unchanged; `images` still feeds the homepage carousel):
 | Field | Type | Notes |
 |---|---|---|
 | `role` | string | e.g. "Product Designer, LinkedIn" |
-| `timeline` | string | `[Timeline placeholder]` for all entries — the live site gives no dates |
 | `team` | string | short phrase |
 | `hero` | `{ src, alt }` | optional; the top-of-page image. Falls back to `images[0]` |
 | `sections` | `{ heading?, blocks: Block[] }[]` | narrative; `Block` is `{type:"text",value}` / `{type:"image",src,alt}` / `{type:"list",items}`. Legacy `body`/`image(s)`/`items` still normalize into blocks. |
@@ -140,7 +140,7 @@ New helpers in `src/lib/caseStudies.js`: `getById(id)`, `getNeighbors(id)`.
 
 | Breakpoint | Changes |
 |---|---|
-| < 768px | Meta block → 1 column; prev/next → stacked column; reduced page padding; smaller title/heading sizes; lightbox arrows hug the edges |
+| < 768px | prev/next → stacked column; reduced page padding; smaller title/heading sizes; lightbox arrows hug the edges |
 | 768–1023px | Content column 760px; image display cap = column width |
 | ≥ 1024px | Image display cap = column width + ~160px (a slight bleed past the text column, centered) |
 

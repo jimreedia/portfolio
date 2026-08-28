@@ -778,16 +778,12 @@ ul {
 
 .case-study__meta {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px 32px;
+  grid-template-columns: 1fr;
+  gap: 20px;
   margin: 0 0 48px;
   padding: 24px 0;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-@media (max-width: 767px) {
-  .case-study__meta { grid-template-columns: 1fr; }
 }
 
 .case-study__meta-item dt {

@@ -8,7 +8,6 @@
     "url": "/case-study/agentic-ai-chat",
     "featured": true,
     "role": "Product Designer, LinkedIn",
-    "timeline": "[Timeline placeholder]",
     "team": "Embedded with product engineers",
     "images": [
       "/assets/case-studies/agentic-ai-chat/LinkedIn_portfolio_cover-no-inset.png",
@@ -90,7 +89,6 @@
     "url": "/case-study/ai-recommendations",
     "featured": true,
     "role": "Principal User Experience Designer, Informatica",
-    "timeline": "[Timeline placeholder]",
     "team": "Machine learning engineers, UX researchers, UX partners, executive leadership",
     "images": [
       "/assets/case-studies/ai-recommendations/AI-Recommendations_cover-resize-no-inset.png",
@@ -190,7 +188,6 @@
     "url": "/case-study/genomic-data-platform",
     "featured": true,
     "role": "Senior Staff Interaction Designer, Illumina",
-    "timeline": "[Timeline placeholder]",
     "team": "UX researchers, bioinformatics subject-matter experts, product stakeholders",
     "images": [
       "/assets/case-studies/genomic-data-platform/Cohorts_portfolio_cover-resize-no-inset.png",
@@ -279,7 +276,6 @@
     "url": "/case-study/developer-experience",
     "featured": false,
     "role": "Senior Staff UX Interaction Designer and acting Technical Product Manager, GE Digital",
-    "timeline": "[Timeline placeholder]",
     "team": "Agile product team",
     "images": [
       "/assets/case-studies/developer-experience/01.png",
@@ -329,7 +325,6 @@
     "url": "/case-study/machine-learning-for-operators",
     "featured": false,
     "role": "Senior Staff UX Interaction Designer, GE Digital",
-    "timeline": "[Timeline placeholder]",
     "team": "Product managers and international scrum teams across California, Bangalore, and New York; UX researchers",
     "images": [
       "/assets/case-studies/machine-learning-for-operators/01.png",
@@ -379,7 +374,6 @@
     "url": "/case-study/operational-insights",
     "featured": false,
     "role": "Principal UX Designer, Informatica",
-    "timeline": "[Timeline placeholder]",
     "team": "One UX designer (Jim Reed) and one UX researcher",
     "images": [
       "/assets/case-studies/operational-insights/01.png",
@@ -430,7 +424,6 @@
     "url": "/case-study/mobile-emergency-system",
     "featured": false,
     "role": "Principal Product Designer, BlackBerry AtHoc",
-    "timeline": "[Timeline placeholder]",
     "team": "[Team placeholder]",
     "images": [
       "/assets/case-studies/mobile-emergency-system/01.png",
@@ -479,7 +472,6 @@
     "url": "/case-study/additive-manufacturing",
     "featured": false,
     "role": "Senior Staff UX Interaction Designer, GE Digital",
-    "timeline": "[Timeline placeholder]",
     "team": "[Team placeholder]",
     "images": [
       "/assets/case-studies/additive-manufacturing/01.png",
@@ -528,7 +520,6 @@
     "url": "/case-study/analytics-big-data",
     "featured": false,
     "role": "Senior Staff UX Interaction Designer, GE Digital",
-    "timeline": "[Timeline placeholder]",
     "team": "Subject-matter experts and stakeholders in collaborative design sessions",
     "images": [
       "/assets/case-studies/analytics-big-data/01.png",
