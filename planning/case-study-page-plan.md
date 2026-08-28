@@ -48,7 +48,7 @@ wider (up to ~920px) on desktop ≥ 1024px. Top padding clears the 64px sticky n
 - **Back link:** "← Back to all work" → `/` + scroll to `#featured-work`.
 - **Title** (`h1`): 52px / 36px mobile, weight 600.
 - **Lead:** the case study `description`, 22px / 19px mobile, `--color-text-muted`.
-- **Cover image:** `images[0]`, full column width (wider on desktop), `border-radius: 8px`.
+- **Cover image:** `hero` (or `images[0]`), sits directly on the page background — no frame, shadow, radius, or crop. Native size, centered, bleeds past the column on desktop.
 - **Meta block:** a `<dl>` grid (2 columns desktop, 1 mobile) with:
   - **Role** — `role`
   - **Timeline** — `timeline` (`[Timeline placeholder]` for now)

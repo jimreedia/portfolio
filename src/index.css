@@ -734,13 +734,14 @@ ul {
   margin: 0;
 }
 
+/* Images are designed to sit directly on the page background — no frame,
+   shadow, radius, or crop. */
 .case-study__media img {
   display: block;
   width: auto;
   height: auto;
   max-width: 100%;
   margin: 0 auto;
-  border-radius: 8px;
 }
 
 .case-study__media figcaption {
@@ -756,16 +757,6 @@ ul {
   display: block;
   width: 100%;
   cursor: zoom-in;
-}
-
-.case-study__media-button img {
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  transition: box-shadow 150ms ease;
-}
-
-.case-study__media-button:hover img,
-.case-study__media-button:focus-visible img {
-  box-shadow: 0 4px 20px rgba(13, 13, 18, 0.14);
 }
 
 .case-study__cover {
@@ -944,7 +935,6 @@ ul {
   width: auto;
   height: auto;
   object-fit: contain;
-  border-radius: 4px;
 }
 
 .lightbox__close {
