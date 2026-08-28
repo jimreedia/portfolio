@@ -1,12 +1,13 @@
 import { useEffect, useRef, useState } from 'react'
 import useActiveSection from '../hooks/useActiveSection'
+import { useSectionNav } from '../lib/navigation'
 
 const SECTION_IDS = ['featured-work', 'profile', 'more-work']
 
 const LINKS = [
-  { label: 'Work', href: '#featured-work', id: 'featured-work' },
-  { label: 'About', href: '#profile', id: 'profile' },
-  { label: 'More Work', href: '#more-work', id: 'more-work' },
+  { label: 'Work', id: 'featured-work' },
+  { label: 'About', id: 'profile' },
+  { label: 'More Work', id: 'more-work' },
 ]
 
 export default function Nav() {
@@ -14,6 +15,7 @@ export default function Nav() {
   const [menuOpen, setMenuOpen] = useState(false)
   const navRef = useRef(null)
   const activeId = useActiveSection(SECTION_IDS)
+  const goToSection = useSectionNav()
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 80)
@@ -34,14 +36,17 @@ export default function Nav() {
   const links = (onLinkClick, className) => (
     <>
       {LINKS.map((link) => (
-        <a
-          key={link.href}
-          href={link.href}
+        <button
+          key={link.id}
+          type="button"
           className={`${className} ${activeId === link.id ? `${className}--active` : ''}`}
-          onClick={onLinkClick}
+          onClick={() => {
+            goToSection(link.id)
+            onLinkClick?.()
+          }}
         >
           {link.label}
-        </a>
+        </button>
       ))}
       <a
         href="https://www.linkedin.com/in/jimreed/"
@@ -58,7 +63,13 @@ export default function Nav() {
   return (
     <nav className={`nav ${scrolled ? 'nav--scrolled' : ''}`} ref={navRef}>
       <div className="nav__inner">
-        <a href="#top" className="nav__mark">Jim Reed</a>
+        <button
+          type="button"
+          className="nav__mark"
+          onClick={() => goToSection('top')}
+        >
+          Jim Reed
+        </button>
 
         <div className="nav__links">{links(null, 'nav__link')}</div>
 

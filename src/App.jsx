@@ -1,20 +1,20 @@
+import { Routes, Route, Navigate } from 'react-router-dom'
 import Nav from './components/Nav'
-import BrandImagery from './components/BrandImagery'
-import Intro from './components/Intro'
-import FeaturedCaseStudies from './components/FeaturedCaseStudies'
-import Profile from './components/Profile'
-import MoreCaseStudies from './components/MoreCaseStudies'
 import Footer from './components/Footer'
+import ScrollToTop from './components/ScrollToTop'
+import Home from './components/Home'
+import CaseStudyPage from './components/CaseStudyPage'
 
 export default function App() {
   return (
     <>
       <Nav />
-      <BrandImagery />
-      <Intro />
-      <FeaturedCaseStudies />
-      <Profile />
-      <MoreCaseStudies />
+      <ScrollToTop />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/case-study/:id" element={<CaseStudyPage />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
       <Footer />
     </>
   )
