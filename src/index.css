@@ -226,6 +226,54 @@ ul {
   max-width: 480px;
 }
 
+/* Section 1: PacMan scene — layered recreation of the placeholder graphic */
+.pacman-scene {
+  height: auto;
+  overflow: visible;
+}
+
+.pacman__caption {
+  fill: #fff;
+  font-family: 'Press Start 2P', var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.5px;
+}
+
+.pacman__label {
+  fill: #fff;
+  font-family: 'Press Start 2P', var(--font-mono);
+  font-size: 31px;
+}
+
+.pacman__leader {
+  stroke: #fff;
+  stroke-width: 2;
+}
+
+/* Orange ghost: pupils scan left/right on a slow, non-interactive loop —
+   long holds with quick, nervous flicks between the edges of the eye.
+   Travel is 36 user units (a 54-wide eye minus the 18-wide pupil). */
+.pacman__layer--orange .pacman__pupils {
+  animation: pacman-pupil-scan 16s infinite;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes pacman-pupil-scan {
+  0%, 26%    { transform: translateX(0); }
+  28%, 42%   { transform: translateX(36px); }
+  44%, 48%   { transform: translateX(0); }
+  50%, 56%   { transform: translateX(18px); }
+  58%, 86%   { transform: translateX(0); }
+  88%, 97%   { transform: translateX(36px); }
+  99%, 100%  { transform: translateX(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pacman__layer--orange .pacman__pupils {
+    animation: none;
+  }
+}
+
 @media (max-width: 767px) {
   .brand-imagery .section__inner {
     flex-direction: column;
