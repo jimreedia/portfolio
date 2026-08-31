@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import useActiveSection from '../hooks/useActiveSection'
 import { useSectionNav } from '../lib/navigation'
+import JrMark from './JrMark'
 
 // 'more-work' is omitted while the More Case Studies section is hidden.
 const SECTION_IDS = ['featured-work', 'profile']
@@ -66,9 +67,10 @@ export default function Nav() {
         <button
           type="button"
           className="nav__mark"
+          aria-label="Jim Reed — back to top"
           onClick={() => goToSection('top')}
         >
-          Jim Reed
+          <JrMark className="nav__mark-icon" />
         </button>
 
         <div className="nav__links">{links(null, 'nav__link')}</div>

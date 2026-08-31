@@ -16,9 +16,12 @@ export default function Home() {
   useEffect(() => {
     const target = location.state?.scrollTo
     if (!target) return
+    if (target === 'top') {
+      window.scrollTo(0, 0)
+      return
+    }
     const el = document.getElementById(target)
     if (el) el.scrollIntoView()
-    else if (target === 'top') window.scrollTo(0, 0)
   }, [location.state])
 
   return (
