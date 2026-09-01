@@ -2,7 +2,6 @@
 
 ## Backlog
 
-- [ ] Animate pacman graphics on user scroll
 - [ ] Refactor the hand/gear animation to CSS instead of a GIF — replace `jimreed_animated_hand_gear_480x280.gif` in `BrandImagery.jsx` with inline SVG (hand, gear, "jimreed.net", "UX Design") animated via CSS (hand float + gear rotation). Drops the ~130KB GIF, gives crisp vector rendering at any size, and lets the colors use CSS tokens. Respect `prefers-reduced-motion`.
 - [ ] Adjust typography
 - [ ] Scroll-linked section transitions (parallax) — deferred from the homepage build; replaces the one-shot fade-up that was removed
@@ -15,6 +14,7 @@
 
 ## Done
 
+- [x] Animate pacman graphics on user scroll — branch: feature/animate-pacman-on-scroll
 - [x] Recolor animated hand/gear graphic — branch: fix/recolor-hand-gear-graphic
 - [x] In Nav component, replace the "Jim Reed" title text with an icon; add a favicon so it renders in the browser tab — branch: feature/nav-icon-favicon
 - [x] Hide the entire More Case Studies section until we're ready to work on it — branch: chore/hide-more-case-studies
