@@ -18,8 +18,7 @@ export default function FeaturedCaseStudies() {
             </div>
             <div className="featured-row__text">
               <h3 className="case-study__title">{cs.title}</h3>
-              <p className="case-study__description">{cs.description}</p>
-              <span className="case-study__outcome">{cs.outcome}</span>
+              <p className="case-study__description">{cs.blurb}</p>
               <Link to={cs.url} className="case-study__cta">View Case Study →</Link>
             </div>
           </div>

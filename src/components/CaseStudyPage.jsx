@@ -11,6 +11,17 @@ function backLink(label, extraClass = '') {
   )
 }
 
+// Render inline **bold** spans within a body string.
+function renderInline(text) {
+  return text.split(/(\*\*[^*]+\*\*)/g).map((part, i) =>
+    part.startsWith('**') && part.endsWith('**') ? (
+      <strong key={i}>{part.slice(2, -2)}</strong>
+    ) : (
+      part
+    )
+  )
+}
+
 // A section is an ordered list of blocks (text / image / list). Older entries use
 // separate `body` / `image(s)` / `items` fields — normalize those into blocks,
 // images first, so there is a single render path.
@@ -116,13 +127,13 @@ export default function CaseStudyPage() {
             )}
             {section.blocks.map((block, j) => {
               if (block.type === 'text') {
-                return <p className="case-study__body" key={j}>{block.value}</p>
+                return <p className="case-study__body" key={j}>{renderInline(block.value)}</p>
               }
               if (block.type === 'list') {
                 return (
                   <ul className="case-study__list" key={j}>
                     {block.items.map((item, k) => (
-                      <li key={k}>{item}</li>
+                      <li key={k}>{renderInline(item)}</li>
                     ))}
                   </ul>
                 )
@@ -176,7 +187,7 @@ export default function CaseStudyPage() {
         </nav>
         )}
 
-        {backLink('Back to all work', 'case-study__back--center')}
+        {backLink('← Back to all work', 'case-study__back--center')}
       </article>
 
       {lightboxIndex !== null && (
