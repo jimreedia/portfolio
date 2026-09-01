@@ -12,10 +12,9 @@
 - [ ] Unify color tokens around two overarching dark/light pairings — one anchored on `--color-surface-dark` (#0D0D12, currently Brand Imagery, carousel background, Footer) and one anchored on `--color-surface-navy` (#1A2744, currently Profile) — each with its own consistent light/text counterparts, rather than collapsing navy into the near-black dark. Exploratory: audit all `--color-surface-*`/`--color-text-*` token usage in index.css, assign each element to the appropriate pairing, and propose the token set; implementation will target specific elements chosen at that time.
 ## In Progress
 
-- [ ] Animate pacman graphics on user scroll — branch: feature/animate-pacman-on-scroll
-
 ## Done
 
+- [x] Animate pacman graphics on user scroll — branch: feature/animate-pacman-on-scroll
 - [x] Recolor animated hand/gear graphic — branch: fix/recolor-hand-gear-graphic
 - [x] In Nav component, replace the "Jim Reed" title text with an icon; add a favicon so it renders in the browser tab — branch: feature/nav-icon-favicon
 - [x] Hide the entire More Case Studies section until we're ready to work on it — branch: chore/hide-more-case-studies

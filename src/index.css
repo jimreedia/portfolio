@@ -12,6 +12,16 @@
 
   --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
   --font-mono: 'DM Mono', ui-monospace, monospace;
+
+  --pacman-scrub: 46vh; /* scroll distance the PacMan chase plays over (Brand Imagery) */
+  --p: 0; /* 0..1 chase progress, written to <html> by useScrollProgress */
+  --nav-fade: 0; /* 0..1 nav fade-out during the chase, written to <html> */
+}
+
+@media (max-width: 767px), (prefers-reduced-motion: reduce) {
+  :root {
+    --pacman-scrub: 0px;
+  }
 }
 
 * {
@@ -106,13 +116,29 @@ ul {
   height: 64px;
   z-index: 100;
   background: transparent;
-  transition: background 200ms ease, backdrop-filter 200ms ease;
+  /* --nav-fade (0..1) is driven by scroll during the PacMan chase: the nav
+     dissolves over its own space as the ghosts start moving (the two overlap on
+     purpose) and snaps back once the chase finishes. */
+  opacity: calc(1 - var(--nav-fade, 0));
+  transition: background 200ms ease, backdrop-filter 200ms ease, opacity 120ms linear;
 }
 
 .nav.nav--scrolled {
   background: var(--color-nav-bg);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+/* Mid-chase the nav is non-interactive and shows no scrolled background — it's
+   just the mark and links dissolving over the dark band. */
+.pacman-pinned .nav {
+  pointer-events: none;
+}
+
+.pacman-pinned .nav.nav--scrolled {
+  background: transparent;
+  backdrop-filter: none;
+  border-bottom-color: transparent;
 }
 
 .nav__inner {
@@ -207,10 +233,39 @@ ul {
   .nav__hamburger { display: flex; }
 }
 
+/* Hero pin: the dark band + the Intro are stacked into one `position: sticky`
+   block, held in place by the compositor (no JS) while the trailing spacer —
+   the sticky range — scrubs past and the chase plays. Then the block releases
+   and band + Intro scroll away together. */
+.hero-pin {
+  position: relative;
+}
+
+.hero-pin__stack {
+  position: sticky;
+  top: 0;
+  z-index: 2; /* below the nav (100); the nav dissolves to reveal the band */
+}
+
+.hero-pin__scrub {
+  height: var(--pacman-scrub);
+}
+
+@media (max-width: 767px), (prefers-reduced-motion: reduce) {
+  .hero-pin__stack {
+    position: static;
+  }
+}
+
 /* Section 1: Brand Imagery */
 .brand-imagery {
-  background: var(--color-surface-dark);
   position: relative;
+}
+
+/* The dark band. `overflow: clip` contains the ghosts exiting sideways. */
+.brand-imagery__stage {
+  overflow: clip;
+  background: var(--color-surface-dark);
 }
 
 .brand-imagery .section__inner {
@@ -274,6 +329,39 @@ ul {
   }
 }
 
+/* Scroll-linked chase: each layer animates over its own window of --p.
+   text fades (0 → .24), red bolts almost immediately (.02 → .48) — overlapping
+   the nav fade-out — and orange chases a beat behind (.22 → .84). */
+.pacman__layer--text {
+  opacity: clamp(0, calc((0.24 - var(--p)) / 0.24), 1);
+}
+
+.pacman__layer--red {
+  transform: translateX(calc(clamp(0, calc((var(--p) - 0.02) / 0.46), 1) * -80vw));
+}
+
+.pacman__layer--orange {
+  transform: translateX(calc(clamp(0, calc((var(--p) - 0.22) / 0.62), 1) * -95vw));
+}
+
+/* Once the chase is underway, lock the orange pupils forward (toward the run). */
+.pacman-chasing .pacman__layer--orange .pacman__pupils {
+  animation: none;
+  transform: translateX(0);
+}
+
+/* No scroll-scrubbed chase on mobile or with reduced motion — `--pacman-scrub`
+   is 0 there (so no pin span); show the static composition. */
+@media (max-width: 767px), (prefers-reduced-motion: reduce) {
+  .pacman__layer--text {
+    opacity: 1;
+  }
+  .pacman__layer--red,
+  .pacman__layer--orange {
+    transform: none;
+  }
+}
+
 @media (max-width: 767px) {
   .brand-imagery .section__inner {
     flex-direction: column;
@@ -322,6 +410,15 @@ ul {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+/* Tighter vertical rhythm while the Intro is stacked in the hero pin, so band +
+   Intro fit a laptop viewport during the hold. Desktop only — the pin is
+   inactive below 768px. */
+@media (min-width: 768px) {
+  .hero-pin__stack .intro .section__inner {
+    padding-block: 56px;
+  }
 }
 
 .intro__headline {
