@@ -669,21 +669,43 @@ ul {
   color: var(--color-accent);
 }
 
-.profile__linkedin-btn {
-  display: inline-block;
+.profile__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
   margin-top: 32px;
+}
+
+.profile__btn {
+  display: inline-block;
   padding: 12px 24px;
   border: 2px solid var(--color-accent);
   border-radius: 6px;
-  color: var(--color-accent);
-  font-size: 15px;
-  font-weight: 500;
-  transition: background 200ms ease, color 200ms ease;
-}
-
-.profile__linkedin-btn:hover {
   background: var(--color-accent);
   color: #fff;
+  font-size: 15px;
+  font-weight: 500;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.28);
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+.profile__btn:hover {
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.38);
+  animation: profile-btn-bounce 320ms ease;
+  transform: scale(1.06);
+}
+
+@keyframes profile-btn-bounce {
+  0% { transform: scale(1); }
+  55% { transform: scale(1.11); }
+  100% { transform: scale(1.06); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .profile__btn:hover {
+    animation: none;
+    transform: none;
+  }
 }
 
 @media (max-width: 767px) {

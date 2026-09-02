@@ -23,14 +23,24 @@ export default function Profile() {
               <li key={bullet}>{bullet}</li>
             ))}
           </ul>
-          <a
-            href="https://www.linkedin.com/in/jimreed/"
-            target="_blank"
-            rel="noreferrer"
-            className="profile__linkedin-btn"
-          >
-            Connect with Jim on LinkedIn →
-          </a>
+          <div className="profile__actions">
+            <a
+              href="https://www.linkedin.com/in/jimreed/"
+              target="_blank"
+              rel="noreferrer"
+              className="profile__btn"
+            >
+              Connect on LinkedIn →
+            </a>
+            <a
+              href="https://jimreedia.myportfolio.com"
+              target="_blank"
+              rel="noreferrer"
+              className="profile__btn"
+            >
+              More Case Studies →
+            </a>
+          </div>
         </div>
       </div>
     </section>

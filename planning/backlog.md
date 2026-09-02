@@ -3,8 +3,9 @@
 ## Backlog
 
 - [ ] manually curate the carousel images shown in the homepage Featured Case Studies section — choose which shots appear and their order, re-crop as needed, and source new images where the current set falls short
-- [ ] Add link to old site — label is "More Case Studies" (phase 1: interim link; phase 2 replaces it with the restored section below)
 - [ ] Final QA for "Beta" version of website
+- [ ] Switch DNS for jimreed.net to point at the GitHub Pages site (configure the custom domain + CNAME/A records, enable HTTPS)
+- [ ] Simplify the footer — drop the LinkedIn link (already visible in the About section within the same viewport, so it's redundant), and put the "back to top" link and copyright info on the same row
 - [ ] Optimize mobile experience — review and adjust vertical spacing throughout, and consider implementing animated scroll transitions for mobile (the Featured Case Studies column reveal and PacMan chase are currently desktop-only)
 
 - [ ] Refactor the hand/gear animation to CSS instead of a GIF — replace `jimreed_animated_hand_gear_480x280.gif` in `BrandImagery.jsx` with inline SVG (hand, gear, "jimreed.net", "UX Design") animated via CSS (hand float + gear rotation). Drops the ~130KB GIF, gives crisp vector rendering at any size, and lets the colors use CSS tokens. Respect `prefers-reduced-motion`.
@@ -18,6 +19,7 @@
 
 ## Done
 
+- [x] Add link to old site — label is "More Case Studies" (phase 1: interim link; phase 2 replaces it with the restored section below) — branch: feature/add-link-to-more-case-studies
 - [x] Scroll-linked section transitions (parallax) — deferred from the homepage build; replaces the one-shot fade-up that was removed — branch: feature/add-more-scroll-transitions
 - [x] Featured case study contribution subtext — branch: feature/case-study-contribution-subtext
 - [x] Adjust typography — branch: fix/adjust-typography
