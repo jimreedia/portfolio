@@ -3,7 +3,6 @@
 ## Backlog
 
 - [ ] manually curate the carousel images shown in the homepage Featured Case Studies section — choose which shots appear and their order, re-crop as needed, and source new images where the current set falls short
-- [ ] Add link to old site — label is "More Case Studies" (phase 1: interim link; phase 2 replaces it with the restored section below)
 - [ ] Final QA for "Beta" version of website
 - [ ] Optimize mobile experience — review and adjust vertical spacing throughout, and consider implementing animated scroll transitions for mobile (the Featured Case Studies column reveal and PacMan chase are currently desktop-only)
 
@@ -15,6 +14,8 @@
 - [ ] Unify color tokens around two overarching dark/light pairings — one anchored on `--color-surface-dark` (#0D0D12, currently Brand Imagery, carousel background, Footer) and one anchored on `--color-surface-navy` (#1A2744, currently Profile) — each with its own consistent light/text counterparts, rather than collapsing navy into the near-black dark. Exploratory: audit all `--color-surface-*`/`--color-text-*` token usage in index.css, assign each element to the appropriate pairing, and propose the token set; implementation will target specific elements chosen at that time.
 
 ## In Progress
+
+- [ ] Add link to old site — label is "More Case Studies" (phase 1: interim link; phase 2 replaces it with the restored section below) — branch: feature/add-link-to-more-case-studies
 
 ## Done
 
