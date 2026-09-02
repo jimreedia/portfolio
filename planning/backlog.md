@@ -17,10 +17,9 @@
 
 ## In Progress
 
-- [ ] Add link to old site — label is "More Case Studies" (phase 1: interim link; phase 2 replaces it with the restored section below) — branch: feature/add-link-to-more-case-studies
-
 ## Done
 
+- [x] Add link to old site — label is "More Case Studies" (phase 1: interim link; phase 2 replaces it with the restored section below) — branch: feature/add-link-to-more-case-studies
 - [x] Scroll-linked section transitions (parallax) — deferred from the homepage build; replaces the one-shot fade-up that was removed — branch: feature/add-more-scroll-transitions
 - [x] Featured case study contribution subtext — branch: feature/case-study-contribution-subtext
 - [x] Adjust typography — branch: fix/adjust-typography
