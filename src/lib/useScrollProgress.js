@@ -6,7 +6,9 @@ const clamp01 = (n) => (n < 0 ? 0 : n > 1 ? 1 : n)
 // `position: sticky` block (`.hero-pin__stack`) held by the compositor while the
 // trailing `.hero-pin__scrub` span scrolls past — this hook only reports how far
 // through that span we are, on <html>:
-//   --p        0..1 chase progress (ghost transforms, text fade)
+//   --p        0..1 chase progress (red ghost, text fade, state classes)
+//   --p-tail   0..2 same progress uncapped — the orange ghost rides this so it
+//              can finish exiting after the block unpins at --p = 1
 //   --nav-fade 0..1 nav dissolve over the first 100px of scroll
 //   .pacman-chasing / .pacman-pinned  state classes
 //
@@ -29,14 +31,20 @@ export function useScrollProgress({ wrapRef, pinRef }) {
       raf = 0
       if (mqReduce.matches || !mqDesktop.matches) {
         root.style.setProperty('--p', '0')
+        root.style.setProperty('--p-tail', '0')
         root.style.setProperty('--nav-fade', '0')
         root.classList.remove('pacman-chasing', 'pacman-pinned')
         return
       }
       const rect = wrap.getBoundingClientRect()
       const range = rect.height - pinH
-      const p = range > 0 ? clamp01(-rect.top / range) : 0
+      const raw = range > 0 ? -rect.top / range : 0
+      const p = clamp01(raw)
       root.style.setProperty('--p', p.toFixed(4))
+      // Same progress but allowed to run past 1 (capped at 2), so the orange
+      // ghost can keep sliding out after the hero block unpins at --p = 1 —
+      // its exit overlaps the start of the page scroll rather than blocking it.
+      root.style.setProperty('--p-tail', (raw < 0 ? 0 : raw > 2 ? 2 : raw).toFixed(4))
       root.classList.toggle('pacman-chasing', p > 0.14)
       root.classList.toggle('pacman-pinned', p > 0 && p < 1)
       // Nav fades out over the first 100px of scroll (overlapping the ghosts
@@ -65,6 +73,7 @@ export function useScrollProgress({ wrapRef, pinRef }) {
       if (raf) cancelAnimationFrame(raf)
       root.classList.remove('pacman-chasing', 'pacman-pinned')
       root.style.removeProperty('--p')
+      root.style.removeProperty('--p-tail')
       root.style.removeProperty('--nav-fade')
     }
   }, [wrapRef, pinRef])

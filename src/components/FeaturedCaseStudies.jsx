@@ -1,12 +1,16 @@
+import { useRef } from 'react'
 import { Link } from 'react-router-dom'
 import Carousel from './Carousel'
 import { getFeatured } from '../lib/caseStudies'
+import { useColumnReveal } from '../lib/useColumnReveal'
 
 export default function FeaturedCaseStudies() {
   const caseStudies = getFeatured()
+  const sectionRef = useRef(null)
+  useColumnReveal(sectionRef)
 
   return (
-    <section className="featured" id="featured-work">
+    <section className="featured" id="featured-work" ref={sectionRef}>
       <div className="section__inner">
         {caseStudies.map((cs, i) => (
           <div
