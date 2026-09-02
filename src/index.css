@@ -14,8 +14,10 @@
   --font-sans: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
   --font-mono: 'DM Mono', ui-monospace, SFMono-Regular, monospace;
 
-  --pacman-scrub: 46vh; /* scroll distance the PacMan chase plays over (Brand Imagery) */
+  --pacman-scrub: 36vh; /* scroll distance the PacMan chase plays over (Brand Imagery) */
   --p: 0; /* 0..1 chase progress, written to <html> by useScrollProgress */
+  --p-tail: 0; /* same progress, uncapped to 2 — lets the orange ghost keep
+                  exiting after the hero unpins at --p = 1 */
   --nav-fade: 0; /* 0..1 nav fade-out during the chase, written to <html> */
 }
 
@@ -332,7 +334,10 @@ ul {
 
 /* Scroll-linked chase: each layer animates over its own window of --p.
    text fades (0 → .24), red bolts almost immediately (.02 → .48) — overlapping
-   the nav fade-out — and orange chases a beat behind (.22 → .84). */
+   the nav fade-out — and orange chases a beat behind. Orange runs on --p-tail
+   (which keeps climbing past 1): it's only ~two-thirds gone when the hero unpins
+   at --p = 1, then finishes sliding out over the next ~0.35 of tail progress
+   while the whole band scrolls away — the exit and the page scroll overlap. */
 .pacman__layer--text {
   opacity: clamp(0, calc((0.24 - var(--p)) / 0.24), 1);
 }
@@ -342,7 +347,7 @@ ul {
 }
 
 .pacman__layer--orange {
-  transform: translateX(calc(clamp(0, calc((var(--p) - 0.22) / 0.62), 1) * -95vw));
+  transform: translateX(calc(clamp(0, calc((var(--p-tail) - 0.22) / 1.25), 1) * -80vw));
 }
 
 /* Once the chase is underway, lock the orange pupils forward (toward the run). */
@@ -474,6 +479,32 @@ ul {
   .featured-row__carousel,
   .featured-row__text {
     width: 100%;
+  }
+}
+
+/* Scroll-scrubbed entrance (desktop only, matching the PacMan chase). As a row
+   scrolls into view its columns slide in from the side they settle on and ease
+   into place; `--enter` (0..1, eased) is written per row by useColumnReveal and
+   defaults to 1 so no-JS / reduced-motion / mobile sit still. `overflow-x: clip`
+   contains the columns' offset start without breaking sticky positioning. */
+@media (min-width: 768px) {
+  .featured {
+    overflow-x: clip;
+  }
+  .featured-row__carousel,
+  .featured-row__text {
+    transform: translateX(calc((1 - var(--enter, 1)) * var(--reveal-dir, 0) * 8vw));
+  }
+  .featured-row__carousel { --reveal-dir: -1; }
+  .featured-row__text { --reveal-dir: 1; }
+  .featured-row--reverse .featured-row__carousel { --reveal-dir: 1; }
+  .featured-row--reverse .featured-row__text { --reveal-dir: -1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .featured-row__carousel,
+  .featured-row__text {
+    transform: none;
   }
 }
 

@@ -2,19 +2,23 @@
 
 ## Backlog
 
+- [ ] manually curate the carousel images shown in the homepage Featured Case Studies section — choose which shots appear and their order, re-crop as needed, and source new images where the current set falls short
+- [ ] Add link to old site — label is "More Case Studies" (phase 1: interim link; phase 2 replaces it with the restored section below)
+- [ ] Final QA for "Beta" version of website
+- [ ] Optimize mobile experience — review and adjust vertical spacing throughout, and consider implementing animated scroll transitions for mobile (the Featured Case Studies column reveal and PacMan chase are currently desktop-only)
+
 - [ ] Refactor the hand/gear animation to CSS instead of a GIF — replace `jimreed_animated_hand_gear_480x280.gif` in `BrandImagery.jsx` with inline SVG (hand, gear, "jimreed.net", "UX Design") animated via CSS (hand float + gear rotation). Drops the ~130KB GIF, gives crisp vector rendering at any size, and lets the colors use CSS tokens. Respect `prefers-reduced-motion`.
-- [ ] Scroll-linked section transitions (parallax) — deferred from the homepage build; replaces the one-shot fade-up that was removed
-- [ ] Restore the More Case Studies section (currently hidden — component/code still in place in `MoreCaseStudies.jsx`, just not rendered by `Home.jsx`, and the "More Work" nav link is removed). Re-render it, re-add the nav link + section id to `Nav.jsx`, and add real thumbnail images for each card (replacing the title-text placeholder in `.more-work__thumb`). Also widen the case study page prev/next nav back to all case studies (`getNeighbors` in `caseStudies.js` is currently scoped to featured only).
+- [ ] Restore the More Case Studies section (currently hidden — component/code still in place in `MoreCaseStudies.jsx`, just not rendered by `Home.jsx`, and the "More Work" nav link is removed). Re-render it, re-add the nav link + section id to `Nav.jsx`, and add real thumbnail images for each card (replacing the title-text placeholder in `.more-work__thumb`). Also widen the case study page prev/next nav back to all case studies (`getNeighbors` in `caseStudies.js` is currently scoped to featured only). Supersedes the interim old-site link above — reuse the "More Case Studies" label and its placement.
 - [ ] Case study tags: review/adjust the tagging strategy if needed, then populate real tag values for each case study
 - [ ] Case study image assets: consider re-exporting all case-study images at one width (e.g. 1600px) so the in-page display is consistent and never soft. The page now uses a max-width strategy — images render at native size, centered, and only scale down to fit the column — so a mixed-size set is acceptable, but the current sources (~600–1300px wide) look undersized on wide screens. Decide between (a) one standard export width or (b) keeping varied sizes but raising the floor. Also revisit whether the annotation banners should stay baked into the pixels or move to HTML captions.
 - [ ] Refine case study content — the initial build seeds each page from jimreed.net with a Problem/Approach/Outcomes skeleton. Raise it to a senior/principal standard: reframe "Approach" around key decisions and tradeoffs (not a list of process activities), surface a one-line outcome in the hero, make individual contribution explicit in the prose, give captions design rationale rather than labels, add a "Reflection / what I'd do differently" section, and replace all `[bracketed]` placeholders (timelines, outcome metrics, team) with real content.
-- [ ] Final QA for "Beta" version of website
-- [ ] Add link to old site — label is "More Case Studies"
 - [ ] Unify color tokens around two overarching dark/light pairings — one anchored on `--color-surface-dark` (#0D0D12, currently Brand Imagery, carousel background, Footer) and one anchored on `--color-surface-navy` (#1A2744, currently Profile) — each with its own consistent light/text counterparts, rather than collapsing navy into the near-black dark. Exploratory: audit all `--color-surface-*`/`--color-text-*` token usage in index.css, assign each element to the appropriate pairing, and propose the token set; implementation will target specific elements chosen at that time.
+
 ## In Progress
 
 ## Done
 
+- [x] Scroll-linked section transitions (parallax) — deferred from the homepage build; replaces the one-shot fade-up that was removed — branch: feature/add-more-scroll-transitions
 - [x] Featured case study contribution subtext — branch: feature/case-study-contribution-subtext
 - [x] Adjust typography — branch: fix/adjust-typography
 - [x] Animate pacman graphics on user scroll — branch: feature/animate-pacman-on-scroll
