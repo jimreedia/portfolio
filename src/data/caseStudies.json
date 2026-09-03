@@ -10,9 +10,9 @@
     "role": "Product Designer, LinkedIn",
     "team": "Embedded with product engineers",
     "images": [
-      "/assets/case-studies/agentic-ai-chat/LinkedIn_portfolio_cover-no-inset.png",
-      "/assets/case-studies/agentic-ai-chat/LinkedIn_chat_home.png",
-      "/assets/case-studies/agentic-ai-chat/LinkedIn_logs_explorer_chat.png"
+      "/assets/case-studies/homepage-assets/agentic-ai-chat-1.webp",
+      "/assets/case-studies/homepage-assets/agentic-ai-chat-2.webp",
+      "/assets/case-studies/homepage-assets/agentic-ai-chat-3.webp"
     ],
     "hero": {
       "src": "/assets/case-studies/agentic-ai-chat/LinkedIn-agentic-chat-home.png",
@@ -81,6 +81,94 @@
     ]
   },
   {
+    "id": "genomic-data-platform",
+    "title": "Genomic Data Platform",
+    "description": "Tools for scientists to analyze genomic data for pharmaceutical and clinical needs.",
+    "blurb": "As Senior Staff Interaction Designer, I led UX across Illumina's Connected Analytics platform for multiomic analysis, spanning genomics, proteomics, and spatial transcriptomics apps built on a shared design system, data model, and user base. I grounded the work in evidence-based personas, card sorting with bioinformaticians, and ongoing field research, then turned direct customer feedback into shipped visualization features. The result is a cohesive platform that helps scientists compare groups of subjects and accelerate biomarker and drug discovery.",
+    "tags": ["Data Platforms", "Enterprise"],
+    "url": "/case-study/genomic-data-platform",
+    "featured": true,
+    "role": "Senior Staff Interaction Designer, Illumina",
+    "team": "UX researchers, bioinformatics subject-matter experts, product stakeholders",
+    "images": [
+      "/assets/case-studies/homepage-assets/genomic-data-platform-1.webp",
+      "/assets/case-studies/homepage-assets/genomic-data-platform-2.webp",
+      "/assets/case-studies/homepage-assets/genomic-data-platform-3.webp"
+    ],
+    "hero": {
+      "src": "/assets/case-studies/genomic-data-platform/Cohorts-survival-comparison.png",
+      "alt": "The Cohorts survival-comparison view: a Kaplan–Meier curve comparing subject groups with a p-value matrix"
+    },
+    "sections": [
+      {
+        "blocks": [
+          { "type": "text", "value": "Cohorts, by Illumina Connected Analytics, lets customers aggregate and analyze genomic and clinical data using private, public and partner data sets, and then compare groups of subjects to **accelerate biomarker and drug discovery**." }
+        ]
+      },
+      {
+        "heading": "Personas",
+        "blocks": [
+          { "type": "text", "value": "As **Senior Staff Interaction Designer** at Illumina, I created personas based on interviews with stakeholders and subject matter experts. These **evidence-based personas** were used to identify user behaviors, tasks, and workflows. The key persona is the research scientist whose goal is to discover biomarkers of interest for pharmaceutical or clinical cures." },
+          { "type": "image", "src": "/assets/case-studies/genomic-data-platform/Cohorts-personas.png", "alt": "Personas for the genomics scientist, bioinformatician, and developer/admin, with goals and a pain-point quote" }
+        ]
+      },
+      {
+        "heading": "Card Sorting",
+        "blocks": [
+          { "type": "text", "value": "The discovery phase is one of my favorite parts of the design process. I collaborated with UX researchers and conducted a series of card sorting activities with subject matter experts and stakeholders to better understand the terminology and **mental models** for analyzing genomic data." },
+          { "type": "image", "src": "/assets/case-studies/genomic-data-platform/Cohorts-card-sort.png", "alt": "A remote card sorting session grouping genomic analysis terms into workflow phases" }
+        ]
+      },
+      {
+        "heading": "User Interviews",
+        "blocks": [
+          { "type": "text", "value": "Early low-fidelity conceptual designs helped identify **interaction models**, and user interviews helped validate the concepts. I conducted several user interviews with bioinformaticians currently using digital workflows to evaluate genetic variants." },
+          { "type": "image", "src": "/assets/case-studies/genomic-data-platform/Cohorts-user-interviews.png", "alt": "Low-fidelity cohort-builder prototypes shown to bioinformaticians in interview sessions" }
+        ]
+      },
+      {
+        "heading": "Storyboards",
+        "blocks": [
+          { "type": "text", "value": "Storyboards help communicate to product stakeholders the high-level design of the **user workflows** and **interaction models**." },
+          { "type": "image", "src": "/assets/case-studies/genomic-data-platform/Cohorts-storyboards.png", "alt": "A storyboard grid walking through building a cohort, visualizing distributions, and comparing survival outcomes" }
+        ]
+      },
+      {
+        "heading": "Prototypes",
+        "blocks": [
+          { "type": "text", "value": "Prototypes are invaluable UX tools for communicating the **experience design** decisions to stakeholders and users. In this screenshot from Figma, the blue arrows, nicknamed “noodles,” are the interactive connections within the prototype." },
+          { "type": "image", "src": "/assets/case-studies/genomic-data-platform/Cohorts-Figma-prototype.png", "alt": "A Figma prototype canvas with many screens connected by blue interaction arrows" }
+        ]
+      },
+      {
+        "heading": "Enhancing the Experience",
+        "blocks": [
+          { "type": "text", "value": "This end-to-end design journey included several **user research studies** and ongoing synthesis of **customer feedback** from scientific users in the field." },
+          { "type": "image", "src": "/assets/case-studies/genomic-data-platform/Cohorts-customer-feedback.png", "alt": "A recorded customer call with a researcher describing the need for a gene-discovery heat map" },
+          { "type": "text", "value": "In this example, I used direct customer feedback to uncover an **unmet user need** to discover genes that are relevant to their scientific studies. My resulting mockups specified new user-centered features such as a comparison heat map." },
+          { "type": "image", "src": "/assets/case-studies/genomic-data-platform/Cohorts-heatmap.png", "alt": "A gene comparison heat map showing variant frequency and type across genes for two cohorts" }
+        ]
+      },
+      {
+        "heading": "User-Centered Design",
+        "blocks": [
+          { "type": "text", "value": "I use insights from **user testing** to identify incremental product improvements. For example, allowing users to customize a data visualization plot based on their research needs." },
+          { "type": "image", "src": "/assets/case-studies/genomic-data-platform/Cohorts-user-study.png", "alt": "A user-testing session where a participant asks to invert the y-axis so rare variants are visible" },
+          { "type": "text", "value": "User testing also uncovered unmet user needs to view the distribution of variants by type, and since there were several types to measure per gene, the radar charts were an appropriate and intuitive **data visualization**." },
+          { "type": "image", "src": "/assets/case-studies/genomic-data-platform/Cohorts-radar-charts.png", "alt": "A grid of radar charts showing structural-variant type distribution per gene" }
+        ]
+      },
+      {
+        "heading": "Cross-Product Design",
+        "blocks": [
+          { "type": "text", "value": "I applied the visual design language and interaction patterns to related apps to ensure that the platform of products have a **cohesive look and feel**." },
+          { "type": "image", "src": "/assets/case-studies/genomic-data-platform/Multiomics-proteomics.png", "alt": "The Connected Multiomics proteomics viewer with a volcano plot and per-protein box plots" },
+          { "type": "image", "src": "/assets/case-studies/genomic-data-platform/Multiomics-spatial.png", "alt": "The Connected Multiomics spatial viewer showing a tissue slice with a UMAP and transcript counts" }
+        ]
+      }
+    ]
+  },
+  {
     "id": "ai-recommendations",
     "title": "AI Recommendations",
     "description": "Using machine learning to create valuable outcomes for customers.",
@@ -91,8 +179,9 @@
     "role": "Principal User Experience Designer, Informatica",
     "team": "Machine learning engineers, UX researchers, UX partners, executive leadership",
     "images": [
-      "/assets/case-studies/ai-recommendations/AI-Recommendations_cover-resize-no-inset.png",
-      "/assets/case-studies/ai-recommendations/AI-Recommendations_mapping-designer-redesign.png"
+      "/assets/case-studies/homepage-assets/ai-recommendations-1.webp",
+      "/assets/case-studies/homepage-assets/ai-recommendations-2.webp",
+      "/assets/case-studies/homepage-assets/ai-recommendations-3.webp"
     ],
     "hero": {
       "src": "/assets/case-studies/ai-recommendations/Informatica-AI-hero.png",
@@ -175,94 +264,6 @@
         "blocks": [
           { "type": "text", "value": "I worked closely with UX partners to redesign the product look and feel, then convinced executive leadership that modernizing the UI was a sound business goal." },
           { "type": "image", "src": "/assets/case-studies/ai-recommendations/Informatica-redesign.png", "alt": "Before-and-after of the mapping designer showing the modernized visual design language" }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "genomic-data-platform",
-    "title": "Genomic Data Platform",
-    "description": "Tools for scientists to analyze genomic data for pharmaceutical and clinical needs.",
-    "blurb": "As Senior Staff Interaction Designer, I led UX across Illumina's Connected Analytics platform for multiomic analysis, spanning genomics, proteomics, and spatial transcriptomics apps built on a shared design system, data model, and user base. I grounded the work in evidence-based personas, card sorting with bioinformaticians, and ongoing field research, then turned direct customer feedback into shipped visualization features. The result is a cohesive platform that helps scientists compare groups of subjects and accelerate biomarker and drug discovery.",
-    "tags": ["Data Platforms", "Enterprise"],
-    "url": "/case-study/genomic-data-platform",
-    "featured": true,
-    "role": "Senior Staff Interaction Designer, Illumina",
-    "team": "UX researchers, bioinformatics subject-matter experts, product stakeholders",
-    "images": [
-      "/assets/case-studies/genomic-data-platform/Cohorts_portfolio_cover-resize-no-inset.png",
-      "/assets/case-studies/genomic-data-platform/02.png",
-      "/assets/case-studies/genomic-data-platform/03.png"
-    ],
-    "hero": {
-      "src": "/assets/case-studies/genomic-data-platform/Cohorts-survival-comparison.png",
-      "alt": "The Cohorts survival-comparison view: a Kaplan–Meier curve comparing subject groups with a p-value matrix"
-    },
-    "sections": [
-      {
-        "blocks": [
-          { "type": "text", "value": "Cohorts, by Illumina Connected Analytics, lets customers aggregate and analyze genomic and clinical data using private, public and partner data sets, and then compare groups of subjects to **accelerate biomarker and drug discovery**." }
-        ]
-      },
-      {
-        "heading": "Personas",
-        "blocks": [
-          { "type": "text", "value": "As **Senior Staff Interaction Designer** at Illumina, I created personas based on interviews with stakeholders and subject matter experts. These **evidence-based personas** were used to identify user behaviors, tasks, and workflows. The key persona is the research scientist whose goal is to discover biomarkers of interest for pharmaceutical or clinical cures." },
-          { "type": "image", "src": "/assets/case-studies/genomic-data-platform/Cohorts-personas.png", "alt": "Personas for the genomics scientist, bioinformatician, and developer/admin, with goals and a pain-point quote" }
-        ]
-      },
-      {
-        "heading": "Card Sorting",
-        "blocks": [
-          { "type": "text", "value": "The discovery phase is one of my favorite parts of the design process. I collaborated with UX researchers and conducted a series of card sorting activities with subject matter experts and stakeholders to better understand the terminology and **mental models** for analyzing genomic data." },
-          { "type": "image", "src": "/assets/case-studies/genomic-data-platform/Cohorts-card-sort.png", "alt": "A remote card sorting session grouping genomic analysis terms into workflow phases" }
-        ]
-      },
-      {
-        "heading": "User Interviews",
-        "blocks": [
-          { "type": "text", "value": "Early low-fidelity conceptual designs helped identify **interaction models**, and user interviews helped validate the concepts. I conducted several user interviews with bioinformaticians currently using digital workflows to evaluate genetic variants." },
-          { "type": "image", "src": "/assets/case-studies/genomic-data-platform/Cohorts-user-interviews.png", "alt": "Low-fidelity cohort-builder prototypes shown to bioinformaticians in interview sessions" }
-        ]
-      },
-      {
-        "heading": "Storyboards",
-        "blocks": [
-          { "type": "text", "value": "Storyboards help communicate to product stakeholders the high-level design of the **user workflows** and **interaction models**." },
-          { "type": "image", "src": "/assets/case-studies/genomic-data-platform/Cohorts-storyboards.png", "alt": "A storyboard grid walking through building a cohort, visualizing distributions, and comparing survival outcomes" }
-        ]
-      },
-      {
-        "heading": "Prototypes",
-        "blocks": [
-          { "type": "text", "value": "Prototypes are invaluable UX tools for communicating the **experience design** decisions to stakeholders and users. In this screenshot from Figma, the blue arrows, nicknamed “noodles,” are the interactive connections within the prototype." },
-          { "type": "image", "src": "/assets/case-studies/genomic-data-platform/Cohorts-Figma-prototype.png", "alt": "A Figma prototype canvas with many screens connected by blue interaction arrows" }
-        ]
-      },
-      {
-        "heading": "Enhancing the Experience",
-        "blocks": [
-          { "type": "text", "value": "This end-to-end design journey included several **user research studies** and ongoing synthesis of **customer feedback** from scientific users in the field." },
-          { "type": "image", "src": "/assets/case-studies/genomic-data-platform/Cohorts-customer-feedback.png", "alt": "A recorded customer call with a researcher describing the need for a gene-discovery heat map" },
-          { "type": "text", "value": "In this example, I used direct customer feedback to uncover an **unmet user need** to discover genes that are relevant to their scientific studies. My resulting mockups specified new user-centered features such as a comparison heat map." },
-          { "type": "image", "src": "/assets/case-studies/genomic-data-platform/Cohorts-heatmap.png", "alt": "A gene comparison heat map showing variant frequency and type across genes for two cohorts" }
-        ]
-      },
-      {
-        "heading": "User-Centered Design",
-        "blocks": [
-          { "type": "text", "value": "I use insights from **user testing** to identify incremental product improvements. For example, allowing users to customize a data visualization plot based on their research needs." },
-          { "type": "image", "src": "/assets/case-studies/genomic-data-platform/Cohorts-user-study.png", "alt": "A user-testing session where a participant asks to invert the y-axis so rare variants are visible" },
-          { "type": "text", "value": "User testing also uncovered unmet user needs to view the distribution of variants by type, and since there were several types to measure per gene, the radar charts were an appropriate and intuitive **data visualization**." },
-          { "type": "image", "src": "/assets/case-studies/genomic-data-platform/Cohorts-radar-charts.png", "alt": "A grid of radar charts showing structural-variant type distribution per gene" }
-        ]
-      },
-      {
-        "heading": "Cross-Product Design",
-        "blocks": [
-          { "type": "text", "value": "I applied the visual design language and interaction patterns to related apps to ensure that the platform of products have a **cohesive look and feel**." },
-          { "type": "image", "src": "/assets/case-studies/genomic-data-platform/Multiomics-proteomics.png", "alt": "The Connected Multiomics proteomics viewer with a volcano plot and per-protein box plots" },
-          { "type": "image", "src": "/assets/case-studies/genomic-data-platform/Multiomics-spatial.png", "alt": "The Connected Multiomics spatial viewer showing a tissue slice with a UMAP and transcript counts" }
         ]
       }
     ]
