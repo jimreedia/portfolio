@@ -14,10 +14,9 @@
 
 ## In Progress
 
-- [ ] Simplify the footer — drop the LinkedIn link (already visible in the About section within the same viewport, so it's redundant), and put the "back to top" link and copyright info on the same row
-
 ## Done
 
+- [x] Simplify the footer — drop the LinkedIn link (already visible in the About section within the same viewport, so it's redundant), and put the "back to top" link and copyright info on the same row — branch: fix/simplify-footer
 - [x] manually curate the carousel images shown in the homepage Featured Case Studies section — choose which shots appear and their order, re-crop as needed, and source new images where the current set falls short — branch: fix/homepage-case-study-images
 - [x] Add link to old site — label is "More Case Studies" (phase 1: interim link; phase 2 replaces it with the restored section below) — branch: feature/add-link-to-more-case-studies
 - [x] Scroll-linked section transitions (parallax) — deferred from the homepage build; replaces the one-shot fade-up that was removed — branch: feature/add-more-scroll-transitions
