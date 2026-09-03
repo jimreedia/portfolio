@@ -4,9 +4,7 @@
 
 - [ ] Final QA for "Beta" version of website
 - [ ] Switch DNS for jimreed.net to point at the GitHub Pages site (configure the custom domain + CNAME/A records, enable HTTPS)
-- [ ] Simplify the footer — drop the LinkedIn link (already visible in the About section within the same viewport, so it's redundant), and put the "back to top" link and copyright info on the same row
 - [ ] Optimize mobile experience — review and adjust vertical spacing throughout, and consider implementing animated scroll transitions for mobile (the Featured Case Studies column reveal and PacMan chase are currently desktop-only)
-
 - [ ] Refactor the hand/gear animation to CSS instead of a GIF — replace `jimreed_animated_hand_gear_480x280.gif` in `BrandImagery.jsx` with inline SVG (hand, gear, "jimreed.net", "UX Design") animated via CSS (hand float + gear rotation). Drops the ~130KB GIF, gives crisp vector rendering at any size, and lets the colors use CSS tokens. Respect `prefers-reduced-motion`.
 - [ ] Restore the More Case Studies section (currently hidden — component/code still in place in `MoreCaseStudies.jsx`, just not rendered by `Home.jsx`, and the "More Work" nav link is removed). Re-render it, re-add the nav link + section id to `Nav.jsx`, and add real thumbnail images for each card (replacing the title-text placeholder in `.more-work__thumb`). Also widen the case study page prev/next nav back to all case studies (`getNeighbors` in `caseStudies.js` is currently scoped to featured only). Supersedes the interim old-site link above — reuse the "More Case Studies" label and its placement.
 - [ ] Case study tags: review/adjust the tagging strategy if needed, then populate real tag values for each case study
@@ -15,6 +13,8 @@
 - [ ] Unify color tokens around two overarching dark/light pairings — one anchored on `--color-surface-dark` (#0D0D12, currently Brand Imagery, carousel background, Footer) and one anchored on `--color-surface-navy` (#1A2744, currently Profile) — each with its own consistent light/text counterparts, rather than collapsing navy into the near-black dark. Exploratory: audit all `--color-surface-*`/`--color-text-*` token usage in index.css, assign each element to the appropriate pairing, and propose the token set; implementation will target specific elements chosen at that time.
 
 ## In Progress
+
+- [ ] Simplify the footer — drop the LinkedIn link (already visible in the About section within the same viewport, so it's redundant), and put the "back to top" link and copyright info on the same row
 
 ## Done
 
