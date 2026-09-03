@@ -806,10 +806,17 @@ ul {
   color: var(--color-text-primary-dark);
 }
 
+.footer .section__inner {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
 .footer__row {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
+  gap: 8px 16px;
 }
 
 .footer__link {
@@ -822,23 +829,9 @@ ul {
   color: var(--color-accent);
 }
 
-.footer__divider {
-  border: none;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  margin: 24px 0;
-}
-
 .footer__copyright {
   font-size: 13px;
   color: var(--color-text-muted-dark);
-}
-
-@media (max-width: 767px) {
-  .footer__row {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 16px;
-  }
 }
 
 /* Case Study Page */
