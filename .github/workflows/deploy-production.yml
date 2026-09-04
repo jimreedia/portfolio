@@ -22,3 +22,4 @@ jobs:
           publish_branch: gh-pages
           publish_dir: ./docs
           keep_files: true
+          cname: jimreed.net

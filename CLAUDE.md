@@ -2,7 +2,7 @@
 
 ## Backlog
 
-Tasks live in `planning/backlog.md`, organized into three sections: Backlog, In Progress, Done. Each task is a single checkbox item. Move an item to In Progress when work starts on it, and to Done once its branch is merged.
+Tasks live in `planning/backlog.md`, organized into three sections: Backlog, In Progress, Done. Each task is a single checkbox item. Move an item to In Progress when work starts on it, and to Done once the local work is finished and looks good — merging the branch happens separately and isn't a precondition for marking it Done.
 
 ## Worktrees & branches
 
