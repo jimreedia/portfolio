@@ -15,6 +15,11 @@
 
 - [ ] Switch DNS for jimreed.net to point at the GitHub Pages site (configure the custom domain + CNAME/A records, enable HTTPS) — branch: chore/switch-dns-to-github-pages
   - QA found (2026-09-04): the homepage's "More Case Studies" interim link points to `jimreedia.myportfolio.com`, which currently 302-redirects to `jimreed.net` (Adobe Portfolio's custom-domain setting). Once DNS cuts over, `jimreed.net` will be this new site, so that link would loop back to our own homepage instead of showing the old portfolio. Resolve as part of this task — either remove/change Adobe Portfolio's custom-domain setting, or repoint the interim link.
+  - Progress (2026-09-04): repo-side prep done — `deploy-production.yml` now passes `cname: jimreed.net` to the gh-pages deploy action, so the next manual production deploy writes the CNAME file. Remaining steps require external access this session doesn't have:
+    - **DNS** (at jimreed.net's registrar/DNS host): apex `A` records to `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153` (optionally `AAAA` to `2606:50c0:8000::153` / `8001::153` / `8002::153` / `8003::153`).
+    - **GitHub Pages custom domain**: set via repo Settings → Pages (or `gh api -X PUT repos/jimreedia/portfolio/pages -f cname=jimreed.net`). Do this close to the DNS change — GitHub Pages redirects the `jimreedia.github.io/portfolio/` URL to `jimreed.net` as soon as the custom domain is set, even before DNS resolves, which would send live visitors to the old Adobe site in the meantime.
+    - **Enforce HTTPS**: toggle in Pages settings once GitHub verifies the domain (cert issuance needs DNS to have propagated first).
+    - **Adobe Portfolio**: remove/change the custom-domain setting on `jimreedia.myportfolio.com` so it stops redirecting to `jimreed.net` (Adobe admin panel — needed to fix the "More Case Studies" loop-back).
 
 ## Done
 
