@@ -21,7 +21,7 @@ export default function FeaturedCaseStudies() {
               <Carousel images={cs.images} title={cs.title} />
             </div>
             <div className="featured-row__text">
-              <h3 className="case-study__title">{cs.title}</h3>
+              <h2 className="case-study__title">{cs.title}</h2>
               <p className="case-study__description">{cs.blurb}</p>
               <Link to={cs.url} className="case-study__cta">View Case Study →</Link>
             </div>
