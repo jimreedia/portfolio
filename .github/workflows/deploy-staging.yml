@@ -1,0 +1,30 @@
+name: Build and deploy to staging
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch: {}
+
+jobs:
+  build-and-deploy-staging:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20.x'
+      - run: npm install
+      - run: npm run build
+      - name: Mark staging build as noindex
+        run: sed -i 's#<head>#<head>\n    <meta name="robots" content="noindex, nofollow" />#' docs/index.html
+      - name: Deploy to gh-pages (staging)
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: ./docs
+          destination_dir: staging
+          keep_files: true
