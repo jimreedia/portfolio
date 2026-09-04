@@ -77,9 +77,9 @@ export default function CaseStudyPage() {
     ['Team', cs.team],
   ].filter(([, value]) => value)
 
-  const imageButton = (src, alt, lightboxIdx, label) => (
+  const imageButton = (src, alt, lightboxIdx, label, key) => (
     <button
-      key={lightboxIdx}
+      key={key}
       type="button"
       className="case-study__media case-study__section-image case-study__media-button"
       onClick={() => setLightboxIndex(lightboxIdx)}
@@ -142,7 +142,8 @@ export default function CaseStudyPage() {
                 block.src,
                 block.alt || section.heading,
                 block.lightboxIdx,
-                section.heading ? `Open image viewer: ${section.heading}` : 'Open image viewer'
+                section.heading ? `Open image viewer: ${section.heading}` : 'Open image viewer',
+                j
               )
             })}
           </section>
