@@ -3,9 +3,11 @@ import { Link, Navigate, useParams } from 'react-router-dom'
 import { assetUrl, getById, getNeighbors } from '../lib/caseStudies'
 import Lightbox from './Lightbox'
 
-function backLink(label, extraClass = '') {
+// Return the visitor to the homepage section this case study is listed in, so
+// "back to all work" lands where they were browsing rather than at the top.
+function backLink(label, scrollTo, extraClass = '') {
   return (
-    <Link to="/" state={{ scrollTo: 'featured-work' }} className={`case-study__back ${extraClass}`}>
+    <Link to="/" state={{ scrollTo }} className={`case-study__back ${extraClass}`}>
       {label}
     </Link>
   )
@@ -72,6 +74,7 @@ export default function CaseStudyPage() {
   })
 
   const { prev, next } = getNeighbors(id)
+  const backSection = cs.featured ? 'featured-work' : 'more-work'
   const meta = [
     ['Role', cs.role],
     ['Team', cs.team],
@@ -93,7 +96,7 @@ export default function CaseStudyPage() {
     <main className="case-study">
       <article className="case-study__inner">
         <header className="case-study__hero">
-          {backLink('← Back to all work')}
+          {backLink('← Back to all work', backSection)}
           <h1 className="case-study__title">{cs.title}</h1>
           <p className="case-study__lead">{cs.description}</p>
         </header>
@@ -186,7 +189,7 @@ export default function CaseStudyPage() {
           ) : <span />}
         </nav>
 
-        {backLink('← Back to all work', 'case-study__back--center')}
+        {backLink('← Back to all work', backSection, 'case-study__back--center')}
       </article>
 
       {lightboxIndex !== null && (
