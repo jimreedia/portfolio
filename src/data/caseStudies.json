@@ -269,50 +269,124 @@
     ]
   },
   {
+    "id": "operational-insights",
+    "title": "Operational Insights",
+    "description": "A monitoring experience for the small teams who both build data-integration jobs and watch over them.",
+    "blurb": "A data-monitoring dashboard built for the quick daily glance — big actionable numbers first, deep analysis one click away. Shipped, with customers calling out \"the right kinds of metrics.\"",
+    "tags": ["Data Platforms", "Enterprise"],
+    "url": "/case-study/operational-insights",
+    "featured": false,
+    "role": "Principal User Experience Designer, Informatica",
+    "team": "One UX designer (Jim Reed) and one UX researcher",
+    "thumb": "/assets/case-studies/homepage-assets/operational-insights.png",
+    "hero": {
+      "src": "/assets/case-studies/operational-insights/overview.png",
+      "alt": "The Operational Insights dashboard: job status fast-facts above rows-processed and job-count charts and a data-volume heat map"
+    },
+    "sections": [
+      {
+        "blocks": [
+          { "type": "text", "value": "Small teams — typically five or fewer developers and one manager — both build data-integration jobs and monitor the daily flow of data through them. Working with a UX researcher, I shaped a monitoring experience around how those teams actually check in on their work: **the \"Monday-morning check\" is a glance, not an analysis session**." }
+        ]
+      },
+      {
+        "heading": "Big Numbers, First Glance",
+        "blocks": [
+          { "type": "text", "value": "Observation showed that the first look is about **large, actionable \"fast facts\"** — Rows Processed, Number of Jobs — not the pie and donut charts that fill traditional dashboards. Job-status breakdowns ride along as small stacked-column charts." },
+          { "type": "image", "src": "/assets/case-studies/operational-insights/key-metrics.png", "alt": "Rows Processed and Number of Jobs shown as a large value beside a small bar chart, with a hover tooltip breaking a bar into succeeded, warning, and failed counts" }
+        ]
+      },
+      {
+        "heading": "Drill Down to Analysis",
+        "blocks": [
+          { "type": "text", "value": "Every fast fact is a doorway. From a single number the user drops into **detailed analysis views** — a filtered job list, scheduled tasks by runtime environment — without losing the thread." },
+          { "type": "image", "src": "/assets/case-studies/operational-insights/big-numbers.png", "alt": "The job-status fast-facts row with arrows connecting the Failed and Scheduled tiles to a filtered job list and a scheduled-tasks chart" }
+        ]
+      },
+      {
+        "heading": "Correlating Over Time",
+        "blocks": [
+          { "type": "text", "value": "The second glance is analytical. **Line charts** correlate Rows Processed and Number of Jobs with the projects and folders they belong to, over a chosen date range." },
+          { "type": "image", "src": "/assets/case-studies/operational-insights/analysis-views.png", "alt": "An analysis screen with a multi-series line chart of rows processed by project above a stacked-column chart of job counts by day" }
+        ]
+      },
+      {
+        "heading": "Observing Customer-Made Solutions",
+        "blocks": [
+          { "type": "text", "value": "Field observation turned up teams **piecing together their own monitoring** from spreadsheets, dashboards, and Slack channels. Those workarounds became feature ideas — including a proposed Slack app that would bring operational monitoring into the tools teams already live in." },
+          { "type": "image", "src": "/assets/case-studies/operational-insights/customer-solutions.png", "alt": "A collage of customer-built monitoring: ad-hoc dashboards, an email summary of processed-rows statistics, and an automated Slack channel of task-flow updates" }
+        ]
+      },
+      {
+        "heading": "Reading AI Predictions",
+        "blocks": [
+          { "type": "text", "value": "As predictive features arrived, a simple **color system** kept them legible: blue for actual values, green for the model's projection. An early mockup that put customer logos on chart labels was dropped — it wouldn't scale to Informatica's hundreds of connector types." },
+          { "type": "image", "src": "/assets/case-studies/operational-insights/ai-predictions.png", "alt": "A rows-processed line chart in blue above a green shaded area chart labeled Projected Rows Processed, powered by CLAIRE" }
+        ]
+      },
+      {
+        "heading": "Validating With Customers",
+        "blocks": [
+          { "type": "text", "value": "Post-launch, I ran feedback sessions with users on the live product. The design met the need — one user put it plainly: **\"I really like Operational Insights. It's got the right kinds of metrics.\"**" },
+          { "type": "image", "src": "/assets/case-studies/operational-insights/research.png", "alt": "A recorded customer call showing the live dashboard, captioned with the quote about it having the right kinds of metrics" }
+        ]
+      }
+    ]
+  },
+  {
     "id": "developer-experience",
     "title": "Developer Experience",
-    "description": "Guiding software developers through a cloud-based data platform experience.",
-    "outcome": "Senior Staff UX Designer + acting TPM · Led MVP to launch",
+    "description": "Guiding software developers through a cloud-based industrial platform — from first visit to first deployed app.",
+    "blurb": "A build-from-scratch developer portal and admin console for GE's Predix cloud — MVP catalog shipped fast, demoed to Gartner, then a full launch. I moved into the PM seat from there.",
     "tags": ["Data Platforms", "Enterprise"],
     "url": "/case-study/developer-experience",
     "featured": false,
     "role": "Senior Staff UX Interaction Designer and acting Technical Product Manager, GE Digital",
-    "team": "Agile product team",
-    "images": [
-      "/assets/case-studies/developer-experience/01.png",
-      "/assets/case-studies/developer-experience/02.png",
-      "/assets/case-studies/developer-experience/03.png"
-    ],
+    "team": "Agile product team of developers and designers",
+    "thumb": "/assets/case-studies/homepage-assets/developer-experience.png",
+    "hero": {
+      "src": "/assets/case-studies/developer-experience/catalog.png",
+      "alt": "The Predix Developer Network home page: an \"Industrial IoT Platform\" hero above a \"How Predix Works\" diagram"
+    },
     "sections": [
       {
-        "heading": "Overview",
-        "body": [
-          "I led design — and for a stretch, product management — for a new web portal and administration console for a cloud platform's services, built from scratch with an agile team."
+        "blocks": [
+          { "type": "text", "value": "I led design — and for a stretch, product management — for a new web portal and administration console for a cloud platform's services, **built from scratch with an agile team**. The job was to get a software developer from a first visit to a running application as quickly as possible." }
         ]
       },
       {
-        "heading": "The problem",
-        "body": [
-          "Developers needed a way to find, understand, and adopt cloud services that didn't exist yet. The design centered on a primary user, \"Elaine the Software Architect,\" and the decisions she makes along her journey."
+        "heading": "A Persona to Design Around",
+        "blocks": [
+          { "type": "text", "value": "The work centered on one primary user — **\"Elaine the Software Architect\"** — and the decisions she makes along her journey. Storyboards cast Elaine as the main character so the team could argue about her choices, not abstract features." },
+          { "type": "image", "src": "/assets/case-studies/developer-experience/persona.png", "alt": "A storyboard panel of Elaine browsing the Predix catalog and trying an interactive API test console against a live wind turbine" }
         ]
       },
       {
-        "heading": "Approach",
-        "body": [
-          "A persona-driven strategy tied every feature to a point in Elaine's path."
-        ],
-        "items": [
-          "Product storyboards to identify the critical features along the journey",
-          "Wireframes and After Effects motion prototypes to test interaction paradigms",
-          "An adoption strategy aimed at developers, built on instructional web videos",
-          "Directing a lean video crew to produce hands-on coding-tip content"
+        "heading": "Storyboards to Find the Critical Features",
+        "blocks": [
+          { "type": "text", "value": "Product storyboards walked the full path — sign up, build, deploy, monitor — and surfaced the features that actually mattered. One target set the bar: **a base application up and running in under five minutes**." },
+          { "type": "image", "src": "/assets/case-studies/developer-experience/storyboard.png", "alt": "A storyboard showing Elaine's app auto-deploying to the cloud and an application dashboard where she reviews usage stats" }
         ]
       },
       {
-        "heading": "Outcomes",
-        "body": [
-          "We shipped an MVP catalog of cloud services quickly, demoed it to analysts including Gartner, and launched the full product months later. I then moved into a product manager role, presenting at GE's Minds + Machines and Industrial Internet events.",
-          "[Outcome metric placeholder]"
+        "heading": "Lo-Fi Wireframes and Motion Prototypes",
+        "blocks": [
+          { "type": "text", "value": "Low-fidelity wireframes drove rapid, early ideation for the catalog and the console. **After Effects motion prototypes** tested the interaction paradigms before anything was built." },
+          { "type": "image", "src": "/assets/case-studies/developer-experience/wireframes.png", "alt": "Wireframes of the Predix catalog of starter packs and services beside a console showing alerts, resource usage, and favorite apps" }
+        ]
+      },
+      {
+        "heading": "Driving Developer Adoption",
+        "blocks": [
+          { "type": "text", "value": "Adoption needed more than a good UI. I convinced the marketing team to fund a series of **hands-on coding-tip web videos**, then directed the lean crew that produced them. The videos lived on the community site next to the forum and blog." },
+          { "type": "image", "src": "/assets/case-studies/developer-experience/community.png", "alt": "The Predix community page with forum and blog links and an embedded \"A Developer's Take on Predix\" video" }
+        ]
+      },
+      {
+        "heading": "From Design to Product Management",
+        "blocks": [
+          { "type": "text", "value": "We shipped an **MVP catalog of cloud services** quickly, demoed it to analysts including Gartner, and launched the full product months later. I then moved into a product manager role, representing the product at GE's Minds + Machines and Industrial Internet events and carrying customer needs back to the roadmap." },
+          { "type": "image", "src": "/assets/case-studies/developer-experience/conference.png", "alt": "Jim Reed in conversation with a customer on the show floor at GE's Minds + Machines conference" }
         ]
       }
     ]
@@ -320,98 +394,56 @@
   {
     "id": "machine-learning-for-operators",
     "title": "Machine Learning for Operators",
-    "description": "Enabling operations engineers to train AI models for accuracy.",
-    "outcome": "Senior Staff UX Designer · [Outcome placeholder]",
+    "description": "Enabling operations engineers to train and monitor AI models without a data-science background.",
+    "blurb": "Design that put machine-learning model training in the hands of the operations engineers who know the equipment best — no data scientist required.",
     "tags": ["AI", "Enterprise"],
     "url": "/case-study/machine-learning-for-operators",
     "featured": false,
     "role": "Senior Staff UX Interaction Designer, GE Digital",
     "team": "Product managers and international scrum teams across California, Bangalore, and New York; UX researchers",
-    "images": [
-      "/assets/case-studies/machine-learning-for-operators/01.png",
-      "/assets/case-studies/machine-learning-for-operators/02.png",
-      "/assets/case-studies/machine-learning-for-operators/03.png"
-    ],
+    "thumb": "/assets/case-studies/homepage-assets/machine-learning-for-operators.png",
+    "hero": {
+      "src": "/assets/case-studies/machine-learning-for-operators/dashboard.png",
+      "alt": "An Operations Optimization dashboard with a Capacity Advisor recommendation and Digital Twin vs. actual output trends for three gas turbines"
+    },
     "sections": [
       {
-        "heading": "Overview",
-        "body": [
-          "Training an accurate AI model normally takes a data scientist. The operations engineers closest to industrial sensor data don't have that background. This work aimed to get machine-learning techniques into the hands of industrialists by reducing the complexity of the process."
+        "blocks": [
+          { "type": "text", "value": "Training an accurate AI model normally takes a data scientist. The **operations engineers closest to industrial sensor data don't have that background** — but they understand the equipment better than anyone. This work aimed to get machine-learning techniques into their hands by reducing the complexity of the process." }
         ]
       },
       {
-        "heading": "The problem",
-        "body": [
-          "The people with the deepest understanding of the equipment and its data were locked out of model training by tooling that assumed data-science expertise."
+        "heading": "On-Site Contextual Research",
+        "blocks": [
+          { "type": "text", "value": "With UX researchers, I ran **on-site visits** to watch the real workflow — Reliability Engineers, Data Analysts, and Data Scientists on customer floors, plus follow-up sessions sketching the model-building flow with them." },
+          { "type": "image", "src": "/assets/case-studies/machine-learning-for-operators/observation.png", "alt": "A collage of site-visit photos: engineers at multi-monitor stations, whiteboard control centers, and participants sketching data curves" }
         ]
       },
       {
-        "heading": "Approach",
-        "body": [
-          "Design followed the iterative shape of the data-science process itself."
-        ],
-        "items": [
-          "Product strategy with stakeholders and scrum teams across three regions to align roadmaps and keep the experience consistent",
-          "Contextual observation of reliability engineers, data analysts, and data scientists on customer sites",
-          "Data curation and exploration tools so users could evaluate data before and after training",
-          "Prognostic equipment dashboards designed for low-light industrial environments",
-          "Monitoring tools to detect data drift and flag when a model needs retraining"
+        "heading": "Seeing the Data Before Training",
+        "blocks": [
+          { "type": "text", "value": "Interviews kept returning to one thing: **data exploration and curation is where the work lives**. Visualization tools let users evaluate a data set — distributions, outliers, gaps — before and after training." },
+          { "type": "image", "src": "/assets/case-studies/machine-learning-for-operators/data-curation.png", "alt": "The AI Workbench data library: a field summary table with per-field mini distributions above a time-series chart of two sensor signals" }
         ]
       },
       {
-        "heading": "Outcomes",
-        "body": [
-          "[Outcomes placeholder — the live case study does not state measurable results.]"
-        ]
-      }
-    ]
-  },
-  {
-    "id": "operational-insights",
-    "title": "Operational Insights",
-    "description": "Solutions to help development teams monitor and analyze operational data.",
-    "outcome": "Principal UX Designer · Shipped; positive customer feedback",
-    "tags": ["Data Platforms", "Enterprise"],
-    "url": "/case-study/operational-insights",
-    "featured": false,
-    "role": "Principal UX Designer, Informatica",
-    "team": "One UX designer (Jim Reed) and one UX researcher",
-    "images": [
-      "/assets/case-studies/operational-insights/01.png",
-      "/assets/case-studies/operational-insights/02.png",
-      "/assets/case-studies/operational-insights/03.png"
-    ],
-    "sections": [
-      {
-        "heading": "Overview",
-        "body": [
-          "Small teams — typically five or fewer developers and one manager — both build data jobs and monitor the daily flow of data through them. I designed a monitoring experience shaped around how those teams actually check in on their work."
+        "heading": "A Guided Model-Building Flow",
+        "blocks": [
+          { "type": "text", "value": "The training wizard breaks the data-science process into legible steps — **Add Data, Prepare, Select Technique, Select Features, Train & Test** — with an accuracy readout and a clear path to deploy or publish a template." },
+          { "type": "image", "src": "/assets/case-studies/machine-learning-for-operators/model-building.png", "alt": "The Train Machine Learning Model screen: a stepper across the top, training configuration on the left, and an accuracy donut with an ROC curve on the right" }
         ]
       },
       {
-        "heading": "The problem",
-        "body": [
-          "The \"Monday-morning check\" of data-integration jobs is a glance, not an analysis session. Traditional dashboard visualizations like pie charts didn't match what people needed in that first look."
+        "heading": "Prognostic Equipment Dashboards",
+        "blocks": [
+          { "type": "text", "value": "Model output feeds **prognostic dashboards** designed for low-light industrial environments — a dark UI comparing the Digital Twin's expected output against actual readings, with a capacity optimizer recommending action." }
         ]
       },
       {
-        "heading": "Approach",
-        "body": [
-          "Interviews and workflow observations produced a two-tier model for the dashboard."
-        ],
-        "items": [
-          "Big numbers, first glance — large, actionable \"fast facts\" (Rows Processed, Number of Jobs) with stacked column charts for job-status breakdowns",
-          "Analysis views, second glance — detailed visualizations, including line charts to correlate metrics with projects or folders over time",
-          "A proposed Slack app for collaborative operations monitoring, inspired by teams' pieced-together workflows",
-          "Color coding for AI predictions — blue for actual values, green for predicted",
-          "Dropping an early logo-based mockup that wouldn't scale to hundreds of connector types"
-        ]
-      },
-      {
-        "heading": "Outcomes",
-        "body": [
-          "Post-launch feedback confirmed the design met customers' needs, with users specifically calling out that it showed \"the right kinds of metrics.\"",
-          "[Outcome metric placeholder]"
+        "heading": "Monitoring for Data Drift",
+        "blocks": [
+          { "type": "text", "value": "The data-science process is iterative and perpetual because of **data drift**. Monitoring tools plot predicted against actual values and mark learning updates, so operators can see when accuracy slips and a model needs retraining." },
+          { "type": "image", "src": "/assets/case-studies/machine-learning-for-operators/monitoring.png", "alt": "Power-output and heat-rate charts for a gas turbine overlaying actual and predicted lines, with diamond markers on re-training events" }
         ]
       }
     ]
@@ -419,46 +451,69 @@
   {
     "id": "mobile-emergency-system",
     "title": "Mobile Emergency System",
-    "description": "A next-generation 911 service enables collaboration between emergency dispatchers and responders.",
-    "outcome": "Principal Product Designer · [Outcome placeholder]",
+    "description": "A next-generation 911 service that lets emergency operators, responders, and citizens collaborate during an incident.",
+    "blurb": "A next-generation 911 app — operators, responders, and citizens sharing location, photos, and video in real time across iOS, Android, and desktop.",
     "tags": ["Mobile", "Enterprise"],
     "url": "/case-study/mobile-emergency-system",
     "featured": false,
-    "role": "Principal Product Designer, BlackBerry AtHoc",
-    "images": [
-      "/assets/case-studies/mobile-emergency-system/01.png",
-      "/assets/case-studies/mobile-emergency-system/02.png",
-      "/assets/case-studies/mobile-emergency-system/03.png"
-    ],
+    "thumb": "/assets/case-studies/homepage-assets/mobile-emergency-system.png",
+    "hero": {
+      "src": "/assets/case-studies/mobile-emergency-system/app-comps.png",
+      "alt": "Three iPhone screens of the AtHoc app: a message list, an emergency report with a photo and map, and a map of alert zones"
+    },
     "sections": [
       {
-        "heading": "Overview",
-        "body": [
-          "A next-generation 911 service that lets emergency dispatchers, operators, responders, and citizens share critical information during an incident. I designed the system across iOS, Android, and desktop."
+        "blocks": [
+          { "type": "text", "value": "A next-generation 911 service that lets emergency dispatchers, operators, responders, and citizens share critical information — text, geolocation, photos, video — during an incident. I designed the system across **iOS, Android, and desktop**. The design goal was to make a genuinely complex system feel simple to use under stress." }
         ]
       },
       {
-        "heading": "The problem",
-        "body": [
-          "Emergencies demand fast, multi-directional communication between people in very different roles and contexts. The design goal was to make a genuinely complex system feel simple to use under stress."
+        "heading": "Rapid Sketches to Find the Screen Templates",
+        "blocks": [
+          { "type": "text", "value": "Early, fast sketches identified the **set of screen templates** the app would need — menu, register, emergency, message, reply, report list, send report — before any layout work began." },
+          { "type": "image", "src": "/assets/case-studies/mobile-emergency-system/storyboard.png", "alt": "A grid of hand sketches labeled menu, splash, register, default, slider, emergency, message, reply, report list, and send report" }
         ]
       },
       {
-        "heading": "Approach",
-        "body": [
-          "Storyboard sketches formed the base for the UX flows, followed by wireframes and high-fidelity mockups."
-        ],
-        "items": [
-          "Motion studies to animate the UI for different emergency scenarios and keep transitions seamless",
-          "Mood boards to set the aesthetic direction for emergency alerting",
-          "Emergency situation tracking — citizens check in with location data and receive operator alerts",
-          "Interactive maps — operators publish layers and pins so responders and civilians can track incidents and cordons"
+        "heading": "Screen Flows for the Detailed Actions",
+        "blocks": [
+          { "type": "text", "value": "**Screen-flow diagrams** mapped every user action — duress, check in, report, tracking, inbox — including the operator-only paths and the branches for success with and without media." },
+          { "type": "image", "src": "/assets/case-studies/mobile-emergency-system/motion-study.png", "alt": "A branching flow diagram of numbered app screens covering duress, check-in, report, tracking, and inbox use cases" }
         ]
       },
       {
-        "heading": "Outcomes",
-        "body": [
-          "[Outcomes placeholder — the live case study does not state measurable results.]"
+        "heading": "Lo-Fi Wireframes and Annotation",
+        "blocks": [
+          { "type": "text", "value": "Low-fidelity wireframes carried the **early screen layout and annotation** — the emergency call button, the send-emergency-message flow, media attachments, inline location, and operator alerts with threaded replies." },
+          { "type": "image", "src": "/assets/case-studies/mobile-emergency-system/wireframes.png", "alt": "Annotated wireframes of a send-emergency-message screen and a message thread with operator alerts and citizen replies" }
+        ]
+      },
+      {
+        "heading": "A Mood Board for Emergency Alerting",
+        "blocks": [
+          { "type": "text", "value": "Mood boards set the aesthetic direction by drawing on the **visual language of physical emergency hardware** — call boxes, pull stations, strobes. That reference informed the color palette and the skeuomorphic treatment of the emergency controls." },
+          { "type": "image", "src": "/assets/case-studies/mobile-emergency-system/mood-board.png", "alt": "A mood board of emergency hardware photos: SOS buttons, fire pull stations, call boxes, and red strobe lights" }
+        ]
+      },
+      {
+        "heading": "Emergency Situation Tracking",
+        "blocks": [
+          { "type": "text", "value": "During an incident, **citizens check in with their location** and receive alerts from operators. The message list keeps a running record — check-ins, reports, tracking state, and failed sends with a retry." },
+          { "type": "image", "src": "/assets/case-studies/mobile-emergency-system/situation-tracking.png", "alt": "An AtHoc message list under a \"Facility Fire\" alert showing check-ins, an emergency report, and a failed report with a Retry button" }
+        ]
+      },
+      {
+        "heading": "Interactive Maps",
+        "blocks": [
+          { "type": "text", "value": "Operators **publish map layers and pins** so first responders and civilians can track the incident, the affected area, and cordons in real time." },
+          { "type": "image", "src": "/assets/case-studies/mobile-emergency-system/interactive-maps.png", "alt": "The app map view with a shaded alert zone and two dropped pins marked NEW" }
+        ]
+      },
+      {
+        "heading": "One System, Every Screen",
+        "blocks": [
+          { "type": "text", "value": "The mobile app is one face of a larger platform. **Operators work a synchronized tablet and desktop view** — messages and the live map side by side — so field and command stay in step." },
+          { "type": "image", "src": "/assets/case-studies/mobile-emergency-system/tablet.png", "alt": "The AtHoc tablet layout with a message list on the left and a full incident map with alert zone and pins on the right" }
         ]
       }
     ]
@@ -466,46 +521,69 @@
   {
     "id": "additive-manufacturing",
     "title": "Additive Manufacturing",
-    "description": "Enabling people at work, optimizing innovative technologies and processes.",
-    "outcome": "Senior Staff UX Designer · [Outcome placeholder]",
+    "description": "A dashboard that turns 3D-printer sensor data into a clear productivity picture, per machine and per facility.",
+    "blurb": "A monitoring dashboard that gives additive-manufacturing teams a clear Availability Score for every 3D printer and across the whole facility.",
     "tags": ["Enterprise"],
     "url": "/case-study/additive-manufacturing",
     "featured": false,
     "role": "Senior Staff UX Interaction Designer, GE Digital",
-    "images": [
-      "/assets/case-studies/additive-manufacturing/01.png",
-      "/assets/case-studies/additive-manufacturing/02.png",
-      "/assets/case-studies/additive-manufacturing/03.png"
-    ],
+    "thumb": "/assets/case-studies/homepage-assets/additive-manufacturing.png",
+    "hero": {
+      "src": "/assets/case-studies/additive-manufacturing/dashboard.png",
+      "alt": "The Additive Console builds view: a table of print jobs by machine and site with status and progress bars"
+    },
     "sections": [
       {
-        "heading": "Overview",
-        "body": [
-          "Customers running industrial 3D laser printers needed visibility into how their machines were operating. I designed a dashboard that gathers sensor data and surfaces statistical calculations per printer and across a facility."
+        "blocks": [
+          { "type": "text", "value": "Customers running industrial 3D laser printers needed visibility into how their machines were operating. I designed a dashboard that gathers **sensor data** and surfaces statistical calculations — per printer and across a facility — so teams can maximize machine productivity." }
         ]
       },
       {
-        "heading": "The problem",
-        "body": [
-          "An early design showed the Availability Score as a donut chart. User testing found it confusing — the printers themselves already use a similar visualization to show print progress, so the metric read as something it wasn't."
+        "heading": "Early Concept Sketches",
+        "blocks": [
+          { "type": "text", "value": "Rough concept sketches illustrated the **core functionality and user value** before any pixels: an Availability Score for each machine, green or red at a glance, rolled up to the site." },
+          { "type": "image", "src": "/assets/case-studies/additive-manufacturing/availability-score.png", "alt": "A hand-drawn sketch of a browser dashboard showing per-machine availability percentages, beside a smiling user" }
         ]
       },
       {
-        "heading": "Approach",
-        "body": [
-          "Contextual research at a facility producing aircraft-engine parts grounded the work — observing the manufacturing process and interviewing operators in place."
-        ],
-        "items": [
-          "A journey map of roles, tasks, and key personas to identify product opportunities",
-          "Replacing the donut chart with a simple number and color indicator after concept testing",
-          "Mobile concepts, since operators work on call and need remote status monitoring"
+        "heading": "Rethinking the Visualization",
+        "blocks": [
+          { "type": "text", "value": "An early design showed the Availability Score as a **donut chart**. User testing found it confusing — the printers themselves use a similar donut to show print progress, so the metric read as something it wasn't. After concept testing it became **a number and a color indicator**." },
+          { "type": "image", "src": "/assets/case-studies/additive-manufacturing/visualization.png", "alt": "Side-by-side options labeled \"donut\" and \"not donut\": a circular progress gauge versus a large percentage with an up arrow" }
         ]
       },
       {
-        "heading": "Outcomes",
-        "body": [
-          "The shipped dashboard shows an Availability Score for each printer's productivity plus aggregate facility-level metrics.",
-          "[Outcome metric placeholder]"
+        "heading": "Observing Users On Site",
+        "blocks": [
+          { "type": "text", "value": "**Contextual research at a facility producing aircraft-engine parts** grounded the work — watching the manufacturing process and interviewing operators, process engineers, and reliability engineers in place." },
+          { "type": "image", "src": "/assets/case-studies/additive-manufacturing/user-research.png", "alt": "Site-visit photos of engineers reviewing production boards, standing at a control center, and operating a metal 3D printer" }
+        ]
+      },
+      {
+        "heading": "A Journey Map of Roles",
+        "blocks": [
+          { "type": "text", "value": "A **journey map** laid out the roles and tasks from part order to ship — design, build, finish, quality — plus the horizontal functions like fleet monitoring and operations, and flagged the MVP opportunities." },
+          { "type": "image", "src": "/assets/case-studies/additive-manufacturing/journey-map.png", "alt": "A journey map with a top row of part-manufacturing steps and a lower band of horizontal functions, each tied to a role" }
+        ]
+      },
+      {
+        "heading": "Personas: Goals and Challenges",
+        "blocks": [
+          { "type": "text", "value": "Personas made the users' goals and constraints concrete. The **Operator** is \"comfortable with computers, but not an expert,\" is responsible for loading, unloading, and monitoring builds, and above all **needs to know accurately when a part will finish**." },
+          { "type": "image", "src": "/assets/case-studies/additive-manufacturing/personas.png", "alt": "An Operator persona card with a photo, goals, responsibilities, and a challenge about knowing when a part will be finished" }
+        ]
+      },
+      {
+        "heading": "Mobile for On-Call Operators",
+        "blocks": [
+          { "type": "text", "value": "Operators work **on call**, so the design extended to mobile concepts for checking machine status remotely — the same green/red build state, pocket-sized." },
+          { "type": "image", "src": "/assets/case-studies/additive-manufacturing/mobile.png", "alt": "A hand holding a phone showing a sketch-style \"My Machines\" list with green and red progress bars" }
+        ]
+      },
+      {
+        "heading": "Outcome",
+        "blocks": [
+          { "type": "text", "value": "The shipped dashboard gives each facility an **Availability Score** for every printer's productivity plus aggregate site-level metrics — the clear productivity read the operators had been missing." }
         ]
       }
     ]
@@ -513,47 +591,197 @@
   {
     "id": "analytics-big-data",
     "title": "Analytics & Big Data",
-    "description": "Enterprise SaaS and platform applications for big data and analytics.",
-    "outcome": "Senior Staff UX Designer · [Outcome placeholder]",
+    "description": "Enterprise tools for big-data analytics on GE's Industrial Internet platform — from data exploration to analytic orchestration.",
+    "blurb": "Data-exploration and orchestration tools for GE's Industrial Internet platform — giving data teams a way to see and shape their data at every step.",
     "tags": ["Data Platforms", "Enterprise"],
     "url": "/case-study/analytics-big-data",
     "featured": false,
     "role": "Senior Staff UX Interaction Designer, GE Digital",
     "team": "Subject-matter experts and stakeholders in collaborative design sessions",
-    "images": [
-      "/assets/case-studies/analytics-big-data/01.png",
-      "/assets/case-studies/analytics-big-data/02.png",
-      "/assets/case-studies/analytics-big-data/03.png"
-    ],
+    "thumb": "/assets/case-studies/homepage-assets/analytics-big-data.png",
+    "hero": {
+      "src": "/assets/case-studies/analytics-big-data/data-explorer.png",
+      "alt": "The Predix Insight Data Explorer: a multi-series line chart of asset temperatures above a data grid, with chart-type options"
+    },
     "sections": [
       {
-        "heading": "Overview",
-        "body": [
-          "Research with data scientists and data engineers kept pointing at the same thing: data exploration and cleansing is a critical part of the data-science process. I conceived Data Explorer to give teams visualization tools for evaluating data before and after analytic processing."
+        "blocks": [
+          { "type": "text", "value": "Research with data scientists and data engineers kept pointing at the same gap: **data exploration and cleansing is a critical part of the data-science process**, and no tool made it easy at the points in the workflow where that visibility matters most." }
         ]
       },
       {
-        "heading": "The problem",
-        "body": [
-          "Teams had no good way to see their data — its shape, its quality — at the points in the workflow where that visibility matters most."
+        "heading": "Data Explorer",
+        "blocks": [
+          { "type": "text", "value": "I conceived **Data Explorer** to give teams visualization tools for evaluating data before and after analytic processing — line, bar, and scatter views, layered assets, and the underlying data grid, all in one place." }
         ]
       },
       {
-        "heading": "Approach",
-        "body": [
-          "I ran collaborative design sessions with subject-matter experts, sketching and mapping task flows with diagrams and sticky notes. Running UX workshops and involving stakeholders directly is a good way to give everyone ownership of the design.",
-          "Alongside Data Explorer, a searchable, sortable catalog of data and analytic techniques lets users sequence techniques and business logic together in a tool called the Orchestration Editor."
-        ],
-        "items": [
-          "Sketches",
-          "Storyboards",
-          "User task flows"
+        "heading": "Orchestration Editor",
+        "blocks": [
+          { "type": "text", "value": "The **Orchestration Editor** lets users catalog and sequence analytic techniques together with business logic on a BPMN-style canvas — standard and long-running analytics, gateways with explicit conditions, and a chart output." },
+          { "type": "image", "src": "/assets/case-studies/analytics-big-data/orchestration-editor.png", "alt": "The Orchestration Editor canvas with data-object, analytic, gateway, and sub-process nodes, and a gateway-conditions panel below" }
         ]
       },
       {
-        "heading": "Outcomes",
-        "body": [
-          "[Outcomes placeholder — the live case study does not state measurable results.]"
+        "heading": "Mapping the User Journey",
+        "blocks": [
+          { "type": "text", "value": "I ran **collaborative workshops** with subject-matter experts — sketching and mapping task flows with diagrams and sticky notes. Running the sessions with stakeholders in the room gives everyone ownership of the design." },
+          { "type": "image", "src": "/assets/case-studies/analytics-big-data/collaborative-design.png", "alt": "A wall of sticky notes mapping a data-analysis user journey from sign-in and upload through catalog, workspace, and visualization" }
+        ]
+      },
+      {
+        "heading": "Task Flows Mapped to the Product",
+        "blocks": [
+          { "type": "text", "value": "The synthesized model tied every user task to a place in the product — **Upload, Pick, Configure, Execute, Evaluate** — across Data Explorer, the Analytics Catalog, and the Analytics Workbench, with a shared Data Visualizer and a Version Tracker for iteration." },
+          { "type": "image", "src": "/assets/case-studies/analytics-big-data/task-flows.png", "alt": "A task-flow diagram with five columns from Upload to Evaluate, each grouping the detailed user actions in that product area" }
+        ]
+      },
+      {
+        "heading": "Exploring Interactions With Sketches",
+        "blocks": [
+          { "type": "text", "value": "Sketches explored the **interactions and layouts** — the orchestration editor's library and canvas, dragging fields onto model inputs, the dashboard, and a dashboard designer showing multiple outputs." },
+          { "type": "image", "src": "/assets/case-studies/analytics-big-data/sketches.png", "alt": "Hand sketches of an orchestration editor, a field-to-input drag interaction, a dashboard, and a dashboard designer" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "samsung-interactive-tv",
+    "title": "Samsung Interactive TV",
+    "description": "Interaction and motion design for navigating TV content with a limited remote.",
+    "blurb": "Interaction and motion design for Samsung's interactive-TV guide — making a living room's worth of content navigable with four arrow keys.",
+    "tags": ["Enterprise"],
+    "url": "/case-study/samsung-interactive-tv",
+    "featured": false,
+    "role": "Interaction & Motion Designer (consultant), experience design firm, San Francisco",
+    "thumb": "/assets/case-studies/homepage-assets/samsung-interactive-tv.png",
+    "hero": {
+      "src": "/assets/case-studies/samsung-interactive-tv/movies-ui.png",
+      "alt": "A Samsung TV guide: a horizontal row of large channel icons — Albums, Shortcuts, Movies, TVOD, Music — with Movies in focus"
+    },
+    "sections": [
+      {
+        "blocks": [
+          { "type": "text", "value": "As an independent consultant for a San Francisco experience-design firm, I worked as an **Interaction and Motion Designer** on Samsung's interactive-TV guide — the on-screen experience for navigating content on the television." }
+        ]
+      },
+      {
+        "heading": "The Design Challenge",
+        "blocks": [
+          { "type": "text", "value": "Interactive TV is constrained by the remote. **Up, down, left, right, select** is the entire input vocabulary, so the **information architecture has to carry the navigation** — where content lives, how deep it sits, and how you move between full-screen menus and lightweight overlays." }
+        ]
+      },
+      {
+        "heading": "Storyboarding the Motion",
+        "blocks": [
+          { "type": "text", "value": "Detailed storyboards worked out the **screen types and transitions** — a macroguide of channels, an open guide that scrolls a list into focus, a miniguide over live video, directory grids, and full-screen item detail — with the exact key presses and pauses annotated for each." },
+          { "type": "image", "src": "/assets/case-studies/samsung-interactive-tv/storyboards.png", "alt": "A storyboard grid of TV guide screen types — macroguide, open guide, miniguide over stage, directory, and item detail — each annotated with navigation notes" }
+        ]
+      },
+      {
+        "heading": "Motion Studies in After Effects",
+        "blocks": [
+          { "type": "text", "value": "I composited **motion-study videos in After Effects**. Video production became the primary tool for communicating creative direction to Samsung — showing, not describing, how a transition should feel." }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "banking-experiences",
+    "title": "Banking Experiences",
+    "description": "Delightful online experiences and financial-planning tools for Bank of America customers.",
+    "blurb": "Interactive calculators, data visualization, and a life-goals information architecture for Bank of America experiences used by 20M+ customers.",
+    "tags": ["Enterprise"],
+    "url": "/case-study/banking-experiences",
+    "featured": false,
+    "role": "Creative Director, Traction — for Bank of America",
+    "team": "Researchers and subject-matter experts in design workshops",
+    "thumb": "/assets/case-studies/homepage-assets/banking-experiences.png",
+    "hero": {
+      "src": "/assets/case-studies/banking-experiences/calculator.png",
+      "alt": "A Bank of America vehicle-payment calculator: sliders for price, trade-in, and term on the left, results and a loan-terms bar chart on the right"
+    },
+    "sections": [
+      {
+        "blocks": [
+          { "type": "text", "value": "As **Creative Director** at Traction, a San Francisco design firm, I directed UX design for Bank of America — experiences serving **more than 20 million customers**. The work ran from interactive calculators and data visualization, like this car-loan estimator, to information architecture and design strategy." }
+        ]
+      },
+      {
+        "heading": "Organizing Around Life Goals",
+        "blocks": [
+          { "type": "text", "value": "Testing with third-party firms using **RITE (Rapid Iterative Testing and Evaluation)** showed customers wanted products and tools organized around **life events — Education, Auto, Family, Home, Small Business** — not traditional banking categories like Checking and Savings. They also expected helpful tools like interactive calculators at every step." },
+          { "type": "image", "src": "/assets/case-studies/banking-experiences/informational.png", "alt": "Wireframes of a \"My Money Puzzle\" page with lifestyle-category icons and a vehicle-payment calculator layout" }
+        ]
+      },
+      {
+        "heading": "Informational Experiences",
+        "blocks": [
+          { "type": "text", "value": "I led experience design for a **consumer-research microsite built around the ritual of buying a car** — a Car Research Center that pairs rate information with side-by-side vehicle comparison." },
+          { "type": "image", "src": "/assets/case-studies/banking-experiences/user-testing.png", "alt": "The Bank of America Car Research Center page: an auto-loan rate banner above a primary-vehicle comparison module" }
+        ]
+      },
+      {
+        "heading": "Transactional Experiences",
+        "blocks": [
+          { "type": "text", "value": "I led UX for the transactional side too — **detailed wireframes and annotation for a foreign-currency-exchange microsite**, down to the error messaging rules and the calculate-button behavior." },
+          { "type": "image", "src": "/assets/case-studies/banking-experiences/transactional.png", "alt": "An annotated wireframe of a \"Foreign Currency Order\" step, with a numbered annotation key covering errors, denominations, and calculate behavior" }
+        ]
+      },
+      {
+        "heading": "UX Strategy for Student Banking",
+        "blocks": [
+          { "type": "text", "value": "For a student-banking portal redesign I **facilitated design workshops with researchers and subject-matter experts** to set direction. The resulting **design principles** — thorough information with minimal clicks and text, rich interactive tutorials — aimed to teach college students about finance without boring them." },
+          { "type": "image", "src": "/assets/case-studies/banking-experiences/ux-strategy.png", "alt": "A design-principles document page: a principle about minimal clicks and rich interactive experiences, with contextual-tip and interactive-check examples" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "walmart-content",
+    "title": "Walmart.com Content",
+    "description": "Interactive brand-extension content and microsites for Walmart.com.",
+    "blurb": "Interactive brand-extension content for Walmart.com — themed microsites and a Super Bowl \"Game Time\" experience with a party-planning shopping-list tool.",
+    "tags": ["Enterprise"],
+    "url": "/case-study/walmart-content",
+    "featured": false,
+    "role": "Creative Director, digital agency — for Walmart",
+    "thumb": "/assets/case-studies/homepage-assets/walmart-content.png",
+    "hero": {
+      "src": "/assets/case-studies/walmart-content/save-live-green.png",
+      "alt": "The Walmart.com \"Save & Live Green\" microsite: a \"Together We Can Make a Difference\" hero over topical article sections"
+    },
+    "sections": [
+      {
+        "blocks": [
+          { "type": "text", "value": "As **Creative Director** at a San Francisco design and development firm, I partnered with Walmart's content strategists to build **interactive content for Walmart.com** — brand extensions in the form of delightful e-commerce experiences." }
+        ]
+      },
+      {
+        "heading": "Content Strategy and Information Architecture",
+        "blocks": [
+          { "type": "text", "value": "I worked with Walmart specialists to shape **topical sections** across the site — gift cards, environmental living, sports — each a small editorial experience rather than a category page. The \"Save & Live Green\" microsite is one example." }
+        ]
+      },
+      {
+        "heading": "A Super Bowl \"Game Time\" Experience",
+        "blocks": [
+          { "type": "text", "value": "The Game Time section built the store into a **living-room scene with hotspots** — a \"beat the clock\" challenge to stock snacks for guests before the game came back from break." },
+          { "type": "image", "src": "/assets/case-studies/walmart-content/super-bowl-game.png", "alt": "The Walmart \"Game Time\" page: a living-room photo with a countdown clock and glowing hotspots over snack products, and a product rail below" }
+        ]
+      },
+      {
+        "heading": "Concept Sketch",
+        "blocks": [
+          { "type": "text", "value": "An early **concept sketch** worked out the core interaction — the \"Go Team\" living room, the hotspot furniture, and the product filmstrip down the side." },
+          { "type": "image", "src": "/assets/case-studies/walmart-content/concept-sketch.png", "alt": "A pencil sketch of the Game Time living-room scene with a \"Go Team\" banner and a vertical strip of product thumbnails" }
+        ]
+      },
+      {
+        "heading": "Interactive Shopping List",
+        "blocks": [
+          { "type": "text", "value": "The centerpiece tool: **slide a football helmet to set your guest count** and the shopping list calculates the quantities you need — backed by supporting articles, recipes, and a room-by-room prep guide." },
+          { "type": "image", "src": "/assets/case-studies/walmart-content/shopping-list.png", "alt": "The \"Interactive Shopping List\" page with a \"How many guests\" helmet slider set to 20 and a Create List button, beside articles and recipes" }
         ]
       }
     ]

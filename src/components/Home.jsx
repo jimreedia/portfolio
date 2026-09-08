@@ -5,9 +5,7 @@ import BrandImagery from './BrandImagery'
 import Intro from './Intro'
 import FeaturedCaseStudies from './FeaturedCaseStudies'
 import Profile from './Profile'
-// More Case Studies is hidden until that section is ready to be worked on.
-// Keep this import and the render below in place so it's a one-line restore.
-// import MoreCaseStudies from './MoreCaseStudies'
+import MoreCaseStudies from './MoreCaseStudies'
 
 export default function Home() {
   const location = useLocation()
@@ -44,7 +42,7 @@ export default function Home() {
       </div>
       <FeaturedCaseStudies />
       <Profile />
-      {/* <MoreCaseStudies /> */}
+      <MoreCaseStudies />
     </>
   )
 }

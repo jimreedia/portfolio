@@ -3,12 +3,12 @@ import useActiveSection from '../hooks/useActiveSection'
 import { useSectionNav } from '../lib/navigation'
 import JrMark from './JrMark'
 
-// 'more-work' is omitted while the More Case Studies section is hidden.
-const SECTION_IDS = ['featured-work', 'profile']
+const SECTION_IDS = ['featured-work', 'profile', 'more-work']
 
 const LINKS = [
   { label: 'Work', id: 'featured-work' },
   { label: 'About', id: 'profile' },
+  { label: 'More Work', id: 'more-work' },
 ]
 
 export default function Nav() {

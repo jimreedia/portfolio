@@ -1,4 +1,5 @@
 import { assetUrl } from '../lib/caseStudies'
+import { useSectionNav } from '../lib/navigation'
 
 const BULLETS = [
   'Product Designer with 15+ years in complex enterprise domains',
@@ -8,6 +9,8 @@ const BULLETS = [
 ]
 
 export default function Profile() {
+  const goToSection = useSectionNav()
+
   return (
     <section className="profile" id="profile">
       <div className="section__inner">
@@ -32,14 +35,13 @@ export default function Profile() {
             >
               Connect on LinkedIn →
             </a>
-            <a
-              href="https://jimreedia.myportfolio.com"
-              target="_blank"
-              rel="noreferrer"
+            <button
+              type="button"
               className="profile__btn"
+              onClick={() => goToSection('more-work')}
             >
               More Case Studies →
-            </a>
+            </button>
           </div>
         </div>
       </div>

@@ -171,7 +171,6 @@ export default function CaseStudyPage() {
           </section>
         )}
 
-        {(prev || next) && (
         <nav className="case-study__nav" aria-label="More case studies">
           {prev ? (
             <Link to={prev.url} className="case-study__nav-link case-study__nav-link--prev">
@@ -186,7 +185,6 @@ export default function CaseStudyPage() {
             </Link>
           ) : <span />}
         </nav>
-        )}
 
         {backLink('← Back to all work', 'case-study__back--center')}
       </article>
