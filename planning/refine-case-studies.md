@@ -243,11 +243,11 @@ These carry `"listed": false` and are off the site. Only worth touching if one i
 brought back. All three have thin myportfolio source (a few sentences) and no stated
 outcomes, so a rehab is close to a rewrite and needs Jim's input on the actual story.
 
-- **Banking Experiences** — the rehab candidate if any. Real scope (Creative Director at
+- **Banking Experiences**: the rehab candidate if any. Real scope (Creative Director at
   Traction, 20M+ customers, RITE testing, life-goals IA, student-banking strategy).
-  Needs: real outcomes, the life-goals IA decision promoted, source reconciliation.
-- **Samsung Interactive TV** — dated (consumer interactive TV, consultant role), only
-  two images, most connective prose is invented. See the "drift to review" note in the
+  Needs real outcomes, the life-goals IA decision promoted, source reconciliation.
+- **Samsung Interactive TV**: dated (consumer interactive TV, consultant role), only two
+  images, most connective prose is invented. See the "drift to review" note in the
   backlog.
-- **Walmart.com Content** — dated agency e-commerce work; the Super Bowl "Game Time"
+- **Walmart.com Content**: dated agency e-commerce work; the Super Bowl "Game Time"
   interactive is the one memorable piece.
