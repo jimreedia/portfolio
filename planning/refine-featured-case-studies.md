@@ -10,6 +10,9 @@ own writing, so they do NOT need the ground-up restructuring the 9 non-featured 
 got. They need targeted editing. See the backlog item for the session-by-session
 history.
 
+The cross-cutting points below (weak lead line, section-heading tiers, reflection
+section, captions) apply to all 12 case studies, not just the featured 3.
+
 ---
 
 ## Cross-cutting (all 3)
@@ -30,10 +33,24 @@ history.
 3. **No reflection section.** None of the three has a "what I'd do differently / what
    I learned" close. Add one to each.
 
-4. **Sections are named by activity, not decision.** "Card Sorting," "User Interviews,"
-   "Storyboards," "Sketches and Renderings," "Animated Behaviors" tell the reader what
-   was done, not what was decided or why it mattered. Reframe headings and opening
-   lines around the call made and the tradeoff.
+4. **Section headings: two tiers, not one formula.** Bare activity labels ("Card
+   Sorting," "User Interviews," "Storyboards," "Sketches and Renderings," "Animated
+   Behaviors") tell the reader what was done, not what was decided or why it mattered.
+   Fix them by tier:
+   - **Decision / bet sections** (the 1 or 2 per case study that carry the argument):
+     the heading names the decision, and the opening sentence states the call plus what
+     was traded away. "Inline, not a separate panel." "Why the donut chart had to go."
+     "One measurement method, shipped by three teams." Do not wrap these in the pattern
+     below or the strongest material gets buried.
+   - **Supporting / craft sections** (everything else): "Activity + concrete goal."
+     "Storyboards to Find the Critical Features." "A Mood Board for Emergency Alerting."
+     "Screen Flows for the Detailed Actions." This keeps the artifact visible (a
+     portfolio reader scans for "storyboards / research / wireframes"), adds the why,
+     and does not overclaim an outcome that was not there. Two cautions: vary the
+     construction so it is not literally "X to Y" every heading, and keep the goal
+     concrete ("...to Find the Critical Features" names a design output; "...to Align
+     the Team" is still filler).
+   - Nothing stays a bare label.
 
 5. **Captions are alt text, not rationale.** Section images carry accessibility `alt`
    only, no visible caption. The backlog asks for captions that carry design rationale.
