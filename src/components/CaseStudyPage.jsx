@@ -174,20 +174,22 @@ export default function CaseStudyPage() {
           </section>
         )}
 
-        <nav className="case-study__nav" aria-label="More case studies">
-          {prev ? (
-            <Link to={prev.url} className="case-study__nav-link case-study__nav-link--prev">
-              <span className="case-study__nav-label">← Previous</span>
-              <span className="case-study__nav-title">{prev.title}</span>
-            </Link>
-          ) : <span />}
-          {next ? (
-            <Link to={next.url} className="case-study__nav-link case-study__nav-link--next">
-              <span className="case-study__nav-label">Next →</span>
-              <span className="case-study__nav-title">{next.title}</span>
-            </Link>
-          ) : <span />}
-        </nav>
+        {(prev || next) && (
+          <nav className="case-study__nav" aria-label="More case studies">
+            {prev ? (
+              <Link to={prev.url} className="case-study__nav-link case-study__nav-link--prev">
+                <span className="case-study__nav-label">← Previous</span>
+                <span className="case-study__nav-title">{prev.title}</span>
+              </Link>
+            ) : <span />}
+            {next ? (
+              <Link to={next.url} className="case-study__nav-link case-study__nav-link--next">
+                <span className="case-study__nav-label">Next →</span>
+                <span className="case-study__nav-title">{next.title}</span>
+              </Link>
+            ) : <span />}
+          </nav>
+        )}
 
         {backLink('← Back to all work', backSection, 'case-study__back--center')}
       </article>

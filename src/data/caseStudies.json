@@ -653,6 +653,7 @@
     "tags": ["Enterprise"],
     "url": "/case-study/samsung-interactive-tv",
     "featured": false,
+    "listed": false,
     "role": "Interaction & Motion Designer (consultant), experience design firm, San Francisco",
     "thumb": "/assets/case-studies/homepage-assets/samsung-interactive-tv.png",
     "hero": {
@@ -694,6 +695,7 @@
     "tags": ["Enterprise"],
     "url": "/case-study/banking-experiences",
     "featured": false,
+    "listed": false,
     "role": "Creative Director, Traction (for Bank of America)",
     "team": "Researchers and subject-matter experts in design workshops",
     "thumb": "/assets/case-studies/homepage-assets/banking-experiences.png",
@@ -745,6 +747,7 @@
     "tags": ["Enterprise"],
     "url": "/case-study/walmart-content",
     "featured": false,
+    "listed": false,
     "role": "Creative Director, digital agency (for Walmart)",
     "thumb": "/assets/case-studies/homepage-assets/walmart-content.png",
     "hero": {
