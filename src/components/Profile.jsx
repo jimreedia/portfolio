@@ -32,14 +32,6 @@ export default function Profile() {
             >
               Connect on LinkedIn →
             </a>
-            <a
-              href="https://jimreedia.myportfolio.com"
-              target="_blank"
-              rel="noreferrer"
-              className="profile__btn"
-            >
-              More Case Studies →
-            </a>
           </div>
         </div>
       </div>

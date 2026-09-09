@@ -748,26 +748,107 @@ ul {
 
 .more-work__card {
   display: block;
-  transition: transform 200ms ease, box-shadow 200ms ease;
-  border-radius: 6px;
+  min-width: 0; /* let the grid track bound the card so the clamped blurb wraps */
 }
 
-.more-work__card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.10);
-}
-
+/* The thumbnail image is the CTA. On hover/focus it darkens, scales up
+   slightly, and reveals a "View Case Study →" label. Proportions echo the
+   featured carousel (border-radius: 40px, inset 0 4px 12px shadow) but
+   scaled down for the smaller image: less rounded, shallower elevation. */
 .more-work__thumb {
-  aspect-ratio: 16 / 9;
-  border-radius: 6px;
+  position: relative;
+  aspect-ratio: 3 / 2;
+  border-radius: 12px;
   overflow: hidden;
+  background: var(--color-surface-dark);
+}
+
+.more-work__thumb::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow:
+    inset 0 2px 6px rgba(0, 0, 0, 0.28),
+    inset 0 0 0 1px rgba(0, 0, 0, 0.08);
+  pointer-events: none;
+}
+
+.more-work__thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 300ms ease;
+}
+
+.more-work__thumb-fallback {
+  position: absolute;
+  inset: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: rgba(255, 255, 255, 0.9);
-  font-weight: 600;
-  font-family: var(--font-mono);
+  padding: 0 20px;
+  text-align: center;
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.92);
+  background: linear-gradient(135deg, var(--color-surface-navy), var(--color-accent));
+}
+
+.more-work__thumb-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(13, 13, 18, 0);
+  transition: background 200ms ease;
+}
+
+.more-work__thumb-cta {
+  color: #fff;
+  font-family: var(--font-sans);
   font-size: 13px;
+  font-weight: 500;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 200ms ease, transform 200ms ease;
+}
+
+.more-work__card:hover .more-work__thumb img,
+.more-work__card:focus-visible .more-work__thumb img {
+  transform: scale(1.05);
+}
+
+.more-work__card:hover .more-work__thumb-overlay,
+.more-work__card:focus-visible .more-work__thumb-overlay {
+  background: rgba(13, 13, 18, 0.42);
+}
+
+.more-work__card:hover .more-work__thumb-cta,
+.more-work__card:focus-visible .more-work__thumb-cta {
+  opacity: 1;
+  transform: none;
+}
+
+/* Touch devices have no hover: keep the label and a light scrim visible. */
+@media (hover: none) {
+  .more-work__thumb-overlay {
+    background: linear-gradient(to top, rgba(13, 13, 18, 0.55), rgba(13, 13, 18, 0) 45%);
+    align-items: flex-end;
+    padding-bottom: 12px;
+  }
+  .more-work__thumb-cta { opacity: 1; transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .more-work__thumb img,
+  .more-work__card:hover .more-work__thumb img,
+  .more-work__card:focus-visible .more-work__thumb img {
+    transform: none;
+  }
 }
 
 .more-work__title {
@@ -786,18 +867,6 @@ ul {
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
-}
-
-.more-work__tag {
-  display: inline-block;
-  margin-top: 12px;
-  padding: 4px 10px;
-  border-radius: 4px;
-  font-family: var(--font-mono);
-  font-size: 12px;
-  font-weight: 500;
-  color: var(--color-accent);
-  background: rgba(61, 122, 245, 0.12);
 }
 
 /* Section 6: Footer */
