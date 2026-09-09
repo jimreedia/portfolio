@@ -278,7 +278,7 @@
     "featured": false,
     "role": "Principal User Experience Designer, Informatica",
     "team": "One UX designer (Jim Reed) and one UX researcher",
-    "thumb": "/assets/case-studies/homepage-assets/operational-insights.png",
+    "thumb": "/assets/case-studies/homepage-assets/operational-insights.webp",
     "hero": {
       "src": "/assets/case-studies/operational-insights/overview.png",
       "alt": "The Operational Insights dashboard: job status fast-facts above rows-processed and job-count charts and a data-volume heat map"
@@ -343,7 +343,7 @@
     "featured": false,
     "role": "Senior Staff UX Interaction Designer and acting Technical Product Manager, GE Digital",
     "team": "Agile product team of developers and designers",
-    "thumb": "/assets/case-studies/homepage-assets/developer-experience.png",
+    "thumb": "/assets/case-studies/homepage-assets/developer-experience.webp",
     "hero": {
       "src": "/assets/case-studies/developer-experience/catalog.png",
       "alt": "The Predix Developer Network home page: an \"Industrial IoT Platform\" hero above a \"How Predix Works\" diagram"
@@ -401,7 +401,7 @@
     "featured": false,
     "role": "Senior Staff UX Interaction Designer, GE Digital",
     "team": "Product managers and international scrum teams across California, Bangalore, and New York; UX researchers",
-    "thumb": "/assets/case-studies/homepage-assets/machine-learning-for-operators.png",
+    "thumb": "/assets/case-studies/homepage-assets/machine-learning-for-operators.webp",
     "hero": {
       "src": "/assets/case-studies/machine-learning-for-operators/dashboard.png",
       "alt": "An Operations Optimization dashboard with a Capacity Advisor recommendation and Digital Twin vs. actual output trends for three gas turbines"
@@ -456,7 +456,7 @@
     "tags": ["Mobile", "Enterprise"],
     "url": "/case-study/mobile-emergency-system",
     "featured": false,
-    "thumb": "/assets/case-studies/homepage-assets/mobile-emergency-system.png",
+    "thumb": "/assets/case-studies/homepage-assets/mobile-emergency-system.webp",
     "hero": {
       "src": "/assets/case-studies/mobile-emergency-system/app-comps.png",
       "alt": "Three iPhone screens of the AtHoc app: a message list, an emergency report with a photo and map, and a map of alert zones"
@@ -527,7 +527,7 @@
     "url": "/case-study/additive-manufacturing",
     "featured": false,
     "role": "Senior Staff UX Interaction Designer, GE Digital",
-    "thumb": "/assets/case-studies/homepage-assets/additive-manufacturing.png",
+    "thumb": "/assets/case-studies/homepage-assets/additive-manufacturing.webp",
     "hero": {
       "src": "/assets/case-studies/additive-manufacturing/dashboard.png",
       "alt": "The Additive Console builds view: a table of print jobs by machine and site with status and progress bars"
@@ -598,7 +598,7 @@
     "featured": false,
     "role": "Senior Staff UX Interaction Designer, GE Digital",
     "team": "Subject-matter experts and stakeholders in collaborative design sessions",
-    "thumb": "/assets/case-studies/homepage-assets/analytics-big-data.png",
+    "thumb": "/assets/case-studies/homepage-assets/analytics-big-data.webp",
     "hero": {
       "src": "/assets/case-studies/analytics-big-data/data-explorer.png",
       "alt": "The Predix Insight Data Explorer: a multi-series line chart of asset temperatures above a data grid, with chart-type options"
@@ -655,7 +655,6 @@
     "featured": false,
     "listed": false,
     "role": "Interaction & Motion Designer (consultant), experience design firm, San Francisco",
-    "thumb": "/assets/case-studies/homepage-assets/samsung-interactive-tv.png",
     "hero": {
       "src": "/assets/case-studies/samsung-interactive-tv/movies-ui.png",
       "alt": "A Samsung TV guide: a horizontal row of large channel icons (Albums, Shortcuts, Movies, TVOD, Music) with Movies in focus"
@@ -698,7 +697,6 @@
     "listed": false,
     "role": "Creative Director, Traction (for Bank of America)",
     "team": "Researchers and subject-matter experts in design workshops",
-    "thumb": "/assets/case-studies/homepage-assets/banking-experiences.png",
     "hero": {
       "src": "/assets/case-studies/banking-experiences/calculator.png",
       "alt": "A Bank of America vehicle-payment calculator: sliders for price, trade-in, and term on the left, results and a loan-terms bar chart on the right"
@@ -749,7 +747,6 @@
     "featured": false,
     "listed": false,
     "role": "Creative Director, digital agency (for Walmart)",
-    "thumb": "/assets/case-studies/homepage-assets/walmart-content.png",
     "hero": {
       "src": "/assets/case-studies/walmart-content/save-live-green.png",
       "alt": "The Walmart.com \"Save & Live Green\" microsite: a \"Together We Can Make a Difference\" hero over topical article sections"
