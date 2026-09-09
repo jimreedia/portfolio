@@ -657,7 +657,7 @@
     "thumb": "/assets/case-studies/homepage-assets/samsung-interactive-tv.png",
     "hero": {
       "src": "/assets/case-studies/samsung-interactive-tv/movies-ui.png",
-      "alt": "A Samsung TV guide: a horizontal row of large channel icons — Albums, Shortcuts, Movies, TVOD, Music — with Movies in focus"
+      "alt": "A Samsung TV guide: a horizontal row of large channel icons (Albums, Shortcuts, Movies, TVOD, Music) with Movies in focus"
     },
     "sections": [
       {
@@ -675,7 +675,7 @@
         "heading": "Storyboarding the Motion",
         "blocks": [
           { "type": "text", "value": "Detailed storyboards worked out the **screen types and transitions**: a macroguide of channels, an open guide that scrolls a list into focus, a miniguide over live video, directory grids, and full-screen item detail, with the exact key presses and pauses annotated for each." },
-          { "type": "image", "src": "/assets/case-studies/samsung-interactive-tv/storyboards.png", "alt": "A storyboard grid of TV guide screen types — macroguide, open guide, miniguide over stage, directory, and item detail — each annotated with navigation notes" }
+          { "type": "image", "src": "/assets/case-studies/samsung-interactive-tv/storyboards.png", "alt": "A storyboard grid of TV guide screen types (macroguide, open guide, miniguide over stage, directory, and item detail), each annotated with navigation notes" }
         ]
       },
       {
@@ -694,7 +694,7 @@
     "tags": ["Enterprise"],
     "url": "/case-study/banking-experiences",
     "featured": false,
-    "role": "Creative Director, Traction — for Bank of America",
+    "role": "Creative Director, Traction (for Bank of America)",
     "team": "Researchers and subject-matter experts in design workshops",
     "thumb": "/assets/case-studies/homepage-assets/banking-experiences.png",
     "hero": {
@@ -745,7 +745,7 @@
     "tags": ["Enterprise"],
     "url": "/case-study/walmart-content",
     "featured": false,
-    "role": "Creative Director, digital agency — for Walmart",
+    "role": "Creative Director, digital agency (for Walmart)",
     "thumb": "/assets/case-studies/homepage-assets/walmart-content.png",
     "hero": {
       "src": "/assets/case-studies/walmart-content/save-live-green.png",
