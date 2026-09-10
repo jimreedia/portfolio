@@ -3,20 +3,22 @@ import { assetUrl } from '../lib/caseStudies'
 
 // Full-screen image viewer. Flip through `images` (array of { src, alt }) with the
 // on-screen arrows, the ← / → keys, or swipe; Esc or a backdrop click closes it.
+// Navigation wraps: past the last image loops to the first and vice versa.
 export default function Lightbox({ images, index, onIndexChange, onClose }) {
   const closeRef = useRef(null)
   const touchStartX = useRef(null)
 
   const count = images.length
-  const atStart = index <= 0
-  const atEnd = index >= count - 1
+  const canNavigate = count > 1
 
   const goPrev = useCallback(() => {
-    onIndexChange((i) => Math.max(0, i - 1))
-  }, [onIndexChange])
+    if (count <= 1) return
+    onIndexChange((i) => (i - 1 + count) % count)
+  }, [onIndexChange, count])
 
   const goNext = useCallback(() => {
-    onIndexChange((i) => Math.min(count - 1, i + 1))
+    if (count <= 1) return
+    onIndexChange((i) => (i + 1) % count)
   }, [onIndexChange, count])
 
   useEffect(() => {
@@ -62,15 +64,16 @@ export default function Lightbox({ images, index, onIndexChange, onClose }) {
         ×
       </button>
 
-      <button
-        type="button"
-        className="lightbox__nav lightbox__nav--prev"
-        onClick={(e) => { e.stopPropagation(); goPrev() }}
-        disabled={atStart}
-        aria-label="Previous image"
-      >
-        ‹
-      </button>
+      {canNavigate && (
+        <button
+          type="button"
+          className="lightbox__nav lightbox__nav--prev"
+          onClick={(e) => { e.stopPropagation(); goPrev() }}
+          aria-label="Previous image"
+        >
+          ‹
+        </button>
+      )}
 
       <figure
         className="lightbox__figure"
@@ -81,17 +84,18 @@ export default function Lightbox({ images, index, onIndexChange, onClose }) {
         <img className="lightbox__image" src={assetUrl(image.src)} alt={image.alt || ''} />
       </figure>
 
-      <button
-        type="button"
-        className="lightbox__nav lightbox__nav--next"
-        onClick={(e) => { e.stopPropagation(); goNext() }}
-        disabled={atEnd}
-        aria-label="Next image"
-      >
-        ›
-      </button>
+      {canNavigate && (
+        <button
+          type="button"
+          className="lightbox__nav lightbox__nav--next"
+          onClick={(e) => { e.stopPropagation(); goNext() }}
+          aria-label="Next image"
+        >
+          ›
+        </button>
+      )}
 
-      <p className="lightbox__counter">{index + 1} / {count}</p>
+      {canNavigate && <p className="lightbox__counter">{index + 1} / {count}</p>}
     </div>
   )
 }

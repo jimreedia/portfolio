@@ -30,6 +30,11 @@
 
 ## Done
 
+- [x] Make the case study lightbox nav circular — branch: fix/case-study-lightbox-nav-is-circular
+  - `src/components/Lightbox.jsx`: `goNext`/`goPrev` (shared by the arrows, ← / → keys, and swipe) now wrap with modulo instead of clamping via `Math.min`/`Math.max`. Neither arrow is ever `disabled` — from the last image, next loops to the first, and vice versa. `count <= 1` short-circuits navigation, and for a single-image array the arrows and the `1 / 1` counter aren't rendered at all (previously the arrows rendered in a greyed disabled state). Removed the now-dead `.lightbox__nav:disabled` rule and the `:not(:disabled)` guard on the nav hover rule.
+  - `.lightbox__counter` font switched from `--font-mono` (DM Mono) to `--font-sans` (Roboto).
+  - Image transitions: none, deliberately. Explored a directional slide (incoming image drifts ~56px in from the side of travel while the outgoing one slides the same way) and then a motionless crossfade (outgoing image held on an overlay, fading out on top of the already-swapped-in new image), tuned across 190–800ms with and without a stagger between out and in. Jim preferred the original hard cut, so all of it was backed out. Navigation is an instant swap; the only lightbox animation is still the 150ms `lightbox-fade` when it opens. If motion is ever wanted here, the crossfade approach (overlay fades out on top, new image swapped in underneath at full opacity so total coverage stays ~1) avoided the luminance dip and, with `will-change: opacity`, the bitmap-reraster shimmer.
+
 - [x] Replace the social-preview (Open Graph / Twitter Card) image — branch: fix/update-social-preview-image
   - Went with a purpose-built, text-free 1200×630 brand mark (the hand + gear outline on the near-black field), not a screenshot or a name/tagline card. Rationale: link unfurls on LinkedIn/Slack/Facebook/Discord/X all render `og:title` + `og:description` next to the image, so the words are already covered; the image just needs to be a recognizable brand mark. Mark is centered so it survives center-square crops (WhatsApp, Google).
   - Asset at `public/assets/brand/social-preview.png` (1200×630, ~25KB, RGB no alpha). Source/working files in `brand/hand gear/` (`hand_gear_1200x630.psd`, vector original `hand_gear.ai`).
