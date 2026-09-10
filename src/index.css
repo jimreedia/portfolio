@@ -1,14 +1,26 @@
 :root {
-  --color-surface-dark: #0D0D12;
-  --color-surface-light: #F2F0ED;
-  --color-surface-mid: #E5E2DE;
-  --color-surface-navy: #1A2744;
+  /* Surfaces */
+  --color-surface-light: #F2F0ED; /* default page background */
+  --color-surface-mid: #E5E2DE;   /* light, sunk one step (Featured band) */
+  --color-surface-dark: #0D0D12;  /* near-black wells, frames, footer */
+  --color-surface-navy: #1A2744;  /* navy feature panel (Profile) */
+
+  /* Text. The palette is a mirror: --color-text-primary-dark is deliberately the
+     same hex as --color-surface-light. */
   --color-text-primary-light: #111111;
-  --color-text-primary-dark: #F2F0ED;
-  --color-text-muted: #888888;
-  --color-text-muted-dark: #8899BB;
+  --color-text-primary-dark: #F2F0ED;  /* running text on any dark surface */
+  --color-text-bright-on-dark: #FFFFFF; /* glyphs/labels on dark or accent fills */
+  --color-text-muted-light: #888888;   /* dimmed text on light */
+  --color-text-muted-dark: #8899BB;     /* dimmed text on any dark surface */
+
+  /* Accent */
   --color-accent: #3D7AF5;
-  --color-nav-bg: rgba(242, 240, 237, 0.92);
+
+  /* Lines */
+  --color-border: rgba(0, 0, 0, 0.1); /* faint divider on a light surface */
+
+  /* Derived */
+  --color-nav-bg: rgba(242, 240, 237, 0.92); /* = --color-surface-light @ 92% */
 
   --font-display: 'Roboto Slab', Rockwell, 'Roboto', Georgia, serif;
   --font-sans: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
@@ -129,7 +141,7 @@ ul {
 .nav.nav--scrolled {
   background: var(--color-nav-bg);
   backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  border-bottom: 1px solid var(--color-border);
 }
 
 /* Mid-chase the nav is non-interactive and shows no scrolled background — it's
@@ -216,7 +228,7 @@ ul {
   background: var(--color-surface-light);
   display: flex;
   flex-direction: column;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  border-bottom: 1px solid var(--color-border);
 }
 
 .nav__mobile-link {
@@ -291,20 +303,20 @@ ul {
 }
 
 .pacman__caption {
-  fill: #fff;
+  fill: var(--color-text-bright-on-dark);
   font-family: 'Press Start 2P', var(--font-mono);
   font-size: 12px;
   letter-spacing: 0.5px;
 }
 
 .pacman__label {
-  fill: #fff;
+  fill: var(--color-text-bright-on-dark);
   font-family: 'Press Start 2P', var(--font-mono);
   font-size: 31px;
 }
 
 .pacman__leader {
-  stroke: #fff;
+  stroke: var(--color-text-bright-on-dark);
   stroke-width: 2;
 }
 
@@ -438,6 +450,14 @@ ul {
 
 @media (max-width: 767px) {
   .intro__headline { font-size: 24px; }
+}
+
+/* The closing "Explore my work…" drops to its own row, muted, as a quiet
+   cue toward Featured Case Studies below. */
+.intro__cue {
+  display: block;
+  margin-top: 28px;
+  color: var(--color-text-muted-light);
 }
 
 /* Section 3: Featured Case Studies */
@@ -586,7 +606,7 @@ ul {
   height: 44px;
   border-radius: 50%;
   background: rgba(0, 0, 0, 0.6);
-  color: #fff;
+  color: var(--color-text-bright-on-dark);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -614,7 +634,7 @@ ul {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: var(--color-text-muted);
+  background: var(--color-text-muted-light);
 }
 
 .carousel__dot--active {
@@ -682,7 +702,7 @@ ul {
   border: 2px solid var(--color-accent);
   border-radius: 6px;
   background: var(--color-accent);
-  color: #fff;
+  color: var(--color-text-bright-on-dark);
   font-size: 15px;
   font-weight: 500;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.28);
@@ -782,33 +802,18 @@ ul {
   transition: transform 300ms ease;
 }
 
-.more-work__thumb-fallback {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 20px;
-  text-align: center;
-  font-family: var(--font-display);
-  font-size: 15px;
-  font-weight: 500;
-  color: rgba(255, 255, 255, 0.92);
-  background: linear-gradient(135deg, var(--color-surface-navy), var(--color-accent));
-}
-
 .more-work__thumb-overlay {
   position: absolute;
   inset: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(13, 13, 18, 0);
+  background: rgb(from var(--color-surface-dark) r g b / 0);
   transition: background 200ms ease;
 }
 
 .more-work__thumb-cta {
-  color: #fff;
+  color: var(--color-text-bright-on-dark);
   font-family: var(--font-sans);
   font-size: 13px;
   font-weight: 500;
@@ -824,7 +829,7 @@ ul {
 
 .more-work__card:hover .more-work__thumb-overlay,
 .more-work__card:focus-visible .more-work__thumb-overlay {
-  background: rgba(13, 13, 18, 0.42);
+  background: rgb(from var(--color-surface-dark) r g b / 0.42);
 }
 
 .more-work__card:hover .more-work__thumb-cta,
@@ -836,7 +841,11 @@ ul {
 /* Touch devices have no hover: keep the label and a light scrim visible. */
 @media (hover: none) {
   .more-work__thumb-overlay {
-    background: linear-gradient(to top, rgba(13, 13, 18, 0.55), rgba(13, 13, 18, 0) 45%);
+    background: linear-gradient(
+      to top,
+      rgb(from var(--color-surface-dark) r g b / 0.55),
+      rgb(from var(--color-surface-dark) r g b / 0) 45%
+    );
     align-items: flex-end;
     padding-bottom: 12px;
   }
@@ -861,7 +870,7 @@ ul {
 .more-work__desc {
   font-size: 14px;
   line-height: 1.6;
-  color: var(--color-text-muted);
+  color: var(--color-text-muted-light);
   margin: 8px 0 0;
   display: -webkit-box;
   -webkit-line-clamp: 3;
@@ -923,7 +932,7 @@ ul {
   display: inline-block;
   font-size: 15px;
   font-weight: 500;
-  color: var(--color-text-muted);
+  color: var(--color-text-muted-light);
   transition: color 150ms ease;
 }
 
@@ -952,7 +961,7 @@ ul {
   font-size: 22px;
   font-weight: 400;
   line-height: 1.5;
-  color: var(--color-text-muted);
+  color: var(--color-text-muted-light);
   margin: 16px 0 0;
 }
 
@@ -988,7 +997,7 @@ ul {
   margin-top: 10px;
   font-size: 13px;
   line-height: 1.5;
-  color: var(--color-text-muted);
+  color: var(--color-text-muted-light);
   text-align: center;
 }
 
@@ -1022,8 +1031,8 @@ ul {
   gap: 20px;
   margin: 0 0 48px;
   padding: 24px 0;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
 }
 
 .case-study__meta-item dt {
@@ -1032,7 +1041,7 @@ ul {
   font-weight: 500;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: var(--color-text-muted);
+  color: var(--color-text-muted-light);
   margin-bottom: 4px;
 }
 
@@ -1107,7 +1116,7 @@ ul {
   justify-content: space-between;
   margin-top: 64px;
   padding-top: 32px;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-top: 1px solid var(--color-border);
 }
 
 .case-study__nav-link {
@@ -1133,7 +1142,7 @@ ul {
   font-weight: 500;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: var(--color-text-muted);
+  color: var(--color-text-muted-light);
 }
 
 .case-study__nav-title {
@@ -1163,7 +1172,7 @@ ul {
   align-items: center;
   justify-content: center;
   padding: 6vh 7vw;
-  background: rgba(13, 13, 18, 0.94);
+  background: rgb(from var(--color-surface-dark) r g b / 0.94);
 }
 
 .lightbox__figure {
@@ -1192,7 +1201,7 @@ ul {
   justify-content: center;
   font-size: 30px;
   line-height: 1;
-  color: #fff;
+  color: var(--color-text-bright-on-dark);
   border-radius: 50%;
   transition: background 150ms ease;
 }
@@ -1208,7 +1217,7 @@ ul {
   justify-content: center;
   font-size: 34px;
   line-height: 1;
-  color: #fff;
+  color: var(--color-text-bright-on-dark);
   background: rgba(255, 255, 255, 0.08);
   border-radius: 50%;
   transition: background 150ms ease;
