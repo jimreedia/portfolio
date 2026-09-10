@@ -12,11 +12,7 @@ export default function MoreCaseStudies() {
           {caseStudies.map((cs) => (
             <Link key={cs.id} to={cs.url} className="more-work__card">
               <div className="more-work__thumb">
-                {cs.thumb ? (
-                  <img src={assetUrl(cs.thumb)} alt="" loading="lazy" />
-                ) : (
-                  <span className="more-work__thumb-fallback">{cs.title}</span>
-                )}
+                <img src={assetUrl(cs.thumb)} alt="" loading="lazy" />
                 <span className="more-work__thumb-overlay">
                   <span className="more-work__thumb-cta">View Case Study →</span>
                 </span>
