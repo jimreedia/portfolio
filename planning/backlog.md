@@ -9,9 +9,6 @@ larger and need Jim in the loop (5 refine case study content, 6 image assets,
 7 hand/gear GIF to CSS), then the remaining bigger/fuzzier work (8 video, 9 mobile,
 10 tags).
 
-- [ ] Bump `actions/checkout` and `actions/setup-node` to their latest major versions in `deploy-production.yml` and `deploy-staging.yml` — GitHub Actions runners are deprecating Node 20 as the action runtime (currently just a warning, forced onto Node 24 automatically) and these action versions are pinned to it.
-  - Current (verified 2026-09-10): both workflows use `actions/checkout@v4`, `actions/setup-node@v4`, `node-version: '20.x'`. Bump the two actions to `@v5`. Optional while in there: raise `node-version` to `'22.x'` (current LTS) — separate from the action-runtime issue, and the build is known-good on 20, so low urgency. Trivial 4-line change; a good candidate to fold into another branch rather than its own PR.
-
 - [ ] Refine case study content — the initial build seeds each page from jimreed.net with a Problem/Approach/Outcomes skeleton. Raise it to a senior/principal standard: reframe "Approach" around key decisions and tradeoffs (not a list of process activities), surface a one-line outcome in the hero, make individual contribution explicit in the prose, give captions design rationale rather than labels, add a "Reflection / what I'd do differently" section, and replace all `[bracketed]` placeholders (timelines, outcome metrics, team) with real content.
   - Updated 2026-09-08: the 9 non-featured case studies were restructured into the featured `blocks` narrative format (heading + body with `**bold**` + one production image per section) sourced from myportfolio + `production images/`. They now match the featured pages structurally but still need the same senior/principal pass — decisions-and-tradeoffs framing, explicit individual contribution, real metrics, a reflection section. Several (Samsung, Walmart, Banking) have thin source material and no stated outcomes.
   - Drift to review (flagged 2026-09-08): the restructure went further than a faithful re-org on the thin pages — sections were reordered and re-headed, one-line source text was expanded (partly from detail visible in the production images), and connective prose / voice was added that isn't Jim's. Samsung is the clearest case ("Video Mockups" → "Motion Studies in After Effects", storyboard section fleshed out from the image, added framing like "a living room's worth of content navigable with four arrow keys"). Treat the current text as a structural draft, not final copy — this item's pass should reconcile every page against the original source and Jim's voice.
@@ -44,6 +41,9 @@ larger and need Jim in the loop (5 refine case study content, 6 image assets,
 ## In Progress
 
 ## Done
+
+- [x] Bump `actions/checkout` and `actions/setup-node` to their latest major versions in `deploy-production.yml` and `deploy-staging.yml` — branch: chore/bump-deploy-workflow-actions
+  - Both workflows bumped `actions/checkout@v4` → `@v5` and `actions/setup-node@v4` → `@v5`. Left `node-version: '20.x'` as-is per the note (build is known-good on 20, raising to 22.x was optional/low urgency and out of scope for this trivial bump).
 
 - [x] Audit and standardize the text-link arrow affordances site-wide — branch: fix/adjust-linkedIn-links (folded in, no code changes needed)
   - Verified all three parts of the rule were already true, or became true as a side effect of the LinkedIn item above, so nothing needed changing:
