@@ -9,29 +9,6 @@ larger and need Jim in the loop (5 refine case study content, 6 image assets,
 7 hand/gear GIF to CSS), then the remaining bigger/fuzzier work (8 video, 9 mobile,
 10 tags).
 
-- [ ] Unify the LinkedIn links and add one to the footer. All LinkedIn links should end with the same glyph, U+2197 NORTH EAST ARROW (`↗`), and the site should have three: nav, Profile, footer.
-  - Current state (verified 2026-09-10): two links, both `href="https://www.linkedin.com/in/jimreed/"` (URL is already consistent), different trailing glyphs.
-    - Nav: `LinkedIn ↗` — U+2197. In the shared `links()` fragment in `Nav.jsx` (the `<a>` after the `LINKS.map`), so it covers both the desktop nav and the mobile menu. This is the target glyph.
-    - Profile (`Profile.jsx:33`): `Connect on LinkedIn →` — U+2192, styled as the blue `.profile__btn` CTA, inside `.profile__actions`.
-    - Footer (`Footer.jsx`): no LinkedIn link (removed in "Simplify the footer"). `.footer__row` currently holds `© 2026 Jim Reed` (`.footer__copyright`) and a `↑ Back to Top` button (`.footer__link`), `space-between` + wrap.
-  - To do:
-    1. Settle the arrow-placement rule first (next item) — it's a quick decision and the footer link here must follow it. Recommended outcome: keep the existing lead-back / trail-forward convention, so the footer LinkedIn link trails its arrow like the nav.
-    2. Profile CTA: change the trailing `→` (U+2192) to `↗` (U+2197). Glyph swap only — keep the "Connect on LinkedIn" label and the button styling.
-    3. Add a LinkedIn link to the footer: text `LinkedIn ↗` (match the nav), same `href`, `target="_blank" rel="noreferrer"`, `.footer__link` class. Place it in `.footer__row` — pick a spot at implementation, e.g. between copyright and "Back to Top" or grouped with copyright.
-    4. Result: nav, Profile, and footer all use U+2197.
-  - Why re-add to the footer (Jim, 2026-09-10): it was dropped in "Simplify the footer" back when the footer sat right after the Profile/About section and its LinkedIn link, so it read as redundant. The More Case Studies section has since been added between Profile and the footer, so the footer is no longer in the same viewport as the Profile CTA and the link stands on its own.
-  - Caveat (accepted): U+2197 is not in Roboto, so it renders from a system-fallback font and looks slightly heavier than the text beside it (visible on the current nav link). Codepoint consistency across the three links is the goal regardless; revisit as a separate item if the mismatch bothers.
-
-- [ ] Audit and standardize the text-link arrow affordances site-wide. Every "label + directional arrow" pair should follow one explicit rule. Pairs with the LinkedIn item above — do them together as one consistency pass.
-  - Current inventory:
-    - Arrow leads the label: Footer `↑ Back to Top` (U+2191); CaseStudyPage `← Back to all work` (U+2190, appears twice); CaseStudyPage `← Previous` (U+2190).
-    - Arrow trails the label: Nav `LinkedIn ↗` (U+2197); Profile `Connect on LinkedIn →` (U+2192); CaseStudyPage `Next →` (U+2192); Featured + More `View Case Study →` (U+2192).
-    - Icon-only controls (probably out of scope, different pattern): Carousel / Lightbox `‹` `›` `×`.
-  - There's already an implicit convention: **backward / return / upward actions lead with the arrow, forward / onward / outward actions trail it.** It mostly holds. The prev/next pair (`← Previous` / `Next →`) deliberately mirrors — arrows point outward on each side — and is arguably correct as-is.
-  - Recommendation: go with (a) — formalize the existing lead-back / trail-forward rule and fix any stragglers, rather than (b) forcing one placement everywhere. The rule already holds; this is mostly a glyph-reconciliation and spacing pass, low risk. Leave the prev/next mirror alone.
-  - Glyph reconciliation: the "forward" arrow is U+2192 everywhere except the nav's U+2197. Keep the nav's diagonal — it's intentional, signalling "leaves the site" — and apply the same U+2197 to the other two external links (Profile CTA, new footer LinkedIn link) per the item above. In-site forward arrows stay U+2192.
-  - Also settle spacing (plain space vs. `&nbsp;` so the arrow never wraps alone) and whether any of these should be non-breaking with the last word.
-
 - [ ] Bump `actions/checkout` and `actions/setup-node` to their latest major versions in `deploy-production.yml` and `deploy-staging.yml` — GitHub Actions runners are deprecating Node 20 as the action runtime (currently just a warning, forced onto Node 24 automatically) and these action versions are pinned to it.
   - Current (verified 2026-09-10): both workflows use `actions/checkout@v4`, `actions/setup-node@v4`, `node-version: '20.x'`. Bump the two actions to `@v5`. Optional while in there: raise `node-version` to `'22.x'` (current LTS) — separate from the action-runtime issue, and the build is known-good on 20, so low urgency. Trivial 4-line change; a good candidate to fold into another branch rather than its own PR.
 
@@ -67,6 +44,17 @@ larger and need Jim in the loop (5 refine case study content, 6 image assets,
 ## In Progress
 
 ## Done
+
+- [x] Audit and standardize the text-link arrow affordances site-wide — branch: fix/adjust-linkedIn-links (folded in, no code changes needed)
+  - Verified all three parts of the rule were already true, or became true as a side effect of the LinkedIn item above, so nothing needed changing:
+    - **Convention** (backward/return/upward leads with the arrow, forward/onward trails it): holds for every current instance, no stragglers. Re-grepped for any arrow glyph in `src/` to confirm no pair was missed (the only other match, "Led 0→1 design" in `Profile.jsx`, is prose, not a link affordance).
+    - **Glyph reconciliation** (U+2197 for external/leaves-the-site links, U+2192 for in-site forward links): done as part of the LinkedIn item — Profile CTA and the new footer LinkedIn link now match the nav's U+2197; Next/View Case Study stay U+2192.
+    - **Spacing / orphan-arrow risk**: all seven label+arrow pairs already use a single plain space (nothing to reconcile there). Screenshotted every one (Back to all work, Previous/Next, View Case Study ×2, LinkedIn ×3, Back to Top) at 320px width (iPhone SE, narrowest realistic viewport) — none wrap, the arrow never separates from its word. `&nbsp;` would guard against a problem that doesn't occur in practice, so skipped.
+
+- [x] Unify the LinkedIn links and add one to the footer — branch: fix/adjust-linkedIn-links
+  - All three LinkedIn links now trail with the same glyph, U+2197 (`↗`): Nav was already correct. `Profile.jsx` CTA swapped its trailing U+2192 (`→`) to U+2197, label and button styling unchanged. Added a new `LinkedIn ↗` link to `Footer.jsx` (same href, `target="_blank" rel="noreferrer"`, `.footer__link` class), placed between the copyright and "Back to Top" in `.footer__row` (existing `space-between` flex row, no CSS changes needed — reads left-to-right as copyright / LinkedIn / Back to Top and doesn't wrap even at 390px).
+  - Verified via `npm run build` (clean) and Playwright screenshots of nav, Profile, and footer at desktop (1280px) and mobile (390px) widths.
+  - Caveat (accepted, unchanged from original note): U+2197 isn't in Roboto so it renders from a system-fallback font, slightly heavier than the surrounding text. Consistent across all three links regardless; revisit separately if it bothers.
 
 - [x] Adjust CTA buttons and padding — a prominence + density pass on the case study pages, mostly CSS — branch: fix/adjust-cta-buttons-and-padding
   - "Back to all work" and "View Case Study" CTAs restyled to match Profile's "Connect on LinkedIn" button (`.profile__btn`): solid pill, `--color-surface-dark` background instead of `--color-accent`, white text, bounce/shadow on hover. Existing arrow placement kept (leading `←` on Back, trailing `→` on View Case Study). Label alternatives ("Back to Home", "Back to Work", "Back") evaluated with Jim; kept "Back to all work". `.case-study__back--center` switched from `display: block` to `display: table` so the now button-shaped link centers correctly instead of stretching full-width.
