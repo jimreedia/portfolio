@@ -544,15 +544,21 @@ ul {
 .case-study__cta {
   display: inline-block;
   margin-top: 28px;
-  font-size: 16px;
+  padding: 12px 24px;
+  border: 2px solid var(--color-surface-dark);
+  border-radius: 6px;
+  background: var(--color-surface-dark);
+  color: var(--color-text-bright-on-dark);
+  font-size: 15px;
   font-weight: 500;
-  color: var(--color-accent);
-  transition: filter 150ms ease;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.28);
+  transition: transform 200ms ease, box-shadow 200ms ease;
 }
 
 .case-study__cta:hover {
-  text-decoration: underline;
-  filter: brightness(0.85);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.38);
+  animation: profile-btn-bounce 320ms ease;
+  transform: scale(1.06);
 }
 
 @media (max-width: 767px) {
@@ -722,7 +728,9 @@ ul {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .profile__btn:hover {
+  .profile__btn:hover,
+  .case-study__cta:hover,
+  .case-study__back:hover {
     animation: none;
     transform: none;
   }
@@ -815,7 +823,7 @@ ul {
 .more-work__thumb-cta {
   color: var(--color-text-bright-on-dark);
   font-family: var(--font-sans);
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 500;
   opacity: 0;
   transform: translateY(6px);
@@ -874,6 +882,7 @@ ul {
   margin: 8px 0 0;
   display: -webkit-box;
   -webkit-line-clamp: 3;
+  line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -921,29 +930,35 @@ ul {
 .case-study__inner {
   max-width: 760px;
   margin: 0 auto;
-  padding: 120px 24px 96px;
+  padding: 72px 24px 96px;
 }
 
 @media (max-width: 767px) {
-  .case-study__inner { padding: 88px 20px 64px; }
+  .case-study__inner { padding: 48px 20px 64px; }
 }
 
 .case-study__back {
   display: inline-block;
+  padding: 12px 24px;
+  border: 2px solid var(--color-surface-dark);
+  border-radius: 6px;
+  background: var(--color-surface-dark);
+  color: var(--color-text-bright-on-dark);
   font-size: 15px;
   font-weight: 500;
-  color: var(--color-text-muted-light);
-  transition: color 150ms ease;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.28);
+  transition: transform 200ms ease, box-shadow 200ms ease;
 }
 
 .case-study__back:hover {
-  color: var(--color-accent);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.38);
+  animation: profile-btn-bounce 320ms ease;
+  transform: scale(1.06);
 }
 
 .case-study__back--center {
-  display: block;
-  text-align: center;
-  margin-top: 48px;
+  display: table;
+  margin: 48px auto 0;
 }
 
 .case-study__hero {
