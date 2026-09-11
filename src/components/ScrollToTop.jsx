@@ -8,7 +8,10 @@ export default function ScrollToTop() {
 
   useEffect(() => {
     if (state?.scrollTo) return
-    window.scrollTo(0, 0)
+    // 'instant' overrides the global `scroll-behavior: smooth` so a route change
+    // is a hard cut to the top of the new page, not an animated scroll up
+    // through the freshly-mounted content.
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' })
   }, [pathname, state])
 
   return null

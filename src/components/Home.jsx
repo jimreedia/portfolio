@@ -14,17 +14,21 @@ export default function Home() {
   const pinRef = useRef(null)
   useScrollProgress({ wrapRef, pinRef })
 
-  // When arriving from another route with a requested section (e.g. a nav click
-  // on a case study page), scroll it into view once the homepage has rendered.
+  // When arriving from another route with a requested section (e.g. "Back to all
+  // work" or a nav click on a case study page), jump it into view once the
+  // homepage has rendered. Must be an instant jump, not smooth: this is a route
+  // change presenting a fresh page, so it should be a hard cut. Passing
+  // 'instant' overrides the global `scroll-behavior: smooth`, which would
+  // otherwise animate a scroll down from the top of the just-mounted page.
   useEffect(() => {
     const target = location.state?.scrollTo
     if (!target) return
     if (target === 'top') {
-      window.scrollTo(0, 0)
+      window.scrollTo({ top: 0, left: 0, behavior: 'instant' })
       return
     }
     const el = document.getElementById(target)
-    if (el) el.scrollIntoView()
+    if (el) el.scrollIntoView({ behavior: 'instant', block: 'start' })
   }, [location.state])
 
   return (
