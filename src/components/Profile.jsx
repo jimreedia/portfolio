@@ -30,7 +30,7 @@ export default function Profile() {
               rel="noreferrer"
               className="profile__btn"
             >
-              Connect on LinkedIn →
+              Connect on LinkedIn ↗
             </a>
           </div>
         </div>

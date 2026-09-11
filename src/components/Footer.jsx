@@ -8,6 +8,14 @@ export default function Footer() {
       <div className="section__inner">
         <div className="footer__row">
           <p className="footer__copyright">© 2026 Jim Reed</p>
+          <a
+            href="https://www.linkedin.com/in/jimreed/"
+            target="_blank"
+            rel="noreferrer"
+            className="footer__link"
+          >
+            LinkedIn ↗
+          </a>
           <button
             type="button"
             className="footer__link"
