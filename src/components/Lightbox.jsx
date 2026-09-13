@@ -81,7 +81,12 @@ export default function Lightbox({ images, index, onIndexChange, onClose }) {
         onTouchStart={onTouchStart}
         onTouchEnd={onTouchEnd}
       >
-        <img className="lightbox__image" src={assetUrl(image.src)} alt={image.alt || ''} />
+        <img
+          className={`lightbox__image${image.unframed ? ' lightbox__image--unframed' : ''}`}
+          src={assetUrl(image.src)}
+          alt={image.alt || ''}
+        />
+        {image.caption && <figcaption className="lightbox__caption">{image.caption}</figcaption>}
       </figure>
 
       {canNavigate && (
