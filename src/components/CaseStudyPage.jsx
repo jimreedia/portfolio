@@ -63,33 +63,56 @@ export default function CaseStudyPage() {
     blocks: toBlocks(section).map((block) => {
       if (block.type !== 'image') return block
       const lightboxIdx = lightboxImages.length
-      lightboxImages.push({ src: block.src, alt: block.alt })
+      lightboxImages.push({ src: block.src, alt: block.alt, caption: block.caption, unframed: block.unframed })
       return { ...block, lightboxIdx }
     }),
   }))
 
   const galleryStart = lightboxImages.length
   gallery.forEach((shot) => {
-    lightboxImages.push({ src: shot.src, alt: shot.caption || cs.title })
+    lightboxImages.push({ src: shot.src, alt: shot.caption || cs.title, caption: shot.caption, unframed: shot.unframed })
   })
 
   const { prev, next } = getNeighbors(id)
   const backSection = cs.featured ? 'featured-work' : 'more-work'
   const meta = [
     ['Role', cs.role],
-    ['Team', cs.team],
+    ['Design Team', cs.team],
   ].filter(([, value]) => value)
 
-  const imageButton = (src, alt, lightboxIdx, label, key) => (
-    <button
+  // `maxWidth` (opt in, a number) caps display width for images that read
+  // better smaller, e.g. a compact stat block, or a stand-in for the old
+  // site's 800px column while that's being evaluated case by case; `unframed`
+  // (opt out) drops the standard border/radius for alpha-transparent
+  // composites, where a frame would draw a rectangle around empty canvas.
+  const mediaModifiers = (block) =>
+    block?.unframed ? ' case-study__media--unframed' : ''
+
+  const mediaMaxWidth = (block) =>
+    block?.maxWidth ? { maxWidth: `min(${block.maxWidth}px, 100%)` } : undefined
+
+  const imageButton = (block, lightboxIdx, label, key) => (
+    <figure
+      className={`case-study__media case-study__section-image${mediaModifiers(block)}`}
       key={key}
-      type="button"
-      className="case-study__media case-study__section-image case-study__media-button"
-      onClick={() => setLightboxIndex(lightboxIdx)}
-      aria-label={label}
     >
-      <img src={assetUrl(src)} alt={alt || ''} loading="lazy" />
-    </button>
+      <button
+        type="button"
+        className="case-study__media-button"
+        onClick={() => setLightboxIndex(lightboxIdx)}
+        aria-label={label}
+      >
+        <img
+          src={assetUrl(block.src)}
+          alt={block.alt || ''}
+          width={block.width}
+          height={block.height}
+          loading="lazy"
+          style={mediaMaxWidth(block)}
+        />
+      </button>
+      {block.caption && <figcaption style={mediaMaxWidth(block)}>{block.caption}</figcaption>}
+    </figure>
   )
 
   return (
@@ -104,11 +127,17 @@ export default function CaseStudyPage() {
         {heroImage && (
           <button
             type="button"
-            className="case-study__media case-study__cover case-study__media-button"
+            className={`case-study__media case-study__cover case-study__media-button${mediaModifiers(heroImage)}`}
             onClick={() => setLightboxIndex(0)}
             aria-label="Open image viewer"
           >
-            <img src={assetUrl(heroImage.src)} alt={heroImage.alt || `${cs.title} cover`} />
+            <img
+              src={assetUrl(heroImage.src)}
+              alt={heroImage.alt || `${cs.title} cover`}
+              width={heroImage.width}
+              height={heroImage.height}
+              style={mediaMaxWidth(heroImage)}
+            />
           </button>
         )}
 
@@ -142,8 +171,7 @@ export default function CaseStudyPage() {
                 )
               }
               return imageButton(
-                block.src,
-                block.alt || section.heading,
+                { ...block, alt: block.alt || section.heading },
                 block.lightboxIdx,
                 section.heading ? `Open image viewer: ${section.heading}` : 'Open image viewer',
                 j

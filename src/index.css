@@ -998,19 +998,33 @@ ul {
   margin: 0;
 }
 
-/* Images are designed to sit directly on the page background — no frame,
-   shadow, radius, or crop. */
+/* Standard frame for every case-study image: a hairline border and a 6px radius
+   matching the corner already baked into the mockup screenshots themselves
+   (measured off overview.png's browser-chrome frame). No shadow or crop.
+   Border color reuses --color-text-muted-light (#888888): closest existing
+   token to the #9e9e9e Jim used when these borders were baked into the pixels;
+   --color-border (rgba(0,0,0,0.1), ~#E5E5E5) is a divider color, too faint here. */
 .case-study__media img {
   display: block;
   width: auto;
   height: auto;
   max-width: 100%;
   margin: 0 auto;
+  border: 1px solid var(--color-text-muted-light);
+  border-radius: 6px;
+}
+
+/* Opt out per image block (set `unframed`) for alpha-transparent composites
+   (e.g. device mockups floating on a transparent canvas) where a border/radius
+   would draw a visible rectangle around empty space instead of the content. */
+.case-study__media--unframed img {
+  border: none;
+  border-radius: 0;
 }
 
 .case-study__media figcaption {
-  margin-top: 10px;
-  font-size: 13px;
+  margin: 10px auto 0;
+  font-size: 14px;
   line-height: 1.5;
   color: var(--color-text-muted-light);
   text-align: center;
@@ -1083,7 +1097,7 @@ ul {
 }
 
 .case-study__body {
-  font-size: 17px;
+  font-size: 16px;
   line-height: 1.7;
   margin: 0 0 16px;
 }
@@ -1105,7 +1119,7 @@ ul {
 .case-study__list li {
   position: relative;
   padding-left: 20px;
-  font-size: 17px;
+  font-size: 16px;
   line-height: 1.7;
   margin-bottom: 8px;
 }
@@ -1195,14 +1209,35 @@ ul {
   max-width: 100%;
   max-height: 100%;
   display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .lightbox__image {
   max-width: 100%;
-  max-height: 88vh;
+  max-height: 80vh;
   width: auto;
   height: auto;
   object-fit: contain;
+  border: 1px solid var(--color-text-muted-light);
+  border-radius: 6px;
+}
+
+/* Matches `.case-study__media--unframed` on the page: skip the border/radius
+   for alpha-transparent composites, where a frame would draw a rectangle
+   around empty canvas instead of the content. */
+.lightbox__image--unframed {
+  border: none;
+  border-radius: 0;
+}
+
+.lightbox__caption {
+  margin: 14px 0 0;
+  max-width: 640px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.7);
+  text-align: center;
 }
 
 .lightbox__close {

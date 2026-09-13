@@ -51,12 +51,13 @@ wider (up to ~920px) on desktop ≥ 1024px. Top padding clears the 64px sticky n
 - **Cover image:** `hero` (or `images[0]`), sits directly on the page background — no frame, shadow, radius, or crop. Native size, centered, bleeds past the column on desktop.
 - **Meta block:** a single-column `<dl>` between two hairline rules:
   - **Role** — `role`
-  - **Team** — `team`
+  - **Design Team** — `team`
   - Labels in DM Mono 12px uppercase; values in Plus Jakarta Sans 15px.
   - Rows are omitted when their value is empty.
-  - Role and Team wording is a first pass — deeper content design (individual
-    contribution, team composition, and whether Outcome/Status belongs here) is
-    tracked in the "refine case study content" backlog item.
+  - Decided 2026-09-11: the label is "Design Team," not "Team" — `team` only ever
+    describes design/research headcount (e.g. "One UX designer and one UX researcher"),
+    never the full cross-functional team (PM, eng, QA, stakeholders), and the bare
+    "Team" label invited that wrong reading.
 
 ### 2. Narrative sections (images woven into the text)
 

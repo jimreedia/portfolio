@@ -1,8 +1,16 @@
 # Refine case studies: working notes
 
 The single home for the "Refine case study content" backlog item. Diagnostic pass
-started 2026-09-09. **No copy has been changed yet.** Everything below is meant to be
-worked through in Jim's voice, checked against the jimreed.net / myportfolio originals.
+started 2026-09-09; copy work started 2026-09-11 with the Operational Insights pilot
+(done, see its entry below). No copy has changed yet on any other page. Everything below
+is meant to be worked through in Jim's voice, checked against the jimreed.net /
+myportfolio originals.
+
+**Source review is mandatory, not optional, before drafting any page** (see cross-cutting
+principle 10): `/Users/jimreed/Projects/portfolio/case-study-references.md` maps every
+case study to both its myportfolio URL and its full local `production images/` folder.
+Review both in full before touching a page, not just the images already wired into
+`caseStudies.json`.
 
 Two starting positions, per the backlog history:
 - **Featured 3** (Agentic AI Chat, Genomic Data Platform, AI Recommendations): already
@@ -12,8 +20,33 @@ Two starting positions, per the backlog history:
   the `blocks` format. Structure is good; the prose is Claude's synthesis of thin
   myportfolio text plus production-image detail, so it needs a source reconciliation
   and a voice pass on top of the cross-cutting fixes.
-- **The 3 unlisted pages** (Samsung, Banking, Walmart): lowest priority, see the stubs
-  at the end.
+
+**2026-09-11:** the 3 unlisted pages (Samsung Interactive TV, Banking Experiences,
+Walmart.com Content) were removed entirely, data + assets, rather than rehabbed. Their
+stubs are gone from this doc.
+
+**Pilot-first rollout:** rather than applying the cross-cutting fixes to all 9 remaining
+pages at once, **Operational Insights is the pilot** — fully executed first to validate
+the framework. See its entry below for the finalized approach, now done.
+
+**Next up (decided 2026-09-12, supersedes the earlier "more pages first" plan): the
+featured 3.** Reprioritized ahead of the remaining "more" pages because they're the
+highest-traffic pages on the site, what most visitors click first, and the lowest-effort
+remaining work: targeted editing against the punch lists below, not the
+reconciliation-against-thin-source work the "more" pages still need. First step, before
+any drafting: the full source review per principle 10 (myportfolio original + complete
+`production images/` folder) hasn't been done for any of the three yet.
+
+After the featured 3, back to the remaining 5 "more" pages. All 5 (Developer Experience,
+Machine Learning for Operators, Mobile Emergency System, Additive Manufacturing,
+Analytics & Big Data) still carry the original credibility risk, synthesized text
+presented as Jim's real history, and should get the reconciliation pass in roughly this
+order: **Developer Experience first** (real outcome arc already, headings in decent
+shape, the closest to done, was the earlier pick for "next" before the featured 3 jumped
+ahead of the whole batch), then the other 4, which each have a bigger gap to close:
+Machine Learning for Operators and Mobile Emergency System have no stated outcome
+anywhere in the source, Analytics & Big Data has an unresolved shipped-vs-concept
+ambiguity, Additive Manufacturing needs more structural consolidation.
 
 ---
 
@@ -55,6 +88,9 @@ Two starting positions, per the backlog history:
    (10,000 engineers). The 6 "more" pages mostly have no stated outcome at all (the
    myportfolio sources didn't). Every page needs at least a qualitative result stated
    plainly, and a number wherever one exists (adoption, time saved, what shipped).
+   Business outcomes (adoption, time saved, users reached, etc.) get folded into the
+   lead / opening statement rather than a dedicated "Business Outcomes" section
+   (2026-09-11, Jim's instruction).
 
 6. **Contribution language.** Watch for "I collaborated / I conducted / I helped" where
    it could be "I decided / I argued for / I owned." Sections that open on a generic
@@ -63,16 +99,88 @@ Two starting positions, per the backlog history:
 
 7. **Captions are alt text, not rationale.** Section images carry accessibility `alt`
    only, no visible caption. The backlog asks for captions that carry design rationale.
-   That needs a small schema/renderer change first (a `caption` on image blocks +
-   `<figcaption>` in `CaseStudyPage.jsx`) before the copy has anywhere to go. Flag as a
-   build task.
+   **Decided 2026-09-11:** the annotation banners currently baked into several images'
+   pixels (a headline overlaid on the screenshot) move to HTML captions instead, and the
+   captions render in the Lightbox too, so paging through the Lightbox alone tells the
+   high-level story. Mechanism: `caption` on image blocks, rendered as a `<figcaption>`
+   both inline (`CaseStudyPage.jsx`) and in `Lightbox.jsx`. Where a case study's raw
+   `production images/` source has an earlier, less-annotated version of a banner-baked
+   image (check for a `-v1` sibling or similar), prefer that as the base image and carry
+   the removed banner text forward as the seed for the new caption rather than writing
+   from scratch. This pass covers the pilot's images only; the standardized re-export
+   across all case studies (WebP, uniform width) is the separate "Case study image
+   assets" backlog item.
+
+   **Decided 2026-09-11/12:** every image also gets a standard 1px border + 6px radius
+   by default (`.case-study__media img`), opt out per image with `unframed` for
+   alpha-transparent composites (a border would frame empty canvas, not content).
+   Since banners are cropped away on re-export and rounding is now CSS not baked
+   pixels, most re-exports should drop the alpha channel entirely, no longer needed.
+   Documented exception: Mobile Emergency System's phone composite (`app-comps.png`)
+   stays alpha and `unframed`. Flag any other genuine composite the same way as it's
+   re-exported; default assumption going in should be "opaque, framed." Border color is
+   `--color-text-muted-light` (#888888), chosen to match the `#9e9e9e` Jim originally
+   baked into these images by hand; `--color-border` (the site's existing hairline-divider
+   token) is too faint for this.
+
+   **Mechanism (2026-09-12):** a numeric `maxWidth` field on an image block (or the
+   `hero` object) caps its display width, e.g. `"maxWidth": 480` — not a boolean, so any
+   value works, not just one fixed narrow tier. Applied via inline `style`
+   (`mediaMaxWidth()` in `CaseStudyPage.jsx`), as `min(Npx, 100%)` so it still shrinks
+   responsively on narrow viewports. A capped image's caption automatically gets the same
+   `maxWidth` and centers under it, no extra work needed per image. Every image without
+   `maxWidth` set keeps the page's existing default (760px below 1024px, 920px at
+   desktop's bleed width).
 
 8. **Copy style:** no em-dashes (see backlog). Commas, colons, parentheses, or separate
    sentences.
 
+9. **AI artifacts in an AI-era process.** For case studies that are themselves AI
+   products (Agentic AI Chat, AI Recommendations, Machine Learning for Operators), the
+   Reflection section is a natural place to relate classic UX artifacts (wireframes,
+   storyboards, personas) to how they show up in AI-era design work. This is a real
+   positioning angle, but it is Jim's opinion to state, not something to invent, so
+   surface it when writing those pages rather than filling it in speculatively.
+
+10. **Review the full source before drafting, every time.** Working only from what's
+    already wired into `caseStudies.json` is not enough, it shows only what a prior pass
+    happened to pick. Before restructuring or rewriting any page, review both (1) the
+    myportfolio original and (2) the *entire* local `production images/` folder for that
+    case study (paths in `case-study-references.md`), including files never referenced
+    anywhere in the current draft. The Operational Insights pilot missed a real sketch
+    asset (`OI-big-numbers-ideation.png`) and the actual dropped-logos mockup
+    (`OI-comp-early.png`) on the first pass, both sitting unused in the folder the whole
+    time, because only already-wired images were checked. Caught 2026-09-11, folded in
+    after the fact; do the full review upfront for the rest.
+
+11. **Process artifacts earn their place as evidence of a decision, not as default
+    "I did process."** The old convention showed sketches and storyboards to prove a
+    methodology was followed. The stronger use: show the rough version next to the
+    shipped one, so the *distance between them* is the point, an idea changing, not a
+    step being completed. Use a sketch or storyboard when it documents a decision
+    (Operational Insights' fast-facts sketches feeding straight into the shipped
+    numbers); skip it when it would just be a "here's my process" beat with nothing
+    riding on it.
+
+12. **Captions carry real story weight, they are not a label.** The Lightbox (see
+    principle 7) means some visitors experience a case study primarily by paging through
+    images and reading only the captions, the page's running text may not be what they
+    read at all. A caption that just names what's pictured ("Blue for what happened,
+    green for what the model predicts") fails that visitor; one that carries the
+    decision or the stakes works for both the page reader and the Lightbox-only one.
+    Write every caption as if it might be the only sentence this reader sees for that
+    section: state the call, the tension, or the outcome, not just the subject.
+    Concise still matters, this is one sentence doing real work, not a paragraph.
+
 ---
 
 ## Featured
+
+The punch lists below are text-only (they predate the pilot's image work). Check each
+page's images against principles 7 and 10 too: any baked-in banners move to captions, any
+image worth re-exporting follows the same WebP/opaque/bordered pattern as Operational
+Insights, per the "Case study image assets" backlog item. Not yet known whether any of
+the 3 have baked-in banners, that's part of the source review before drafting.
 
 ### Agentic AI Chat
 
@@ -166,15 +274,61 @@ These 6 were restructured this session. Baseline for each: reconcile every claim
 against the myportfolio original, bring it into Jim's voice, apply the cross-cutting
 fixes (lead line, heading tiers, reflection, outcome). Page-specific notes:
 
-### Operational Insights
+### Operational Insights — done (2026-09-11/12 pilot)
 
-Strongest of the 6. Real thesis ("the Monday-morning check is a glance, not an analysis
-session") and a real ending (the customer quote about "the right kinds of metrics").
-- Needs a metric beyond the quote (adoption, or what the two-tier dashboard measurably
-  changed).
-- "Reading AI Predictions" and "Observing Customer-Made Solutions" are close to
-  decision/craft headings already; leave them, tighten the prose.
-- Add a reflection.
+Rewritten in full as the pilot for the framework above, then refined further against
+Jim's live feedback. Final state, as the reference pattern for the remaining 8:
+
+**Structure** (intro + 9 sections, in order): Big Numbers, Not Pie Charts (the core
+first-glance bet; includes a sketch-to-shipped pairing, see principle 11) → Every Fast
+Fact Is a Doorway (drill-down) → Time Series for the Second Glance (line **and**
+stacked-column charts, both instances of "time series"; don't let one chart type stand
+in for the category, fixed 2026-09-12 after Jim caught it) → Customers Were Already
+Building This by Hand (field-observed workarounds) → What I Tried Based on What I Heard
+From Customers (a full section on the Slack/CLAIRE-bot prototype Jim pitched to product
+management, present in the myportfolio original but compressed to a half-sentence aside
+during this session's restructure; restored to its own section after Jim flagged the
+loss) → Company Logos, Not at This
+Scale (decision/bet: the dropped logo mockup) → Blue for Real, Green for Predicted
+(decision/bet: the color code, split out from the logos story once Jim pointed out the
+myportfolio source had conflated two separate decisions under one "AI Predictions"
+heading) → What Shipped, and What Users Said (the customer-quote outcome) → Reflection
+(the Slack app that stayed a prototype; the open question of whether the "How was this
+prediction made?" trust affordance actually worked).
+
+**Two decision/bet headings, not one**: "Big Numbers, Not Pie Charts" and "Company Logos,
+Not at This Scale" / "Blue for Real, Green for Predicted" as a pair. The rest are activity
++ concrete-goal headings, several pulled from Jim's own existing body text ("Every Fast
+Fact Is a Doorway") rather than invented from scratch.
+
+**Individual-contribution language** tightened throughout ("I designed," "I built," "I
+dropped [the logo idea]") in place of the passive "Working with a UX researcher, I
+shaped."
+
+**No metric beyond the quote** was added deliberately; the raw source has none to draw on
+and the dashboard's own demo data (e.g. "960.4K rows processed") is mockup content, not a
+real adoption number, so it stayed out rather than being passed off as one.
+
+**Images, fully re-exported (2026-09-12)**: all 9 images (hero + 8 section images) are
+WebP, opaque (no alpha), no baked-in banners or rounded corners, at native/100% scale (no
+upscaling yet, see the "Case study image assets" backlog item). Two images not in the
+original draft were added after Jim asked why they were missing: a sketch/ideation image
+(`big-numbers-sketches.webp`, principle 11) and the dropped-logos mockup
+(`connector-logos.webp`) — both were sitting unused in the raw `production images/`
+folder because only already-wired images were checked the first time (principle 10).
+`slack-app.gif` is the one exception left un-re-exported (animated, Jim's call) and
+flagged `unframed`.
+
+**Visual treatment, applies site-wide now, not just here**: every image gets a 1px
+`--color-text-muted-light` (#888888) border + 6px radius by default (chosen to match
+Jim's original baked-in `#9e9e9e` and the radius already baked into the mockup
+screenshots themselves), in both the inline page and the Lightbox; `unframed` opts a
+specific image out (alpha composites, e.g. Mobile Emergency System's hero). A numeric
+`maxWidth` field (not the old boolean `narrow`) caps display width per image when
+something reads better smaller (`key-metrics.webp` at 480, the hero here tested at 800);
+a capped image's caption automatically matches its width (`mediaMaxWidth()` in
+`CaseStudyPage.jsx` applies to both). Body text is 16px, inline captions 14px (down/up
+respectively from 17/13, so the two feel closer in weight, per principle 12).
 
 ### Developer Experience
 
@@ -235,19 +389,3 @@ conceptual.
 - "I conceived Data Explorer" is a strong ownership claim; build on it.
 - Add a reflection.
 
----
-
-## Unlisted (lowest priority)
-
-These carry `"listed": false` and are off the site. Only worth touching if one is being
-brought back. All three have thin myportfolio source (a few sentences) and no stated
-outcomes, so a rehab is close to a rewrite and needs Jim's input on the actual story.
-
-- **Banking Experiences**: the rehab candidate if any. Real scope (Creative Director at
-  Traction, 20M+ customers, RITE testing, life-goals IA, student-banking strategy).
-  Needs real outcomes, the life-goals IA decision promoted, source reconciliation.
-- **Samsung Interactive TV**: dated (consumer interactive TV, consultant role), only two
-  images, most connective prose is invented. See the "drift to review" note in the
-  backlog.
-- **Walmart.com Content**: dated agency e-commerce work; the Super Bowl "Game Time"
-  interactive is the one memorable piece.

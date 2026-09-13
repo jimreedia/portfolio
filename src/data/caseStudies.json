@@ -271,7 +271,7 @@
   {
     "id": "operational-insights",
     "title": "Operational Insights",
-    "description": "A monitoring experience for the small teams who both build data-integration jobs and watch over them.",
+    "description": "Built for the Monday-morning glance, not an analysis session: big numbers first, deeper analysis one click down. It shipped, and the response from users was that it finally had the right kinds of metrics.",
     "blurb": "A data-monitoring dashboard built for the quick daily glance: big actionable numbers first, deep analysis one click away. Shipped, with customers calling out \"the right kinds of metrics.\"",
     "tags": ["Data Platforms", "Enterprise"],
     "url": "/case-study/operational-insights",
@@ -280,55 +280,82 @@
     "team": "One UX designer (Jim Reed) and one UX researcher",
     "thumb": "/assets/case-studies/homepage-assets/operational-insights.webp",
     "hero": {
-      "src": "/assets/case-studies/operational-insights/overview.png",
-      "alt": "The Operational Insights dashboard: job status fast-facts above rows-processed and job-count charts and a data-volume heat map"
+      "src": "/assets/case-studies/operational-insights/overview.webp",
+      "width": 1000,
+      "height": 908,
+      "maxWidth": 800,
+      "alt": "The Operational Insights dashboard: job status fast-facts above rows-processed and job-count charts and a data-volume heat map",
+      "caption": "Built around one idea: the Monday-morning check is a glance, not an analysis session, and treating it like one is what most dashboards get wrong."
     },
     "sections": [
       {
         "blocks": [
-          { "type": "text", "value": "Small teams, typically five or fewer developers and one manager, both build data-integration jobs and monitor the daily flow of data through them. Working with a UX researcher, I shaped a monitoring experience around how those teams actually check in on their work: **the \"Monday-morning check\" is a glance, not an analysis session**." }
+          { "type": "text", "value": "Small teams, typically five or fewer developers and one manager, both build data-integration jobs and monitor the daily flow of data through them. I designed the monitoring experience around how those teams actually check in on their work: **the \"Monday-morning check\" is a glance, not an analysis session**, and treating it like one is what most dashboards get wrong." }
         ]
       },
       {
-        "heading": "Big Numbers, First Glance",
+        "heading": "Big Numbers, Not Pie Charts",
         "blocks": [
-          { "type": "text", "value": "Observation showed that the first look is about **large, actionable \"fast facts\"** like Rows Processed and Number of Jobs, not the pie and donut charts that fill traditional dashboards. Job-status breakdowns ride along as small stacked-column charts." },
-          { "type": "image", "src": "/assets/case-studies/operational-insights/key-metrics.png", "alt": "Rows Processed and Number of Jobs shown as a large value beside a small bar chart, with a hover tooltip breaking a bar into succeeded, warning, and failed counts" }
+          { "type": "text", "value": "Field observation was clear: the first look is about **large, actionable numbers**, like Rows Processed and Number of Jobs, not the pie and donut charts that fill most dashboards. I built the fast-facts row around that finding and pushed status breakdowns into a small stacked column riding along beside each number, rather than giving them a chart of their own." },
+          { "type": "image", "src": "/assets/case-studies/operational-insights/big-numbers-sketches.webp", "width": 1014, "height": 456, "alt": "Hand sketches labeled Fast Facts and Insights, next to a series of higher-fidelity comps showing the same running, scheduled, succeeded, and failed counts", "caption": "The concept on paper before it was pixels: fast facts and insights, worked out in sketches first." },
+          { "type": "text", "value": "Those sketches carried straight through several rounds of higher-fidelity comps into what shipped." },
+          { "type": "image", "src": "/assets/case-studies/operational-insights/key-metrics.webp", "width": 876, "height": 654, "alt": "Rows Processed and Number of Jobs shown as a large value beside a small bar chart, with a hover tooltip breaking a bar into succeeded, warning, and failed counts", "caption": "Two fast facts, Rows Processed and Number of Jobs, with status breakdowns riding along as a stacked column instead of a chart of their own.", "maxWidth": 480 }
         ]
       },
       {
-        "heading": "Drill Down to Analysis",
+        "heading": "Every Fast Fact Is a Doorway",
         "blocks": [
-          { "type": "text", "value": "Every fast fact is a doorway. From a single number the user drops into **detailed analysis views**, such as a filtered job list or scheduled tasks by runtime environment, without losing the thread." },
-          { "type": "image", "src": "/assets/case-studies/operational-insights/big-numbers.png", "alt": "The job-status fast-facts row with arrows connecting the Failed and Scheduled tiles to a filtered job list and a scheduled-tasks chart" }
+          { "type": "text", "value": "Every fast fact needed a next step. From a single number, a user drops into **detailed analysis views**, a filtered job list, scheduled tasks by runtime environment, without losing the thread back to where they started." },
+          { "type": "image", "src": "/assets/case-studies/operational-insights/big-numbers.webp", "width": 1010, "height": 496, "alt": "The job-status fast-facts row with arrows connecting the Failed and Scheduled tiles to a filtered job list and a scheduled-tasks chart", "caption": "From a number to the filtered list behind it: the Failed and Scheduled tiles open directly into their own detail views." }
         ]
       },
       {
-        "heading": "Correlating Over Time",
+        "heading": "Time Series for the Second Glance",
         "blocks": [
-          { "type": "text", "value": "The second glance is analytical. **Line charts** correlate Rows Processed and Number of Jobs with the projects and folders they belong to, over a chosen date range." },
-          { "type": "image", "src": "/assets/case-studies/operational-insights/analysis-views.png", "alt": "An analysis screen with a multi-series line chart of rows processed by project above a stacked-column chart of job counts by day" }
+          { "type": "text", "value": "The second glance is analytical, not a glance at all. **Time-series charts**, a line for Rows Processed, stacked columns for Number of Jobs, correlate both against the projects and folders they belong to, over whatever date range the operator picks." },
+          { "type": "image", "src": "/assets/case-studies/operational-insights/analysis-views.webp", "width": 1000, "height": 810, "alt": "An analysis screen with a multi-series line chart of rows processed by project above a stacked-column chart of job counts by day", "caption": "Not every question fits in a fast fact: the second glance correlates rows processed against job counts, by project." }
         ]
       },
       {
-        "heading": "Observing Customer-Made Solutions",
+        "heading": "Customers Were Already Building This by Hand",
         "blocks": [
-          { "type": "text", "value": "Field observation turned up teams **piecing together their own monitoring** from spreadsheets, dashboards, and Slack channels. Those workarounds became feature ideas, including a proposed Slack app that would bring operational monitoring into the tools teams already live in." },
-          { "type": "image", "src": "/assets/case-studies/operational-insights/customer-solutions.png", "alt": "A collage of customer-built monitoring: ad-hoc dashboards, an email summary of processed-rows statistics, and an automated Slack channel of task-flow updates" }
+          { "type": "text", "value": "Field visits turned up teams **piecing together their own monitoring** out of spreadsheets, ad-hoc dashboards, and a Slack channel wired to post automated status updates. I treated every one of those workarounds as a feature request already validated by the customer who built it." },
+          { "type": "image", "src": "/assets/case-studies/operational-insights/customer-solutions.webp", "width": 994, "height": 587, "alt": "A collage of customer-built monitoring: ad-hoc dashboards, an email summary of processed-rows statistics, and an automated Slack channel of task-flow updates", "caption": "What customers built for themselves before we built it for them: spreadsheets, dashboards, and an automated Slack channel of status updates." }
         ]
       },
       {
-        "heading": "Reading AI Predictions",
+        "heading": "What I Tried Based on What I Heard From Customers",
         "blocks": [
-          { "type": "text", "value": "As predictive features arrived, a simple **color system** kept them legible: blue for actual values, green for the model's projection. An early mockup that put customer logos on chart labels was dropped because it wouldn't scale to Informatica's hundreds of connector types." },
-          { "type": "image", "src": "/assets/case-studies/operational-insights/ai-predictions.png", "alt": "A rows-processed line chart in blue above a green shaded area chart labeled Projected Rows Processed, powered by CLAIRE" }
+          { "type": "text", "value": "Those workarounds were the pitch. Customers already had a Slack channel they checked all day, so instead of asking them to open another dashboard, I proposed bringing the same fast facts and anomaly alerts there. I took the idea to product management and designed a prototype: a bot, CLAIRE, that posted alerts straight into the channel and could restart a stuck agent or explain an anomaly on request, right where the team was already talking. It demoed well. It did not make the next roadmap." },
+          { "type": "image", "src": "/assets/case-studies/operational-insights/slack-app.gif", "width": 1024, "height": 640, "alt": "A Slack conversation in the Data Integration channel: teammates asking the CLAIRE bot about anomalies and to restart a stuck agent, with the bot posting a rows-processed chart in response", "caption": "CLAIRE, the bot I built to bring the same alerts and answers into Slack: a working prototype that demoed well and never shipped.", "unframed": true }
         ]
       },
       {
-        "heading": "Validating With Customers",
+        "heading": "Company Logos, Not at This Scale",
         "blocks": [
-          { "type": "text", "value": "Post-launch, I ran feedback sessions with users on the live product. The design met the need. One user put it plainly: **\"I really like Operational Insights. It's got the right kinds of metrics.\"**" },
-          { "type": "image", "src": "/assets/case-studies/operational-insights/research.png", "alt": "A recorded customer call showing the live dashboard, captioned with the quote about it having the right kinds of metrics" }
+          { "type": "text", "value": "An early comp put customer logos, Salesforce, AWS, Oracle, Workday, on the Top Targets and Top Sources bar charts in place of plain text labels. Product marketing loved how it looked in the demo. I dropped it: Informatica has hundreds of connector types, many with no logo at all, and plenty of customers connect to systems that were never going to get an icon. A design that only works for the six connectors in a demo does not belong in the shipped product." },
+          { "type": "image", "src": "/assets/case-studies/operational-insights/connector-logos.webp", "width": 1000, "height": 909, "alt": "Top Targets and Top Sources bar charts with company logos, Salesforce, AWS, Oracle, Workday, Azure, standing in for connector names", "caption": "Striking in the demo, unworkable at Informatica's actual scale: company logos standing in for connector names." }
+        ]
+      },
+      {
+        "heading": "Blue for Real, Green for Predicted",
+        "blocks": [
+          { "type": "text", "value": "Predictive features needed a way to keep actual values from blurring together with the forecast. A plain **color code** did it: blue for what happened, green for what the model predicts. I added a \"How was this prediction made?\" link alongside it, so operators could interrogate the forecast instead of just trusting it." },
+          { "type": "image", "src": "/assets/case-studies/operational-insights/ai-predictions.webp", "width": 1000, "height": 800, "alt": "A rows-processed line chart in blue above a green shaded area chart labeled Projected Rows Processed, powered by CLAIRE", "caption": "Blue for what happened, green for what the model predicts, plus a way to ask how the forecast was made so operators don't have to just trust it." }
+        ]
+      },
+      {
+        "heading": "What Shipped, and What Users Said",
+        "blocks": [
+          { "type": "text", "value": "Post-launch, I ran feedback sessions with people using the live product. The design held up. One user put it plainly: **\"I really like Operational Insights. It's got the right kinds of metrics.\"**" },
+          { "type": "image", "src": "/assets/case-studies/operational-insights/research.webp", "width": 1010, "height": 700, "alt": "A recorded customer call showing the live dashboard, captioned with the quote about it having the right kinds of metrics", "caption": "Nick Marty, an Informatica user, confirming after launch what mattered most: the dashboard finally had the right kinds of metrics." }
+        ]
+      },
+      {
+        "heading": "Reflection",
+        "blocks": [
+          { "type": "text", "value": "The Slack app stayed a prototype, not a shipped feature. Customers had already proven the concept by building rougher versions of it themselves. If I revisit this work, that is the extension I would push from concept to production first." },
+          { "type": "text", "value": "Trust in the AI prediction mattered as much as reading it correctly. The \"How was this prediction made?\" link was our answer, but I never got to measure whether it actually changed how much operators trusted the forecast. That is the open question I would go back and answer." }
         ]
       }
     ]
@@ -459,7 +486,8 @@
     "thumb": "/assets/case-studies/homepage-assets/mobile-emergency-system.webp",
     "hero": {
       "src": "/assets/case-studies/mobile-emergency-system/app-comps.png",
-      "alt": "Three iPhone screens of the AtHoc app: a message list, an emergency report with a photo and map, and a map of alert zones"
+      "alt": "Three iPhone screens of the AtHoc app: a message list, an emergency report with a photo and map, and a map of alert zones",
+      "unframed": true
     },
     "sections": [
       {
@@ -641,147 +669,6 @@
         "blocks": [
           { "type": "text", "value": "Sketches explored the **interactions and layouts**: the orchestration editor's library and canvas, dragging fields onto model inputs, the dashboard, and a dashboard designer showing multiple outputs." },
           { "type": "image", "src": "/assets/case-studies/analytics-big-data/sketches.png", "alt": "Hand sketches of an orchestration editor, a field-to-input drag interaction, a dashboard, and a dashboard designer" }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "samsung-interactive-tv",
-    "title": "Samsung Interactive TV",
-    "description": "Interaction and motion design for navigating TV content with a limited remote.",
-    "blurb": "Interaction and motion design for Samsung's interactive-TV guide, making a living room's worth of content navigable with four arrow keys.",
-    "tags": ["Enterprise"],
-    "url": "/case-study/samsung-interactive-tv",
-    "featured": false,
-    "listed": false,
-    "role": "Interaction & Motion Designer (consultant), experience design firm, San Francisco",
-    "hero": {
-      "src": "/assets/case-studies/samsung-interactive-tv/movies-ui.png",
-      "alt": "A Samsung TV guide: a horizontal row of large channel icons (Albums, Shortcuts, Movies, TVOD, Music) with Movies in focus"
-    },
-    "sections": [
-      {
-        "blocks": [
-          { "type": "text", "value": "As an independent consultant for a San Francisco experience-design firm, I worked as an **Interaction and Motion Designer** on Samsung's interactive-TV guide, the on-screen experience for navigating content on the television." }
-        ]
-      },
-      {
-        "heading": "The Design Challenge",
-        "blocks": [
-          { "type": "text", "value": "Interactive TV is constrained by the remote. **Up, down, left, right, select** is the entire input vocabulary, so the **information architecture has to carry the navigation**: where content lives, how deep it sits, and how you move between full-screen menus and lightweight overlays." }
-        ]
-      },
-      {
-        "heading": "Storyboarding the Motion",
-        "blocks": [
-          { "type": "text", "value": "Detailed storyboards worked out the **screen types and transitions**: a macroguide of channels, an open guide that scrolls a list into focus, a miniguide over live video, directory grids, and full-screen item detail, with the exact key presses and pauses annotated for each." },
-          { "type": "image", "src": "/assets/case-studies/samsung-interactive-tv/storyboards.png", "alt": "A storyboard grid of TV guide screen types (macroguide, open guide, miniguide over stage, directory, and item detail), each annotated with navigation notes" }
-        ]
-      },
-      {
-        "heading": "Motion Studies in After Effects",
-        "blocks": [
-          { "type": "text", "value": "I composited **motion-study videos in After Effects**. Video production became the primary tool for communicating creative direction to Samsung, showing rather than describing how a transition should feel." }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "banking-experiences",
-    "title": "Banking Experiences",
-    "description": "Delightful online experiences and financial-planning tools for Bank of America customers.",
-    "blurb": "Interactive calculators, data visualization, and a life-goals information architecture for Bank of America experiences used by 20M+ customers.",
-    "tags": ["Enterprise"],
-    "url": "/case-study/banking-experiences",
-    "featured": false,
-    "listed": false,
-    "role": "Creative Director, Traction (for Bank of America)",
-    "team": "Researchers and subject-matter experts in design workshops",
-    "hero": {
-      "src": "/assets/case-studies/banking-experiences/calculator.png",
-      "alt": "A Bank of America vehicle-payment calculator: sliders for price, trade-in, and term on the left, results and a loan-terms bar chart on the right"
-    },
-    "sections": [
-      {
-        "blocks": [
-          { "type": "text", "value": "As **Creative Director** at Traction, a San Francisco design firm, I directed UX design for Bank of America across experiences serving **more than 20 million customers**. The work ran from interactive calculators and data visualization, like this car-loan estimator, to information architecture and design strategy." }
-        ]
-      },
-      {
-        "heading": "Organizing Around Life Goals",
-        "blocks": [
-          { "type": "text", "value": "Testing with third-party firms using **RITE (Rapid Iterative Testing and Evaluation)** showed customers wanted products and tools organized around **life events like Education, Auto, Family, Home, and Small Business**, not traditional banking categories like Checking and Savings. They also expected helpful tools like interactive calculators at every step." },
-          { "type": "image", "src": "/assets/case-studies/banking-experiences/informational.png", "alt": "Wireframes of a \"My Money Puzzle\" page with lifestyle-category icons and a vehicle-payment calculator layout" }
-        ]
-      },
-      {
-        "heading": "Informational Experiences",
-        "blocks": [
-          { "type": "text", "value": "I led experience design for a **consumer-research microsite built around the ritual of buying a car**, a Car Research Center that pairs rate information with side-by-side vehicle comparison." },
-          { "type": "image", "src": "/assets/case-studies/banking-experiences/user-testing.png", "alt": "The Bank of America Car Research Center page: an auto-loan rate banner above a primary-vehicle comparison module" }
-        ]
-      },
-      {
-        "heading": "Transactional Experiences",
-        "blocks": [
-          { "type": "text", "value": "I led UX for the transactional side too, producing **detailed wireframes and annotation for a foreign-currency-exchange microsite**, down to the error messaging rules and the calculate-button behavior." },
-          { "type": "image", "src": "/assets/case-studies/banking-experiences/transactional.png", "alt": "An annotated wireframe of a \"Foreign Currency Order\" step, with a numbered annotation key covering errors, denominations, and calculate behavior" }
-        ]
-      },
-      {
-        "heading": "UX Strategy for Student Banking",
-        "blocks": [
-          { "type": "text", "value": "For a student-banking portal redesign I **facilitated design workshops with researchers and subject-matter experts** to set direction. The resulting **design principles**, thorough information with minimal clicks and text plus rich interactive tutorials, aimed to teach college students about finance without boring them." },
-          { "type": "image", "src": "/assets/case-studies/banking-experiences/ux-strategy.png", "alt": "A design-principles document page: a principle about minimal clicks and rich interactive experiences, with contextual-tip and interactive-check examples" }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "walmart-content",
-    "title": "Walmart.com Content",
-    "description": "Interactive brand-extension content and microsites for Walmart.com.",
-    "blurb": "Interactive brand-extension content for Walmart.com: themed microsites and a Super Bowl \"Game Time\" experience with a party-planning shopping-list tool.",
-    "tags": ["Enterprise"],
-    "url": "/case-study/walmart-content",
-    "featured": false,
-    "listed": false,
-    "role": "Creative Director, digital agency (for Walmart)",
-    "hero": {
-      "src": "/assets/case-studies/walmart-content/save-live-green.png",
-      "alt": "The Walmart.com \"Save & Live Green\" microsite: a \"Together We Can Make a Difference\" hero over topical article sections"
-    },
-    "sections": [
-      {
-        "blocks": [
-          { "type": "text", "value": "As **Creative Director** at a San Francisco design and development firm, I partnered with Walmart's content strategists to build **interactive content for Walmart.com**: brand extensions in the form of delightful e-commerce experiences." }
-        ]
-      },
-      {
-        "heading": "Content Strategy and Information Architecture",
-        "blocks": [
-          { "type": "text", "value": "I worked with Walmart specialists to shape **topical sections** across the site (gift cards, environmental living, sports), each a small editorial experience rather than a category page. The \"Save & Live Green\" microsite is one example." }
-        ]
-      },
-      {
-        "heading": "A Super Bowl \"Game Time\" Experience",
-        "blocks": [
-          { "type": "text", "value": "The Game Time section built the store into a **living-room scene with hotspots**: a \"beat the clock\" challenge to stock snacks for guests before the game came back from break." },
-          { "type": "image", "src": "/assets/case-studies/walmart-content/super-bowl-game.png", "alt": "The Walmart \"Game Time\" page: a living-room photo with a countdown clock and glowing hotspots over snack products, and a product rail below" }
-        ]
-      },
-      {
-        "heading": "Concept Sketch",
-        "blocks": [
-          { "type": "text", "value": "An early **concept sketch** worked out the core interaction: the \"Go Team\" living room, the hotspot furniture, and the product filmstrip down the side." },
-          { "type": "image", "src": "/assets/case-studies/walmart-content/concept-sketch.png", "alt": "A pencil sketch of the Game Time living-room scene with a \"Go Team\" banner and a vertical strip of product thumbnails" }
-        ]
-      },
-      {
-        "heading": "Interactive Shopping List",
-        "blocks": [
-          { "type": "text", "value": "The centerpiece tool: **slide a football helmet to set your guest count** and the shopping list calculates the quantities you need, backed by supporting articles, recipes, and a room-by-room prep guide." },
-          { "type": "image", "src": "/assets/case-studies/walmart-content/shopping-list.png", "alt": "The \"Interactive Shopping List\" page with a \"How many guests\" helmet slider set to 20 and a Create List button, beside articles and recipes" }
         ]
       }
     ]
