@@ -2,7 +2,7 @@
   {
     "id": "agentic-ai-chat",
     "title": "Agentic AI Chat",
-    "description": "Leveraging AI experiences to create valuable outcomes for customers.",
+    "description": "An AI agent embedded in LinkedIn's observability tools, now used by 10,000+ engineers to find an incident's root cause faster.",
     "blurb": "Embedded with product engineers, I led end-to-end UX for a conversational AI agent now used across observability tools by 10,000+ LinkedIn engineers. I set the UX principles for LLM-powered interactions, spec'd the contextual input, plugins, and inline-artifact components the team builds on, and designed a custom icon system that signals a trusted, purpose-built tool. The result is faster incident triage and lower cognitive load for engineers working mid-incident.",
     "tags": ["AI", "Enterprise"],
     "url": "/case-study/agentic-ai-chat",
@@ -15,67 +15,137 @@
       "/assets/case-studies/homepage-assets/agentic-ai-chat-3.webp"
     ],
     "hero": {
-      "src": "/assets/case-studies/agentic-ai-chat/LinkedIn-agentic-chat-home.png",
-      "alt": "Observe Agent chat home screen, embedded in the observability product"
+      "src": "/assets/case-studies/agentic-ai-chat/observe-agent-home.webp",
+      "width": 1000,
+      "height": 614,
+      "alt": "Observe Agent chat home screen, embedded in the observability product",
+      "caption": "The empty state had to work as well as the answers: three getting-started prompts, not a blank box asking the engineer to type something."
     },
     "sections": [
       {
-        "heading": "Overview",
-        "body": [
-          "As **Product Designer** at LinkedIn, I collaborated closely with product engineers to design a front-end conversational experience for an AI agent for observability products used by 10,000 employees. The result was a major decrease in the time it takes developers to find root causes for performance incidents such as service disruptions and network latency.",
-          "**Outcome:** faster incident triage, lower cognitive load, a trusted AI surface."
+        "blocks": [
+          {
+            "type": "text",
+            "value": "Observe Agent is a conversational AI surface built into LinkedIn's observability tools: alerts, metrics, logs, and deployment history. I led end-to-end UX for the experience alongside the product engineers building it: the interaction model, the plugin and inline-artifact components other designers now build on, and the visual identity that signals a trustworthy, purpose-built tool rather than a generic bot."
+          },
+          {
+            "type": "text",
+            "value": "It ships to 10,000+ engineers and has cut the time it takes them to trace an incident (a service disruption, a spike in latency) back to its root cause."
+          }
         ]
       },
       {
-        "heading": "AI in Context",
-        "image": {
-          "src": "/assets/case-studies/agentic-ai-chat/LinkedIn-agent-in-context.png",
-          "alt": "The agent conversation shown alongside a logs explorer view, sharing context with the surrounding UI"
-        },
-        "body": [
-          "One product design goal was to create a **conversational assistant** that feels native to LinkedIn engineers, and seamlessly integrated with existing views so that user and agent can chat in context with adjacent UI elements."
+        "heading": "What SREs Need Mid-Incident",
+        "blocks": [
+          {
+            "type": "text",
+            "value": "The people using this are Site Reliability Engineers and on-call engineers, almost always mid-incident: several tabs open across alerting, metrics, logs, and deployment history, under real time pressure. Before designing anything, I wrote down what that person actually needed from the agent, to align the team on the job to be done, not on what would be a fun AI feature to add."
+          },
+          {
+            "type": "list",
+            "items": [
+              "Help me quickly diagnose an incident.",
+              "Let me control the UI view so I can drill into details.",
+              "Provide evidence, and remember what I taught it.",
+              "Meet me in the context of my current view.",
+              "Let me come back to previous conversations.",
+              "Let me share conversations with others."
+            ]
+          },
+          {
+            "type": "image",
+            "src": "/assets/case-studies/agentic-ai-chat/user-needs.webp",
+            "width": 582,
+            "height": 430,
+            "alt": "User-needs statements from a Site Reliability Engineer persona, framed as \"I want to…\" jobs",
+            "caption": "The persona, stated as jobs the agent had to do, not a bio: diagnose, drill into evidence, come back to it later."
+          },
+          {
+            "type": "text",
+            "value": "That's the common thread: high-pressure, multi-tab work, split across tooling that doesn't talk to each other. Every decision after this had to earn its place against that reality."
+          }
         ]
       },
       {
-        "heading": "UI Principles",
-        "image": {
-          "src": "/assets/case-studies/agentic-ai-chat/LinkedIn-side-panel-principles.png",
-          "alt": "Storyboard of side-panel placement options, showing how the chat panel shares screen space with the existing application"
-        },
-        "body": [
-          "To help the team decide how the chat experience shares screen real estate with the existing application, and to establish meaningful placement of side panels, I conducted an audit of existing panels and used a basic storyboard to communicate the **design rationale** for panel placement."
+        "heading": "The Agent Lives Beside the Data",
+        "blocks": [
+          {
+            "type": "text",
+            "value": "The agent had to feel native to the product, not bolted onto it: sitting beside the same logs and metrics views engineers already use, and not just reading context from them. Ask it to show errors during lunch, and it sets the filters in the view itself, rather than telling the engineer where to click or sending them off to a separate destination to do it themselves."
+          },
+          {
+            "type": "image",
+            "src": "/assets/case-studies/agentic-ai-chat/agent-in-context.webp",
+            "width": 1000,
+            "height": 614,
+            "alt": "The agent conversation shown alongside a logs explorer view, having just applied filters to that view on the engineer's behalf",
+            "caption": "Asked for errors during lunch, the agent didn't just answer, it applied the filters itself: navigating the Logs Explorer, not just narrating it."
+          }
         ]
       },
       {
-        "heading": "Elements and Interactions",
-        "image": {
-          "src": "/assets/case-studies/agentic-ai-chat/LinkedIn-interaction-specs.png",
-          "alt": "Interaction specs for chat input, plugins menu, contextual tags, and inline chart artifacts"
-        },
-        "body": [
-          "To help developers move fast, I spec'd critical elements and interactions with a thoughtful **design language**. Critical components include plugins, contextual input, and inline artifacts such as charts. These components enable better contextual input and quicker answers for the user."
+        "heading": "A Side Panel, Sized to the Task",
+        "blocks": [
+          {
+            "type": "text",
+            "value": "Where the agent lived on screen was its own decision, not a default. I audited how side panels already behaved elsewhere in the product, full takeovers, modals, docked panels, and built a storyboard to argue the case: a **persistent side panel** that keeps the underlying page in view, narrow when it's supplying supplementary information, wider once the interaction turns into something closer to create-and-edit. A modal or a full-screen takeover would have solved for the chat and lost the page it's supposed to be chatting about."
+          },
+          {
+            "type": "image",
+            "src": "/assets/case-studies/agentic-ai-chat/side-panel-principles.webp",
+            "width": 672,
+            "height": 529,
+            "alt": "Storyboard of side-panel placement options, showing how the chat panel shares screen space with the existing application",
+            "caption": "The audit that argued for a side panel over a takeover: narrow for supplementary info, wider once the interaction turns into create-and-edit."
+          }
         ]
       },
       {
-        "heading": "User Needs",
-        "image": {
-          "src": "/assets/case-studies/agentic-ai-chat/LinkedIn-user-needs.png",
-          "alt": "User-needs statements from a Site Reliability Engineer persona, framed as \"I want to…\" jobs"
-        },
-        "body": [
-          "The primary persona is a Site Reliability Engineer (SRE) or an on-call engineer in mid-incident. Before designing anything, I outlined some basic user needs to align the team on what we were building.",
-          "**Common context:** high-pressure, multi-tab workflows, fragmented tooling across alerts, metrics, logs, and deployments."
+        "heading": "Three Primitives: Plugins, Context, and Inline Artifacts",
+        "blocks": [
+          {
+            "type": "text",
+            "value": "Underneath the chat itself, I spec'd three components everything else builds on: **plugins** for the agent's tools and skills, **contextual input** for pulling a page element, a chart, a job, an alert, into the conversation as a removable tag, and **inline artifacts** so a chart renders directly in the chat instead of linking out to it. That last one was the real tradeoff: it would have been simpler to answer in text and link to the real dashboard, but that hands the engineer another tab to lose their place in. Rendering the answer where the question was asked cost more design and engineering effort up front, and was worth it."
+          },
+          {
+            "type": "image",
+            "src": "/assets/case-studies/agentic-ai-chat/interaction-specs.webp",
+            "width": 1311,
+            "height": 678,
+            "alt": "Interaction specs for chat input, plugins menu, contextual tags, and inline chart artifacts",
+            "caption": "Plugins, contextual tags, and inline charts, spec'd once so the rest of the team could build the same conversation grammar everywhere the agent shows up.",
+            "unframed": true
+          }
         ]
       },
       {
         "heading": "Branding",
-        "image": {
-          "src": "/assets/case-studies/agentic-ai-chat/LinkedIn-icon-design.png",
-          "alt": "Icon design work: a comparison audit of sparkle glyphs and the final telescope-plus-sparkle mark in its variations"
-        },
-        "body": [
-          "I created custom graphical icons instead of using a generic bot icon. A custom icon reinforces the custom solution as a trusted tool.",
-          "Icon design work started with a comparison audit to uncover best practices and recognizable patterns. The final design used sparkle glyphs to indicate AI and the shape of a telescope to indicate Observe. I created variations for multiple experience channels such as the application UI and Slack."
+        "blocks": [
+          {
+            "type": "text",
+            "value": "A generic bot icon would have undercut the one thing this needed to earn: trust from someone deciding whether to act on what the agent just told them mid-incident. I ran a comparison audit of the sparkle and bot iconography already in use elsewhere, then designed a mark that pairs a sparkle (AI) with the shape of a telescope (Observe), built out in variations for every channel it appears in, the product UI and Slack. That exploration reached further than the icon: an early concept named the Slack bot separately, O11y Copilot, before the team settled on one name, Observe Agent, everywhere it appears, so the identity stayed consistent in name as well as mark."
+          },
+          {
+            "type": "image",
+            "src": "/assets/case-studies/agentic-ai-chat/icon-design.webp",
+            "width": 666,
+            "height": 475,
+            "alt": "Icon design work: a comparison audit of sparkle glyphs and the final telescope-plus-sparkle mark in its variations",
+            "caption": "An early concept explored a separate name for the Slack bot, O11y Copilot; the team settled on one name, Observe Agent, everywhere the icon appears."
+          }
+        ]
+      },
+      {
+        "heading": "Reflection",
+        "blocks": [
+          {
+            "type": "text",
+            "value": "The classic UX toolkit didn't disappear designing this, it just changed shape. Personas became short need statements instead of a persona board, a storyboard audited screen real estate instead of a user flow, and the artifact the rest of the team actually built from wasn't a wireframe, it was the interaction spec for the plugin and inline-artifact primitives."
+          },
+          {
+            "type": "text",
+            "value": "What I'd revisit: the panel model assumes one conversation, one side panel, at a time. It hasn't been tested against an engineer running two or three investigations in parallel, which is closer to how a bad incident actually goes. I'd want real usage data before deciding whether the component set needs a second surface, not just a wider one."
+          }
         ]
       }
     ]

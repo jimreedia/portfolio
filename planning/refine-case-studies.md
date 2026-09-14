@@ -37,6 +37,15 @@ reconciliation-against-thin-source work the "more" pages still need. First step,
 any drafting: the full source review per principle 10 (myportfolio original + complete
 `production images/` folder) hasn't been done for any of the three yet.
 
+**Decided 2026-09-13: one case study at a time, sequential worktrees, not parallel.**
+Considered branching two more worktrees at once for Genomic Data Platform and AI
+Recommendations right after Agentic AI Chat, then reviewing and merging all three
+together. Jim opted to keep going one at a time instead, so whatever the next pass turns
+up (a framework wrinkle, a source-review surprise, a pattern worth reusing) can actually
+inform the one after it, rather than three branches drifting independently off the same
+starting point. Next up: Genomic Data Platform or AI Recommendations, either order, in
+its own fresh worktree once this one is reviewed and merged.
+
 After the featured 3, back to the remaining 5 "more" pages. All 5 (Developer Experience,
 Machine Learning for Operators, Mobile Emergency System, Additive Manufacturing,
 Analytics & Big Data) still carry the original credibility risk, synthesized text
@@ -182,29 +191,64 @@ image worth re-exporting follows the same WebP/opaque/bordered pattern as Operat
 Insights, per the "Case study image assets" backlog item. Not yet known whether any of
 the 3 have baked-in banners, that's part of the source review before drafting.
 
-### Agentic AI Chat
+### Agentic AI Chat — done (2026-09-13)
 
-Structure: 6 sections, the tightest of the three; order is off.
+Source review done first, per principle 10: myportfolio original checked (its text is a
+paraphrase of what was already wired into `caseStudies.json`, nothing new there), and all
+6 images in `production images/LinkedIn Agent/` reviewed in full (all 6 were already
+wired in; unlike the Operational Insights pilot, nothing was sitting unused). One real
+finding from reading the images closely rather than just their existing alt text, caught
+and corrected by Jim after an initial misreading: `LinkedIn-icon-design.png`'s usage
+examples show an early concept that explored a separate name for the Slack bot, **O11y
+Copilot**, before the team settled on one name, Observe Agent, across both the app and
+Slack (not, as first drafted here, two names that both shipped). That's evidence of the
+icon-design exploration feeding a naming decision, not just a visual one, and became the
+closing beat of the Branding section.
 
-- **Lead:** replace "Leveraging AI experiences to create valuable outcomes for
-  customers." with the outcome (an agent 10,000+ engineers use to triage incidents
-  faster).
-- **Move "User Needs" up.** It is section 4, after AI in Context / UI Principles /
-  Elements and Interactions. The SRE persona and the mid-incident context should frame
-  the work, not arrive two-thirds through.
-- **Metric inconsistency:** body says "10,000 employees," blurb says "10,000+ LinkedIn
-  engineers." Pick one. State the time-savings as a number if there is one ("a major
-  decrease in the time it takes developers to find root causes" is vague).
-- **"UI Principles" and "Elements and Interactions" read as process reports** ("I
-  conducted an audit," "I spec'd critical elements"). Reframe around the decisions: why
-  a side panel over a modal or a full takeover; why plugins + contextual input + inline
-  artifacts were the three primitives, and what was deliberately left out.
-- **"Branding" is the strongest section already** (custom icon reinforces trust;
-  telescope + sparkle). Keep the shape, tighten.
-- **Add a reflection:** what did not work, what you would revisit about the panel model
-  or the component set.
-- **Schema:** this page still uses the legacy `body`/`image` shape; the other two use
-  `blocks`. Normalize while editing.
+**Reordered** to lead with the persona: intro → **What SREs Need Mid-Incident** (was
+"User Needs," moved from position 4 to 2, now includes the actual "I want Observe Agent
+to..." need statements from the image as a `list` block, not just a paraphrase) → **The
+Agent Lives Beside the Data** (was "AI in Context") → **A Side Panel, Sized to the Task**
+(was "UI Principles," reframed around the actual call: a persistent side panel over a
+modal or full takeover, narrow for supplementary info and wider for create-and-edit,
+argued from a panel audit rather than assumed) → **Three Primitives: Plugins, Context,
+and Inline Artifacts** (was "Elements and Interactions," names the tradeoff: inline chart
+artifacts cost more up front than linking out to the real dashboard, and were worth it
+so the engineer doesn't lose their tab) → **Branding** (kept, tightened, plus the
+early-O11y-Copilot-name finding) → **Reflection** (new: relates the classic UX toolkit to how it actually
+showed up here per principle 9, needs statements instead of a persona board, a storyboard
+auditing screen real estate instead of a user flow; open question on whether the
+one-conversation-per-panel model holds up against an engineer running parallel
+investigations, which is closer to how a bad incident actually goes).
+
+**Metric standardized** on "10,000+ engineers" (lead, intro, blurb all agree; body
+previously said "10,000 employees"). No harder time-savings number exists in the source
+to state, stayed qualitative rather than inventing one.
+
+**Schema normalized** to `blocks` (was the legacy `body`/`image` shape), matching Genomic
+Data Platform and AI Recommendations.
+
+**Images re-exported (2026-09-13), folding in the "Case study image assets" backlog item
+for this case study.** None of the 6 had an unbannered `-v1` sibling in the source
+folder (unlike some of Operational Insights' images), so a first pass patched the
+banners out of the existing PNGs programmatically (color-thresholded to find each
+banner's exact pixels, then flat-fill reconstruction sampled from each image's own
+unbroken surroundings, not automatic inpainting, tried once on the side-panel-principles
+diagram and cv2.inpaint produced a visible blur smear on that flat, vector-style art).
+That stopgap was fully superseded once Jim re-exported all 6 himself from the real
+source files: cleaner results across the board (smaller file sizes, tighter crops, no
+guesswork over what a hidden sidebar icon should be), and it surfaced one thing the
+patch job couldn't have shown, `interaction-specs` is a genuine composite (a
+drop-shadowed stack of screenshots and callouts, not a single flat rectangle), so it
+carries a real alpha channel and is flagged `unframed` rather than getting the standard
+border/radius, which would otherwise box in its soft edges. Final assets: WebP, renamed
+from the literal `LinkedIn-*.png` source names to descriptive ids
+(`observe-agent-home`, `agent-in-context`, `side-panel-principles`,
+`interaction-specs`, `user-needs`, `icon-design`) matching Operational Insights'
+convention; `width`/`height` updated in `caseStudies.json` to match each re-export's
+actual (slightly different) final dimensions. Captions added in the earlier content
+pass already carried the banners' story-weight content, so they didn't need to change.
+Verified with `npm run build` and screenshots after each swap.
 
 ### Genomic Data Platform
 
