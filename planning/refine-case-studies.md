@@ -43,8 +43,10 @@ Recommendations right after Agentic AI Chat, then reviewing and merging all thre
 together. Jim opted to keep going one at a time instead, so whatever the next pass turns
 up (a framework wrinkle, a source-review surprise, a pattern worth reusing) can actually
 inform the one after it, rather than three branches drifting independently off the same
-starting point. Next up: Genomic Data Platform or AI Recommendations, either order, in
-its own fresh worktree once this one is reviewed and merged.
+starting point. **Genomic Data Platform done 2026-09-14** (branch:
+fix/refine-case-study-genomic-data-platform), see its entry below. Next up: AI
+Recommendations, the last of the featured 3, in its own fresh worktree once this one is
+reviewed and merged.
 
 After the featured 3, back to the remaining 5 "more" pages. All 5 (Developer Experience,
 Machine Learning for Operators, Mobile Emergency System, Additive Manufacturing,
@@ -250,36 +252,86 @@ actual (slightly different) final dimensions. Captions added in the earlier cont
 pass already carried the banners' story-weight content, so they didn't need to change.
 Verified with `npm run build` and screenshots after each swap.
 
-### Genomic Data Platform
+### Genomic Data Platform — done (2026-09-14)
 
-Structure: 9 sections, ~6 of them a methods tour (Personas, Card Sorting, User
-Interviews, Storyboards, Prototypes, then Enhancing the Experience / User-Centered
-Design / Cross-Product Design).
+Source review done first, per principle 10: myportfolio original checked (its text is a
+close paraphrase of what was already wired into `caseStudies.json`, nothing structurally
+new there), and the full `production images/Illumina/` folder reviewed, all 29 files, not
+just the 12 already wired in. Two real findings sitting unused the whole time:
+`Cohorts-design-principles.png` (three design principles, "Data density is King," not
+used, judged too disconnected from the narrative to force in) and
+`Cohorts-comparison marker frequency.png`, the Marker Frequency comparison view, a real
+shipped feature that turned out to be a *closer* match to the customer quote already in
+the case study than the heat map image that was standing in for it. That became the
+session's best find: the existing "Enhancing the Experience" section paired a direct
+quote from William LaFramboise (Allegheny Health Network, readable directly in the
+image, not paraphrased) asking to compare gene variance across multiple cohorts with a
+screenshot of the Genes tab, a single-cohort view that doesn't actually do that
+comparison. The unused Marker Frequency image does. Both shipped and both are now
+shown, in order, as two answers to the one call.
 
-- **Lead:** "Tools for scientists to analyze genomic data..." is a topic. The blurb has
-  the story (evidence-based personas + card sorting + field feedback turned into shipped
-  visualization features; one cohesive multiomic platform). Compress that.
-- **Collapse the methods tour.** Personas / Card Sorting / User Interviews / Storyboards
-  / Prototypes is five sections for "I did discovery." Merge into one or two that lead
-  with what the research changed: which mental model won, which terminology was adopted,
-  which early concept was killed.
-- **Cut the generic openers.** "The discovery phase is one of my favorite parts of the
-  design process." "Storyboards help communicate to product stakeholders..."
-  "Prototypes are invaluable UX tools for communicating..." Textbook definitions, not
-  the work. Open each section on a decision or a stake.
-- **Weak contribution:** "I created personas based on interviews," "I collaborated with
-  UX researchers and conducted," "I conducted several user interviews." The Storyboards
-  and Prototypes sections have no "I" at all.
-- **The two best sections are buried at the end.** "Enhancing the Experience" (customer
-  feedback into a gene-discovery heat map) and "User-Centered Design" (user testing into
-  radar charts for variant types) are real "feedback became a shipped feature" stories.
-  Pull them forward; name the feature and the result.
-- **No metrics anywhere.** "Accelerate biomarker and drug discovery" is the mission, not
-  a result. What shipped, adoption, anything measurable?
-- **"Cross-Product Design"** (applying the system across proteomics + spatial apps) is a
-  genuine principal-scope point, underplayed as a one-liner. Expand: what made the
-  shared system hold across three very different data types.
-- **Add a reflection.**
+**Collapsed the five-section methods tour to two**, per the punch list: Personas and
+Card Sorting merged into **One Persona to Design Around** (the real finding: three roles
+were mapped, but design decisions were made for one, the research scientist chasing a
+biomarker; card sorting settled the shared vocabulary underneath that work). User
+Interviews, Storyboards, and Prototypes merged into **Cohorts That Nest, Compare, and
+Save** (the actual interaction model the storyboards worked out. hierarchical cohorts,
+temporary tabs to compare several at once, ethnicity estimated against 1000 Genomes
+Project reference data, save/share as a snapshot). Reading the storyboard grid closely
+(all 15 frames, most previously unseen since only the top strip was legible in the old
+banner-cropped export) is what surfaced these specifics; the old copy never mentioned
+any of them.
+
+**Pulled the two strongest sections forward**, per the punch list: the customer-call
+story (now **What One Customer Call Shipped**, expanded with the Marker Frequency
+finding above) and the user-testing story (now **What Two Testing Sessions Changed**:
+the Invert Y-axis fix for rare variants squished to the bottom of a plot, and the radar
+charts for six-axis variant-type distribution) both moved up, ahead of Cross-Product
+Design.
+
+**Cross-Product Design expanded** into **One System Across Three Very Different Data
+Types**, now naming what actually carries over to the Multiomics proteomics and spatial
+apps (the component system and the chart-beside-its-data-table pattern) rather than
+claiming identical page chrome, which a closer look at the screenshots shows isn't true
+(Cohorts uses a persistent left sidebar; Multiomics uses a breadcrumb-and-toolbar shell).
+
+**Reflection added**, built from two specifics the source review surfaced rather than
+invented: every comparison view and every session caps at four cohorts, with nowhere
+for a fifth or sixth to go in the current tabs layout; and the ethnicity-estimation
+scatter plot is only as representative as the 1000 Genomes reference panel behind it.
+
+**No metric added.** As with Operational Insights, the "Total Data: 2.67 TB" / "Total
+Analyses: 1,570" figures visible in the mockups are demo content baked into the
+screenshots, not real adoption numbers, so they stayed out rather than being passed off
+as one. Lead rewritten around the customer-call story instead of a metric.
+
+**Images, fully re-exported, folding in the "Case study image assets" backlog item for
+this case study.** 8 of the 12 previously-wired images had an unbannered `-v1` sibling in
+the source folder; those became the new base images per principle 7, with the removed
+banner text seeding several captions (survival-comparison's "Designing Analysis Outcomes
+for Scientists," card-sort's "Card Sorting with Microbiology Experts," etc.). The 4
+without a `-v1` (heatmap, radar-charts, both Multiomics images) were already clean.
+Added the previously-unused Marker Frequency comparison image as a 13th. All first
+converted to WebP (Pillow, quality 88, no cwebp/ImageMagick available in this
+environment); Jim then re-exported 8 of the 13 himself from the real source files
+(`survival-comparison`, `card-sort`, `user-interviews`, `gene-heatmap`,
+`marker-frequency-comparison`, `radar-charts`, `proteomics`, `spatial`), superseding the
+Pillow pass for those with tighter crops and smaller file sizes, each verified and its
+`width`/`height` updated to match. The remaining 5 (`personas`, `storyboards`,
+`prototype`, `customer-feedback`, `user-study`) stayed on the Pillow export. Two images,
+`personas.webp` and `storyboards.webp`, have a genuine soft-edged "stacked paper" shadow
+effect baked into the source graphic (not a hard rectangle) and are flagged `unframed`,
+matching the Mobile Emergency System precedent, so the standard border doesn't box in
+empty canvas around the shadow. The other 11 are opaque and framed. `width`/`height`
+recorded for all 13 from their actual re-exported dimensions.
+Renamed from literal `Cohorts-*` / `Multiomics-*` source names to descriptive ids
+(`survival-comparison`, `personas`, `card-sort`, `user-interviews`, `storyboards`,
+`prototype`, `customer-feedback`, `gene-heatmap`, `marker-frequency-comparison`,
+`user-study`, `radar-charts`, `proteomics`, `spatial`). Also deleted an orphaned,
+never-referenced `01.png` (a duplicate of the comps-gene-discovery source, added in the
+original #12 PR and never wired in). Verified with `npm run build` (clean) and
+Playwright screenshots (desktop, mobile, and the Lightbox, including both `unframed`
+images) since `chromium-cli` wasn't available in this environment.
 
 ### AI Recommendations
 

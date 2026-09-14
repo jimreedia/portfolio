@@ -153,7 +153,7 @@
   {
     "id": "genomic-data-platform",
     "title": "Genomic Data Platform",
-    "description": "Tools for scientists to analyze genomic data for pharmaceutical and clinical needs.",
+    "description": "A customer described, on a support call, exactly the comparison tool bioinformaticians needed. It shipped, and became how scientists spot which genes vary across patient cohorts.",
     "blurb": "As Senior Staff Interaction Designer, I led UX across Illumina's Connected Analytics platform for multiomic analysis, spanning genomics, proteomics, and spatial transcriptomics apps built on a shared design system, data model, and user base. I grounded the work in evidence-based personas, card sorting with bioinformaticians, and ongoing field research, then turned direct customer feedback into shipped visualization features. The result is a cohesive platform that helps scientists compare groups of subjects and accelerate biomarker and drug discovery.",
     "tags": ["Data Platforms", "Enterprise"],
     "url": "/case-study/genomic-data-platform",
@@ -166,74 +166,71 @@
       "/assets/case-studies/homepage-assets/genomic-data-platform-3.webp"
     ],
     "hero": {
-      "src": "/assets/case-studies/genomic-data-platform/Cohorts-survival-comparison.png",
-      "alt": "The Cohorts survival-comparison view: a Kaplan–Meier curve comparing subject groups with a p-value matrix"
+      "src": "/assets/case-studies/genomic-data-platform/survival-comparison.webp",
+      "width": 1000,
+      "height": 768,
+      "alt": "The Cohorts survival-comparison view: a Kaplan–Meier curve comparing four subject groups with a p-value confidence matrix",
+      "caption": "A p-value matrix sits next to the survival curves, so a scientist sees not just how cohorts diverge, but how confident to be that they do."
     },
     "sections": [
       {
         "blocks": [
-          { "type": "text", "value": "Cohorts, by Illumina Connected Analytics, lets customers aggregate and analyze genomic and clinical data using private, public and partner data sets, and then compare groups of subjects to **accelerate biomarker and drug discovery**." }
+          { "type": "text", "value": "Cohorts, by Illumina Connected Analytics, lets customers aggregate and analyze genomic and clinical data using private, public, and partner data sets, then compare groups of subjects to **accelerate biomarker and drug discovery**." }
         ]
       },
       {
-        "heading": "Personas",
+        "heading": "One Persona to Design Around",
         "blocks": [
-          { "type": "text", "value": "As **Senior Staff Interaction Designer** at Illumina, I created personas based on interviews with stakeholders and subject matter experts. These **evidence-based personas** were used to identify user behaviors, tasks, and workflows. The key persona is the research scientist whose goal is to discover biomarkers of interest for pharmaceutical or clinical cures." },
-          { "type": "image", "src": "/assets/case-studies/genomic-data-platform/Cohorts-personas.png", "alt": "Personas for the genomics scientist, bioinformatician, and developer/admin, with goals and a pain-point quote" }
+          { "type": "text", "value": "Interviews with stakeholders and subject matter experts surfaced three roles: the research scientist, the bioinformatician, and the developer or admin who provisions access. I **designed for one of them**. The research scientist chasing a biomarker was the persona everything else served, and the pain point that shaped the most decisions was a simple one: “My research often gets bogged down because I can't easily find enough data.”" },
+          {"type": "image", "src": "/assets/case-studies/genomic-data-platform/personas.webp", "width": 1014, "height": 570, "unframed": true, "alt": "Personas for the genomics scientist, bioinformatician, and developer/admin, with goals and a pain-point quote", "caption": "Three roles touched the platform. Design decisions were made for one: the scientist trying to find enough data to chase a biomarker."},
+          { "type": "text", "value": "I ran card sorting sessions with subject matter experts to settle the **shared vocabulary** underneath that persona's work, from panel design through sequencing and secondary analysis to case interpretation. Getting that terminology right mattered more than it sounds: it's the language every screen in the platform would eventually use." },
+          {"type": "image", "src": "/assets/case-studies/genomic-data-platform/card-sort.webp", "width": 1115, "height": 523, "alt": "A remote card sorting session grouping genomic analysis terms into workflow phases", "caption": "Card sorting with subject matter experts, not a guess at the vocabulary: the terms and groupings scientists actually use for their own workflow."}
         ]
       },
       {
-        "heading": "Card Sorting",
+        "heading": "Cohorts That Nest, Compare, and Save",
         "blocks": [
-          { "type": "text", "value": "The discovery phase is one of my favorite parts of the design process. I collaborated with UX researchers and conducted a series of card sorting activities with subject matter experts and stakeholders to better understand the terminology and **mental models** for analyzing genomic data." },
-          { "type": "image", "src": "/assets/case-studies/genomic-data-platform/Cohorts-card-sort.png", "alt": "A remote card sorting session grouping genomic analysis terms into workflow phases" }
+          { "type": "text", "value": "Low-fidelity concepts went in front of bioinformaticians already running variant analysis by hand, and their reactions **validated the interaction model** I'd sketched: cohorts nest like folders, with parents and children, so a scientist can refine a group without losing the broader one it came from." },
+          {"type": "image", "src": "/assets/case-studies/genomic-data-platform/user-interviews.webp", "width": 1056, "height": 496, "alt": "Low-fidelity cohort-builder prototypes shown to bioinformaticians in interview sessions", "caption": "Tested with the bioinformaticians who'd actually run this analysis, not a stand-in audience."},
+          { "type": "text", "value": "The storyboards worked out the rest of that model before a line of code shipped: **temporary tabs** let a scientist hold several cohorts open to compare side by side, a scatter plot estimates ethnicity against 1000 Genomes Project reference data, cohort size adjusts by filtering out numerical outliers, and a finished cohort can be **saved and shared as a snapshot** rather than rebuilt from scratch by the next person who needs it." },
+          {"type": "image", "src": "/assets/case-studies/genomic-data-platform/storyboards.webp", "width": 1024, "height": 697, "unframed": true, "alt": "A storyboard grid walking through building a cohort, comparing multiple cohorts in tabs, estimating ethnicity, and saving a cohort snapshot", "caption": "The interaction model in miniature: cohorts that nest, tabs that compare, and a snapshot you can hand to a colleague instead of rebuilding."},
+          { "type": "text", "value": "The Figma prototype proved the model held together end to end, dozens of connected screens, not a handful of hero shots." },
+          {"type": "image", "src": "/assets/case-studies/genomic-data-platform/prototype.webp", "width": 1379, "height": 677, "alt": "A Figma prototype canvas with many screens connected by blue interaction arrows", "caption": "Every one of those blue lines, nicknamed “noodles,” is a working connection: the full click-through, not a few hero screens."}
         ]
       },
       {
-        "heading": "User Interviews",
+        "heading": "What One Customer Call Shipped",
         "blocks": [
-          { "type": "text", "value": "Early low-fidelity conceptual designs helped identify **interaction models**, and user interviews helped validate the concepts. I conducted several user interviews with bioinformaticians currently using digital workflows to evaluate genetic variants." },
-          { "type": "image", "src": "/assets/case-studies/genomic-data-platform/Cohorts-user-interviews.png", "alt": "Low-fidelity cohort-builder prototypes shown to bioinformaticians in interview sessions" }
+          { "type": "text", "value": "This end-to-end design was never a one-time discovery pass. I kept synthesizing **customer feedback** from scientists in the field, and one recorded call did more to shape the roadmap than most research studies. William LaFramboise of Allegheny Health Network described, almost exactly, the tool his team needed: generate a heat map of one cohort against another, light up the genes that vary, then drill into the specific mutations." },
+          {"type": "image", "src": "/assets/case-studies/genomic-data-platform/customer-feedback.webp", "width": 1024, "height": 543, "alt": "A recorded customer call with William LaFramboise of Allegheny Health Network describing the need to compare gene variance across cohorts", "caption": "A real customer call, not a hypothetical: “generate a heatmap of the breast cohort versus the colorectal versus ovarian cancers, and light up the genes that have variance.”"},
+          { "type": "text", "value": "Two features shipped in response. The **Genes** tab gives a scientist fast reconnaissance on one cohort at a time, mutation types color-coded by gene, so they know where to look before committing to a comparison." },
+          {"type": "image", "src": "/assets/case-studies/genomic-data-platform/gene-heatmap.webp", "width": 1000, "height": 910, "alt": "The Genes tab: a mutation-type heat map by gene, color-coded by variant class, for the active cohort", "caption": "Fast reconnaissance on a single cohort: which genes carry the most disruptive mutations, before deciding what's worth comparing."},
+          { "type": "text", "value": "**Marker Frequency** is the closer match to what LaFramboise actually described: up- and down-regulated gene percentages across several named cohorts at once, so a scientist sees which genes vary between, say, lung, prostate, uterine, and breast cases without building four separate views by hand." },
+          {"type": "image", "src": "/assets/case-studies/genomic-data-platform/marker-frequency-comparison.webp", "width": 1000, "height": 935, "alt": "The Marker Frequency comparison view: up- and down-regulated gene percentages across four named cohorts at once", "caption": "The shipped answer to that call: flip to Marker Frequency and see which genes vary across four cohorts side by side."}
         ]
       },
       {
-        "heading": "Storyboards",
+        "heading": "What Two Testing Sessions Changed",
         "blocks": [
-          { "type": "text", "value": "Storyboards help communicate to product stakeholders the high-level design of the **user workflows** and **interaction models**." },
-          { "type": "image", "src": "/assets/case-studies/genomic-data-platform/Cohorts-storyboards.png", "alt": "A storyboard grid walking through building a cohort, visualizing distributions, and comparing survival outcomes" }
+          { "type": "text", "value": "User testing kept finding the smaller misses that research alone doesn't catch. Mid-session, a participant hit a real problem: rare variants were all squished to the bottom of the plot, impossible to tell apart. The fix that shipped was a single **Invert Y-axis** toggle, so rare variants aren't lost at the bottom of their own chart." },
+          {"type": "image", "src": "/assets/case-studies/genomic-data-platform/user-study.webp", "width": 1024, "height": 490, "alt": "A user-testing session where a participant asks to invert the y-axis so rare variants are visible", "caption": "“The rare variants are all squished to the bottom.” The fix: an Invert Y-axis toggle, shipped from that one session."},
+          { "type": "text", "value": "The same testing surfaced an **unmet need**: scientists wanted to see the distribution of variant types per gene, and a bar chart couldn't hold six variant types cleanly. A radar chart could, one shape per gene, comparable at a glance down an entire results page." },
+          {"type": "image", "src": "/assets/case-studies/genomic-data-platform/radar-charts.webp", "width": 1000, "height": 710, "alt": "A grid of radar charts showing structural-variant type distribution per gene", "caption": "Six variant types don't fit a bar chart. A radar chart does, one shape per gene, comparable down the whole page."}
         ]
       },
       {
-        "heading": "Prototypes",
+        "heading": "One System Across Three Very Different Data Types",
         "blocks": [
-          { "type": "text", "value": "Prototypes are invaluable UX tools for communicating the **experience design** decisions to stakeholders and users. In this screenshot from Figma, the blue arrows, nicknamed “noodles,” are the interactive connections within the prototype." },
-          { "type": "image", "src": "/assets/case-studies/genomic-data-platform/Cohorts-Figma-prototype.png", "alt": "A Figma prototype canvas with many screens connected by blue interaction arrows" }
+          { "type": "text", "value": "Cohorts wasn't the only app I owned. I applied the same visual language and component system to **Connected Multiomics**, Illumina's proteomics and spatial transcriptomics apps, so the platform reads as one product even though the underlying science, and the charts it demands, are nothing alike." },
+          {"type": "image", "src": "/assets/case-studies/genomic-data-platform/proteomics.webp", "width": 1000, "height": 694, "alt": "The Connected Multiomics proteomics viewer with a volcano plot and per-protein box plots", "caption": "Different science, same system: a volcano plot and box plots replace variant heat maps, but the chart-beside-its-data-table pattern carries over from Cohorts."},
+          {"type": "image", "src": "/assets/case-studies/genomic-data-platform/spatial.webp", "width": 1000, "height": 694, "alt": "The Connected Multiomics spatial viewer showing a tissue slice with a UMAP and transcript counts", "caption": "Spatial transcriptomics pushes hardest against the shared system: a tissue slice instead of a table, a UMAP plot instead of a survival curve, still built from the same components."}
         ]
       },
       {
-        "heading": "Enhancing the Experience",
+        "heading": "Reflection",
         "blocks": [
-          { "type": "text", "value": "This end-to-end design journey included several **user research studies** and ongoing synthesis of **customer feedback** from scientific users in the field." },
-          { "type": "image", "src": "/assets/case-studies/genomic-data-platform/Cohorts-customer-feedback.png", "alt": "A recorded customer call with a researcher describing the need for a gene-discovery heat map" },
-          { "type": "text", "value": "In this example, I used direct customer feedback to uncover an **unmet user need** to discover genes that are relevant to their scientific studies. My resulting mockups specified new user-centered features such as a comparison heat map." },
-          { "type": "image", "src": "/assets/case-studies/genomic-data-platform/Cohorts-heatmap.png", "alt": "A gene comparison heat map showing variant frequency and type across genes for two cohorts" }
-        ]
-      },
-      {
-        "heading": "User-Centered Design",
-        "blocks": [
-          { "type": "text", "value": "I use insights from **user testing** to identify incremental product improvements. For example, allowing users to customize a data visualization plot based on their research needs." },
-          { "type": "image", "src": "/assets/case-studies/genomic-data-platform/Cohorts-user-study.png", "alt": "A user-testing session where a participant asks to invert the y-axis so rare variants are visible" },
-          { "type": "text", "value": "User testing also uncovered unmet user needs to view the distribution of variants by type, and since there were several types to measure per gene, the radar charts were an appropriate and intuitive **data visualization**." },
-          { "type": "image", "src": "/assets/case-studies/genomic-data-platform/Cohorts-radar-charts.png", "alt": "A grid of radar charts showing structural-variant type distribution per gene" }
-        ]
-      },
-      {
-        "heading": "Cross-Product Design",
-        "blocks": [
-          { "type": "text", "value": "I applied the visual design language and interaction patterns to related apps to ensure that the platform of products have a **cohesive look and feel**." },
-          { "type": "image", "src": "/assets/case-studies/genomic-data-platform/Multiomics-proteomics.png", "alt": "The Connected Multiomics proteomics viewer with a volcano plot and per-protein box plots" },
-          { "type": "image", "src": "/assets/case-studies/genomic-data-platform/Multiomics-spatial.png", "alt": "The Connected Multiomics spatial viewer showing a tissue slice with a UMAP and transcript counts" }
+          { "type": "text", "value": "Every comparison view I shipped, and every session I watched, topped out at four cohorts. That was enough for the case-control comparisons customers asked for, but bioinformaticians increasingly want to line up five or six subtypes at once, and the current tabs-and-columns layout doesn't have anywhere left to grow. If I revisited this, I'd design the comparison model to scale past four before it becomes a wall of tabs." },
+          { "type": "text", "value": "I'd also push harder on the ethnicity-estimation scatter plot from the storyboards. It's only as fair as the reference panel behind it, and 1000 Genomes alone under-represents some of the populations these scientists study. That's a data problem more than a design one, but it's the kind of thing worth flagging rather than letting a clean scatter plot imply more confidence than the underlying data supports." }
         ]
       }
     ]
