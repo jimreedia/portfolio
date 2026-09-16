@@ -41,6 +41,7 @@ export default function CaseStudyPage() {
   const { id } = useParams()
   const cs = getById(id)
   const [lightboxIndex, setLightboxIndex] = useState(null)
+  const [playingVideoIds, setPlayingVideoIds] = useState(() => new Set())
 
   if (!cs) return <Navigate to="/" replace />
 
@@ -115,6 +116,43 @@ export default function CaseStudyPage() {
     </figure>
   )
 
+  // A Vimeo embed, lazy by default: shows a static poster (no third-party
+  // frame fetched until the visitor clicks) and swaps in the real iframe on
+  // click, per the "restore case study video" backlog decision.
+  const videoBlock = (block, key) => {
+    const playing = playingVideoIds.has(block.vimeoId)
+    const ratio = block.width && block.height ? `${block.width} / ${block.height}` : '4 / 3'
+    return (
+      <figure
+        className={`case-study__media case-study__section-image case-study__video${mediaModifiers(block)}`}
+        key={key}
+      >
+        <div className="case-study__video-frame" style={{ aspectRatio: ratio, ...mediaMaxWidth(block) }}>
+          {playing ? (
+            <iframe
+              src={`https://player.vimeo.com/video/${block.vimeoId}?dnt=1&autoplay=1`}
+              title={block.alt || cs.title}
+              allow="autoplay; fullscreen; picture-in-picture"
+              allowFullScreen
+              sandbox="allow-same-origin allow-scripts allow-pointer-lock allow-forms allow-popups allow-popups-to-escape-sandbox"
+            />
+          ) : (
+            <button
+              type="button"
+              className="case-study__video-poster"
+              onClick={() => setPlayingVideoIds((prev) => new Set(prev).add(block.vimeoId))}
+              aria-label={`Play video: ${block.alt || cs.title}`}
+            >
+              <img src={assetUrl(block.poster)} alt="" loading="lazy" />
+              <span className="case-study__video-play" aria-hidden="true" />
+            </button>
+          )}
+        </div>
+        {block.caption && <figcaption>{block.caption}</figcaption>}
+      </figure>
+    )
+  }
+
   return (
     <main className="case-study">
       <article className="case-study__inner">
@@ -169,6 +207,9 @@ export default function CaseStudyPage() {
                     ))}
                   </ul>
                 )
+              }
+              if (block.type === 'video') {
+                return videoBlock(block, j)
               }
               return imageButton(
                 { ...block, alt: block.alt || section.heading },
