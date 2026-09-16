@@ -1030,6 +1030,73 @@ ul {
   text-align: center;
 }
 
+/* A lazy Vimeo embed: a static poster (no third-party iframe fetched until
+   clicked) that swaps for the real player on click. Same frame treatment as
+   a standard image (`.case-study__media--unframed` opts out the same way). */
+.case-study__video-frame {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  border: 1px solid var(--color-text-muted-light);
+  border-radius: 6px;
+  background: #000;
+}
+
+.case-study__media--unframed .case-study__video-frame {
+  border: none;
+  border-radius: 0;
+}
+
+.case-study__video-frame iframe,
+.case-study__video-poster,
+.case-study__video-poster img {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.case-study__video-poster {
+  padding: 0;
+  background: none;
+  cursor: pointer;
+}
+
+.case-study__video-poster img {
+  object-fit: cover;
+}
+
+.case-study__video-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.65);
+  transition: background 0.15s ease;
+}
+
+.case-study__video-poster:hover .case-study__video-play,
+.case-study__video-poster:focus-visible .case-study__video-play {
+  background: rgba(0, 0, 0, 0.85);
+}
+
+.case-study__video-play::after {
+  content: '';
+  margin-left: 4px;
+  border-style: solid;
+  border-width: 12px 0 12px 20px;
+  border-color: transparent transparent transparent #fff;
+}
+
 /* Clickable image that opens the lightbox */
 .case-study__media-button {
   display: block;

@@ -72,6 +72,11 @@ System have no stated outcome anywhere in the source, Analytics & Big Data has a
 unresolved shipped-vs-concept ambiguity, Additive Manufacturing needs more structural
 consolidation.
 
+**Developer Experience done (2026-09-16)**, first of the remaining 5 "more" pages,
+branch: fix/refine-case-study-developer-experience. See its entry below for the full
+account. Next: the other 4 (Machine Learning for Operators, Mobile Emergency System,
+Additive Manufacturing, Analytics & Big Data).
+
 ---
 
 ## Cross-cutting (every case study)
@@ -494,17 +499,104 @@ a capped image's caption automatically matches its width (`mediaMaxWidth()` in
 `CaseStudyPage.jsx` applies to both). Body text is 16px, inline captions 14px (down/up
 respectively from 17/13, so the two feel closer in weight, per principle 12).
 
-### Developer Experience
+### Developer Experience — done (2026-09-16)
 
-Good outcome arc already (MVP catalog to Gartner demo to launch to Jim moving into the
-PM seat). Headings are in decent shape.
-- "A Persona to Design Around" and "Lo-Fi Wireframes and Motion Prototypes" still lean
-  process; reframe around a decision (why storyboard around one architect persona; what
-  the motion prototypes settled).
-- "Driving Developer Adoption" (Jim convinced marketing to fund the video series) is a
-  real influence story; give it more weight.
-- Numbers: catalog size, adoption, video views if any.
-- Add a reflection.
+Source review done first, per principle 10: myportfolio original checked (thin, a
+paraphrase of the same MVP-to-Gartner-to-launch arc already in `caseStudies.json`,
+nothing structurally new there), and the full `production images/Predix/` folder
+reviewed, all 18 files, not just the 6 already wired in. Two real finds sitting unused
+the whole time: `predix-developer_video_storyboard.png`, a shot list for the coding-tip
+video series (title card, medium close with lower thirds, medium close with laptop,
+over-the-shoulder, screen capture, several marked "to be designed"), real evidence Jim
+planned the shoot rather than just funding it; and `Predix_portfolio_cover-resize.png`,
+a screenshot of the actual shipped Catalog page (Services/Analytics/Apps tabs, eight
+services already listed under Edge Software and Data Management), never wired in even
+though the case study talks about shipping an MVP catalog.
+
+**"A Persona to Design Around" retitled "One Persona, Not a Committee of Them"** and
+reframed as a decision: designing around one persona (Elaine) instead of a roster of
+them, argued from the tradeoff (a committee of personas keeps debates abstract; one
+gives the team an actual person to argue about). "Lo-Fi Wireframes and Motion
+Prototypes" stayed a supporting/craft section rather than being forced into a decision
+heading: no motion-prototype stills exist in the source to ground a claim about what
+the prototypes specifically settled, so the text only tightens what's actually evidenced
+(wireframes iterating the catalog/console fast, After Effects testing interactions
+before build), not inventing a decision the artifacts don't show.
+
+**"Driving Developer Adoption" given more weight**, per the punch list, using the
+shot-list find: the section now shows the actual shot types planned (over-the-shoulder,
+screen capture favored over talking-head) as evidence of Jim directing the crew, not
+just securing the budget, alongside the existing community-site image.
+
+**"From Design to Product Management" expanded** with the shipped-Catalog find: eight
+services already live across two categories is a real, countable number read directly
+off the screenshot, used in place of an invented adoption metric. The conference photo
+swapped to its unbannered `-v1` sibling (see images note below).
+
+**Reflection added**, grounded in what the source actually shows: the five-minute
+deploy target named in the storyboard was a design bet, never checked against real
+usage data after launch, so the reflection states that plainly as an open question
+rather than claiming it held up; and moving into the PM seat blurred the line between
+advocating for developer experience and trading it off against roadmap deadlines.
+
+**No adoption or video-view metric added.** Nothing in the myportfolio source or the
+image folder states one; the "eight services" catalog-size figure above is the one real
+number the artifacts support.
+
+**Images, fully re-exported (2026-09-16), folding in the "Case study image assets"
+backlog item for this case study and clearing the 2026-09-14 interim `unframed`
+stopgap.** Of the 6 previously-wired images, 5 had an unbannered `-v1` sibling in the
+source folder (home, both storyboards, wireframes, community); those became the new
+base images, with each removed banner's text seeding its caption (e.g. "Storyboards
+With Personas as Main Characters" behind the persona caption, "Storyboards Help
+Identify Critical Features" behind the five-minute one). The conference photo also
+swapped to its `-v1` sibling. The 2 new finds (video shot list, shipped Catalog) had no
+banner to begin with. All 8 converted to WebP via Pillow (no cwebp/ImageMagick in this
+environment), flattened to opaque white where the alpha channel turned out to be plain
+rounded-corner anti-aliasing on the browser-chrome mockups (home, wireframes,
+community), not a real composite. Two, `persona-storyboard` and `five-minute-storyboard`,
+have a genuine soft-shadow "stacked paper" alpha composite baked into the source
+graphic (the storyboard cards' irregular torn-edge outline) and are flagged `unframed`,
+extending the Genomic Data Platform precedent; the other 6 are opaque and framed
+normally, dropping the blanket `unframed` the 2026-09-14 interim fix had applied to
+every image on this page. Renamed from literal `Predix-*` / `Jim-*` source names to
+descriptive ids (`hero`, `persona-storyboard`, `five-minute-storyboard`,
+`catalog-console-wireframes`, `video-shot-list`, `community-video`, `shipped-catalog`,
+`conference-conversation`); `width`/`height` recorded for all 8 from their actual
+re-exported dimensions. Old PNGs deleted.
+
+**Corrections (2026-09-16), Jim re-exporting himself from the real source files,
+superseding the Pillow pass for each:** `hero.webp` (849×720, tighter crop, matching the
+pattern on the featured 3 and Genomic Data Platform); `catalog-console-wireframes.webp`
+(1014×582), which kept the real transparent gutter between its two panels intact rather
+than flattening it to opaque white, so it's flagged `unframed` per Jim's call, joining
+`persona-storyboard` and `five-minute-storyboard` as the page's 3 alpha-composite
+images. `width`/`height` updated to match for both. `video-shot-list.webp` also
+re-exported (same 967×511) and given `maxWidth: 640` at Jim's request, reading smaller
+now that it's a supporting six-panel grid rather than the section's lead image (later
+reduced further to `maxWidth: 560`). `community-video.webp` also re-exported (849×880),
+this time from the final `community.png` source with the shipped "Eager to Innovate?"
+green CTA rather than the `-v1` sibling's earlier "We are hiring code ninjas" copy this
+pass had picked, since that's what the case study should actually show. `shipped-catalog.webp`
+also re-exported (849×720), now showing the full browser-chrome frame around the Catalog
+page (matching the hero's convention) rather than just the cropped card content; still
+shows the same eight services across Edge Software and Data Management the caption
+cites. `width`/`height` updated to match for both.
+
+Verified with `npm run build` (clean) and Playwright screenshots (desktop, mobile, and
+the Lightbox, both `unframed` images included) since `chromium-cli` wasn't available in
+this environment; every caption checked by rendered `scrollHeight` for one-line fit at
+both the inline default column and the Lightbox's fixed 640px width, not just by eye.
+
+**Video added (2026-09-16):** the local `Predix/cloud foundry/PredixIO_nav_behavior.mov`
+(13s, silent) turned out to already be live on Jim's Vimeo account, the exact clip
+myportfolio embedded under its old "Motion Design" topic. Rather than re-hosting, this
+shipped the "Restore case study video content" backlog item's `video` block type
+(`CaseStudyPage.jsx` + `index.css`), a lazy click-to-play Vimeo embed using Vimeo's own
+oEmbed thumbnail as the poster, placed in "Lo-Fi Wireframes and Motion Prototypes" right
+after the wireframes image. See that backlog item for the full account, including a
+known gap: this sandboxed environment's network gets Cloudflare-blocked on
+`player.vimeo.com`, so actual playback needs verifying in a real browser.
 
 ### Machine Learning for Operators
 

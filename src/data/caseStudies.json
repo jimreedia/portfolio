@@ -411,7 +411,7 @@
   {
     "id": "developer-experience",
     "title": "Developer Experience",
-    "description": "Guiding software developers through a cloud-based industrial platform, from first visit to first deployed app.",
+    "description": "A developer portal built from scratch for GE's Predix cloud: an MVP catalog shipped fast, went in front of Gartner, and launched in full, then I moved into the PM seat myself.",
     "blurb": "A build-from-scratch developer portal and admin console for GE's Predix cloud. The MVP catalog shipped fast, got demoed to Gartner, and launched in full. I moved into the PM seat from there.",
     "tags": ["Data Platforms", "Enterprise"],
     "url": "/case-study/developer-experience",
@@ -420,9 +420,12 @@
     "team": "Agile product team of developers and designers",
     "thumb": "/assets/case-studies/homepage-assets/developer-experience.webp",
     "hero": {
-      "src": "/assets/case-studies/developer-experience/catalog.png",
+      "src": "/assets/case-studies/developer-experience/hero.webp",
+      "width": 849,
+      "height": 720,
+      "maxWidth": 800,
       "alt": "The Predix Developer Network home page: an \"Industrial IoT Platform\" hero above a \"How Predix Works\" diagram",
-      "unframed": true
+      "caption": "Three concrete starting points on the home page, not a marketing pitch: try, tutorial, app."
     },
     "sections": [
       {
@@ -431,38 +434,49 @@
         ]
       },
       {
-        "heading": "A Persona to Design Around",
+        "heading": "One Persona, Not a Committee of Them",
         "blocks": [
-          { "type": "text", "value": "The work centered on one primary user, **\"Elaine the Software Architect,\"** and the decisions she makes along her journey. Storyboards cast Elaine as the main character so the team could argue about her choices, not abstract features." },
-          { "type": "image", "unframed": true, "src": "/assets/case-studies/developer-experience/persona.png", "alt": "A storyboard panel of Elaine browsing the Predix catalog and trying an interactive API test console against a live wind turbine" }
+          { "type": "text", "value": "I designed around a single persona instead of a roster of them: **Elaine the Software Architect**, cast as the main character in every storyboard. A committee of personas turns design debates abstract; one gives the team an actual person to argue about, not a feature list." },
+          { "type": "image", "unframed": true, "src": "/assets/case-studies/developer-experience/persona-storyboard.webp", "width": 1014, "height": 600, "alt": "A storyboard panel of Elaine browsing the Predix catalog and trying an interactive API test console against a live wind turbine", "caption": "Elaine's own line drove the bet: an API console against a live GE turbine, not just documentation." }
         ]
       },
       {
         "heading": "Storyboards to Find the Critical Features",
         "blocks": [
           { "type": "text", "value": "Product storyboards walked the full path (sign up, build, deploy, monitor) and surfaced the features that actually mattered. One target set the bar: **a base application up and running in under five minutes**." },
-          { "type": "image", "unframed": true, "src": "/assets/case-studies/developer-experience/storyboard.png", "alt": "A storyboard showing Elaine's app auto-deploying to the cloud and an application dashboard where she reviews usage stats" }
+          { "type": "image", "unframed": true, "src": "/assets/case-studies/developer-experience/five-minute-storyboard.webp", "width": 1014, "height": 570, "alt": "A storyboard showing Elaine's app auto-deploying to the cloud and an application dashboard where she reviews usage stats", "caption": "The five-minute deploy claim came from this frame, a design target, not a measured number." }
         ]
       },
       {
         "heading": "Lo-Fi Wireframes and Motion Prototypes",
         "blocks": [
-          { "type": "text", "value": "Low-fidelity wireframes drove rapid, early ideation for the catalog and the console. **After Effects motion prototypes** tested the interaction paradigms before anything was built." },
-          { "type": "image", "unframed": true, "src": "/assets/case-studies/developer-experience/wireframes.png", "alt": "Wireframes of the Predix catalog of starter packs and services beside a console showing alerts, resource usage, and favorite apps" }
+          { "type": "text", "value": "Low-fidelity wireframes drove rapid, early iteration on the catalog and console layouts. Before any of it was built, **After Effects motion prototypes** tested how the interactions should actually behave, catching problems a static wireframe couldn't show." },
+          { "type": "image", "unframed": true, "src": "/assets/case-studies/developer-experience/catalog-console-wireframes.webp", "width": 1014, "height": 582, "alt": "Wireframes of the Predix catalog of starter packs and services beside a console showing alerts, resource usage, and favorite apps", "caption": "The catalog wireframe led with runnable starter packs, not just a service directory to browse." },
+          { "type": "video", "provider": "vimeo", "vimeoId": "268208418", "width": 1024, "height": 768, "maxWidth": 560, "poster": "/assets/case-studies/developer-experience/nav-behavior-poster.webp", "alt": "A silent motion study testing hover and active-item transitions in the Predix docs navigation", "caption": "This behavior was proven in motion before a single line of production code existed." }
         ]
       },
       {
         "heading": "Driving Developer Adoption",
         "blocks": [
-          { "type": "text", "value": "Adoption needed more than a good UI. I convinced the marketing team to fund a series of **hands-on coding-tip web videos**, then directed the lean crew that produced them. The videos lived on the community site next to the forum and blog." },
-          { "type": "image", "unframed": true, "src": "/assets/case-studies/developer-experience/community.png", "alt": "The Predix community page with forum and blog links and an embedded \"A Developer's Take on Predix\" video" }
+          { "type": "text", "value": "A good UI wasn't going to be enough on its own. I pitched the marketing team on funding a series of **hands-on coding-tip videos** aimed at developers, not a generic product reel, and won the budget. I then directed the lean crew that shot them." },
+          { "type": "image", "src": "/assets/case-studies/developer-experience/video-shot-list.webp", "width": 967, "height": 511, "maxWidth": 640, "alt": "A shot list for the developer video series: title card, medium close with lower thirds, over-the-shoulder, and screen capture shots", "caption": "The shot list favored over-the-shoulder and screen capture: show the code, not talk about it." },
+          { "type": "text", "value": "The videos lived on the community site, next to the developer forum and blog, where developers were already spending time." },
+          { "type": "image", "src": "/assets/case-studies/developer-experience/community-video.webp", "width": 849, "height": 880, "alt": "The Predix community page with forum and blog links and an embedded \"A Developer's Take on Predix\" video", "caption": "The videos sat beside the forum and blog, where developers were already looking." }
         ]
       },
       {
         "heading": "From Design to Product Management",
         "blocks": [
-          { "type": "text", "value": "We shipped an **MVP catalog of cloud services** quickly, demoed it to analysts including Gartner, and launched the full product months later. I then moved into a product manager role, representing the product at GE's Minds + Machines and Industrial Internet events and carrying customer needs back to the roadmap." },
-          { "type": "image", "unframed": true, "src": "/assets/case-studies/developer-experience/conference.png", "alt": "Jim Reed in conversation with a customer on the show floor at GE's Minds + Machines conference" }
+          { "type": "text", "value": "We shipped an **MVP catalog of cloud services** quickly: eight services already live across Edge Software and Data Management alone, with Analytics and Apps categories still to come. It got demoed to analysts including Gartner, then launched in full months later." },
+          { "type": "image", "src": "/assets/case-studies/developer-experience/shipped-catalog.webp", "width": 849, "height": 720, "alt": "The shipped Predix catalog page, organized into Services, Analytics, and Apps tabs", "caption": "Eight services shipped across two categories before Analytics and Apps even launched." },
+          { "type": "text", "value": "I then moved into a product manager role myself, representing the product at GE's Minds + Machines and Industrial Internet events and carrying customer needs straight back into the roadmap." },
+          { "type": "image", "src": "/assets/case-studies/developer-experience/conference-conversation.webp", "width": 1024, "height": 682, "maxWidth": 700, "alt": "Jim Reed in conversation with a customer on the show floor at GE's Minds + Machines conference", "caption": "Moving into the PM seat meant working the show floor, not just designing the product." }
+        ]
+      },
+      {
+        "heading": "Reflection",
+        "blocks": [
+          { "type": "text", "value": "The five-minute deploy target was a bet made at the storyboard stage. I never saw it checked against real usage data after launch, so I can't say whether it held up in practice. Moving into the PM seat also blurred a line I'd kept clean as a pure designer: I was now the one trading developer-experience polish against roadmap deadlines, not just arguing for it. If I did this again, I'd push for instrumentation on that five-minute number specifically, so a target set at the whiteboard could be checked against what developers actually experienced." }
         ]
       }
     ]
