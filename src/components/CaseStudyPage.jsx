@@ -111,7 +111,7 @@ export default function CaseStudyPage() {
           style={mediaMaxWidth(block)}
         />
       </button>
-      {block.caption && <figcaption style={mediaMaxWidth(block)}>{block.caption}</figcaption>}
+      {block.caption && <figcaption>{block.caption}</figcaption>}
     </figure>
   )
 

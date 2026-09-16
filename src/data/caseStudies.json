@@ -18,8 +18,9 @@
       "src": "/assets/case-studies/agentic-ai-chat/observe-agent-home.webp",
       "width": 1000,
       "height": 614,
+      "maxWidth": 800,
       "alt": "Observe Agent chat home screen, embedded in the observability product",
-      "caption": "The empty state had to work as well as the answers: three getting-started prompts, not a blank box asking the engineer to type something."
+      "caption": "The empty state had three getting-started prompts, not a blank box waiting for input."
     },
     "sections": [
       {
@@ -42,23 +43,13 @@
             "value": "The people using this are Site Reliability Engineers and on-call engineers, almost always mid-incident: several tabs open across alerting, metrics, logs, and deployment history, under real time pressure. Before designing anything, I wrote down what that person actually needed from the agent, to align the team on the job to be done, not on what would be a fun AI feature to add."
           },
           {
-            "type": "list",
-            "items": [
-              "Help me quickly diagnose an incident.",
-              "Let me control the UI view so I can drill into details.",
-              "Provide evidence, and remember what I taught it.",
-              "Meet me in the context of my current view.",
-              "Let me come back to previous conversations.",
-              "Let me share conversations with others."
-            ]
-          },
-          {
             "type": "image",
             "src": "/assets/case-studies/agentic-ai-chat/user-needs.webp",
-            "width": 582,
-            "height": 430,
+            "width": 1164,
+            "height": 860,
+            "maxWidth": 582,
             "alt": "User-needs statements from a Site Reliability Engineer persona, framed as \"I want to…\" jobs",
-            "caption": "The persona, stated as jobs the agent had to do, not a bio: diagnose, drill into evidence, come back to it later."
+            "caption": "The persona stated as jobs to do, not a bio: diagnose, drill into evidence, revisit later."
           },
           {
             "type": "text",
@@ -78,8 +69,9 @@
             "src": "/assets/case-studies/agentic-ai-chat/agent-in-context.webp",
             "width": 1000,
             "height": 614,
+            "maxWidth": 800,
             "alt": "The agent conversation shown alongside a logs explorer view, having just applied filters to that view on the engineer's behalf",
-            "caption": "Asked for errors during lunch, the agent didn't just answer, it applied the filters itself: navigating the Logs Explorer, not just narrating it."
+            "caption": "It didn't just answer: it applied the filters itself in the Logs Explorer."
           }
         ]
       },
@@ -93,10 +85,11 @@
           {
             "type": "image",
             "src": "/assets/case-studies/agentic-ai-chat/side-panel-principles.webp",
-            "width": 672,
-            "height": 529,
+            "width": 1344,
+            "height": 1058,
+            "maxWidth": 672,
             "alt": "Storyboard of side-panel placement options, showing how the chat panel shares screen space with the existing application",
-            "caption": "The audit that argued for a side panel over a takeover: narrow for supplementary info, wider once the interaction turns into create-and-edit."
+            "caption": "The audit that argued for a side panel over a takeover, narrow or wide depending on the task."
           }
         ]
       },
@@ -110,10 +103,10 @@
           {
             "type": "image",
             "src": "/assets/case-studies/agentic-ai-chat/interaction-specs.webp",
-            "width": 1311,
-            "height": 678,
+            "width": 1744,
+            "height": 902,
             "alt": "Interaction specs for chat input, plugins menu, contextual tags, and inline chart artifacts",
-            "caption": "Plugins, contextual tags, and inline charts, spec'd once so the rest of the team could build the same conversation grammar everywhere the agent shows up.",
+            "caption": "Plugins, tags, and inline charts, spec'd once so the whole team builds the same grammar.",
             "unframed": true
           }
         ]
@@ -128,10 +121,11 @@
           {
             "type": "image",
             "src": "/assets/case-studies/agentic-ai-chat/icon-design.webp",
-            "width": 666,
-            "height": 475,
+            "width": 1332,
+            "height": 950,
+            "maxWidth": 666,
             "alt": "Icon design work: a comparison audit of sparkle glyphs and the final telescope-plus-sparkle mark in its variations",
-            "caption": "An early concept explored a separate name for the Slack bot, O11y Copilot; the team settled on one name, Observe Agent, everywhere the icon appears."
+            "caption": "An early concept split the name: O11y Copilot in Slack, before the team settled on one."
           }
         ]
       },
@@ -169,8 +163,9 @@
       "src": "/assets/case-studies/genomic-data-platform/survival-comparison.webp",
       "width": 1000,
       "height": 768,
+      "maxWidth": 800,
       "alt": "The Cohorts survival-comparison view: a Kaplan–Meier curve comparing four subject groups with a p-value confidence matrix",
-      "caption": "A p-value matrix sits next to the survival curves, so a scientist sees not just how cohorts diverge, but how confident to be that they do."
+      "caption": "A p-value matrix sits beside the curves: how cohorts diverge, and how confident to be."
     },
     "sections": [
       {
@@ -182,9 +177,9 @@
         "heading": "One Persona to Design Around",
         "blocks": [
           { "type": "text", "value": "Interviews with stakeholders and subject matter experts surfaced three roles: the research scientist, the bioinformatician, and the developer or admin who provisions access. I **designed for one of them**. The research scientist chasing a biomarker was the persona everything else served, and the pain point that shaped the most decisions was a simple one: “My research often gets bogged down because I can't easily find enough data.”" },
-          {"type": "image", "src": "/assets/case-studies/genomic-data-platform/personas.webp", "width": 1014, "height": 570, "unframed": true, "alt": "Personas for the genomics scientist, bioinformatician, and developer/admin, with goals and a pain-point quote", "caption": "Three roles touched the platform. Design decisions were made for one: the scientist trying to find enough data to chase a biomarker."},
+          {"type": "image", "src": "/assets/case-studies/genomic-data-platform/personas.webp", "width": 1014, "height": 570, "unframed": true, "alt": "Personas for the genomics scientist, bioinformatician, and developer/admin, with goals and a pain-point quote", "caption": "Design decisions served one of three roles: the scientist chasing a biomarker."},
           { "type": "text", "value": "I ran card sorting sessions with subject matter experts to settle the **shared vocabulary** underneath that persona's work, from panel design through sequencing and secondary analysis to case interpretation. Getting that terminology right mattered more than it sounds: it's the language every screen in the platform would eventually use." },
-          {"type": "image", "src": "/assets/case-studies/genomic-data-platform/card-sort.webp", "width": 1115, "height": 523, "alt": "A remote card sorting session grouping genomic analysis terms into workflow phases", "caption": "Card sorting with subject matter experts, not a guess at the vocabulary: the terms and groupings scientists actually use for their own workflow."}
+          {"type": "image", "src": "/assets/case-studies/genomic-data-platform/card-sort.webp", "width": 1115, "height": 523, "alt": "A remote card sorting session grouping genomic analysis terms into workflow phases", "caption": "Card sorting with subject matter experts, not a guess: the vocabulary scientists actually use."}
         ]
       },
       {
@@ -193,37 +188,37 @@
           { "type": "text", "value": "Low-fidelity concepts went in front of bioinformaticians already running variant analysis by hand, and their reactions **validated the interaction model** I'd sketched: cohorts nest like folders, with parents and children, so a scientist can refine a group without losing the broader one it came from." },
           {"type": "image", "src": "/assets/case-studies/genomic-data-platform/user-interviews.webp", "width": 1056, "height": 496, "alt": "Low-fidelity cohort-builder prototypes shown to bioinformaticians in interview sessions", "caption": "Tested with the bioinformaticians who'd actually run this analysis, not a stand-in audience."},
           { "type": "text", "value": "The storyboards worked out the rest of that model before a line of code shipped: **temporary tabs** let a scientist hold several cohorts open to compare side by side, a scatter plot estimates ethnicity against 1000 Genomes Project reference data, cohort size adjusts by filtering out numerical outliers, and a finished cohort can be **saved and shared as a snapshot** rather than rebuilt from scratch by the next person who needs it." },
-          {"type": "image", "src": "/assets/case-studies/genomic-data-platform/storyboards.webp", "width": 1024, "height": 697, "unframed": true, "alt": "A storyboard grid walking through building a cohort, comparing multiple cohorts in tabs, estimating ethnicity, and saving a cohort snapshot", "caption": "The interaction model in miniature: cohorts that nest, tabs that compare, and a snapshot you can hand to a colleague instead of rebuilding."},
+          {"type": "image", "src": "/assets/case-studies/genomic-data-platform/storyboards.webp", "width": 1024, "height": 697, "unframed": true, "alt": "A storyboard grid walking through building a cohort, comparing multiple cohorts in tabs, estimating ethnicity, and saving a cohort snapshot", "caption": "The model in miniature: cohorts that nest, tabs that compare, snapshots you can hand off."},
           { "type": "text", "value": "The Figma prototype proved the model held together end to end, dozens of connected screens, not a handful of hero shots." },
-          {"type": "image", "src": "/assets/case-studies/genomic-data-platform/prototype.webp", "width": 1379, "height": 677, "alt": "A Figma prototype canvas with many screens connected by blue interaction arrows", "caption": "Every one of those blue lines, nicknamed “noodles,” is a working connection: the full click-through, not a few hero screens."}
+          {"type": "image", "src": "/assets/case-studies/genomic-data-platform/prototype.webp", "width": 1379, "height": 677, "alt": "A Figma prototype canvas with many screens connected by blue interaction arrows", "caption": "Every blue line, nicknamed “noodles,” is a real connection, not a hero-screen mockup."}
         ]
       },
       {
         "heading": "What One Customer Call Shipped",
         "blocks": [
           { "type": "text", "value": "This end-to-end design was never a one-time discovery pass. I kept synthesizing **customer feedback** from scientists in the field, and one recorded call did more to shape the roadmap than most research studies. William LaFramboise of Allegheny Health Network described, almost exactly, the tool his team needed: generate a heat map of one cohort against another, light up the genes that vary, then drill into the specific mutations." },
-          {"type": "image", "src": "/assets/case-studies/genomic-data-platform/customer-feedback.webp", "width": 1024, "height": 543, "alt": "A recorded customer call with William LaFramboise of Allegheny Health Network describing the need to compare gene variance across cohorts", "caption": "A real customer call, not a hypothetical: “generate a heatmap of the breast cohort versus the colorectal versus ovarian cancers, and light up the genes that have variance.”"},
+          {"type": "image", "src": "/assets/case-studies/genomic-data-platform/customer-feedback.webp", "width": 1024, "height": 543, "alt": "A recorded customer call with William LaFramboise of Allegheny Health Network describing the need to compare gene variance across cohorts", "caption": "A real customer call, not hypothetical: compare gene variance across three cancer cohorts."},
           { "type": "text", "value": "Two features shipped in response. The **Genes** tab gives a scientist fast reconnaissance on one cohort at a time, mutation types color-coded by gene, so they know where to look before committing to a comparison." },
-          {"type": "image", "src": "/assets/case-studies/genomic-data-platform/gene-heatmap.webp", "width": 1000, "height": 910, "alt": "The Genes tab: a mutation-type heat map by gene, color-coded by variant class, for the active cohort", "caption": "Fast reconnaissance on a single cohort: which genes carry the most disruptive mutations, before deciding what's worth comparing."},
+          {"type": "image", "src": "/assets/case-studies/genomic-data-platform/gene-heatmap.webp", "width": 1000, "height": 910, "maxWidth": 800, "alt": "The Genes tab: a mutation-type heat map by gene, color-coded by variant class, for the active cohort", "caption": "Fast reconnaissance on one cohort: which genes carry the most disruptive mutations."},
           { "type": "text", "value": "**Marker Frequency** is the closer match to what LaFramboise actually described: up- and down-regulated gene percentages across several named cohorts at once, so a scientist sees which genes vary between, say, lung, prostate, uterine, and breast cases without building four separate views by hand." },
-          {"type": "image", "src": "/assets/case-studies/genomic-data-platform/marker-frequency-comparison.webp", "width": 1000, "height": 935, "alt": "The Marker Frequency comparison view: up- and down-regulated gene percentages across four named cohorts at once", "caption": "The shipped answer to that call: flip to Marker Frequency and see which genes vary across four cohorts side by side."}
+          {"type": "image", "src": "/assets/case-studies/genomic-data-platform/marker-frequency-comparison.webp", "width": 1000, "height": 935, "maxWidth": 800, "alt": "The Marker Frequency comparison view: up- and down-regulated gene percentages across four named cohorts at once", "caption": "The shipped answer: flip to Marker Frequency, compare genes across four cohorts at once."}
         ]
       },
       {
         "heading": "What Two Testing Sessions Changed",
         "blocks": [
           { "type": "text", "value": "User testing kept finding the smaller misses that research alone doesn't catch. Mid-session, a participant hit a real problem: rare variants were all squished to the bottom of the plot, impossible to tell apart. The fix that shipped was a single **Invert Y-axis** toggle, so rare variants aren't lost at the bottom of their own chart." },
-          {"type": "image", "src": "/assets/case-studies/genomic-data-platform/user-study.webp", "width": 1024, "height": 490, "alt": "A user-testing session where a participant asks to invert the y-axis so rare variants are visible", "caption": "“The rare variants are all squished to the bottom.” The fix: an Invert Y-axis toggle, shipped from that one session."},
+          {"type": "image", "src": "/assets/case-studies/genomic-data-platform/user-study.webp", "width": 1024, "height": 490, "alt": "A user-testing session where a participant asks to invert the y-axis so rare variants are visible", "caption": "“The rare variants are squished to the bottom.” The fix: an Invert Y-axis toggle."},
           { "type": "text", "value": "The same testing surfaced an **unmet need**: scientists wanted to see the distribution of variant types per gene, and a bar chart couldn't hold six variant types cleanly. A radar chart could, one shape per gene, comparable at a glance down an entire results page." },
-          {"type": "image", "src": "/assets/case-studies/genomic-data-platform/radar-charts.webp", "width": 1000, "height": 710, "alt": "A grid of radar charts showing structural-variant type distribution per gene", "caption": "Six variant types don't fit a bar chart. A radar chart does, one shape per gene, comparable down the whole page."}
+          {"type": "image", "src": "/assets/case-studies/genomic-data-platform/radar-charts.webp", "width": 1000, "height": 710, "maxWidth": 800, "alt": "A grid of radar charts showing structural-variant type distribution per gene", "caption": "Six variant types don't fit a bar chart. A radar chart does, one shape per gene."}
         ]
       },
       {
         "heading": "One System Across Three Very Different Data Types",
         "blocks": [
           { "type": "text", "value": "Cohorts wasn't the only app I owned. I applied the same visual language and component system to **Connected Multiomics**, Illumina's proteomics and spatial transcriptomics apps, so the platform reads as one product even though the underlying science, and the charts it demands, are nothing alike." },
-          {"type": "image", "src": "/assets/case-studies/genomic-data-platform/proteomics.webp", "width": 1000, "height": 694, "alt": "The Connected Multiomics proteomics viewer with a volcano plot and per-protein box plots", "caption": "Different science, same system: a volcano plot and box plots replace variant heat maps, but the chart-beside-its-data-table pattern carries over from Cohorts."},
-          {"type": "image", "src": "/assets/case-studies/genomic-data-platform/spatial.webp", "width": 1000, "height": 694, "alt": "The Connected Multiomics spatial viewer showing a tissue slice with a UMAP and transcript counts", "caption": "Spatial transcriptomics pushes hardest against the shared system: a tissue slice instead of a table, a UMAP plot instead of a survival curve, still built from the same components."}
+          {"type": "image", "src": "/assets/case-studies/genomic-data-platform/proteomics.webp", "width": 1000, "height": 694, "maxWidth": 800, "alt": "The Connected Multiomics proteomics viewer with a volcano plot and per-protein box plots", "caption": "Different science, same system: new chart types, same chart-beside-data-table pattern."},
+          {"type": "image", "src": "/assets/case-studies/genomic-data-platform/spatial.webp", "width": 1000, "height": 694, "maxWidth": 800, "alt": "The Connected Multiomics spatial viewer showing a tissue slice with a UMAP and transcript counts", "caption": "Spatial transcriptomics pushes hardest: a tissue slice and a UMAP plot, same components."}
         ]
       },
       {
@@ -238,7 +233,7 @@
   {
     "id": "ai-recommendations",
     "title": "AI Recommendations",
-    "description": "Using machine learning to create valuable outcomes for customers.",
+    "description": "An inline recommendation model for Informatica's data-integration products, plus a precision-tracking method I convinced cross-functional teams to ship so the model keeps learning from what developers actually choose.",
     "blurb": "As Principal UX Designer, I brought AI-predicted best practices into Informatica's data-integration products, designing an inline recommendation model that suggests the next set of transformations without breaking the developer's flow. I partnered with ML engineers to shape the interaction model across cloud and desktop, and designed a lightweight precision-tracking method that I convinced cross-functional teams to ship, so the model retrains on real user choices.",
     "tags": ["AI", "Data Platforms"],
     "url": "/case-study/ai-recommendations",
@@ -251,86 +246,72 @@
       "/assets/case-studies/homepage-assets/ai-recommendations-3.webp"
     ],
     "hero": {
-      "src": "/assets/case-studies/ai-recommendations/Informatica-AI-hero.png",
-      "alt": "The data-integration mapping canvas with an AI recommendations panel suggesting next transformations"
+      "src": "/assets/case-studies/ai-recommendations/recommendations-panel.webp",
+      "width": 1000,
+      "height": 638,
+      "alt": "The CLAIRE recommendations panel in the mapping canvas, each suggestion explained and one already applied to the mapping",
+      "caption": "Each recommendation explains why it's shown, and applies without leaving the mapping."
     },
     "sections": [
       {
         "blocks": [
-          { "type": "text", "value": "As **Principal User Experience Designer** at Informatica, I designed a new product feature using artificial intelligence to predict and recommend best practices in data workflows." }
+          { "type": "text", "value": "As **Principal User Experience Designer** at Informatica, I designed CLAIRE Recommendations: an AI feature that predicts and suggests the next data transformation a developer needs, trained on anonymized mapping patterns across customer tenants. I partnered with machine learning engineers and UX researchers to shape the interaction model across both the desktop client and the newer cloud product." },
+          { "type": "text", "value": "The recommendations only work if developers trust them and don't have to leave their flow to use them. That meant designing them to appear inline in the canvas instead of a separate list, and building a way to prove the model was actually getting better instead of just declaring it was." }
         ]
       },
       {
-        "heading": "AI for Customer Value",
+        "heading": "How the Model Learns What to Recommend",
         "blocks": [
-          { "type": "text", "value": "The **AI model** is trained on anonymized mappings across multiple customer tenants. A mapping is a data transformation workflow that moves data from a source to a target with user-specified transformations in between. I collaborated with machine learning engineers and UX researchers to identify user behaviors and determine the most appropriate **interaction model** and user experience for both cloud and desktop products." },
-          { "type": "image", "src": "/assets/case-studies/ai-recommendations/AI-Recommendations_mapping-designers.png", "alt": "The mapping designer shown in both the desktop client and the cloud product" },
-          { "type": "text", "value": "The machine learning model determines best practices by analyzing matching sequences within transformations, and based on prior usage patterns produces recommendations for the “next set” of transforms to add during development." },
-          { "type": "image", "src": "/assets/case-studies/ai-recommendations/AI-Recommendations-prediction-menu.png", "alt": "The transformation menu with AI-recommended options marked by a distinct icon" }
+          { "type": "text", "value": "A mapping is a data transformation workflow that moves data from a source to a target through a sequence of user-specified transformations. The model analyzes matching sequences across anonymized mappings from multiple customer tenants and, based on prior usage patterns, predicts the **“next set”** of transforms a developer is likely to add." },
+          { "type": "image", "src": "/assets/case-studies/ai-recommendations/mapping-designers.webp", "width": 1744, "height": 546, "unframed": true, "alt": "The mapping designer shown in both the desktop client and the cloud product", "caption": "The same model runs in both surfaces developers use: desktop and the newer cloud product." }
         ]
       },
       {
-        "heading": "Inline Recommendations",
+        "heading": "Inline, Not a Separate Panel",
         "blocks": [
-          { "type": "text", "value": "I advocated to integrate the **AI recommendations** so that the experience was seamless within existing user workflows, and the best example I found to tell this story was predictive text in text apps." },
-          { "type": "image", "src": "/assets/case-studies/ai-recommendations/AI-Recommendations-predictive-text.png", "alt": "A messaging app suggesting the next words inline, used as an analogy for inline transformation recommendations" },
-          { "type": "text", "value": "Predictive text is seamlessly integrated with the existing user workflow and not disruptive or jarring." }
+          { "type": "text", "value": "I advocated for surfacing recommendations directly in the canvas instead of a separate list to cross-reference, the way predictive text suggests the next word without asking you to open a menu. An early concept tested this literally: a recommended step rendered as a dashed placeholder right where it would go, accepted or dismissed on the spot instead of checked against a sidebar." },
+          { "type": "image", "src": "/assets/case-studies/ai-recommendations/inline-concept.webp", "width": 1744, "height": 1024, "unframed": true, "alt": "A higher-fidelity concept rendering showing a recommended transform as a dashed placeholder directly in the mapping canvas", "caption": "A recommendation as a dashed placeholder in the canvas: accept or dismiss it in place." },
+          { "type": "image", "src": "/assets/case-studies/ai-recommendations/predictive-text-analogy.webp", "width": 900, "height": 506, "maxWidth": 480, "alt": "A messaging app suggesting the next words inline, used as an analogy for inline transformation recommendations", "caption": "The comparison that made the case: work like predictive text, not a list." },
+          { "type": "image", "src": "/assets/case-studies/ai-recommendations/prediction-icon.webp", "width": 505, "height": 505, "maxWidth": 252, "unframed": true, "alt": "The transformation menu with AI-recommended options marked by a distinct lightbulb icon", "caption": "One lightbulb icon set recommended transformations apart from the defaults." }
         ]
       },
       {
-        "heading": "Sketches and Renderings",
+        "heading": "From Napkin Sketch to Shipped Interaction",
         "blocks": [
-          { "type": "text", "value": "Early conceptual sketches and renderings helped identify conceptual models for the inline recommendations." },
-          { "type": "image", "src": "/assets/case-studies/ai-recommendations/AI-Recommendations_concept-sketches.png", "alt": "Hand sketches exploring where and how recommendations could appear in the mapping canvas" },
-          { "type": "image", "src": "/assets/case-studies/ai-recommendations/AI-Recommendations_concept-renderings.png", "alt": "Higher-fidelity renderings of the recommendation menu and inline affordances" }
+          { "type": "text", "value": "The inline concept above is where the idea landed, not where it started. Early sketches worked through several ways a recommendation could attach to a step: a dashed placeholder, a dropdown of ranked options, or a badge you click into. A storyboard settled the remaining details: recommendations surface as a card with a **“Show Me”** action that jumps to the step in question, can be accepted or dismissed inline, and dismissed recommendations stay reachable under their own tab instead of disappearing for good." },
+          { "type": "image", "src": "/assets/case-studies/ai-recommendations/concept-sketches.webp", "width": 887, "height": 292, "maxWidth": 700, "alt": "Hand sketches exploring where and how recommendations could appear in the mapping canvas", "caption": "Early sketches tried several ways to attach a recommendation: placeholder, dropdown, badge." },
+          { "type": "image", "src": "/assets/case-studies/ai-recommendations/storyboard.webp", "width": 1025, "height": 469, "unframed": true, "alt": "An eight-frame storyboard walking through when recommendations surface, how they are explained, and how they are accepted, dismissed, or recovered", "caption": "The storyboard that settled it: a “Show Me” card, accept or dismiss in place, recoverable later." },
+          { "type": "image", "src": "/assets/case-studies/ai-recommendations/animated-prototype.webp", "width": 1280, "height": 800, "alt": "An animated prototype showing a recommendation appearing and being accepted in the mapping canvas", "caption": "An animated prototype carried the interaction to engineering before any of it was built." },
+          { "type": "image", "src": "/assets/case-studies/ai-recommendations/branded-exploration.webp", "width": 633, "height": 463, "alt": "Visual explorations applying Informatica's CLAIRE AI branding to the recommendations panel", "caption": "CLAIRE, Informatica's AI brand, applied to the shipped panel: the swirl mark and lightbulb icon." }
         ]
       },
       {
-        "heading": "Animated Behaviors",
+        "heading": "Two Personas, One Canvas",
         "blocks": [
-          { "type": "text", "value": "In addition to creating **interactive prototypes**, I use animation to help define interaction paradigms. It's an effective way to communicate concepts to stakeholders and developers." },
-          { "type": "image", "src": "/assets/case-studies/ai-recommendations/AI-Recommendations_animated-behaviors.gif", "alt": "An animated prototype showing a recommendation appearing and being accepted in the mapping canvas" }
+          { "type": "text", "value": "My user research pointed to the **Data Integration Developer** as the primary persona. Gartner's research introduced a second: the **Citizen Developer**, a non-technical subject-matter expert who needs to build integrations without writing code. Both had to work in the same mapping canvas, part of why the recommendations couldn't afford to ask either of them to learn something new." },
+          { "type": "image", "src": "/assets/case-studies/ai-recommendations/personas.webp", "width": 594, "height": 420, "alt": "The two target personas: the Data Integration Developer and the non-technical Citizen Developer", "caption": "Two personas, one canvas: the Data Integration Developer and the non-technical Citizen Developer." }
         ]
       },
       {
-        "heading": "Storyboards",
+        "heading": "A Precision Method Cross-Functional Teams Agreed to Ship",
         "blocks": [
-          { "type": "text", "value": "Early storyboards helped identify interaction models for a panel concept." },
-          { "type": "image", "src": "/assets/case-studies/ai-recommendations/AI-Recommendations_storyboard.png", "alt": "A storyboard walking through when recommendations surface, how they are explained, and how they are accepted or dismissed" }
+          { "type": "text", "value": "A recommendation is only worth showing if it's actually right, so I designed a simple method to measure that: track what the model predicted against what the developer actually picked, a true positive if they match, a false positive if they don't. The harder part was convincing the cross-functional teams who owned the model and the tracking pipeline to build the instrumentation for it, since it added engineering work with no visible feature to point to. Once it shipped, false positives fed back into the model so it adjusted toward what developers were actually choosing." },
+          { "type": "image", "src": "/assets/case-studies/ai-recommendations/precision-model.webp", "width": 923, "height": 422, "maxWidth": 640, "alt": "A diagram contrasting a true-positive and a false-positive prediction, feeding user selections back to improve the model", "caption": "True positive: prediction matches choice. False positive: it doesn't, and retrains the model." },
+          { "type": "text", "value": "During research, one customer put the payoff plainly: “Since the last upgrade they added this function that's pretty cool.” (Keri-Ann Bowen, ETL Developer, University of Maryland)" }
         ]
       },
       {
-        "heading": "Branded Explorations",
+        "heading": "Convincing Leadership to Modernize the Whole Product",
         "blocks": [
-          { "type": "image", "src": "/assets/case-studies/ai-recommendations/Informatica-brand.png", "alt": "Visual explorations applying Informatica's CLAIRE AI branding to the recommendations panel" }
+          { "type": "text", "value": "The recommendations panel highlighted how dated the rest of the product's visual design had gotten by comparison. I worked with UX partners to redesign the look and feel, then made the case to executive leadership that modernizing the UI was worth the investment on its own, not just as a backdrop for the AI feature." },
+          { "type": "image", "src": "/assets/case-studies/ai-recommendations/visual-redesign.webp", "width": 1000, "height": 673, "alt": "The modernized visual design language applied to the mapping designer", "caption": "The modernized visual language I argued for: worth shipping on its own, not just a backdrop." }
         ]
       },
       {
-        "heading": "Personas",
+        "heading": "Reflection",
         "blocks": [
-          { "type": "text", "value": "My **user-centered design** approach identified the primary persona as the Data Integration Developer. The **business objectives** introduced another target persona identified by the technology research and consulting firm Gartner: the Citizen Integrator, a non-technical subject-matter expert who needs data integration tools without code." },
-          { "type": "image", "src": "/assets/case-studies/ai-recommendations/AI-Recommendations_personas.png", "alt": "The two target personas: the Data Integration Developer and the non-technical Citizen Integrator" }
-        ]
-      },
-      {
-        "heading": "Customer Delight",
-        "blocks": [
-          { "type": "text", "value": "While conducting user research, I observed customers using the newly released features. **Users think the end results are pretty cool.**" },
-          { "type": "image", "src": "/assets/case-studies/ai-recommendations/AI-Recommendations_customer-delight.png", "alt": "A customer quote: “Since the last upgrade they added this function that's pretty cool.”" }
-        ]
-      },
-      {
-        "heading": "Precision Model",
-        "blocks": [
-          { "type": "text", "value": "To ensure the **accuracy of the model**, I designed a simple method to measure user choices against the generated predictions and convinced cross-functional teams to implement the tracking. When there are false positives, the model updates to reflect the most common user decisions." },
-          { "type": "image", "src": "/assets/case-studies/ai-recommendations/AI-Recommendations-precision-model.png", "alt": "A diagram contrasting a true-positive and a false-positive prediction, feeding user selections back to improve the model" }
-        ]
-      },
-      {
-        "heading": "Visual Redesign",
-        "blocks": [
-          { "type": "text", "value": "I worked closely with UX partners to redesign the product look and feel, then convinced executive leadership that modernizing the UI was a sound business goal." },
-          { "type": "image", "src": "/assets/case-studies/ai-recommendations/Informatica-redesign.png", "alt": "Before-and-after of the mapping designer showing the modernized visual design language" }
+          { "type": "text", "value": "The classic toolkit didn't disappear on this project, it just carried different weight. The sketches and storyboard weren't there to document a process, they settled a real interaction question (where does a prediction live, and what happens when it's wrong) before any model output existed to design around. The artifact that mattered most wasn't a wireframe, it was the true-positive/false-positive diagram: it doubled as a spec and as the argument that got other teams to build the tracking." },
+          { "type": "text", "value": "What I'd revisit: the false-positive loop closes on individual choices, one developer, one mapping, but it doesn't distinguish a developer following a genuinely better approach from one working around something the recommendation got wrong. I'd want a way to separate those before trusting the retrained model as much as the first one." }
         ]
       }
     ]
@@ -352,7 +333,7 @@
       "height": 908,
       "maxWidth": 800,
       "alt": "The Operational Insights dashboard: job status fast-facts above rows-processed and job-count charts and a data-volume heat map",
-      "caption": "Built around one idea: the Monday-morning check is a glance, not an analysis session, and treating it like one is what most dashboards get wrong."
+      "caption": "Built around one idea: the Monday-morning check is a glance, not an analysis session."
     },
     "sections": [
       {
@@ -366,56 +347,56 @@
           { "type": "text", "value": "Field observation was clear: the first look is about **large, actionable numbers**, like Rows Processed and Number of Jobs, not the pie and donut charts that fill most dashboards. I built the fast-facts row around that finding and pushed status breakdowns into a small stacked column riding along beside each number, rather than giving them a chart of their own." },
           { "type": "image", "src": "/assets/case-studies/operational-insights/big-numbers-sketches.webp", "width": 1014, "height": 456, "alt": "Hand sketches labeled Fast Facts and Insights, next to a series of higher-fidelity comps showing the same running, scheduled, succeeded, and failed counts", "caption": "The concept on paper before it was pixels: fast facts and insights, worked out in sketches first." },
           { "type": "text", "value": "Those sketches carried straight through several rounds of higher-fidelity comps into what shipped." },
-          { "type": "image", "src": "/assets/case-studies/operational-insights/key-metrics.webp", "width": 876, "height": 654, "alt": "Rows Processed and Number of Jobs shown as a large value beside a small bar chart, with a hover tooltip breaking a bar into succeeded, warning, and failed counts", "caption": "Two fast facts, Rows Processed and Number of Jobs, with status breakdowns riding along as a stacked column instead of a chart of their own.", "maxWidth": 480 }
+          { "type": "image", "src": "/assets/case-studies/operational-insights/key-metrics.webp", "width": 876, "height": 654, "alt": "Rows Processed and Number of Jobs shown as a large value beside a small bar chart, with a hover tooltip breaking a bar into succeeded, warning, and failed counts", "caption": "Two fast facts, status folded into a stacked column instead of its own chart.", "maxWidth": 480 }
         ]
       },
       {
         "heading": "Every Fast Fact Is a Doorway",
         "blocks": [
           { "type": "text", "value": "Every fast fact needed a next step. From a single number, a user drops into **detailed analysis views**, a filtered job list, scheduled tasks by runtime environment, without losing the thread back to where they started." },
-          { "type": "image", "src": "/assets/case-studies/operational-insights/big-numbers.webp", "width": 1010, "height": 496, "alt": "The job-status fast-facts row with arrows connecting the Failed and Scheduled tiles to a filtered job list and a scheduled-tasks chart", "caption": "From a number to the filtered list behind it: the Failed and Scheduled tiles open directly into their own detail views." }
+          { "type": "image", "src": "/assets/case-studies/operational-insights/big-numbers.webp", "width": 1010, "height": 496, "alt": "The job-status fast-facts row with arrows connecting the Failed and Scheduled tiles to a filtered job list and a scheduled-tasks chart", "caption": "From a number to the list behind it: Failed and Scheduled tiles open their own detail views." }
         ]
       },
       {
         "heading": "Time Series for the Second Glance",
         "blocks": [
           { "type": "text", "value": "The second glance is analytical, not a glance at all. **Time-series charts**, a line for Rows Processed, stacked columns for Number of Jobs, correlate both against the projects and folders they belong to, over whatever date range the operator picks." },
-          { "type": "image", "src": "/assets/case-studies/operational-insights/analysis-views.webp", "width": 1000, "height": 810, "alt": "An analysis screen with a multi-series line chart of rows processed by project above a stacked-column chart of job counts by day", "caption": "Not every question fits in a fast fact: the second glance correlates rows processed against job counts, by project." }
+          { "type": "image", "src": "/assets/case-studies/operational-insights/analysis-views.webp", "width": 1000, "height": 810, "alt": "An analysis screen with a multi-series line chart of rows processed by project above a stacked-column chart of job counts by day", "caption": "Not every question fits a fast fact: the second glance correlates rows against jobs, by project." }
         ]
       },
       {
         "heading": "Customers Were Already Building This by Hand",
         "blocks": [
           { "type": "text", "value": "Field visits turned up teams **piecing together their own monitoring** out of spreadsheets, ad-hoc dashboards, and a Slack channel wired to post automated status updates. I treated every one of those workarounds as a feature request already validated by the customer who built it." },
-          { "type": "image", "src": "/assets/case-studies/operational-insights/customer-solutions.webp", "width": 994, "height": 587, "alt": "A collage of customer-built monitoring: ad-hoc dashboards, an email summary of processed-rows statistics, and an automated Slack channel of task-flow updates", "caption": "What customers built for themselves before we built it for them: spreadsheets, dashboards, and an automated Slack channel of status updates." }
+          { "type": "image", "src": "/assets/case-studies/operational-insights/customer-solutions.webp", "width": 994, "height": 587, "alt": "A collage of customer-built monitoring: ad-hoc dashboards, an email summary of processed-rows statistics, and an automated Slack channel of task-flow updates", "caption": "What customers built for themselves first: spreadsheets, dashboards, a Slack status channel." }
         ]
       },
       {
         "heading": "What I Tried Based on What I Heard From Customers",
         "blocks": [
           { "type": "text", "value": "Those workarounds were the pitch. Customers already had a Slack channel they checked all day, so instead of asking them to open another dashboard, I proposed bringing the same fast facts and anomaly alerts there. I took the idea to product management and designed a prototype: a bot, CLAIRE, that posted alerts straight into the channel and could restart a stuck agent or explain an anomaly on request, right where the team was already talking. It demoed well. It did not make the next roadmap." },
-          { "type": "image", "src": "/assets/case-studies/operational-insights/slack-app.gif", "width": 1024, "height": 640, "alt": "A Slack conversation in the Data Integration channel: teammates asking the CLAIRE bot about anomalies and to restart a stuck agent, with the bot posting a rows-processed chart in response", "caption": "CLAIRE, the bot I built to bring the same alerts and answers into Slack: a working prototype that demoed well and never shipped.", "unframed": true }
+          { "type": "image", "src": "/assets/case-studies/operational-insights/slack-app.gif", "width": 1024, "height": 640, "alt": "A Slack conversation in the Data Integration channel: teammates asking the CLAIRE bot about anomalies and to restart a stuck agent, with the bot posting a rows-processed chart in response", "caption": "CLAIRE, a Slack bot prototype for the same alerts and answers: demoed well, never shipped.", "unframed": true }
         ]
       },
       {
         "heading": "Company Logos, Not at This Scale",
         "blocks": [
           { "type": "text", "value": "An early comp put customer logos, Salesforce, AWS, Oracle, Workday, on the Top Targets and Top Sources bar charts in place of plain text labels. Product marketing loved how it looked in the demo. I dropped it: Informatica has hundreds of connector types, many with no logo at all, and plenty of customers connect to systems that were never going to get an icon. A design that only works for the six connectors in a demo does not belong in the shipped product." },
-          { "type": "image", "src": "/assets/case-studies/operational-insights/connector-logos.webp", "width": 1000, "height": 909, "alt": "Top Targets and Top Sources bar charts with company logos, Salesforce, AWS, Oracle, Workday, Azure, standing in for connector names", "caption": "Striking in the demo, unworkable at Informatica's actual scale: company logos standing in for connector names." }
+          { "type": "image", "src": "/assets/case-studies/operational-insights/connector-logos.webp", "width": 1000, "height": 909, "alt": "Top Targets and Top Sources bar charts with company logos, Salesforce, AWS, Oracle, Workday, Azure, standing in for connector names", "caption": "Striking in the demo, unworkable at scale: company logos standing in for connector names." }
         ]
       },
       {
         "heading": "Blue for Real, Green for Predicted",
         "blocks": [
           { "type": "text", "value": "Predictive features needed a way to keep actual values from blurring together with the forecast. A plain **color code** did it: blue for what happened, green for what the model predicts. I added a \"How was this prediction made?\" link alongside it, so operators could interrogate the forecast instead of just trusting it." },
-          { "type": "image", "src": "/assets/case-studies/operational-insights/ai-predictions.webp", "width": 1000, "height": 800, "alt": "A rows-processed line chart in blue above a green shaded area chart labeled Projected Rows Processed, powered by CLAIRE", "caption": "Blue for what happened, green for what the model predicts, plus a way to ask how the forecast was made so operators don't have to just trust it." }
+          { "type": "image", "src": "/assets/case-studies/operational-insights/ai-predictions.webp", "width": 1000, "height": 800, "alt": "A rows-processed line chart in blue above a green shaded area chart labeled Projected Rows Processed, powered by CLAIRE", "caption": "Blue for what happened, green for the model's prediction, plus a way to ask how it was made." }
         ]
       },
       {
         "heading": "What Shipped, and What Users Said",
         "blocks": [
           { "type": "text", "value": "Post-launch, I ran feedback sessions with people using the live product. The design held up. One user put it plainly: **\"I really like Operational Insights. It's got the right kinds of metrics.\"**" },
-          { "type": "image", "src": "/assets/case-studies/operational-insights/research.webp", "width": 1010, "height": 700, "alt": "A recorded customer call showing the live dashboard, captioned with the quote about it having the right kinds of metrics", "caption": "Nick Marty, an Informatica user, confirming after launch what mattered most: the dashboard finally had the right kinds of metrics." }
+          { "type": "image", "src": "/assets/case-studies/operational-insights/research.webp", "width": 1010, "height": 700, "alt": "A recorded customer call showing the live dashboard, captioned with the quote about it having the right kinds of metrics", "caption": "Nick Marty, an Informatica user, after launch: the dashboard finally had the right metrics." }
         ]
       },
       {
@@ -440,7 +421,8 @@
     "thumb": "/assets/case-studies/homepage-assets/developer-experience.webp",
     "hero": {
       "src": "/assets/case-studies/developer-experience/catalog.png",
-      "alt": "The Predix Developer Network home page: an \"Industrial IoT Platform\" hero above a \"How Predix Works\" diagram"
+      "alt": "The Predix Developer Network home page: an \"Industrial IoT Platform\" hero above a \"How Predix Works\" diagram",
+      "unframed": true
     },
     "sections": [
       {
@@ -452,35 +434,35 @@
         "heading": "A Persona to Design Around",
         "blocks": [
           { "type": "text", "value": "The work centered on one primary user, **\"Elaine the Software Architect,\"** and the decisions she makes along her journey. Storyboards cast Elaine as the main character so the team could argue about her choices, not abstract features." },
-          { "type": "image", "src": "/assets/case-studies/developer-experience/persona.png", "alt": "A storyboard panel of Elaine browsing the Predix catalog and trying an interactive API test console against a live wind turbine" }
+          { "type": "image", "unframed": true, "src": "/assets/case-studies/developer-experience/persona.png", "alt": "A storyboard panel of Elaine browsing the Predix catalog and trying an interactive API test console against a live wind turbine" }
         ]
       },
       {
         "heading": "Storyboards to Find the Critical Features",
         "blocks": [
           { "type": "text", "value": "Product storyboards walked the full path (sign up, build, deploy, monitor) and surfaced the features that actually mattered. One target set the bar: **a base application up and running in under five minutes**." },
-          { "type": "image", "src": "/assets/case-studies/developer-experience/storyboard.png", "alt": "A storyboard showing Elaine's app auto-deploying to the cloud and an application dashboard where she reviews usage stats" }
+          { "type": "image", "unframed": true, "src": "/assets/case-studies/developer-experience/storyboard.png", "alt": "A storyboard showing Elaine's app auto-deploying to the cloud and an application dashboard where she reviews usage stats" }
         ]
       },
       {
         "heading": "Lo-Fi Wireframes and Motion Prototypes",
         "blocks": [
           { "type": "text", "value": "Low-fidelity wireframes drove rapid, early ideation for the catalog and the console. **After Effects motion prototypes** tested the interaction paradigms before anything was built." },
-          { "type": "image", "src": "/assets/case-studies/developer-experience/wireframes.png", "alt": "Wireframes of the Predix catalog of starter packs and services beside a console showing alerts, resource usage, and favorite apps" }
+          { "type": "image", "unframed": true, "src": "/assets/case-studies/developer-experience/wireframes.png", "alt": "Wireframes of the Predix catalog of starter packs and services beside a console showing alerts, resource usage, and favorite apps" }
         ]
       },
       {
         "heading": "Driving Developer Adoption",
         "blocks": [
           { "type": "text", "value": "Adoption needed more than a good UI. I convinced the marketing team to fund a series of **hands-on coding-tip web videos**, then directed the lean crew that produced them. The videos lived on the community site next to the forum and blog." },
-          { "type": "image", "src": "/assets/case-studies/developer-experience/community.png", "alt": "The Predix community page with forum and blog links and an embedded \"A Developer's Take on Predix\" video" }
+          { "type": "image", "unframed": true, "src": "/assets/case-studies/developer-experience/community.png", "alt": "The Predix community page with forum and blog links and an embedded \"A Developer's Take on Predix\" video" }
         ]
       },
       {
         "heading": "From Design to Product Management",
         "blocks": [
           { "type": "text", "value": "We shipped an **MVP catalog of cloud services** quickly, demoed it to analysts including Gartner, and launched the full product months later. I then moved into a product manager role, representing the product at GE's Minds + Machines and Industrial Internet events and carrying customer needs back to the roadmap." },
-          { "type": "image", "src": "/assets/case-studies/developer-experience/conference.png", "alt": "Jim Reed in conversation with a customer on the show floor at GE's Minds + Machines conference" }
+          { "type": "image", "unframed": true, "src": "/assets/case-studies/developer-experience/conference.png", "alt": "Jim Reed in conversation with a customer on the show floor at GE's Minds + Machines conference" }
         ]
       }
     ]
@@ -498,7 +480,8 @@
     "thumb": "/assets/case-studies/homepage-assets/machine-learning-for-operators.webp",
     "hero": {
       "src": "/assets/case-studies/machine-learning-for-operators/dashboard.png",
-      "alt": "An Operations Optimization dashboard with a Capacity Advisor recommendation and Digital Twin vs. actual output trends for three gas turbines"
+      "alt": "An Operations Optimization dashboard with a Capacity Advisor recommendation and Digital Twin vs. actual output trends for three gas turbines",
+      "unframed": true
     },
     "sections": [
       {
@@ -510,21 +493,21 @@
         "heading": "On-Site Contextual Research",
         "blocks": [
           { "type": "text", "value": "With UX researchers, I ran **on-site visits** to watch the real workflow: Reliability Engineers, Data Analysts, and Data Scientists on customer floors, plus follow-up sessions sketching the model-building flow with them." },
-          { "type": "image", "src": "/assets/case-studies/machine-learning-for-operators/observation.png", "alt": "A collage of site-visit photos: engineers at multi-monitor stations, whiteboard control centers, and participants sketching data curves" }
+          { "type": "image", "unframed": true, "src": "/assets/case-studies/machine-learning-for-operators/observation.png", "alt": "A collage of site-visit photos: engineers at multi-monitor stations, whiteboard control centers, and participants sketching data curves" }
         ]
       },
       {
         "heading": "Seeing the Data Before Training",
         "blocks": [
           { "type": "text", "value": "Interviews kept returning to one thing: **data exploration and curation is where the work lives**. Visualization tools let users evaluate a data set (distributions, outliers, gaps) before and after training." },
-          { "type": "image", "src": "/assets/case-studies/machine-learning-for-operators/data-curation.png", "alt": "The AI Workbench data library: a field summary table with per-field mini distributions above a time-series chart of two sensor signals" }
+          { "type": "image", "unframed": true, "src": "/assets/case-studies/machine-learning-for-operators/data-curation.png", "alt": "The AI Workbench data library: a field summary table with per-field mini distributions above a time-series chart of two sensor signals" }
         ]
       },
       {
         "heading": "A Guided Model-Building Flow",
         "blocks": [
           { "type": "text", "value": "The training wizard breaks the data-science process into legible steps (**Add Data, Prepare, Select Technique, Select Features, Train & Test**) with an accuracy readout and a clear path to deploy or publish a template." },
-          { "type": "image", "src": "/assets/case-studies/machine-learning-for-operators/model-building.png", "alt": "The Train Machine Learning Model screen: a stepper across the top, training configuration on the left, and an accuracy donut with an ROC curve on the right" }
+          { "type": "image", "unframed": true, "src": "/assets/case-studies/machine-learning-for-operators/model-building.png", "alt": "The Train Machine Learning Model screen: a stepper across the top, training configuration on the left, and an accuracy donut with an ROC curve on the right" }
         ]
       },
       {
@@ -537,7 +520,7 @@
         "heading": "Monitoring for Data Drift",
         "blocks": [
           { "type": "text", "value": "The data-science process is iterative and perpetual because of **data drift**. Monitoring tools plot predicted against actual values and mark learning updates, so operators can see when accuracy slips and a model needs retraining." },
-          { "type": "image", "src": "/assets/case-studies/machine-learning-for-operators/monitoring.png", "alt": "Power-output and heat-rate charts for a gas turbine overlaying actual and predicted lines, with diamond markers on re-training events" }
+          { "type": "image", "unframed": true, "src": "/assets/case-studies/machine-learning-for-operators/monitoring.png", "alt": "Power-output and heat-rate charts for a gas turbine overlaying actual and predicted lines, with diamond markers on re-training events" }
         ]
       }
     ]
@@ -566,49 +549,49 @@
         "heading": "Rapid Sketches to Find the Screen Templates",
         "blocks": [
           { "type": "text", "value": "Early, fast sketches identified the **set of screen templates** the app would need (menu, register, emergency, message, reply, report list, send report) before any layout work began." },
-          { "type": "image", "src": "/assets/case-studies/mobile-emergency-system/storyboard.png", "alt": "A grid of hand sketches labeled menu, splash, register, default, slider, emergency, message, reply, report list, and send report" }
+          { "type": "image", "unframed": true, "src": "/assets/case-studies/mobile-emergency-system/storyboard.png", "alt": "A grid of hand sketches labeled menu, splash, register, default, slider, emergency, message, reply, report list, and send report" }
         ]
       },
       {
         "heading": "Screen Flows for the Detailed Actions",
         "blocks": [
           { "type": "text", "value": "**Screen-flow diagrams** mapped every user action (duress, check in, report, tracking, inbox), including the operator-only paths and the branches for success with and without media." },
-          { "type": "image", "src": "/assets/case-studies/mobile-emergency-system/motion-study.png", "alt": "A branching flow diagram of numbered app screens covering duress, check-in, report, tracking, and inbox use cases" }
+          { "type": "image", "unframed": true, "src": "/assets/case-studies/mobile-emergency-system/motion-study.png", "alt": "A branching flow diagram of numbered app screens covering duress, check-in, report, tracking, and inbox use cases" }
         ]
       },
       {
         "heading": "Lo-Fi Wireframes and Annotation",
         "blocks": [
           { "type": "text", "value": "Low-fidelity wireframes carried the **early screen layout and annotation**: the emergency call button, the send-emergency-message flow, media attachments, inline location, and operator alerts with threaded replies." },
-          { "type": "image", "src": "/assets/case-studies/mobile-emergency-system/wireframes.png", "alt": "Annotated wireframes of a send-emergency-message screen and a message thread with operator alerts and citizen replies" }
+          { "type": "image", "unframed": true, "src": "/assets/case-studies/mobile-emergency-system/wireframes.png", "alt": "Annotated wireframes of a send-emergency-message screen and a message thread with operator alerts and citizen replies" }
         ]
       },
       {
         "heading": "A Mood Board for Emergency Alerting",
         "blocks": [
           { "type": "text", "value": "Mood boards set the aesthetic direction by drawing on the **visual language of physical emergency hardware**: call boxes, pull stations, strobes. That reference informed the color palette and the skeuomorphic treatment of the emergency controls." },
-          { "type": "image", "src": "/assets/case-studies/mobile-emergency-system/mood-board.png", "alt": "A mood board of emergency hardware photos: SOS buttons, fire pull stations, call boxes, and red strobe lights" }
+          { "type": "image", "unframed": true, "src": "/assets/case-studies/mobile-emergency-system/mood-board.png", "alt": "A mood board of emergency hardware photos: SOS buttons, fire pull stations, call boxes, and red strobe lights" }
         ]
       },
       {
         "heading": "Emergency Situation Tracking",
         "blocks": [
           { "type": "text", "value": "During an incident, **citizens check in with their location** and receive alerts from operators. The message list keeps a running record of check-ins, reports, tracking state, and failed sends with a retry." },
-          { "type": "image", "src": "/assets/case-studies/mobile-emergency-system/situation-tracking.png", "alt": "An AtHoc message list under a \"Facility Fire\" alert showing check-ins, an emergency report, and a failed report with a Retry button" }
+          { "type": "image", "unframed": true, "src": "/assets/case-studies/mobile-emergency-system/situation-tracking.png", "alt": "An AtHoc message list under a \"Facility Fire\" alert showing check-ins, an emergency report, and a failed report with a Retry button" }
         ]
       },
       {
         "heading": "Interactive Maps",
         "blocks": [
           { "type": "text", "value": "Operators **publish map layers and pins** so first responders and civilians can track the incident, the affected area, and cordons in real time." },
-          { "type": "image", "src": "/assets/case-studies/mobile-emergency-system/interactive-maps.png", "alt": "The app map view with a shaded alert zone and two dropped pins marked NEW" }
+          { "type": "image", "unframed": true, "src": "/assets/case-studies/mobile-emergency-system/interactive-maps.png", "alt": "The app map view with a shaded alert zone and two dropped pins marked NEW" }
         ]
       },
       {
         "heading": "One System, Every Screen",
         "blocks": [
           { "type": "text", "value": "The mobile app is one face of a larger platform. **Operators work a synchronized tablet and desktop view**, messages and the live map side by side, so field and command stay in step." },
-          { "type": "image", "src": "/assets/case-studies/mobile-emergency-system/tablet.png", "alt": "The AtHoc tablet layout with a message list on the left and a full incident map with alert zone and pins on the right" }
+          { "type": "image", "unframed": true, "src": "/assets/case-studies/mobile-emergency-system/tablet.png", "alt": "The AtHoc tablet layout with a message list on the left and a full incident map with alert zone and pins on the right" }
         ]
       }
     ]
@@ -625,7 +608,8 @@
     "thumb": "/assets/case-studies/homepage-assets/additive-manufacturing.webp",
     "hero": {
       "src": "/assets/case-studies/additive-manufacturing/dashboard.png",
-      "alt": "The Additive Console builds view: a table of print jobs by machine and site with status and progress bars"
+      "alt": "The Additive Console builds view: a table of print jobs by machine and site with status and progress bars",
+      "unframed": true
     },
     "sections": [
       {
@@ -637,42 +621,42 @@
         "heading": "Early Concept Sketches",
         "blocks": [
           { "type": "text", "value": "Rough concept sketches illustrated the **core functionality and user value** before any pixels: an Availability Score for each machine, green or red at a glance, rolled up to the site." },
-          { "type": "image", "src": "/assets/case-studies/additive-manufacturing/availability-score.png", "alt": "A hand-drawn sketch of a browser dashboard showing per-machine availability percentages, beside a smiling user" }
+          { "type": "image", "unframed": true, "src": "/assets/case-studies/additive-manufacturing/availability-score.png", "alt": "A hand-drawn sketch of a browser dashboard showing per-machine availability percentages, beside a smiling user" }
         ]
       },
       {
         "heading": "Rethinking the Visualization",
         "blocks": [
           { "type": "text", "value": "An early design showed the Availability Score as a **donut chart**. User testing found it confusing: the printers themselves use a similar donut to show print progress, so the metric read as something it wasn't. After concept testing it became **a number and a color indicator**." },
-          { "type": "image", "src": "/assets/case-studies/additive-manufacturing/visualization.png", "alt": "Side-by-side options labeled \"donut\" and \"not donut\": a circular progress gauge versus a large percentage with an up arrow" }
+          { "type": "image", "unframed": true, "src": "/assets/case-studies/additive-manufacturing/visualization.png", "alt": "Side-by-side options labeled \"donut\" and \"not donut\": a circular progress gauge versus a large percentage with an up arrow" }
         ]
       },
       {
         "heading": "Observing Users On Site",
         "blocks": [
           { "type": "text", "value": "**Contextual research at a facility producing aircraft-engine parts** grounded the work: watching the manufacturing process and interviewing operators, process engineers, and reliability engineers in place." },
-          { "type": "image", "src": "/assets/case-studies/additive-manufacturing/user-research.png", "alt": "Site-visit photos of engineers reviewing production boards, standing at a control center, and operating a metal 3D printer" }
+          { "type": "image", "unframed": true, "src": "/assets/case-studies/additive-manufacturing/user-research.png", "alt": "Site-visit photos of engineers reviewing production boards, standing at a control center, and operating a metal 3D printer" }
         ]
       },
       {
         "heading": "A Journey Map of Roles",
         "blocks": [
           { "type": "text", "value": "A **journey map** laid out the roles and tasks from part order to ship (design, build, finish, quality) plus the horizontal functions like fleet monitoring and operations, and flagged the MVP opportunities." },
-          { "type": "image", "src": "/assets/case-studies/additive-manufacturing/journey-map.png", "alt": "A journey map with a top row of part-manufacturing steps and a lower band of horizontal functions, each tied to a role" }
+          { "type": "image", "unframed": true, "src": "/assets/case-studies/additive-manufacturing/journey-map.png", "alt": "A journey map with a top row of part-manufacturing steps and a lower band of horizontal functions, each tied to a role" }
         ]
       },
       {
         "heading": "Personas: Goals and Challenges",
         "blocks": [
           { "type": "text", "value": "Personas made the users' goals and constraints concrete. The **Operator** is \"comfortable with computers, but not an expert,\" is responsible for loading, unloading, and monitoring builds, and above all **needs to know accurately when a part will finish**." },
-          { "type": "image", "src": "/assets/case-studies/additive-manufacturing/personas.png", "alt": "An Operator persona card with a photo, goals, responsibilities, and a challenge about knowing when a part will be finished" }
+          { "type": "image", "unframed": true, "src": "/assets/case-studies/additive-manufacturing/personas.png", "alt": "An Operator persona card with a photo, goals, responsibilities, and a challenge about knowing when a part will be finished" }
         ]
       },
       {
         "heading": "Mobile for On-Call Operators",
         "blocks": [
           { "type": "text", "value": "Operators work **on call**, so the design extended to mobile concepts for checking machine status remotely: the same green/red build state, pocket-sized." },
-          { "type": "image", "src": "/assets/case-studies/additive-manufacturing/mobile.png", "alt": "A hand holding a phone showing a sketch-style \"My Machines\" list with green and red progress bars" }
+          { "type": "image", "unframed": true, "src": "/assets/case-studies/additive-manufacturing/mobile.png", "alt": "A hand holding a phone showing a sketch-style \"My Machines\" list with green and red progress bars" }
         ]
       },
       {
@@ -696,7 +680,8 @@
     "thumb": "/assets/case-studies/homepage-assets/analytics-big-data.webp",
     "hero": {
       "src": "/assets/case-studies/analytics-big-data/data-explorer.png",
-      "alt": "The Predix Insight Data Explorer: a multi-series line chart of asset temperatures above a data grid, with chart-type options"
+      "alt": "The Predix Insight Data Explorer: a multi-series line chart of asset temperatures above a data grid, with chart-type options",
+      "unframed": true
     },
     "sections": [
       {
@@ -714,28 +699,28 @@
         "heading": "Orchestration Editor",
         "blocks": [
           { "type": "text", "value": "The **Orchestration Editor** lets users catalog and sequence analytic techniques together with business logic on a BPMN-style canvas: standard and long-running analytics, gateways with explicit conditions, and a chart output." },
-          { "type": "image", "src": "/assets/case-studies/analytics-big-data/orchestration-editor.png", "alt": "The Orchestration Editor canvas with data-object, analytic, gateway, and sub-process nodes, and a gateway-conditions panel below" }
+          { "type": "image", "unframed": true, "src": "/assets/case-studies/analytics-big-data/orchestration-editor.png", "alt": "The Orchestration Editor canvas with data-object, analytic, gateway, and sub-process nodes, and a gateway-conditions panel below" }
         ]
       },
       {
         "heading": "Mapping the User Journey",
         "blocks": [
           { "type": "text", "value": "I ran **collaborative workshops** with subject-matter experts, sketching and mapping task flows with diagrams and sticky notes. Running the sessions with stakeholders in the room gives everyone ownership of the design." },
-          { "type": "image", "src": "/assets/case-studies/analytics-big-data/collaborative-design.png", "alt": "A wall of sticky notes mapping a data-analysis user journey from sign-in and upload through catalog, workspace, and visualization" }
+          { "type": "image", "unframed": true, "src": "/assets/case-studies/analytics-big-data/collaborative-design.png", "alt": "A wall of sticky notes mapping a data-analysis user journey from sign-in and upload through catalog, workspace, and visualization" }
         ]
       },
       {
         "heading": "Task Flows Mapped to the Product",
         "blocks": [
           { "type": "text", "value": "The synthesized model tied every user task to a place in the product (**Upload, Pick, Configure, Execute, Evaluate**) across Data Explorer, the Analytics Catalog, and the Analytics Workbench, with a shared Data Visualizer and a Version Tracker for iteration." },
-          { "type": "image", "src": "/assets/case-studies/analytics-big-data/task-flows.png", "alt": "A task-flow diagram with five columns from Upload to Evaluate, each grouping the detailed user actions in that product area" }
+          { "type": "image", "unframed": true, "src": "/assets/case-studies/analytics-big-data/task-flows.png", "alt": "A task-flow diagram with five columns from Upload to Evaluate, each grouping the detailed user actions in that product area" }
         ]
       },
       {
         "heading": "Exploring Interactions With Sketches",
         "blocks": [
           { "type": "text", "value": "Sketches explored the **interactions and layouts**: the orchestration editor's library and canvas, dragging fields onto model inputs, the dashboard, and a dashboard designer showing multiple outputs." },
-          { "type": "image", "src": "/assets/case-studies/analytics-big-data/sketches.png", "alt": "Hand sketches of an orchestration editor, a field-to-input drag interaction, a dashboard, and a dashboard designer" }
+          { "type": "image", "unframed": true, "src": "/assets/case-studies/analytics-big-data/sketches.png", "alt": "Hand sketches of an orchestration editor, a field-to-input drag interaction, a dashboard, and a dashboard designer" }
         ]
       }
     ]

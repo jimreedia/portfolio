@@ -44,20 +44,33 @@ together. Jim opted to keep going one at a time instead, so whatever the next pa
 up (a framework wrinkle, a source-review surprise, a pattern worth reusing) can actually
 inform the one after it, rather than three branches drifting independently off the same
 starting point. **Genomic Data Platform done 2026-09-14** (branch:
-fix/refine-case-study-genomic-data-platform), see its entry below. Next up: AI
-Recommendations, the last of the featured 3, in its own fresh worktree once this one is
-reviewed and merged.
+fix/refine-case-study-genomic-data-platform). **AI Recommendations done 2026-09-14**
+(branch: fix/refine-case-study-ai-recommendations), the last of the featured 3, see its
+entry below. **All three featured case studies are now done**, pending review and merge.
 
-After the featured 3, back to the remaining 5 "more" pages. All 5 (Developer Experience,
-Machine Learning for Operators, Mobile Emergency System, Additive Manufacturing,
-Analytics & Big Data) still carry the original credibility risk, synthesized text
-presented as Jim's real history, and should get the reconciliation pass in roughly this
-order: **Developer Experience first** (real outcome arc already, headings in decent
-shape, the closest to done, was the earlier pick for "next" before the featured 3 jumped
-ahead of the whole batch), then the other 4, which each have a bigger gap to close:
-Machine Learning for Operators and Mobile Emergency System have no stated outcome
-anywhere in the source, Analytics & Big Data has an unresolved shipped-vs-concept
-ambiguity, Additive Manufacturing needs more structural consolidation.
+**Reprioritized again 2026-09-14: next up is a further refine pass on the 4 case studies
+already done** (Operational Insights, Agentic AI Chat, Genomic Data Platform, AI
+Recommendations), not the remaining 5 "more" pages. As an interim, presentation-layer fix
+to keep the site presentable in the meantime, every image across all 5 not-yet-refined
+pages was flagged `unframed` (2026-09-14): their source images still carry old baked-in
+rounded corners and drop shadows, and the new site-wide border+radius CSS was stacking a
+second frame on top of that. `unframed` opts them out so each page reads as one clean
+frame, without touching prose or images. This is provisional, not the real fix; when each
+of the 5 gets its full content refine, treat its images the normal way (re-export opaque,
+crop banners to captions, frame normally, drop `unframed` unless a genuine alpha
+composite turns up).
+
+Once the further refine pass on the 4 done pages wraps, back to the remaining 5 "more"
+pages. All 5 (Developer Experience, Machine Learning for Operators, Mobile Emergency
+System, Additive Manufacturing, Analytics & Big Data) still carry the original
+credibility risk, synthesized text presented as Jim's real history, and should get the
+reconciliation pass in roughly this order: **Developer Experience first** (real outcome
+arc already, headings in decent shape, the closest to done, was the earlier pick for
+"next" before the featured 3 jumped ahead of the whole batch), then the other 4, which
+each have a bigger gap to close: Machine Learning for Operators and Mobile Emergency
+System have no stated outcome anywhere in the source, Analytics & Big Data has an
+unresolved shipped-vs-concept ambiguity, Additive Manufacturing needs more structural
+consolidation.
 
 ---
 
@@ -134,14 +147,18 @@ ambiguity, Additive Manufacturing needs more structural consolidation.
    baked into these images by hand; `--color-border` (the site's existing hairline-divider
    token) is too faint for this.
 
-   **Mechanism (2026-09-12):** a numeric `maxWidth` field on an image block (or the
-   `hero` object) caps its display width, e.g. `"maxWidth": 480` — not a boolean, so any
-   value works, not just one fixed narrow tier. Applied via inline `style`
-   (`mediaMaxWidth()` in `CaseStudyPage.jsx`), as `min(Npx, 100%)` so it still shrinks
-   responsively on narrow viewports. A capped image's caption automatically gets the same
-   `maxWidth` and centers under it, no extra work needed per image. Every image without
-   `maxWidth` set keeps the page's existing default (760px below 1024px, 920px at
-   desktop's bleed width).
+   **Mechanism (2026-09-12, revised 2026-09-15):** a numeric `maxWidth` field on an
+   image block (or the `hero` object) caps its display width, e.g. `"maxWidth": 480` —
+   not a boolean, so any value works, not just one fixed narrow tier. Applied via inline
+   `style` (`mediaMaxWidth()` in `CaseStudyPage.jsx`), as `min(Npx, 100%)` so it still
+   shrinks responsively on narrow viewports. Every image without `maxWidth` set keeps the
+   page's existing default (760px below 1024px, ~872px at desktop's bleed width).
+   **The caption does not inherit the image's `maxWidth`** (changed 2026-09-15;
+   `CaseStudyPage.jsx`'s `figcaption` no longer takes the `mediaMaxWidth()` style): a
+   narrow image (an icon capped to 252px, say) still gets a caption sized to the normal
+   default column width, not squeezed to the image's own narrow width. This keeps every
+   caption's wrap behavior consistent regardless of what width the image above it
+   happens to be capped to. See principle 13 for what this means for caption length.
 
 8. **Copy style:** no em-dashes (see backlog). Commas, colons, parentheses, or separate
    sentences.
@@ -182,6 +199,31 @@ ambiguity, Additive Manufacturing needs more structural consolidation.
     Write every caption as if it might be the only sentence this reader sees for that
     section: state the call, the tension, or the outcome, not just the subject.
     Concise still matters, this is one sentence doing real work, not a paragraph.
+
+13. **Every caption must render on one line, no wrap, wherever it appears.** Decided
+    2026-09-14, applied to all 4 case studies done at that point (Operational Insights,
+    Agentic AI Chat, Genomic Data Platform, AI Recommendations); apply it to the
+    remaining 5 as they get their refine pass, and to any caption touched after this
+    point on the 4 already done. A wrapped caption reads as a paragraph, not a caption,
+    undercutting principle 12's "one sentence doing real work." **A caption's wrap width
+    does not depend on its image's `maxWidth`** (see principle 7's mechanism note,
+    revised 2026-09-15): inline, every caption wraps at the page's normal default column
+    width regardless of how narrow the image above it is capped, so there is exactly one
+    budget to write against, not a per-image one. Two contexts to satisfy, both fixed
+    regardless of any image's own `maxWidth`:
+    - **Inline**: the default column, ~872px measured at desktop.
+    - **Lightbox**: `.lightbox__caption` is a fixed 640px, always narrower than inline,
+      so it's normally the tighter constraint of the two.
+    In practice: target roughly 90-100 characters as a safe one-line budget (this covers
+    both contexts for the vast majority of captions). Character count is a rough guide
+    only, actual width depends on the letters used (14px font, ~5.7-5.9px average per
+    character measured); verify by rendering, don't just count characters. To verify:
+    load the page in the running dev server and check every `figcaption` for
+    `scrollHeight` beyond one `lineHeight`, then open the Lightbox and step through every
+    image doing the same check against `.lightbox__caption` (a short Playwright script,
+    not eyeballing, since some wraps are a few pixels past the edge and easy to miss
+    visually). Iterate: a caption that still wraps after a first rewrite needs cutting
+    further, not just rephrasing, favor dropping a clause over keeping every detail.
 
 ---
 
@@ -333,34 +375,60 @@ original #12 PR and never wired in). Verified with `npm run build` (clean) and
 Playwright screenshots (desktop, mobile, and the Lightbox, including both `unframed`
 images) since `chromium-cli` wasn't available in this environment.
 
-### AI Recommendations
+### AI Recommendations — done (2026-09-14)
 
-Structure: 11 sections, too many; several are one sentence or image-only.
+Source review done first, per principle 10: myportfolio original checked (a close
+paraphrase of what was already in `caseStudies.json`, nothing structurally new there),
+and the full `production images/AI Recommendations/` folder reviewed, all 27 files, not
+just the 13 already wired in. `AI-Workbench-model-building-concept.png` turned out to be
+a stray GE Predix asset (Analytics Workbench, not Informatica), misfiled in this folder;
+excluded rather than forced in. Two real corrections caught against the shipped
+artifacts: the personas image labels the second persona **Citizen Developer**, not
+"Citizen Integrator" as the prose had it (Gartner's term is Citizen Integrator, but the
+shipped design used a different label, followed the artifact); and "Visual Redesign"
+claimed a before-and-after, but the source image only ever showed the one modernized
+state, so the caption was corrected to match. The customer-delight quote had a full
+attribution sitting unused in the source image (Keri-Ann Bowen, ETL Developer,
+University of Maryland) that the alt text had stripped down to "a customer quote."
 
-- **Lead:** replace "Using machine learning to create valuable outcomes for customers."
-  with the blurb's story (an inline recommendation model that suggests the next
-  transforms without breaking the developer's flow; a precision-tracking method Jim got
-  cross-functional teams to ship).
-- **Cut or merge the thin sections:** "Storyboards" (one sentence), "Branded
-  Explorations" (image only), "Animated Behaviors" (one sentence), "Sketches and
-  Renderings" (one sentence + two images). Fold the useful pieces into a single "how the
-  concept evolved" beat; drop the rest.
-- **"Customer Delight" is fluff** for a principal portfolio ("Users think the end
-  results are pretty cool" + a casual quote). Cut it, or turn it into a real outcome
-  statement.
-- **"Inline Recommendations" and "Precision Model" are the whole case study.** Inline
-  Recommendations is a real design bet (predictive-text analogy; seamless, not jarring).
-  Precision Model is the standout: Jim designed a measurement method and convinced
-  cross-functional teams to build it so the model retrains on real choices. Give both
-  more room; consider building the page around them.
-- **Best contribution language of the three** lives here ("I advocated," "I convinced
-  cross-functional teams," "convinced executive leadership..."). Keep that register;
-  raise the weaker sections to it.
-- **No metrics.** Model precision/accuracy, adoption of the recommendations, anything.
-- **"Visual Redesign"** (convinced execs to modernize the UI) is a strong influence
-  story stranded at the end as a one-liner. Expand or move.
-- **Add a reflection.** The false-positive handling and the retrain loop are natural
-  material.
+Restructured from 11 sections to 8. Biggest change: the "Sketches and Renderings" and
+"Storyboards" sections were marked as one-sentence throwaways in the initial punch list,
+written before the source review. Un-cropped, `AI-Recommendations_storyboard-v1.png`
+turned out to be a fully legible 8-frame storyboard (a "Show Me" card, accept/dismiss in
+place, dismissed items recoverable under their own tab), and
+`AI-Recommendations_concept-renderings-v1.png` shows the actual design bet directly: a
+recommended transform rendered as a dashed placeholder *inline in the canvas*, the
+alternative to a separate list panel. That image became the lead evidence for a new
+decision-tier section, "Inline, Not a Separate Panel," built around it and the
+predictive-text analogy per the punch list's steer to build the page around the two
+strongest ideas. The remaining evolution material (concept sketches, storyboard,
+branded CLAIRE exploration, the animated prototype) consolidated into one supporting
+section, "From Napkin Sketch to Shipped Interaction," rather than four thin ones.
+"Customer Delight" as a standalone section was cut; the attributed quote now closes the
+precision-model section as evidence instead. Added a Reflection section relating the
+sketch/storyboard/diagram artifacts to AI-era design work per principle 9, plus a
+what-I'd-revisit on the false-positive retrain loop, both grounded in what the shipped
+artifacts actually show.
+
+Images: all 12 in-narrative images (plus the hero) re-exported to WebP. No cwebp or
+ImageMagick in this environment, so conversion went through Pillow: flattened to opaque
+(the alpha channel on several source PNGs turned out to be plain rounded-corner
+anti-aliasing, not a real composite, so nothing here needed `unframed`), baked banner
+text cropped off in favor of the new HTML captions, preferring each `-v1` sibling as the
+unbannered base per principle 7. `Informatica-brand.png` had no `-v1`; its banner sat
+over a redundant, otherwise-undamaged thumbnail column, so that column was cropped out
+entirely rather than left bannered. `AI-Recommendations_animated-behaviors.gif`
+converted to an animated WebP (27 frames) rather than deferred to the separate
+Vimeo/video-block backlog item, since it's a short looping UI prototype, not the
+longer-form motion content that item is scoped around. Final ids match the descriptive,
+no-product-prefix convention (`recommendations-panel`, `inline-concept`, `storyboard`,
+etc.). As with Genomic Data Platform, this was a Pillow-only pass; Jim may want to
+re-export some of these himself from the real source files for tighter crops, the way he
+did for the first two of the featured three. Folds this case study's share of the "Case
+study image assets" backlog item into Done too.
+
+Verified with `npm run build` (clean) and Playwright screenshots (desktop, mobile, and
+the Lightbox, including the animated prototype frame).
 
 ---
 
