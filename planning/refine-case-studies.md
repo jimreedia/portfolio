@@ -74,8 +74,10 @@ consolidation.
 
 **Developer Experience done (2026-09-16)**, first of the remaining 5 "more" pages,
 branch: fix/refine-case-study-developer-experience. See its entry below for the full
-account. Next: the other 4 (Machine Learning for Operators, Mobile Emergency System,
-Additive Manufacturing, Analytics & Big Data).
+account. **Machine Learning for Operators done (2026-09-16)**, second of the remaining
+5, branch: fix/refine-case-study-machine-learning-for-operators, see its entry below.
+Next: the other 3 (Mobile Emergency System, Additive Manufacturing, Analytics & Big
+Data).
 
 ---
 
@@ -158,6 +160,15 @@ Additive Manufacturing, Analytics & Big Data).
    `style` (`mediaMaxWidth()` in `CaseStudyPage.jsx`), as `min(Npx, 100%)` so it still
    shrinks responsively on narrow viewports. Every image without `maxWidth` set keeps the
    page's existing default (760px below 1024px, ~872px at desktop's bleed width).
+   **2x export (2026-09-16, supersedes the 2026-09-12 "100%, no upscaling" backlog
+   decision once genuinely higher-resolution source captures are available):** export at
+   twice the image's actual display width, not its CSS display size. An unconstrained
+   section image displays at up to 872px, so export at 1744px; an image with
+   `maxWidth: N` set exports at `2 * N`. The `width`/`height` fields in `caseStudies.json`
+   still record the export's real pixel dimensions (so a 2x image reads as, e.g.,
+   1744×966), the responsive CSS (`max-width: 100%; height: auto`) handles the rest.
+   Only applies to new re-exports; already-shipped 100%-scale images get bumped to 2x
+   opportunistically when their page is next touched, not via a dedicated retrofit pass.
    **The caption does not inherit the image's `maxWidth`** (changed 2026-09-15;
    `CaseStudyPage.jsx`'s `figcaption` no longer takes the `mediaMaxWidth()` style): a
    narrow image (an icon capped to 252px, say) still gets a caption sized to the normal
@@ -598,16 +609,120 @@ after the wireframes image. See that backlog item for the full account, includin
 known gap: this sandboxed environment's network gets Cloudflare-blocked on
 `player.vimeo.com`, so actual playback needs verifying in a real browser.
 
-### Machine Learning for Operators
+### Machine Learning for Operators — done (2026-09-16)
 
-Strong frame ("get model training into the hands of the operations engineers, no data
-scientist required") but **no stated outcome anywhere** (myportfolio had none).
-- Find out / state whether it shipped, pilot results, adoption.
-- "Seeing the Data Before Training" and "A Guided Model-Building Flow" are the design
-  substance; "On-Site Contextual Research" and "Monitoring for Data Drift" support.
-- Consider leading with the core bet (a guided wizard that hides the data-science
-  process) as a decision section.
-- Add a reflection.
+Source review done first, per principle 10: myportfolio original checked (thin, four
+short paragraphs, no stated outcome, confirming the punch list's read), and the full
+`production images/AI Workbench/` folder reviewed, all 15 files, not just the 5 already
+wired in. Three real finds sitting unused the whole time: `Analytics_Workbench-monitoring-room.png`,
+a "CASE STUDY" framing slide over a control-room photo stating the actual business
+stakes (a power plant manager bidding into the electricity market, penalized for
+underproducing, wasting fuel for overproducing) that the shipped page never stated
+anywhere; `AI-Workbench-model-building-concept.png`, a conceptual map of Data Engineer,
+Data Scientist, and Analytic Developer roles moving data and trained models through a
+Marketplace, Data Catalog, Model Builder, and Analytics Catalog (the myportfolio
+original's one line about "storyboarding and concept flows" pointed straight at this,
+and it was never wired in); and `Analytics-Workbench-Data-Visualiztion.png`, a full data
+library page whose bottom half (cropped in as `correlation-plot.webp`) shows a
+correlation-coefficient matrix and a correlation-density heat map, a real data
+exploration feature the current draft never showed. Also found: 4 of the 5 wired images
+had a genuinely unbannered sibling with the *same content* (not just a less-annotated
+crop), confirmed by direct pixel comparison, not assumed from filename: `AI-Workbench-comp-v1.png`
+(model-building), `AI-Workbench-data-curation-v1.png` (data library, and richer, 8 fields
+shown instead of 4), `Analytics-Workbench-user-research.png` (site visits), and
+`Analytics-Workbench-monitor-comp-v1.png` (monitoring). The hero's sibling,
+`Analytics_Workbench-dashboard-v1.png`, turned out to be a *different, lower scroll
+position* of the same dashboard (no banner, but missing the top Capacity Advisor
+numbers and showing a lower "98% Performance" / alerts / degradation section the
+original crop never showed) rather than a matching swap; used as the new hero directly
+since it's a strict superset once you include both halves, no patching needed.
+
+**Restructured from 6 sections to 7 plus a new Reflection**, adding two sections built
+entirely from the source-review finds: **"Bidding Into the Market, One Percent at a
+Time"** (the monitoring-room slide's stakes, stated in the case study for the first
+time) and folding the concept-map into **"A Wizard That Trades Flexibility for
+Guardrails"** (promoted from the old bare-label "A Guided Model-Building Flow" to a
+decision heading: a fixed five-step wizard trades a data scientist's flexibility for a
+path an operations engineer can actually finish, and a trained model publishes to a
+shared Analytics Catalog instead of staying with the team that built it, which the
+concept map is the direct evidence for). **"Seeing the Data Before Training"** likewise
+promoted to a decision heading, **"Let Them See the Data Before They Trust the
+Model,"** with the correlation-plot find added as a second image. "On-Site Contextual
+Research" retitled "On-Site Visits to Watch the Real Workflow" and "Monitoring for Data
+Drift" kept, both supporting per the punch list.
+
+**No adoption number found or invented.** The screen's own numbers (69.91% accuracy,
+506,206 rows, 98% performance) are demo content baked into the mockups, same call as
+Operational Insights and Genomic Data Platform: referenced in the Reflection as what the
+UI shows, never passed off as a real result. The qualitative outcome is the shipped
+capability itself: a guided wizard that put model training in front of operations
+engineers instead of data scientists, inside GE's Predix-powered AI Workbench (the
+"Powered by Predix" badge visible in the dashboard screens, tying this to the same
+platform the Developer Experience case study covers).
+
+**Reflection added**, grounded in what the source shows rather than invented: the
+closest thing to a storyboard here was an engineer sketching a data curve on a legal pad
+during a site visit (per principle 9, relating the classic UX toolkit to how it actually
+showed up in this AI-era process), plus two open questions on trust and legibility: does
+a single accuracy percentage (69.91%) let a non-data-scientist over-trust a borderline
+model, and does a correlation-coefficient matrix actually teach a reliability engineer
+anything or just look approachable.
+
+**One naming ambiguity flagged, not resolved:** the source folder's file names split
+roughly in half between an "AI Workbench" branded UI (GE logo, Data/Models/Techniques
+sidebar) and an "Analytics Workbench" branded UI (no GE logo, Assets/Data/Analytics/Twins
+sidebar) for what look like the same underlying screens (data library, monitoring,
+dashboard). This could be a mid-project rename, similar to the Agentic AI Chat
+O11y-Copilot-to-Observe-Agent find, or just inconsistent internal comp labeling. Unlike
+that case, this wasn't confirmed with Jim, so the shipped copy calls the product "AI
+Workbench" throughout (matching the majority branding and the pre-existing alt text) and
+doesn't assert a naming-decision narrative. Flagging here in case Jim knows the real
+story and wants it surfaced the way the O11y Copilot one was.
+
+**Images, fully re-exported (2026-09-16), folding in the "Case study image assets"
+backlog item for this case study and clearing its 2026-09-14 interim `unframed`
+stopgap.** 4 of the 5 previously-wired images swapped to their confirmed-identical
+unbannered sibling (comp-v1, data-curation-v1, user-research, monitor-comp-v1); the
+hero swapped to the richer `Analytics_Workbench-dashboard-v1.png` crop instead of
+patching the original's banner (patching was attempted first, pixel-sampled two-band
+fill reconstructing the sidebar and card colors around the banner's bounding box, but
+the cleaner unbannered alternate crop made the patch unnecessary once the source review
+turned it up). All converted to WebP via Pillow (no cwebp/ImageMagick in this
+environment); flattened to opaque where the alpha channel was just the mockup frame's
+corner rounding (all 6 photographic/UI screenshots, under 1.3% alpha each, confirmed
+by inspecting the alpha channel directly rather than assumed from file size). One
+genuine composite: `product-ecosystem.webp` (the concept map) has an irregular
+torn-edge, stacked-paper drop shadow baked into the source graphic, confirmed by
+extracting and viewing its alpha channel, and is flagged `unframed`, matching the
+Genomic Data Platform and Developer Experience "stacked paper" precedent; its banner
+was patched out with a flat white fill (confirmed safe first: the area it covers is
+blank paper, not diagram content) rather than requiring a source swap, since no
+unbannered sibling existed for it. `correlation-plot.webp` cropped from the larger,
+previously two-purpose `Analytics-Workbench-Data-Visualiztion.png` (its top half,
+already covered by `data-library.webp`, was dropped to avoid duplicating the same field
+table twice in one section). Renamed from literal `AI-Workbench-*` / `Analytics-Workbench-*`
+source names to descriptive ids (`dashboard`, `market-stakes`, `site-visits`,
+`data-library`, `correlation-plot`, `model-building`, `product-ecosystem`,
+`monitoring`). `width`/`height` recorded for all 8 from their actual exported
+dimensions. Old PNGs deleted. Total asset weight for this page dropped from ~1.5MB of
+PNGs to ~600KB of WebP across one more image than before (8 vs. 5).
+
+**`product-ecosystem.webp` re-exported by Jim himself (2026-09-16, same day), superseding
+the Pillow pass at the new 2x standard** (see the "2x export" note under principle 7
+below, decided the same day): 1744×1023, a tighter crop from the real source file at
+2x the 872px desktop display width. Same content and stacked-paper torn-edge treatment
+as the Pillow version, still flagged `unframed`; `width`/`height` updated to match. The
+other 7 images on this page stay at their original 100%-scale Pillow exports, to be
+bumped to 2x opportunistically rather than as a dedicated pass, per the same decision.
+
+Verified with `npm run build` (clean) and a headless-Chromium Playwright script
+(installed fresh into the scratchpad directory rather than the project, since neither
+Playwright nor a system Chromium was preinstalled in this environment) confirming: no
+console/build errors, every one of the 8 captions renders on one line by measured
+`scrollHeight` at both the inline default column and the Lightbox's fixed 640px width
+(not by eye), the `unframed` concept-map image reads as a single clean frame against
+the page background, and desktop/mobile full-page screenshots hold together
+end-to-end.
 
 ### Mobile Emergency System
 
