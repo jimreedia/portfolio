@@ -467,7 +467,7 @@
       {
         "heading": "From Design to Product Management",
         "blocks": [
-          { "type": "text", "value": "We shipped an **MVP catalog of cloud services** quickly: eight services already live across Edge Software and Data Management alone, with Analytics and Apps categories still to come. It got demoed to analysts including Gartner, then launched in full months later." },
+          { "type": "text", "value": "We shipped an **MVP catalog of cloud services** quickly. It got demoed to analysts including Gartner, then launched in full months later." },
           { "type": "image", "src": "/assets/case-studies/developer-experience/shipped-catalog.webp", "width": 849, "height": 720, "alt": "The shipped Predix catalog page, organized into Services, Analytics, and Apps tabs", "caption": "Eight services shipped across two categories before Analytics and Apps even launched." },
           { "type": "text", "value": "I then moved into a product manager role myself, representing the product at GE's Minds + Machines and Industrial Internet events and carrying customer needs straight back into the roadmap." },
           { "type": "image", "src": "/assets/case-studies/developer-experience/conference-conversation.webp", "width": 1024, "height": 682, "maxWidth": 700, "alt": "Jim Reed in conversation with a customer on the show floor at GE's Minds + Machines conference", "caption": "Moving into the PM seat meant working the show floor, not just designing the product." }
@@ -484,7 +484,7 @@
   {
     "id": "machine-learning-for-operators",
     "title": "Machine Learning for Operators",
-    "description": "Enabling operations engineers to train and monitor AI models without a data-science background.",
+    "description": "A guided model-training wizard, shipped inside GE's Predix-powered AI Workbench, that let operations engineers, not data scientists, build the machine-learning models behind a plant's production forecasts.",
     "blurb": "Design that put machine-learning model training in the hands of the operations engineers who know the equipment best, no data scientist required.",
     "tags": ["AI", "Enterprise"],
     "url": "/case-study/machine-learning-for-operators",
@@ -493,48 +493,65 @@
     "team": "Product managers and international scrum teams across California, Bangalore, and New York; UX researchers",
     "thumb": "/assets/case-studies/homepage-assets/machine-learning-for-operators.webp",
     "hero": {
-      "src": "/assets/case-studies/machine-learning-for-operators/dashboard.png",
+      "src": "/assets/case-studies/machine-learning-for-operators/dashboard.webp",
+      "width": 1000,
+      "height": 670,
       "alt": "An Operations Optimization dashboard with a Capacity Advisor recommendation and Digital Twin vs. actual output trends for three gas turbines",
-      "unframed": true
+      "caption": "The optimizer quantifies its own trade directly: -100 MWh banked against +10 MW gained at peak."
     },
     "sections": [
       {
         "blocks": [
-          { "type": "text", "value": "Training an accurate AI model normally takes a data scientist. The **operations engineers closest to industrial sensor data don't have that background**, but they understand the equipment better than anyone. This work aimed to get machine-learning techniques into their hands by reducing the complexity of the process." }
+          { "type": "text", "value": "Training an accurate machine-learning model normally takes a data scientist. The **operations engineers closest to industrial sensor data don't have that background**, but they understand the equipment better than anyone. I designed a guided model-training tool that put that work directly in their hands." }
         ]
       },
       {
-        "heading": "On-Site Contextual Research",
+        "heading": "Bidding Into the Market, One Percent at a Time",
         "blocks": [
-          { "type": "text", "value": "With UX researchers, I ran **on-site visits** to watch the real workflow: Reliability Engineers, Data Analysts, and Data Scientists on customer floors, plus follow-up sessions sketching the model-building flow with them." },
-          { "type": "image", "unframed": true, "src": "/assets/case-studies/machine-learning-for-operators/observation.png", "alt": "A collage of site-visit photos: engineers at multi-monitor stations, whiteboard control centers, and participants sketching data curves" }
+          { "type": "text", "value": "The stakes were concrete, not abstract. A power plant manager bids into the electricity market based on how much power the plant will produce. **Underproduce and the plant eats a regulatory penalty. Overproduce and it burns fuel that never becomes revenue.** A model good enough to trust was the difference between a bid that held and one that didn't." },
+          { "type": "image", "src": "/assets/case-studies/machine-learning-for-operators/market-stakes.webp", "width": 960, "height": 540, "alt": "A case study slide over a photo of a power plant control room: a power plant manager needs to predict output accurately enough to bid into the electricity market", "caption": "Underproduce and pay a regulatory penalty. Overproduce and waste fuel that's not earning revenue." }
         ]
       },
       {
-        "heading": "Seeing the Data Before Training",
+        "heading": "On-Site Visits to Watch the Real Workflow",
         "blocks": [
-          { "type": "text", "value": "Interviews kept returning to one thing: **data exploration and curation is where the work lives**. Visualization tools let users evaluate a data set (distributions, outliers, gaps) before and after training." },
-          { "type": "image", "unframed": true, "src": "/assets/case-studies/machine-learning-for-operators/data-curation.png", "alt": "The AI Workbench data library: a field summary table with per-field mini distributions above a time-series chart of two sensor signals" }
+          { "type": "text", "value": "With a UX researcher, I visited customer sites to watch **Reliability Engineers, Data Analysts, and Data Scientists** work the floor, then ran follow-up sessions sketching the model-building flow with them directly." },
+          { "type": "image", "src": "/assets/case-studies/machine-learning-for-operators/site-visits.webp", "width": 768, "height": 576, "alt": "A collage of site-visit photos: engineers at multi-monitor stations, a whiteboard control center, and participants sketching data curves by hand", "caption": "Reliability engineers sketched their own data curves before I ever showed them a wireframe." }
         ]
       },
       {
-        "heading": "A Guided Model-Building Flow",
+        "heading": "Let Them See the Data Before They Trust the Model",
         "blocks": [
-          { "type": "text", "value": "The training wizard breaks the data-science process into legible steps (**Add Data, Prepare, Select Technique, Select Features, Train & Test**) with an accuracy readout and a clear path to deploy or publish a template." },
-          { "type": "image", "unframed": true, "src": "/assets/case-studies/machine-learning-for-operators/model-building.png", "alt": "The Train Machine Learning Model screen: a stepper across the top, training configuration on the left, and an accuracy donut with an ROC curve on the right" }
+          { "type": "text", "value": "Interviews kept returning to one thing: **before anyone would trust a trained model, they wanted to see the data it was trained on.** I designed the data library so every field shows its own distribution, range, and outlier count up front, and added a correlation view so a hunch about two signals could be checked before committing to a technique." },
+          { "type": "image", "src": "/assets/case-studies/machine-learning-for-operators/data-library.webp", "width": 1000, "height": 790, "alt": "The AI Workbench data library: a field summary table for four sensor fields above a time-series chart of wind speed and acceleration", "caption": "Every field gets its own distribution, range, and outlier count before training starts." },
+          { "type": "image", "src": "/assets/case-studies/machine-learning-for-operators/correlation-plot.webp", "width": 1074, "height": 948, "maxWidth": 700, "alt": "A correlation coefficient matrix across nine sensor fields beside a correlation density heat map of torque against kWh", "caption": "Before training a model, an engineer could check whether two signals actually correlate." }
+        ]
+      },
+      {
+        "heading": "A Wizard That Trades Flexibility for Guardrails",
+        "blocks": [
+          { "type": "text", "value": "I broke the data-science process into a **fixed five-step wizard** (Add Data, Prepare, Select Technique, Select Features, Train & Test) instead of leaving it open-ended. The trade was deliberate: less flexibility than a notebook, but a path an operations engineer could actually finish. A trained model doesn't just sit with the person who built it, either. Publishing it to a shared Analytics Catalog makes it available to the next team that needs the same kind of model." },
+          { "type": "image", "src": "/assets/case-studies/machine-learning-for-operators/model-building.webp", "width": 1000, "height": 809, "alt": "The Train Machine Learning Model screen: a five-step stepper, training configuration on the left, and an accuracy donut with an ROC curve on the right", "caption": "Five fixed steps end in one choice: test the model, deploy it, or publish it as a template." },
+          { "type": "image", "unframed": true, "src": "/assets/case-studies/machine-learning-for-operators/product-ecosystem.webp", "width": 1744, "height": 1023, "alt": "A conceptual map of Data Engineer, Data Scientist, and Analytic Developer roles moving data and trained models through a Data Catalog, Model Builder, and Analytics Catalog", "caption": "Publishing to the Analytics Catalog turned one team's trained model into shared infrastructure." }
         ]
       },
       {
         "heading": "Prognostic Equipment Dashboards",
         "blocks": [
-          { "type": "text", "value": "Model output feeds **prognostic dashboards** designed for low-light industrial environments: a dark UI comparing the Digital Twin's expected output against actual readings, with a capacity optimizer recommending action." }
+          { "type": "text", "value": "Model output feeds **prognostic dashboards** built for low-light industrial control rooms: a dark UI comparing the Digital Twin's expected output against actual readings, with a capacity optimizer recommending action, like the peak-fire call shown at the top of this page." }
         ]
       },
       {
         "heading": "Monitoring for Data Drift",
         "blocks": [
-          { "type": "text", "value": "The data-science process is iterative and perpetual because of **data drift**. Monitoring tools plot predicted against actual values and mark learning updates, so operators can see when accuracy slips and a model needs retraining." },
-          { "type": "image", "unframed": true, "src": "/assets/case-studies/machine-learning-for-operators/monitoring.png", "alt": "Power-output and heat-rate charts for a gas turbine overlaying actual and predicted lines, with diamond markers on re-training events" }
+          { "type": "text", "value": "The data-science process doesn't end at deployment, it's iterative and perpetual because of **data drift**. Monitoring tools plot predicted against actual values and mark retraining events, so an operator sees when accuracy slips before it becomes a bigger problem." },
+          { "type": "image", "src": "/assets/case-studies/machine-learning-for-operators/monitoring.webp", "width": 1000, "height": 644, "alt": "Power-output and heat-rate charts for a gas turbine overlaying actual and predicted lines, with diamond markers on retraining events", "caption": "Each diamond marks a retraining event, so drift is a visible line, not a support ticket." }
+        ]
+      },
+      {
+        "heading": "Reflection",
+        "blocks": [
+          { "type": "text", "value": "The classic UX toolkit didn't disappear here, it just moved earlier and got more literal: the closest thing to a storyboard was an engineer sketching a data curve on a legal pad while explaining drift to me directly. Two things I'd revisit. The accuracy donut collapses a model's fit to one number; it reads at a glance, but I never tested whether an operations engineer without a statistics background reads '69.91%' as roughly right or as a rounding error away from wrong, and the honest caveats (test-set size, feature confidence) run deeper than one number can carry. And the correlation matrix, while inviting, assumes the viewer already knows what a correlation coefficient is. I put it in front of reliability engineers on faith that a color-coded grid would teach itself; I'd want real data on whether it did." }
         ]
       }
     ]
