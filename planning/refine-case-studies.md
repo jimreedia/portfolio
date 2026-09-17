@@ -76,8 +76,9 @@ consolidation.
 branch: fix/refine-case-study-developer-experience. See its entry below for the full
 account. **Machine Learning for Operators done (2026-09-16)**, second of the remaining
 5, branch: fix/refine-case-study-machine-learning-for-operators, see its entry below.
-Next: the other 3 (Mobile Emergency System, Additive Manufacturing, Analytics & Big
-Data).
+**Mobile Emergency System done (2026-09-16)**, third of the remaining 5, branch:
+fix/refine-case-study-mobile-emergency-system, see its entry below. Next: the other 2
+(Additive Manufacturing, Analytics & Big Data).
 
 ---
 
@@ -724,18 +725,142 @@ console/build errors, every one of the 8 captions renders on one line by measure
 the page background, and desktop/mobile full-page screenshots hold together
 end-to-end.
 
-### Mobile Emergency System
+### Mobile Emergency System — done (2026-09-16)
 
-Process-heavy: Rapid Sketches / Screen Flows / Lo-Fi Wireframes / A Mood Board are four
-craft sections in a row. No stated outcome.
-- Consolidate the four craft sections to two.
-- Thesis is "make a genuinely complex system feel simple under stress." Lead with a
-  decision that embodies it (the always-present red emergency button; the skeuomorphic
-  choice drawn from physical emergency hardware).
-- "Emergency Situation Tracking," "Interactive Maps," "One System, Every Screen" are the
-  product; keep those.
-- Outcome: did it ship across iOS/Android/desktop, any deployment scale.
-- Add a reflection.
+Source review done first, per principle 10: myportfolio original checked (four short
+paragraphs plus a "Motion Study" callout, no stated outcome, confirming the punch list's
+read), and the full `production images/AtHoc/` folder reviewed, all 15 files, not just
+the 8 already wired in. Role recovered from the myportfolio page's byline, not
+previously in `caseStudies.json`: **Principal Product Designer, BlackBerry AtHoc**.
+
+Two real finds sitting unused the whole time: `AtHoc_comp_emergency.png`, a full-size,
+unbannered close-up of the emergency-message composer (text, a dropped location pin,
+and an attached photo of a fire, the exact screen cropped small inside the hero's
+middle panel but never shown at readable size); and `AtHoc_design_stencil-v1.png`, a UI
+pattern-library sheet (buttons, form fields, popovers, pills, contextual help) that's
+the real, concrete evidence behind "One System, Every Screen," never wired in even
+though the section already claimed platform-wide consistency. Both added as new images.
+Also confirmed the "Motion Study" claim in the myportfolio original ("I animated the
+UI... to get an overall feel for interaction flows and transitions") does **not** match
+the shipped `motion-study.png`, which is a static branching flow diagram, not an
+animation, matching backlog item 29's existing flag. Renamed the id from `motion-study`
+to `screen-flows` so the case study stops implying a video artifact that isn't there;
+the real motion study, if the source file ever surfaces, stays open under that backlog
+item.
+
+**Consolidated the four craft sections (Rapid Sketches, Screen Flows, Lo-Fi Wireframes,
+A Mood Board) to two, per the punch list.** The Mood Board section was promoted to
+decision tier and moved to lead, right after the intro: **"Emergency Controls Borrowed
+From the Hardware on the Wall"** states the actual bet (skeuomorphic red controls drawn
+from physical call boxes, pull stations, and SOS buttons, not a flat UI accent color) as
+the concrete embodiment of the case study's "simple under stress" thesis. The other
+three (Rapid Sketches, Screen Flows, Lo-Fi Wireframes) merged into one supporting
+section, **"Ten Screen Templates, Then Every Path Between Them"** (the heading names the
+real count read off the sketch grid: menu, splash, register, default, slider, emergency,
+message, reply, report list, send report), walking sketch to flow diagram to annotated
+wireframe as increasing fidelity on the same design question. "Emergency Situation
+Tracking," "Interactive Maps," and "One System, Every Screen" kept as the product
+sections per the punch list, each tightened for individual-contribution language and
+given a second image where the source review turned one up (the emergency-report
+composer under Situation Tracking, the design-pattern library under One System).
+
+**No adoption or deployment-scale number found or invented.** Neither the myportfolio
+original nor any source image states one (same call as Operational Insights, Genomic
+Data Platform, and Machine Learning for Operators: nothing to draw on beyond demo
+content). The outcome folded into the lead instead: the system shipped across iOS,
+Android, and desktop, one shared real-time picture of an incident for operators,
+responders, and citizens.
+
+**Reflection added**, grounded in what the wireframes and screenshots actually show
+rather than invented: the EMERGENCY button sits in the top nav bar on every screen by
+deliberate design, impossible to miss, but never tested for accidental-trigger risk
+given how exposed it is; and the failed-send Retry control assumed a person calm enough
+to notice a failure and tap a button, an assumption worth revisiting against real
+bad-connection, high-stress use (an automatic retry with backoff might have served
+better).
+
+**Images, fully re-exported (2026-09-16), folding in the "Case study image assets"
+backlog item for this case study and clearing its 2026-09-14 interim `unframed`
+stopgap.** All 8 previously-wired images converted to WebP via Pillow (no
+cwebp/ImageMagick in this environment). `situation-tracking`, `interactive-maps`, and
+`tablet` flattened to opaque (each was already ≥98.7% opaque, the residual alpha just
+mockup-frame corner rounding) and framed normally, dropping the blanket `unframed` the
+2026-09-14 interim fix had applied. Two, `app-comps` (the hero) and the newly-added
+`design-system`, are genuine composites (a drop-shadowed three-phone spread and a
+stacked-paper pattern-library sheet respectively) and stay `unframed`, the hero matching
+its long-documented exception.
+
+**`tablet` corrected (2026-09-17): Jim re-exported it himself keeping the device
+bezel's real transparent rounded corners intact**, rather than the Pillow pass's
+flattened-to-opaque version. Same crop (764×602), but the corners are now genuine alpha,
+not a squared-off white fill, so it went back to `unframed`, matching the
+`catalog-console-wireframes` precedent on Developer Experience (a real transparent
+gutter kept intact rather than flattened): the site's standard border/radius would
+otherwise box a second, square frame around a device silhouette that's already rounded.
+
+`storyboard` swapped to its unbannered `AtHoc_storyboard_sketch-v1.png` sibling per
+principle 7 (confirmed identical content, just without the banner or a second stacked
+sheet), its removed banner text ("Early and Rapid Sketches Identify Screen Templates
+Needed") folded into the new section's framing. **Jim re-exported it himself from the
+real source file the next day (2026-09-17), superseding the Pillow pass with a tighter
+crop** (847×602, down from 1036×653); same content, still a genuine soft-shadow
+composite, stays `unframed`. `width`/`height` updated to match. `screen-flows` (renamed
+from
+`motion-study`) had its banner ("Screen Flows Reveal Detailed User Actions") removed by
+a precise flat-white patch: the banner's bounding box was isolated via
+connected-component analysis on the darkest pixels (a single 21,160-pixel blob, two
+orders of magnitude larger than any other dark region in the image) to avoid clipping
+nearby diagram content, a first attempt at a looser hand-eyeballed bounding box did clip
+a screen thumbnail and the "Operator Only" label and was caught and redone before
+shipping. Verified safe first: the area under the banner was confirmed pure flat white
+(zero variance) in this image, unlike the two exceptions below. **Jim re-exported it
+himself the next day too (2026-09-17), superseding the patched Pillow version**: the new
+export (1006×598, RGB, no alpha, tighter crop than the patched 1019×598) is fully opaque
+with no banner and no residual soft-edge alpha, so `unframed` was dropped and it now
+takes the standard border like the page's other product screenshots.
+
+**`wireframes` kept its banner baked in as a documented exception to principle 7,
+initially.** No unbanned sibling existed in the source folder, and the banner directly
+overlapped the top status bar of the left phone mockup (confirmed by zooming the
+boundary, the "10:10 AM" status text was visibly clipped by the banner's edge, with the
+real annotated content, the emergency button, message field, and map, starting clearly
+below it and fully intact). Patching it algorithmically would have meant fabricating
+pixels for content that wasn't recoverable from any source file on hand, which the
+framework's "stay faithful, don't invent" principle rules out. **Jim resolved it himself
+(2026-09-17) by re-exporting from the real source file**, superseding the Pillow pass:
+the new export (1012×581, still RGBA with the same soft-shadow single-sheet composite,
+so it keeps `unframed`) has the banner cleanly removed and both status bars fully
+intact, no clipping. `width`/`height` updated to match.
+
+`mood-board` had the same problem initially (a banner sitting on top of real photo tiles
+in the collage, at least one hardware photo fully hidden underneath, no way to
+reconstruct it from pixels alone), but **Jim re-exported it himself from the real
+source file (2026-09-16, same day), superseding the Pillow pass and closing the gap the
+automated pass couldn't**: the new export (870×634, RGB, no alpha) has no banner and no
+stacked-paper shadow effect, a clean flat rectangle with every photo tile visible,
+including the "AGE DATA RECORDER" panel the banner used to cover. `width` updated to
+match (870, down from 883) and `unframed` removed since it's now opaque, framed
+normally like the rest of the page's product screenshots.
+
+Between `mood-board` (2026-09-16), `screen-flows` (2026-09-17), and `wireframes`
+(2026-09-17), Jim personally re-exported every image on this page that this pass
+couldn't fully de-banner on its own; zero banners remain baked into any image here.
+
+`emergency-report` (new) and `design-system` (new, from the `-v1` unbannered source)
+round out the 10 total images on this page (up from 8). `width`/`height` recorded for
+all 10 from their actual exported dimensions. Old PNGs deleted. This stayed a
+100%-scale Pillow pass, not the 2x standard, since no higher-resolution source captures
+exist for this decade-old project; a future opportunistic bump would need Jim to
+re-export from the original design files, if those still exist.
+
+Verified with `npm run build` (clean) and a headless-Chromium Playwright script
+(installed fresh into the scratchpad directory, neither Playwright nor a system
+Chromium was preinstalled in this environment) confirming: no console/page errors, all
+10 captions render on one line by measured `scrollHeight` at both the inline default
+column and the Lightbox's fixed 640px width (not by eye, re-verified after each of
+Jim's corrections below), the 5 `unframed` images (hero, storyboard, wireframes,
+design-system, tablet) read as single clean frames against the page background, and
+desktop/mobile full-page screenshots hold together end-to-end.
 
 ### Additive Manufacturing
 
