@@ -559,70 +559,77 @@
   {
     "id": "mobile-emergency-system",
     "title": "Mobile Emergency System",
-    "description": "A next-generation 911 service that lets emergency operators, responders, and citizens collaborate during an incident.",
-    "blurb": "A next-generation 911 app where operators, responders, and citizens share location, photos, and video in real time across iOS, Android, and desktop.",
+    "description": "A next-generation 911 app that kept a genuinely complex, multi-party emergency system simple under stress. It shipped across iOS, Android, and desktop, giving operators, responders, and citizens one shared, real-time picture of an incident.",
+    "blurb": "A next-generation 911 app where operators, responders, and citizens share location, photos, and video in real time, designed to stay usable under stress. Shipped across iOS, Android, and desktop.",
     "tags": ["Mobile", "Enterprise"],
     "url": "/case-study/mobile-emergency-system",
     "featured": false,
+    "role": "Principal Product Designer, BlackBerry AtHoc",
+    "team": "User experience designers and developers for iOS, Android, backend, and web UI",
     "thumb": "/assets/case-studies/homepage-assets/mobile-emergency-system.webp",
     "hero": {
-      "src": "/assets/case-studies/mobile-emergency-system/app-comps.png",
+      "src": "/assets/case-studies/mobile-emergency-system/app-comps.webp",
+      "width": 1105,
+      "height": 718,
+      "maxWidth": 800,
+      "unframed": true,
       "alt": "Three iPhone screens of the AtHoc app: a message list, an emergency report with a photo and map, and a map of alert zones",
-      "unframed": true
+      "caption": "Three screens, one system: the message feed, an emergency report, and the live map."
     },
     "sections": [
       {
         "blocks": [
-          { "type": "text", "value": "A next-generation 911 service that lets emergency dispatchers, operators, responders, and citizens share critical information (text, geolocation, photos, video) during an incident. I designed the system across **iOS, Android, and desktop**. The design goal was to make a genuinely complex system feel simple to use under stress." }
+          { "type": "text", "value": "As **Principal Product Designer** at BlackBerry AtHoc, I designed a next-generation 911 service that let dispatchers, emergency operators, responders, and citizens share critical information (text, geolocation, photos, video) during an incident, across **iOS, Android, and desktop**. Every screen was built around one goal: make a genuinely complex, multi-party system feel simple to use under stress." }
         ]
       },
       {
-        "heading": "Rapid Sketches to Find the Screen Templates",
+        "heading": "Emergency Controls Borrowed From the Hardware on the Wall",
         "blocks": [
-          { "type": "text", "value": "Early, fast sketches identified the **set of screen templates** the app would need (menu, register, emergency, message, reply, report list, send report) before any layout work began." },
-          { "type": "image", "unframed": true, "src": "/assets/case-studies/mobile-emergency-system/storyboard.png", "alt": "A grid of hand sketches labeled menu, splash, register, default, slider, emergency, message, reply, report list, and send report" }
+          { "type": "text", "value": "Under stress, people fall back on instinct, not instructions. I grounded the app's visual language in the **physical hardware people already trust in an emergency**: call boxes, pull stations, strobes, the red SOS button on the wall. That reference, not a generic style guide, is why the app's emergency control is a saturated red circle instead of a flat UI accent color." },
+          { "type": "image", "src": "/assets/case-studies/mobile-emergency-system/mood-board.webp", "width": 870, "height": 634, "alt": "A mood board of emergency hardware photos: SOS buttons, fire pull stations, call boxes, and red strobe lights", "caption": "A wall-mounted alarm reads instantly. The app's emergency button borrows that same instant read." }
         ]
       },
       {
-        "heading": "Screen Flows for the Detailed Actions",
+        "heading": "Ten Screen Templates, Then Every Path Between Them",
         "blocks": [
-          { "type": "text", "value": "**Screen-flow diagrams** mapped every user action (duress, check in, report, tracking, inbox), including the operator-only paths and the branches for success with and without media." },
-          { "type": "image", "unframed": true, "src": "/assets/case-studies/mobile-emergency-system/motion-study.png", "alt": "A branching flow diagram of numbered app screens covering duress, check-in, report, tracking, and inbox use cases" }
-        ]
-      },
-      {
-        "heading": "Lo-Fi Wireframes and Annotation",
-        "blocks": [
-          { "type": "text", "value": "Low-fidelity wireframes carried the **early screen layout and annotation**: the emergency call button, the send-emergency-message flow, media attachments, inline location, and operator alerts with threaded replies." },
-          { "type": "image", "unframed": true, "src": "/assets/case-studies/mobile-emergency-system/wireframes.png", "alt": "Annotated wireframes of a send-emergency-message screen and a message thread with operator alerts and citizen replies" }
-        ]
-      },
-      {
-        "heading": "A Mood Board for Emergency Alerting",
-        "blocks": [
-          { "type": "text", "value": "Mood boards set the aesthetic direction by drawing on the **visual language of physical emergency hardware**: call boxes, pull stations, strobes. That reference informed the color palette and the skeuomorphic treatment of the emergency controls." },
-          { "type": "image", "unframed": true, "src": "/assets/case-studies/mobile-emergency-system/mood-board.png", "alt": "A mood board of emergency hardware photos: SOS buttons, fire pull stations, call boxes, and red strobe lights" }
+          { "type": "text", "value": "Fast, rough sketches identified **ten screen templates** the app would need, menu, splash screen, registration, default list, slider, emergency composer, message, reply, report list, and send report, before any layout work began." },
+          { "type": "image", "unframed": true, "src": "/assets/case-studies/mobile-emergency-system/storyboard.webp", "width": 847, "height": 602, "alt": "A grid of hand sketches labeled menu, splash, register, default, slider, emergency, message, reply, report list, and send report", "caption": "Ten templates settled here, menu to send report, before any screen was actually laid out." },
+          { "type": "text", "value": "**Screen-flow diagrams** then mapped every user action in the app: duress, check in, report, tracking, and inbox, including the branches only an operator could take and the paths that succeeded with or without attached media." },
+          { "type": "image", "src": "/assets/case-studies/mobile-emergency-system/screen-flows.webp", "width": 1006, "height": 598, "alt": "A branching flow diagram of numbered app screens covering duress, check-in, report, tracking, and inbox use cases", "caption": "Every path branches: operator-only screens split off, and reports succeed with or without media." },
+          { "type": "text", "value": "Low-fidelity wireframes carried that flow into actual **layout and annotation** for the send-emergency-message screen specifically: the always-visible emergency call button, the message and media-attachment controls, inline location, and the thread of operator alerts and citizen replies." },
+          { "type": "image", "unframed": true, "src": "/assets/case-studies/mobile-emergency-system/wireframes.webp", "width": 1012, "height": 581, "alt": "Annotated wireframes of a send-emergency-message screen and a message thread with operator alerts and citizen replies", "caption": "The annotation that mattered: an emergency button always on screen, not buried in a menu." }
         ]
       },
       {
         "heading": "Emergency Situation Tracking",
         "blocks": [
-          { "type": "text", "value": "During an incident, **citizens check in with their location** and receive alerts from operators. The message list keeps a running record of check-ins, reports, tracking state, and failed sends with a retry." },
-          { "type": "image", "unframed": true, "src": "/assets/case-studies/mobile-emergency-system/situation-tracking.png", "alt": "An AtHoc message list under a \"Facility Fire\" alert showing check-ins, an emergency report, and a failed report with a Retry button" }
+          { "type": "text", "value": "During an incident, citizens **check in with their location** and receive alerts from operators. The message list keeps a running record: check-ins, reports, tracking state, and a failed send with a one-tap **Retry**, so a bad connection during an emergency doesn't mean a lost report." },
+          { "type": "image", "src": "/assets/case-studies/mobile-emergency-system/situation-tracking.webp", "width": 640, "height": 1136, "maxWidth": 480, "alt": "An AtHoc message list under a \"Facility Fire\" alert showing check-ins, an emergency report, and a failed report with a Retry button", "caption": "A failed report doesn't vanish. It sits in the list with a Retry, not a silent retry loop." },
+          { "type": "text", "value": "The report itself is a **single composed message**: text, an automatic location pin, and an attached photo, sent as one unit an operator can act on immediately." },
+          { "type": "image", "src": "/assets/case-studies/mobile-emergency-system/emergency-report.webp", "width": 640, "height": 1136, "maxWidth": 480, "alt": "The AtHoc emergency-message composer: a text message, a dropped location pin, and an attached photo of a building fire, ready to send", "caption": "One message, three kinds of evidence: text, a location pin, and a photo, sent together." }
         ]
       },
       {
         "heading": "Interactive Maps",
         "blocks": [
-          { "type": "text", "value": "Operators **publish map layers and pins** so first responders and civilians can track the incident, the affected area, and cordons in real time." },
-          { "type": "image", "unframed": true, "src": "/assets/case-studies/mobile-emergency-system/interactive-maps.png", "alt": "The app map view with a shaded alert zone and two dropped pins marked NEW" }
+          { "type": "text", "value": "Operators **publish map layers and pins** so first responders and civilians see the same incident: the affected area shaded, new pins flagged, so no one is working from a verbal description of where to go." },
+          { "type": "image", "src": "/assets/case-studies/mobile-emergency-system/interactive-maps.webp", "width": 640, "height": 960, "maxWidth": 480, "alt": "The app map view with a shaded alert zone and two dropped pins marked NEW", "caption": "A shaded zone and two flagged pins: everyone sees the same incident, not a description of it." }
         ]
       },
       {
         "heading": "One System, Every Screen",
         "blocks": [
           { "type": "text", "value": "The mobile app is one face of a larger platform. **Operators work a synchronized tablet and desktop view**, messages and the live map side by side, so field and command stay in step." },
-          { "type": "image", "unframed": true, "src": "/assets/case-studies/mobile-emergency-system/tablet.png", "alt": "The AtHoc tablet layout with a message list on the left and a full incident map with alert zone and pins on the right" }
+          { "type": "image", "unframed": true, "src": "/assets/case-studies/mobile-emergency-system/tablet.webp", "width": 764, "height": 602, "alt": "The AtHoc tablet layout with a message list on the left and a full incident map with alert zone and pins on the right", "caption": "Same message list, same map, now side by side: the view built for command, not the field." },
+          { "type": "text", "value": "That consistency didn't happen by accident. I maintained a **shared design-pattern library**, buttons, form fields, menus, alerts, contextual help, used identically across the phone, tablet, and desktop surfaces, so the system read as one product instead of three." },
+          { "type": "image", "unframed": true, "src": "/assets/case-studies/mobile-emergency-system/design-system.webp", "width": 1127, "height": 729, "alt": "A UI pattern library sheet: buttons, form fields, dropdowns, popovers, pills, and contextual help styled consistently", "caption": "One shared library of buttons, fields, and alerts, not three apps that happen to look similar." }
+        ]
+      },
+      {
+        "heading": "Reflection",
+        "blocks": [
+          { "type": "text", "value": "The **EMERGENCY button** sits in the top navigation bar on every screen, deliberately impossible to miss. I never got to test whether that was too easy to trigger by accident, a real risk for a control that's exposed at all times rather than tucked behind a confirmation." },
+          { "type": "text", "value": "The failed-send **Retry** button assumed a person calm enough to notice a failure and tap a button to fix it. I'd want to revisit that assumption directly with people in an actual bad-connection, high-stress moment: an automatic retry with backoff might serve them better than asking for one more deliberate action." }
         ]
       }
     ]
