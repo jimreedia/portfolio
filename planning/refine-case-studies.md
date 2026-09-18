@@ -79,8 +79,15 @@ account. **Machine Learning for Operators done (2026-09-16)**, second of the rem
 **Mobile Emergency System done (2026-09-16)**, third of the remaining 5, branch:
 fix/refine-case-study-mobile-emergency-system, see its entry below. **Additive
 Manufacturing done (2026-09-17)**, fourth of the remaining 5, branch:
-fix/refine-case-study-additive-manufacturing, see its entry below. Next: Analytics & Big
-Data, the last one.
+fix/refine-case-study-additive-manufacturing, see its entry below. **Analytics & Big Data
+done (2026-09-18)**, fifth and last of the remaining 5, branch:
+fix/refine-case-study-analytics-big-data, see its entry below. All 9 case studies have
+now had their full refine pass. **Next is a second pass (decided 2026-09-18, Jim):** one
+"Case study second pass" backlog item that combines content refinement and image
+re-export, done together one case study at a time, since re-exporting images (including
+the bump to the 2x standard) fits naturally into re-reading and tightening a page. It
+absorbs the further pass on the first 4 flagged in the 2026-09-14 reprioritization above;
+the order is Jim's call. Per-page open flags in the entries below carry into it.
 
 ---
 
@@ -1029,15 +1036,179 @@ reading better narrower next to the journey map and persona card in the same sec
 verified its caption still renders on one line at the un-narrowed default column width
 (captions don't inherit `maxWidth`, per principle 7).
 
-### Analytics & Big Data
+### Analytics & Big Data — done (2026-09-18)
 
-Two product sections (Data Explorer, Orchestration Editor) then three process sections
-(journey map, task flows, sketches). No stated outcome, and it reads as partly
-conceptual.
-- Clarify what shipped vs. what was a concept ("I conceived Data Explorer" needs a
-  follow-through).
-- Collapse "Mapping the User Journey" / "Task Flows Mapped to the Product" / "Exploring
-  Interactions With Sketches" into one process beat.
-- "I conceived Data Explorer" is a strong ownership claim; build on it.
-- Add a reflection.
+Source review done first, per principle 10: myportfolio original checked (short, four
+paragraphs plus a "Sketches / Storyboards / User Task Flows" strip), and the full
+`production images/GE Analytics/` folder reviewed, all 13 files, not just the 5 already
+wired in, plus the wider `case studies/GE-Analytics/` working folder (31 files: PSDs, a
+wireframe, a room photo, a Predix Design System capture set) for anything the curated
+folder left out. Two real finds sitting unused the whole time, both in the curated
+folder: `GE_orchestration_editor_storyboard.png`, a six-frame storyboard of the
+Orchestration Editor's actual interaction (a welcome modal, a new-application dialog,
+components dragged onto a canvas from a My Resources drawer, then connections that turn
+from red to green as fields are dragged onto an analytic's inputs), and the unbannered
+paper-wireframing photo (`Analytics-Cloud-collaborative-design-v1.png`), the other half
+of the myportfolio page's "Collaborative Design" pair that the draft had reduced to the
+sticky-note wall alone. Also noticed: the myportfolio page lists **Storyboards** as one
+of three artifacts, and the draft had silently dropped them.
+
+**Drift corrected, not just restyled.** The draft opened "Research with data scientists
+and data engineers kept pointing at the same gap ... and no tool made it easy at the
+points in the workflow where that visibility matters most." The myportfolio original
+says something different and more specific: Jim *interviewed dozens* of data scientists
+and data engineers and *discovered* that data exploration and cleansing is a critical
+part of the data-science process. "Dozens" and "interviewed" had been lost in an earlier
+paraphrase, and the "no tool made it easy" clause appears nowhere in the source, so it
+was cut. The intro now states what the source states.
+
+**Shipped vs. concept: resolved by Jim (2026-09-18), after the first pass.** This was the
+page's flagged ambiguity, and nothing in the source could settle it, so the first pass
+claimed neither side and asked. Jim's answer: **the Orchestration Editor shipped, with a
+companion product, the Analytics Catalog** (the second lane of the task flow, Catalog View
+and Detail View), and **Data Explorer was well received by product management and
+executive leaders but was never prioritized for development.** So the page's real shape
+is one shipped tool and one unbuilt concept, and the copy now says both plainly: the lead
+states them side by side, the Orchestration Editor section opens on "shipped" and names
+the Analytics Catalog, the Data Explorer section closes on the leadership response and
+the missing prioritization, and the hero caption calls the comp a "Data Explorer concept"
+so the image is not read as a shipped screen. Still no metric or adoption number: none
+was given and none was invented. The demo data in the comps ("Asset one/two/three," 2012
+timestamps, "Last saved November 19, 2013") is mockup content, same call as the other
+pages. **Caveat:** the storyboard, sketches, and comps are design artifacts, so the copy
+describes the designed interaction (red arrow until configured, green when ready). If the
+shipped Orchestration Editor differed, that line needs correcting. Also inferred, not
+stated by Jim: the myportfolio original's "searchable and sortable catalog of data and
+analytic techniques" is the Analytics Catalog, which the lane's contents (search by
+keyword, filter by asset type, algorithm, function, and tags, ratings, add to library)
+support.
+
+**Restructured from 5 sections to 3 plus a Reflection**, per the punch list ("I conceived
+Data Explorer is a strong ownership claim; build on it"; collapse the three process
+sections). Two decision-tier headings and one supporting section:
+- **One Visualizer, Before and After the Analytic** (decision): builds on "I conceived
+  Data Explorer" with the follow-through the punch list asked for. The call is where
+  Data Explorer sits, at both ends of an analytic run rather than as a start-only cleanup
+  step, and two artifacts show it directly: the comp's breadcrumb (Orchestration Results,
+  then Data Explorer) and the task flow, where Data Visualizer appears under Upload and
+  again under Evaluate, marked as a shared component. The section closes on Data Explorer's
+  fate: well received by product management and executive leaders, never prioritized for
+  development. The task flow moved here from its
+  own process section because it is the evidence for this decision, not a separate beat.
+- **Red Until Configured, Green When Ready** (decision): the Orchestration Editor, which
+  shipped alongside the Analytics Catalog (named here, with what its lane in the task flow
+  shows users doing), built
+  around the interaction the new storyboard shows, connection status lives on the arrow
+  itself (red while improper or incomplete, green once properly configured) with
+  fields dragged onto inputs in a Connection Editor. Per principle 11, the sketch page
+  rides along as continuity evidence, the drag-a-field-onto-an-input gesture is already
+  in the hand sketches and carries through to the comp's gateway-condition tokens, and
+  it is also the only artifact showing the dashboard and dashboard-designer half of the
+  workflow. The draft's "Exploring Interactions With Sketches" section is folded in here.
+- **A Sticky-Note Wall That Became the Five-Step Task Flow** (supporting): the workshop
+  material, the draft's "Mapping the User Journey," now with the paper-wireframing photo
+  and a real, checkable claim in place of the generic "workshops give everyone
+  ownership" opener: read up close, the wall's notes are already in columns for Upload,
+  Pick (catalog), Config (workspace), Execute, and Evaluate, and include "Connection
+  Editor" and "map inputs" under Config, the same tasks the task flow later groups under
+  Connection Editor. Jim's original line about stakeholder ownership is kept.
+
+**Reflection added**, built from what the artifacts show rather than invented: color
+alone carries the whole configuration state in the Orchestration Editor (the storyboard
+captions each arrow in words, but no second cue on the arrow itself appears anywhere),
+so how it reads for an engineer who can't tell red from green is open; and Data
+Explorer's shared-visualizer bet (that evaluating data before and after an analytic is
+one job) was never tested against real use, because leadership liked it and it was never
+prioritized for development. (Rewritten 2026-09-18 once Jim confirmed what shipped; the
+first draft called the bet untested without saying why.)
+
+**Lead and blurb (principle 1):** the old lead was a category label ("Enterprise tools
+for big-data analytics ... from data exploration to analytic orchestration"). The first
+pass named the two tools and the one ownership fact the source supported (Jim conceived
+Data Explorer after interviewing dozens of data scientists) but had no outcome to state.
+After Jim confirmed what shipped, both lead and blurb carry the real result: the
+Orchestration Editor shipped with a companion Analytics Catalog, and the Data Explorer
+concept was well received but never prioritized. The lead runs 3 lines at desktop. The
+homepage `blurb` is held to ~142 characters on purpose: the More cards line-clamp their
+description, and 145 characters was the longest that fit unclamped when measured (a
+first 165-character draft was truncated on the card). **Pre-existing, not touched
+here:** the Operational Insights, Developer Experience, and Mobile Emergency System
+blurbs (187 to 195 characters) are also clamped on their cards today.
+
+**No AI-artifacts angle** (principle 9): not an AI product, nothing to relate.
+
+**Images, fully re-exported (2026-09-18), folding in the "Case study image assets"
+backlog item for this case study and clearing its 2026-09-14 interim `unframed`
+stopgap.** 7 images (up from 5), all WebP via Pillow (no cwebp/ImageMagick in this
+environment), quality 88. Both browser-chrome comps (`data-explorer`,
+`orchestration-editor`) were already opaque under the old blanket `unframed` (0.01%
+alpha each, just window-corner anti-aliasing, checked directly), flattened to white and
+now framed normally. Both photos come from their unbannered `-v1` siblings per
+principle 7, the wall's old baked-in "Mapping the User Journey" banner and the
+wireframing photo's "Collaborative Design With Stakeholders" banner both gone, and are
+opaque. Three genuine composites keep their alpha and stay `unframed`, each a
+soft-shadow stacked-paper sheet baked into the source graphic: `task-flows` (4.8%
+non-opaque), `storyboard` (3.6%), and `sketches` (3.1%, also swapped to its unbannered
+`-v1` sibling). Renamed to descriptive ids (`data-explorer`, `task-flows`,
+`orchestration-editor`, `storyboard`, `sketches`, `paper-wireframes`,
+`sticky-note-wall`); `width`/`height` recorded for all 7 from their exported dimensions.
+Old PNGs deleted; total asset weight ~2.8MB of PNG down to ~440KB of WebP.
+
+**`data-explorer` and `orchestration-editor` re-exported by Jim himself (2026-09-18, same
+day), superseding the Pillow pass for both:** 1000×718 each (down from 1002×720, a
+slightly tighter crop), smaller files (45KB and 29KB, from 56KB and 34KB). Both carry an
+alpha channel, but only a 1px hairline row at y=57 (alpha ~240, the seam between the
+browser chrome and the app header) is not fully opaque; the corners are fully opaque,
+square, and the CSS radius rounds them, so both are effectively opaque and stay framed
+normally, no `unframed`. `width`/`height` updated to match; captions unaffected (re-ran
+the one-line check).
+
+**`sketches` also re-exported by Jim (2026-09-18)**, 934×708 (down from 1043×790), still
+the soft-shadow stacked-paper composite (2.2% non-opaque), so it stays `unframed`.
+`width`/`height` updated, and capped at `maxWidth: 640` at Jim's request (a four-panel
+sketch sheet reads better narrower; the handwriting stays legible at that size, checked
+in the rendered page). Its caption does not inherit the cap (principle 7), and still fits
+on one line inline and in the Lightbox.
+
+The rest stayed a 100%-scale Pillow pass, not the 2x standard (and the three
+re-exports above are still under 1744px): the curated PNGs are all ~800 to 1140px
+wide, the two photos at 800px display very slightly upscaled at the 872px column. Jim
+can re-export any of them from the working PSDs in `case studies/GE-Analytics/` for a
+2x pass, `Analytics-Cloud-collaborative-design.psd` (128MB) may hold a higher-resolution
+original of the photos, and `GE_orchestration_editor_comp_editor.png` (1240×930, no
+browser chrome) is a larger flat version of the Orchestration Editor comp if a chrome-free
+crop is ever wanted.
+
+**Left out on purpose, worth a second look from Jim:**
+- `GE-SR0012.JPG` / `jim_at_GE.jpg` (a 5184×2916 workshop-room photo: three people
+  watching walls of sticky notes and wireframes). Strong image, and `jim_at_GE.jpg` is
+  dated December 2013, contemporaneous with the Orchestration Editor comps. Not used
+  because nothing ties it to this project specifically (not in the curated folder, not
+  on the myportfolio page, and the full-resolution file is dated 2016). If it is from
+  these sessions it is the best available image for the workshop section.
+- `GE_orchestration_editor_wire.png`, a lo-fi wireframe of the editor ("Analytic
+  Application Workbench," puzzle-piece analytic blocks, a red "Incomplete" terminal
+  state). Directly supports the red/green section, but the storyboard already carries
+  that story and a third fidelity would turn the section into a process tour
+  (principle 11).
+- `GE-design-patterns-google-chrome.png` and the `pattern library/` screenshots: the
+  Predix Design System gallery (2018) and the browser-chrome mockup template behind the
+  comps. A later, separate project, not part of this case study.
+- `GE_Analytics_portfolio_cover(-resize).png`: the homepage thumbnail source, already
+  curated.
+
+**Naming, flagged not resolved:** the artifacts label the product three ways,
+"Analytic Application Workbench" (storyboard, wireframe), "Predix Insight" (the comps),
+and "Analytic Cloud" (the task flow, and the sticky-note file names), and the task flow
+names Analytics Catalog and Analytics Workbench as product areas. Copy names each by the
+label on the artifact being described and does not assert a rename story. If it was a
+rename, it is the kind of finding that closed the Agentic AI Chat branding section.
+
+Verified with `npm run build` (clean) and a headless-Chromium Playwright script
+(installed fresh into the scratchpad directory) confirming: no console/page errors, no
+broken images, all 7 captions render on one line by measured `scrollHeight` at both the
+inline default column (872px) and the Lightbox's fixed 640px width (widest Lightbox
+caption 581px, at least 59px of headroom, after trimming three that first measured
+613 to 635px and later retitling the hero caption "Data Explorer concept"), the three `unframed` composites read as single clean frames, and
+desktop/mobile full-page screenshots hold together with no horizontal overflow.
 
