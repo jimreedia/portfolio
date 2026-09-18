@@ -77,8 +77,10 @@ branch: fix/refine-case-study-developer-experience. See its entry below for the 
 account. **Machine Learning for Operators done (2026-09-16)**, second of the remaining
 5, branch: fix/refine-case-study-machine-learning-for-operators, see its entry below.
 **Mobile Emergency System done (2026-09-16)**, third of the remaining 5, branch:
-fix/refine-case-study-mobile-emergency-system, see its entry below. Next: the other 2
-(Additive Manufacturing, Analytics & Big Data).
+fix/refine-case-study-mobile-emergency-system, see its entry below. **Additive
+Manufacturing done (2026-09-17)**, fourth of the remaining 5, branch:
+fix/refine-case-study-additive-manufacturing, see its entry below. Next: Analytics & Big
+Data, the last one.
 
 ---
 
@@ -862,16 +864,170 @@ Jim's corrections below), the 5 `unframed` images (hero, storyboard, wireframes,
 design-system, tablet) read as single clean frames against the page background, and
 desktop/mobile full-page screenshots hold together end-to-end.
 
-### Additive Manufacturing
+### Additive Manufacturing — done (2026-09-17)
 
-Has an "Outcome" section already but it is weak ("the clear productivity read the
-operators had been missing").
-- **"Rethinking the Visualization" (donut chart read as print-progress, replaced with a
-  number + color after testing) is the decision story.** Promote it; make the heading
-  name the decision.
-- "Early Concept Sketches," "A Journey Map of Roles," "Personas" are process; collapse.
-- Real metric for the Availability Score (facility rollout, what it changed).
-- Add a reflection (the donut misfire is natural material).
+Source review done first, per principle 10: myportfolio original checked (four short
+paragraphs, mirroring what was already in `caseStudies.json`, nothing structurally new),
+and the full `production images/Additive/` folder reviewed, all 19 files, not just the 7
+already wired in. Three real finds sitting unused the whole time: `additive-progress-donut-v1.png`,
+the full shipped Availability Overview dashboard (Predix sidebar, Jim Reed logged in),
+showing the exact OEE donut grid next to a printer's own progress donut ("PRINTING 48%",
+same ring shape) captured in one screenshot, the clearest possible evidence for why the
+donut chart was confusing; `Additive-mobile.png`, a side-by-side of the hand-drawn phone
+sketch (already wired, cropped tighter as `additive-mobile-operator-view.png`) next to a
+mockup of the shipped color-coded Builds list, a real sketch-to-shipped pairing per
+principle 11 that the cropped version obscured; and `Additive-user-persona-v1.png`, an
+unbannered sibling of the Operator persona card that names her, **Stacey, Operator**,
+a real name the banner-cropped version's alt text never surfaced.
+
+**"Rethinking the Visualization" promoted and retitled "Why the Donut Chart Had to Go,"**
+per the punch list, now the lead section right after the intro. States the decision
+directly: the ring shape matched the dashboard's own visual language, which is exactly
+why it was risky next to a printer already using that shape for build progress. Both
+real numbers cited are read directly off the screenshots, not invented: an 85% OEE ring
+(`GE Additives Plant 1, Cincinnati`) and a printer at 48% printed. Two images: the
+existing small "donut / not donut" comparison graphic as the primary, and the newly
+surfaced `additive-progress-donut-v1.png` as supporting evidence, showing the real
+dashboard-in-context rather than an abstracted comparison.
+
+**"Early Concept Sketches," "A Journey Map of Roles," and "Personas: Goals and
+Challenges" collapsed into one section, "Sketches, a Journey Map, and a Persona Named
+Stacey,"** per the punch list. The sketch's placement here does double duty: it's process
+evidence, but it also lands as a quiet callback to the donut decision above, since the
+earliest hand-drawn concept already used a number and color, not a ring, before a later
+comp detoured through the donut that testing later caught.
+
+**Real metric added, per the punch list's "facility rollout" ask**, grounded in what the
+shipped dashboard screenshots actually show rather than invented: the Availability Score
+rolled out across GE Additive sites in Cincinnati, Greenville, Beijing, Florence, Rio de
+Janeiro, and Lichtenfels, real site names visible across multiple different screens
+(hero, OEE dashboard), spanning four continents. Folded into the lead description per
+principle 5 and given its own closing section, "One Score, Four Continents," rather than
+a dedicated "Business Outcomes" section. The old generic "Outcome" section (a bare label,
+principle 4) was dropped; nothing case-specific survived it that isn't now covered by the
+lead or this section.
+
+**New section, "Watching Builds Get Tracked by Hand,"** replaces "Observing Users On
+Site" with a sharper finding read directly off the site-visit photos once unbannered and
+full-size: engineers in the DMLM cell were tracking builds on a whiteboard by hand,
+material spec, responsible engineer's name and phone number, estimated completion,
+written and erased as jobs moved. That's real, legible evidence of the gap the console
+needed to close, previously invisible in the small banner-cropped collage. A second
+image, the newly surfaced selfie (`additive-selfie-v1.png`, capped `maxWidth: 420`),
+adds the human, on-site texture the source review turned up.
+
+**"Mobile for On-Call Operators" kept, image swapped** to the fuller `Additive-mobile.png`
+(sketch and shipped side by side) in place of the tighter sketch-only crop, so the
+section shows the actual distance between the hand-drawn concept and what shipped, per
+principle 11, rather than just the sketch alone.
+
+**Reflection added**, built from the donut misfire and the whiteboard finding, both
+already in the page rather than invented for this section: whether checking the new
+design against the printer's own UI earlier, before the first comp was built, would have
+caught the ring conflict before a design round was spent on it; and whether the console
+ever gave operators the same kind of ownership/ETA annotation the whiteboards carried, or
+whether the whiteboard is still there next to the machine.
+
+**Images, fully re-exported (2026-09-17), folding in the "Case study image assets"
+backlog item for this case study and clearing its 2026-09-14 interim `unframed`
+stopgap.** All 9 (hero plus 8 section images) converted to WebP via Pillow (no
+cwebp/ImageMagick in this environment). The hero and 6 of the 8 section images were
+already flat opaque screenshots or diagrams under their old blanket `unframed` flag (the
+alpha channel, where present, checked directly and found to be under 2% in every case,
+just corner-rounding anti-aliasing on browser-chrome mockups), so all 7 dropped
+`unframed` and now take the standard border. One genuine composite: `persona-stacey.webp`
+(the persona card) has a real soft-shadow "stacked paper" effect baked into the source
+graphic (confirmed via its alpha channel, ~6.5% non-opaque), and is flagged `unframed`,
+matching the Genomic Data Platform / Developer Experience / Mobile Emergency System
+precedent. 4 of the 7 previously-wired images swapped to an unbannered sibling per
+principle 7 (`journey-map`, `persona-stacey`, `site-visit`, and the richer
+`additive-progress-donut-v1.png` in place of patching the bannered `evaluate-design`
+comp): each removed banner's text seeded its section's framing rather than a caption
+directly (the journey-map and site-visit banners duplicated what the new captions say
+better in context). One image, `concept-sketch.webp` (the "Early Concept Sketches"
+photo), kept its baked-in banner as a documented exception in the first pass: no
+unbannered sibling existed in the source folder, and the banner sat over the photographed
+woman's shoulder, not over the sketch itself, so patching it would have meant fabricating
+photographed content the framework's "stay faithful, don't invent" principle rules out.
+**Jim resolved it himself (2026-09-17) by re-exporting from the real source file**,
+superseding the Pillow pass: the new export (720×510, tighter crop, down from 733×510)
+has the banner cleanly gone, still fully opaque RGB, no `unframed` needed. Zero banners
+remain baked into any image on this page. `journey-map.webp` was also re-exported by Jim
+himself (2026-09-17), superseding the Pillow pass with a cleaner export from the real
+source file; same content and dimensions (1128×540, opaque, no banner), no JSON changes
+needed. Renamed from literal
+`Additive-*` / `additive-*` source names to descriptive ids (`dashboard`,
+`donut-comparison`, `oee-dashboard`, `concept-sketch`, `journey-map`, `persona-stacey`,
+`site-visit`, `onsite-selfie`, `mobile`); `width`/`height` recorded for all 9 from their
+actual exported dimensions. Old PNGs deleted. This stayed a 100%-scale Pillow pass, not
+the 2x standard, since no higher-resolution source captures exist for this project.
+Total asset weight dropped from roughly 3.5MB of PNGs to ~600KB of WebP across 9 images
+(up from 7; the mobile side-by-side and the OEE-dashboard-in-context are new).
+
+Verified with `npm run build` (clean) and a headless-Chromium Playwright script
+(installed fresh into the scratchpad directory, neither Playwright nor a system Chromium
+was preinstalled in this environment) confirming: no console/page errors, all 9 captions
+render on one line by measured `scrollHeight` at both the inline default column and the
+Lightbox's fixed 640px width (not by eye), the one `unframed` image (`persona-stacey`)
+reads as a single clean frame against the page background, and desktop/mobile full-page
+screenshots hold together end-to-end.
+
+**Follow-up (2026-09-17, same day): the fleet-to-machine drill-down restored, per Jim's
+review, as a three-level story.** The original myportfolio page described dashboard
+levels this pass had missed on the first source review, an aggregate fleet view drilling
+down to individual printers ("the individual printing progress of each printer at a
+manufacturing plant"); Jim supplied two new screenshots, `dashboard-fleet.webp`
+(Availability: GE Additives Company, an aggregate 58% with nine ranked facility cards,
+Lichtenfels at 69% down to a struggling GE Power Turbine plant at 9%) and a facility/
+machine drill-down, and asked for the topic restored ahead of the donut story. Went
+through three iterations on structure and image count before landing: first pass used
+just the two new screenshots as a two-level story; Jim pointed out the order was wrong
+(fleet should lead as the hero, since that's the level a user sees first); the next pass
+swapped the hero to the fleet shot but, in restoring the drill-down section, surfaced
+that the *existing* hero image (`Additive-comp-builds.png`, a Builds table scoped to one
+facility, Lichtenfels) was actually a third, distinct level, facility, sitting between
+fleet and machine; a moment of back-and-forth (removed, then restored) landed on Jim's
+call: all three levels are real and belong in the story (fleet, facility, individual
+printer), so all three are now used. Renamed the three files to match the hierarchy they
+represent: `dashboard-fleet.webp` (now the hero), `dashboard-facility.webp` (formerly
+`dashboard.webp` / `Additive-comp-builds.png`, the Lichtenfels Builds table), and
+`dashboard-machine.webp` (formerly `dashboard-location.webp`, CL-3031's current-job
+detail with its own Availability ring and progress bar). New section, **"Drilling From
+the Fleet Down to One Job,"** sits right after the intro and before "Why the Donut Chart
+Had to Go," walking fleet (hero) to facility to machine in one paragraph, two images.
+Separately, this fleet screenshot's facility list turned out more authoritative than the
+OEE-donut screenshot's used in the donut section (real, consistent GE Additive site
+names: Lichtenfels, Grapevine, ATC, GE Aviation Print Center, CEC Munich, San Ramon
+Foundry, CEC Pittsburgh, Shanghai Foundry, GE Power Turbine Manufacturing, versus the
+donut grid's mix of plausible-but-inconsistently-labeled names), so the closing outcome
+section and the lead description were updated to cite it instead ("One Score, From
+Lichtenfels to Shanghai," dropping an earlier, less certain "four continents" framing
+built off the donut screenshot's shakier site list). Also caught mid-pass: `dashboard.webp`
+briefly went missing from the working tree between edit rounds (cause unclear, likely
+disturbed by the same file-manager action that added Jim's new screenshots into the same
+directory) and had to be regenerated from source before it was renamed to
+`dashboard-facility.webp`; re-verified present and loading before treating this follow-up
+as done. Re-verified with `npm run build` (clean) and the same Playwright script: no
+console errors, all 12 captions (up from 9) render on one line inline and in the
+Lightbox, desktop/mobile screenshots hold together end-to-end.
+
+**Further follow-ups (2026-09-18):** Jim re-exported `concept-sketch.webp` himself,
+superseding the Pillow pass and closing its one documented banner exception (720×510,
+tighter crop, banner cleanly gone, still opaque RGB, no `unframed` needed); zero banners
+now remain baked into any image on this page. Jim also re-exported `journey-map.webp`
+himself (same dimensions and content, a cleaner source export, no JSON changes needed).
+Added `team` metadata after Jim asked whether his own principal-designer role should be
+reflected here: reviewed the `team` field across all 9 case studies and found the
+convention is consistently collaborator-focused (who else was on the team), not a
+restatement of Jim's own title, which the `role` field directly above it already
+covers; recommended keeping that convention site-wide rather than retrofitting it, which
+Jim agreed with. Separately confirmed Jim was hands-on in visual design on this project
+too, not just interaction design and discovery, so the field reads "Another visual
+designer, with user discovery done alongside the lead engineer and architect" rather than
+"A visual designer." Also capped `concept-sketch` at `maxWidth: 480` (native 720×510),
+reading better narrower next to the journey map and persona card in the same section;
+verified its caption still renders on one line at the un-narrowed default column width
+(captions don't inherit `maxWidth`, per principle 7).
 
 ### Analytics & Big Data
 
