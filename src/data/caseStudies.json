@@ -716,8 +716,8 @@
   {
     "id": "analytics-big-data",
     "title": "Analytics & Big Data",
-    "description": "Enterprise tools for big-data analytics on GE's Industrial Internet platform, from data exploration to analytic orchestration.",
-    "blurb": "Data-exploration and orchestration tools for GE's Industrial Internet platform, giving data teams a way to see and shape their data at every step.",
+    "description": "On GE's Industrial Internet platform, the Orchestration Editor shipped with a companion Analytics Catalog, while my Data Explorer concept was well received but never prioritized.",
+    "blurb": "An Orchestration Editor that shipped on GE's Industrial Internet platform, plus a Data Explorer concept leaders liked but never prioritized.",
     "tags": ["Data Platforms", "Enterprise"],
     "url": "/case-study/analytics-big-data",
     "featured": false,
@@ -725,48 +725,48 @@
     "team": "Subject-matter experts and stakeholders in collaborative design sessions",
     "thumb": "/assets/case-studies/homepage-assets/analytics-big-data.webp",
     "hero": {
-      "src": "/assets/case-studies/analytics-big-data/data-explorer.png",
-      "alt": "The Predix Insight Data Explorer: a multi-series line chart of asset temperatures above a data grid, with chart-type options",
-      "unframed": true
+      "src": "/assets/case-studies/analytics-big-data/data-explorer.webp",
+      "width": 1000,
+      "height": 718,
+      "alt": "The Predix Insight Data Explorer: a multi-series line chart of asset temperatures above a data grid, with layers and chart-type options alongside",
+      "caption": "Data Explorer concept: layered charts over the raw data grid, before and after an analytic runs."
     },
     "sections": [
       {
         "blocks": [
-          { "type": "text", "value": "Research with data scientists and data engineers kept pointing at the same gap: **data exploration and cleansing is a critical part of the data-science process**, and no tool made it easy at the points in the workflow where that visibility matters most." }
+          {"type": "text", "value": "I interviewed dozens of data scientists and data engineers to understand how they actually worked, and one thing stood out: **data exploration and data cleansing are a critical part of the data-science process**. I conceived **Data Explorer** as the answer, a visualization tool for evaluating data before and after analytic processing. From a searchable, sortable catalog of data and analytic techniques, users then sequence techniques and business logic together in the **Orchestration Editor** and hook the result up to big-data streams and dashboards."}
         ]
       },
       {
-        "heading": "Data Explorer",
+        "heading": "One Visualizer, Before and After the Analytic",
         "blocks": [
-          { "type": "text", "value": "I conceived **Data Explorer** to give teams visualization tools for evaluating data before and after analytic processing: line, bar, and scatter views, layered assets, and the underlying data grid, all in one place." }
+          {"type": "text", "value": "The call was where Data Explorer sits: not only at the start, as a cleanup step, but at **both ends of an analytic run**. Going in, users chart layered assets over their raw data grid to inspect what they're about to analyze. Coming out, the same view opens from an orchestration's results (the breadcrumb runs Orchestration Results, then Data Explorer) to check what the analytic produced. The task flow makes the same choice at product scale: **Data Visualizer** appears under Upload and again under Evaluate, marked as a shared component, one visualizer rather than two. Product management and executive leaders responded well to Data Explorer, but it was never prioritized for development."},
+          {"type": "image", "unframed": true, "src": "/assets/case-studies/analytics-big-data/task-flows.webp", "width": 1125, "height": 742, "alt": "An Analytic Cloud task-flow diagram mapping user tasks to Data Explorer, Analytics Catalog, and Analytics Workbench across five columns, from Upload to Evaluate", "caption": "One Data Visualizer serves Upload at the start and Evaluate at the end of the five-step flow."}
         ]
       },
       {
-        "heading": "Orchestration Editor",
+        "heading": "Red Until Configured, Green When Ready",
         "blocks": [
-          { "type": "text", "value": "The **Orchestration Editor** lets users catalog and sequence analytic techniques together with business logic on a BPMN-style canvas: standard and long-running analytics, gateways with explicit conditions, and a chart output." },
-          { "type": "image", "unframed": true, "src": "/assets/case-studies/analytics-big-data/orchestration-editor.png", "alt": "The Orchestration Editor canvas with data-object, analytic, gateway, and sub-process nodes, and a gateway-conditions panel below" }
+          {"type": "text", "value": "The **Orchestration Editor** shipped, alongside a companion product, the **Analytics Catalog** (the second lane of the task flow above), where users search and filter analytics, read their profiles and ratings, and add them to a library. In the editor, users sequence data, analytics, and business logic on a BPMN-style canvas: standard and long-running analytics, gateways with explicit conditions, sub-processes, and a chart at the end. The interaction I designed puts status on the connection itself. Users drag components from a My Resources drawer onto the canvas and connect them, and a **Connection Editor** opens for the selected analytic, where available fields are dragged onto its inputs. A connection is red while it's improper or incomplete and turns green once it's properly configured, so a broken workflow shows where it's broken."},
+          {"type": "image", "src": "/assets/case-studies/analytics-big-data/orchestration-editor.webp", "width": 1000, "height": 718, "alt": "The Predix Insight Orchestration Editor: a canvas with data-object, analytic, gateway, and sub-process nodes, and a gateway-conditions panel below", "caption": "Analytics, data, and business logic on one BPMN-style canvas, gateway conditions below."},
+          {"type": "image", "unframed": true, "src": "/assets/case-studies/analytics-big-data/storyboard.webp", "width": 1040, "height": 660, "alt": "A six-frame storyboard for the Analytic Application Workbench: a welcome modal, a new-application dialog, components dragged onto a canvas, then connections turning from red to green as fields are dragged onto inputs", "caption": "Storyboard: a green arrow means a configured connection, red flags an incomplete one."},
+          {"type": "text", "value": "The drag-a-field-onto-an-input gesture is in the hand sketches and carries through to the comp, where field tokens fill the gateway conditions. The same page of sketches holds the other end of the workflow: a dashboard, and a dashboard designer for showing multiple outputs."},
+          {"type": "image", "unframed": true, "maxWidth": 640, "src": "/assets/case-studies/analytics-big-data/sketches.webp", "width": 934, "height": 708, "alt": "Hand sketches of an orchestration editor with a library drawer, a field-to-input drag interaction, a dashboard, and a dashboard designer showing multiple outputs", "caption": "In the hand sketches: the field-to-input drag already there, beside a dashboard designer."}
         ]
       },
       {
-        "heading": "Mapping the User Journey",
+        "heading": "A Sticky-Note Wall That Became the Five-Step Task Flow",
         "blocks": [
-          { "type": "text", "value": "I ran **collaborative workshops** with subject-matter experts, sketching and mapping task flows with diagrams and sticky notes. Running the sessions with stakeholders in the room gives everyone ownership of the design." },
-          { "type": "image", "unframed": true, "src": "/assets/case-studies/analytics-big-data/collaborative-design.png", "alt": "A wall of sticky notes mapping a data-analysis user journey from sign-in and upload through catalog, workspace, and visualization" }
+          {"type": "text", "value": "I ran **collaborative design sessions with subject-matter experts**, sketching wireframes on paper and mapping the whole user journey on a wall of sticky notes. Involving stakeholders in the design process is an excellent way to give UX ownership to everyone. The wall is where the task flow above began: its notes were already grouped into columns for Upload, Pick, Config, Execute, and Evaluate, and the Connection Editor's tasks, like mapping inputs, were on it too."},
+          {"type": "image", "src": "/assets/case-studies/analytics-big-data/paper-wireframes.webp", "width": 800, "height": 534, "alt": "Two people at a table sketching on sheets of paper wireframe templates, with sticky notes and markers beside them", "caption": "Wireframing on paper with stakeholders at the table, so ownership of the design is shared."},
+          {"type": "image", "src": "/assets/case-studies/analytics-big-data/sticky-note-wall.webp", "width": 800, "height": 534, "alt": "A wall of sticky notes in columns mapping a data-analysis user journey from sign-in through upload, catalog, workspace, and evaluation", "caption": "The whole user journey on one wall of sticky notes, later the task flow's five columns."}
         ]
       },
       {
-        "heading": "Task Flows Mapped to the Product",
+        "heading": "Reflection",
         "blocks": [
-          { "type": "text", "value": "The synthesized model tied every user task to a place in the product (**Upload, Pick, Configure, Execute, Evaluate**) across Data Explorer, the Analytics Catalog, and the Analytics Workbench, with a shared Data Visualizer and a Version Tracker for iteration." },
-          { "type": "image", "unframed": true, "src": "/assets/case-studies/analytics-big-data/task-flows.png", "alt": "A task-flow diagram with five columns from Upload to Evaluate, each grouping the detailed user actions in that product area" }
-        ]
-      },
-      {
-        "heading": "Exploring Interactions With Sketches",
-        "blocks": [
-          { "type": "text", "value": "Sketches explored the **interactions and layouts**: the orchestration editor's library and canvas, dragging fields onto model inputs, the dashboard, and a dashboard designer showing multiple outputs." },
-          { "type": "image", "unframed": true, "src": "/assets/case-studies/analytics-big-data/sketches.png", "alt": "Hand sketches of an orchestration editor, a field-to-input drag interaction, a dashboard, and a dashboard designer" }
+          {"type": "text", "value": "Color carries the whole configuration state in the Orchestration Editor, red until configured and green when ready, and color alone is a thin signal. The storyboard captions every arrow in words, but nothing in these artifacts shows a second cue on the arrow itself, so the open question is how that state reads for an engineer who can't tell red from green."},
+          {"type": "text", "value": "Data Explorer's fate is the other open question. Product management and executive leaders liked it, but it was never prioritized for development, so the bet under it, that evaluating data before and after an analytic is the same job, was never tested against real use. The task flow reuses one visualizer at both ends on a read from the interviews, and whether the results end wanted something more specific is still unanswered."}
         ]
       }
     ]
