@@ -238,12 +238,18 @@ the order is Jim's call. Per-page open flags in the entries below carry into it.
     budget to write against, not a per-image one. Two contexts to satisfy, both fixed
     regardless of any image's own `maxWidth`:
     - **Inline**: the default column, ~872px measured at desktop.
-    - **Lightbox**: `.lightbox__caption` is a fixed 640px, always narrower than inline,
-      so it's normally the tighter constraint of the two.
+    - **Lightbox**: `.lightbox__caption` is a fixed 1000px box in 20px bold Roboto Slab
+      (restyled and widened from 640px / 14px Roboto on 2026-09-21), still narrower than
+      inline in characters-per-line terms, so it's normally the tighter constraint of the
+      two. At viewports under ~1120px (the widest caption needs that much) it wraps to two
+      lines by design; the one-line requirement is checked at desktop (1280px and up).
     In practice: target roughly 90-100 characters as a safe one-line budget (this covers
     both contexts for the vast majority of captions). Character count is a rough guide
     only, actual width depends on the letters used (14px font, ~5.7-5.9px average per
-    character measured); verify by rendering, don't just count characters. To verify:
+    character measured at the old inline size; the Lightbox's 20px bold slab measures ~9.5px
+    average, and the widest current caption is 96 characters at 964px of the 1000px box, so
+    headroom is thin: a caption past ~100 characters will wrap); verify by rendering, don't
+    just count characters. To verify:
     load the page in the running dev server and check every `figcaption` for
     `scrollHeight` beyond one `lineHeight`, then open the Lightbox and step through every
     image doing the same check against `.lightbox__caption` (a short Playwright script,

@@ -1298,12 +1298,18 @@ ul {
   border-radius: 0;
 }
 
+/* Reads as a headline, not a label: captions carry the story for visitors who
+   only page through the Lightbox. The box is wide (not the old 640px) so the
+   ~90-100 character captions stay on one line at desktop widths; narrower
+   viewports wrap to two lines by design. Roboto Slab loads at 500 and 700 only. */
 .lightbox__caption {
   margin: 14px 0 0;
-  max-width: 640px;
-  font-size: 14px;
-  line-height: 1.5;
-  color: rgba(255, 255, 255, 0.7);
+  max-width: 1000px;
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--color-text-bright-on-dark);
   text-align: center;
 }
 
@@ -1361,6 +1367,7 @@ ul {
 
 @media (max-width: 767px) {
   .lightbox { padding: 12vh 12px; }
+  .lightbox__caption { font-size: 16px; }
   .lightbox__nav--prev { left: 4px; }
   .lightbox__nav--next { right: 4px; }
 }
