@@ -10,14 +10,16 @@
   --color-text-primary-light: #111111;
   --color-text-primary-dark: #F2F0ED;  /* running text on any dark surface */
   --color-text-bright-on-dark: #FFFFFF; /* glyphs/labels on dark or accent fills */
-  --color-text-muted-light: #888888;   /* dimmed text on light */
+  --color-text-muted-light: #6D6D6D;   /* dimmed text on light: 4.55:1 on --color-surface-light (AA) */
   --color-text-muted-dark: #8899BB;     /* dimmed text on any dark surface */
 
   /* Accent */
   --color-accent: #3D7AF5;
+  --color-accent-on-light: #2F63D9;    /* accent as text on light: 4.72:1 on --color-surface-light (AA); --color-accent is only 3.48:1 */
 
   /* Lines */
   --color-border: rgba(0, 0, 0, 0.1); /* faint divider on a light surface */
+  --color-frame: #888888;              /* image/video frames and carousel dots (non-text, 3.12:1 clears the 3:1 UI minimum) */
 
   /* Derived */
   --color-nav-bg: rgba(242, 240, 237, 0.92); /* = --color-surface-light @ 92% */
@@ -201,7 +203,7 @@ ul {
 
 .nav__link:hover,
 .nav__link.nav__link--active {
-  color: var(--color-accent);
+  color: var(--color-accent-on-light);
 }
 
 .nav__hamburger {
@@ -640,7 +642,7 @@ ul {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: var(--color-text-muted-light);
+  background: var(--color-frame);
 }
 
 .carousel__dot--active {
@@ -1001,8 +1003,8 @@ ul {
 /* Standard frame for every case-study image: a hairline border and a 6px radius
    matching the corner already baked into the mockup screenshots themselves
    (measured off overview.png's browser-chrome frame). No shadow or crop.
-   Border color reuses --color-text-muted-light (#888888): closest existing
-   token to the #9e9e9e Jim used when these borders were baked into the pixels;
+   Border color is --color-frame (#888888): closest existing token to the
+   #9e9e9e Jim used when these borders were baked into the pixels;
    --color-border (rgba(0,0,0,0.1), ~#E5E5E5) is a divider color, too faint here. */
 .case-study__media img {
   display: block;
@@ -1010,7 +1012,7 @@ ul {
   height: auto;
   max-width: 100%;
   margin: 0 auto;
-  border: 1px solid var(--color-text-muted-light);
+  border: 1px solid var(--color-frame);
   border-radius: 6px;
 }
 
@@ -1024,7 +1026,7 @@ ul {
 
 .case-study__media figcaption {
   margin: 10px auto 0;
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1.5;
   color: var(--color-text-muted-light);
   text-align: center;
@@ -1038,7 +1040,7 @@ ul {
   width: 100%;
   margin: 0 auto;
   overflow: hidden;
-  border: 1px solid var(--color-text-muted-light);
+  border: 1px solid var(--color-frame);
   border-radius: 6px;
   background: #000;
 }
@@ -1229,7 +1231,7 @@ ul {
 }
 
 .case-study__nav-link:hover {
-  color: var(--color-accent);
+  color: var(--color-accent-on-light);
 }
 
 .case-study__nav-label {
@@ -1286,7 +1288,7 @@ ul {
   width: auto;
   height: auto;
   object-fit: contain;
-  border: 1px solid var(--color-text-muted-light);
+  border: 1px solid var(--color-frame);
   border-radius: 6px;
 }
 
