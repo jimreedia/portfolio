@@ -437,14 +437,14 @@
         "heading": "One Persona, Not a Committee of Them",
         "blocks": [
           { "type": "text", "value": "I designed around a single persona instead of a roster of them: **Elaine the Software Architect**, cast as the main character in every storyboard. A committee of personas turns design debates abstract; one gives the team an actual person to argue about, not a feature list." },
-          { "type": "image", "unframed": true, "src": "/assets/case-studies/developer-experience/persona-storyboard.webp", "width": 1014, "height": 600, "alt": "A storyboard panel of Elaine browsing the Predix catalog and trying an interactive API test console against a live wind turbine", "caption": "Elaine's own line drove the bet: an API console against a live GE turbine, not just documentation." }
+          { "type": "image", "unframed": true, "src": "/assets/case-studies/developer-experience/persona-storyboard.webp", "width": 1014, "height": 600, "alt": "A storyboard panel of Elaine browsing the Predix catalog and trying an interactive API test console against a live wind turbine", "caption": "“Listing APIs is nice, but I want to try the technology.” Elaine's line drove the API test console." }
         ]
       },
       {
         "heading": "Storyboards to Find the Critical Features",
         "blocks": [
           { "type": "text", "value": "Product storyboards walked the full path (sign up, build, deploy, monitor) and surfaced the features that actually mattered. One target set the bar: **a base application up and running in under five minutes**." },
-          { "type": "image", "unframed": true, "src": "/assets/case-studies/developer-experience/five-minute-storyboard.webp", "width": 1014, "height": 570, "alt": "A storyboard showing Elaine's app auto-deploying to the cloud and an application dashboard where she reviews usage stats", "caption": "The five-minute deploy claim came from this frame, a design target, not a measured number." }
+          { "type": "image", "unframed": true, "src": "/assets/case-studies/developer-experience/five-minute-storyboard.webp", "width": 1014, "height": 570, "alt": "A storyboard showing Elaine's app auto-deploying to the cloud and an application dashboard where she reviews usage stats", "caption": "Elaine's app is running in under five minutes (panel 13): a design target, not a measured result." }
         ]
       },
       {
