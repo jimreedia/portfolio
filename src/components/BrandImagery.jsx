@@ -1,5 +1,5 @@
-import { assetUrl } from '../lib/caseStudies'
 import { useSectionNav } from '../lib/navigation'
+import HandGearMark from './HandGearMark'
 import PacmanScene from './PacmanScene'
 
 export default function BrandImagery() {
@@ -10,11 +10,13 @@ export default function BrandImagery() {
       <div className="brand-imagery__stage">
         <div className="section__inner">
           <PacmanScene />
-          <img
-            className="brand-imagery__illustration"
-            src={assetUrl('assets/brand/jimreed_animated_hand_gear_480x280.gif')}
-            alt="An animated hand pointing at a gear, representing interaction design"
-          />
+          <div className="brand-imagery__lockup">
+            <HandGearMark />
+            <div className="brand-imagery__wordmark">
+              <span className="brand-imagery__wordmark-name">jimreed.net</span>
+              <span className="brand-imagery__wordmark-tag">UX Design</span>
+            </div>
+          </div>
         </div>
         <button
           type="button"

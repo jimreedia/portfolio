@@ -11,7 +11,7 @@
   --color-text-primary-dark: #F2F0ED;  /* running text on any dark surface */
   --color-text-bright-on-dark: #FFFFFF; /* glyphs/labels on dark or accent fills */
   --color-text-muted-light: #6D6D6D;   /* dimmed text on light: 4.55:1 on --color-surface-light (AA) */
-  --color-text-muted-dark: #8899BB;     /* dimmed text on any dark surface */
+  --color-text-muted-dark: #909CA7;     /* dimmed text on any dark surface: warmed from #8899BB (2026-09-22) to read closer to the warm light-surface neutrals; 6.92:1 on --color-surface-dark, 5.29:1 on --color-surface-navy (both improved over the old value) */
 
   /* Accent */
   --color-accent: #3D7AF5;
@@ -289,13 +289,191 @@ ul {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 80px;
+  gap: 120px;
   padding-top: 72px;
 }
 
-.brand-imagery__illustration {
+/* PacmanScene's root <svg> still carries the `brand-imagery__illustration`
+   class (see PacmanScene.jsx) for this same 45%/480px sizing budget, split
+   between it and this lockup so the two sit side by side within the 1200px
+   section. Keep both selectors in sync. */
+.brand-imagery__illustration,
+.brand-imagery__lockup {
   width: 45%;
   max-width: 480px;
+}
+
+.brand-imagery__lockup {
+  display: flex;
+  align-items: center;
+  gap: 46px;
+}
+
+@media (min-width: 768px) {
+  /* Nudge right (desktop only): a `transform` shifts the lockup visually
+     without affecting the flex row's own centering math, so PacmanScene stays
+     put — balances the left margin (viewport edge to the ghosts) against the
+     right margin (jimreed.net's right edge to the viewport edge), which were
+     visibly uneven at wide viewports. */
+  .brand-imagery__lockup {
+    transform: translateX(40px);
+  }
+}
+
+/* Hand + gear mark, extracted from brand/hand gear/hand_gear.ai. .brand-imagery__mark
+   is the positioning context; hand and gear are placed inside it as percentages of its
+   box, measured from the two drawings' union bounding box (70.35 x 133.21pt). */
+.brand-imagery__mark {
+  position: relative;
+  flex: 0 0 24%;
+  aspect-ratio: 70.35 / 133.21;
+}
+
+.brand-imagery__hand {
+  position: absolute;
+  left: 0%;
+  top: 32.51%;
+  width: 76.63%;
+  height: 67.49%;
+  fill: var(--color-text-bright-on-dark);
+  display: block;
+}
+
+.brand-imagery__gear-btn {
+  position: absolute;
+  left: 49.03%;
+  top: 0%;
+  width: 50.97%;
+  height: 26.92%;
+  min-width: 44px;
+  min-height: 44px;
+  transform: scale(var(--growth-scale, 1));
+  transition: transform 400ms ease;
+}
+
+.brand-imagery__gear-btn:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 6px;
+  border-radius: 50%;
+}
+
+.brand-imagery__gear {
+  display: block;
+  width: 100%;
+  height: 100%;
+  fill: var(--color-text-bright-on-dark);
+  transition: opacity 250ms ease, fill 200ms ease;
+}
+
+.brand-imagery__gear-btn:hover .brand-imagery__gear {
+  fill: var(--color-text-muted-dark);
+}
+
+.brand-imagery__gear-btn--bursting .brand-imagery__gear,
+.brand-imagery__gear-btn--hidden .brand-imagery__gear {
+  animation: none;
+  opacity: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes gear-spin {
+    to { transform: rotate(360deg); }
+  }
+  @keyframes hand-float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+  }
+  .brand-imagery__gear {
+    animation: gear-spin 12s linear infinite;
+  }
+  .brand-imagery__hand {
+    animation: hand-float 3.2s ease-in-out infinite;
+  }
+}
+
+.brand-imagery__confetti {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.brand-imagery__confetti-piece {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 10px;
+  height: 10px;
+  opacity: 0;
+  background: var(--piece-color);
+}
+
+.brand-imagery__confetti-piece--circle {
+  border-radius: 50%;
+}
+
+.brand-imagery__confetti-piece--triangle {
+  width: 0;
+  height: 0;
+  background: transparent;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 9px solid var(--piece-color);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes confetti-burst {
+    0% { opacity: 1; transform: translate(0, 0) rotate(0deg) scale(1); }
+    100% { opacity: 0; transform: translate(var(--tx), var(--ty)) rotate(var(--rot)) scale(0.6); }
+  }
+  .brand-imagery__gear-btn--bursting .brand-imagery__confetti-piece {
+    animation: confetti-burst 900ms ease-out var(--delay, 0ms);
+  }
+}
+
+/* No flight or spin/float under reduced motion; a burst is still
+   acknowledged with an instant color change rather than a dead click. */
+@media (prefers-reduced-motion: reduce) {
+  .brand-imagery__gear-btn--bursting .brand-imagery__gear,
+  .brand-imagery__gear-btn--hidden .brand-imagery__gear {
+    animation: none;
+    opacity: 1;
+    fill: var(--color-accent);
+  }
+  .brand-imagery__confetti-piece {
+    display: none;
+  }
+}
+
+.brand-imagery__wordmark {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  /* Nudged down from dead-center (measured against the reference composition):
+     "jimreed.net" should land level with the hand's knuckles, not the whole
+     hand+gear mark's vertical middle. Scales with .brand-imagery__lockup's
+     own max-width per breakpoint (see the 767px override below). */
+  margin-top: 95px;
+}
+
+/* Fluid between the 767px mobile breakpoint and ~1248px (where the lockup
+   hits its 480px cap and stops growing further): a flat desktop size left a
+   dead zone in between (roughly 768-895px viewport width) where the mark's
+   own 24%-of-lockup width shrinks with the viewport but this fixed-px text
+   didn't, so "jimreed.net" ran past the edge before the layout dropped to
+   the stacked mobile column. clamp() floor/ceiling exactly match the 767px
+   override below, so there's no visible jump at that boundary. */
+.brand-imagery__wordmark-name {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: clamp(27px, 6.2px + 2.70833vw, 40px);
+  color: var(--color-text-bright-on-dark);
+}
+
+.brand-imagery__wordmark-tag {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(19px, 7.8px + 1.45833vw, 26px);
+  color: var(--color-text-muted-dark);
 }
 
 /* Section 1: PacMan scene — layered recreation of the placeholder graphic */
@@ -385,11 +563,43 @@ ul {
 @media (max-width: 767px) {
   .brand-imagery .section__inner {
     flex-direction: column;
-    gap: 48px;
+    /* Matches the reference (production GIF) composition's vertical gap
+       between the PacMan labels and the gear, measured from a screenshot. */
+    gap: 85px;
+    /* Extra room below the lockup before the "scroll down" arrow, which is
+       absolutely positioned (bottom: 32px) and otherwise ends up only ~5px
+       from the wordmark — too tight at this breakpoint. */
+    padding-bottom: 88px;
   }
   .brand-imagery__illustration {
     width: 100%;
     max-width: 320px;
+  }
+  /* No max-width here (unlike .brand-imagery__illustration above): letting
+     the lockup size to its own content, rather than forcing a 320px box, is
+     what centers it to match the reference — a fixed wide box left extra
+     slack on the right (content left-aligned within it), visibly
+     off-center/too far left compared to production. Relies on
+     .section__inner's existing `align-items: center` to center this
+     shrink-to-fit box. `width: max-content` (not the `width: auto` default)
+     because auto hits a flexbox min-content-sizing quirk here — the lockup
+     under-measured itself to roughly mark+gap only, ignoring the wordmark's
+     real width, and let it silently overflow past the lockup's own box on
+     narrow phones (~360px and below) instead of centering correctly. */
+  .brand-imagery__lockup {
+    width: max-content;
+  }
+  .brand-imagery__mark {
+    /* Fixed instead of the desktop rule's 24% flex-basis: percentage
+       flex-basis needs a definite-width containing block, which the lockup
+       no longer has now that it's content-sized. */
+    flex-basis: 77px;
+  }
+  /* No font-size override needed here anymore: the fluid clamp() on
+     .brand-imagery__wordmark-name/-tag already bottoms out at exactly these
+     mobile sizes (27px/19px) at and below the 768px clamp floor. */
+  .brand-imagery__wordmark {
+    margin-top: 66px;
   }
 }
 
