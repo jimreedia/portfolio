@@ -780,6 +780,7 @@ ul {
 /* Carousel */
 .carousel__frame {
   position: relative;
+  display: block;
   aspect-ratio: 16 / 9;
   border-radius: 40px;
   overflow: hidden;
@@ -813,31 +814,123 @@ ul {
   height: 100%;
   object-fit: cover;
   display: block;
+  transition: transform 300ms ease;
 }
 
-.carousel__arrow {
+/* Hover/focus state matches .more-work__thumb exactly: image scales, a dark
+   scrim fades in, and a "View Case Study →" label fades/slides into view. */
+.carousel__overlay {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background: rgba(0, 0, 0, 0.6);
-  color: var(--color-text-bright-on-dark);
+  inset: 0;
   display: flex;
   align-items: center;
   justify-content: center;
+  background: rgb(from var(--color-surface-dark) r g b / 0);
+  transition: background 200ms ease;
+}
+
+.carousel__cta {
+  color: var(--color-text-bright-on-dark);
+  font-family: var(--font-sans);
+  font-size: 15px;
+  font-weight: 500;
   opacity: 0;
-  transition: opacity 200ms ease;
+  transform: translateY(6px);
+  transition: opacity 200ms ease, transform 200ms ease;
 }
 
-.carousel__frame:hover .carousel__arrow {
+.carousel__frame:hover .carousel__slide-image,
+.carousel__frame:focus-visible .carousel__slide-image {
+  transform: scale(1.05);
+}
+
+.carousel__frame:hover .carousel__overlay,
+.carousel__frame:focus-visible .carousel__overlay {
+  background: rgb(from var(--color-surface-dark) r g b / 0.42);
+}
+
+.carousel__frame:hover .carousel__cta,
+.carousel__frame:focus-visible .carousel__cta {
   opacity: 1;
+  transform: none;
 }
 
-@media (max-width: 767px) {
-  .carousel__arrow { opacity: 1; }
+/* Touch devices have no hover: keep the label and a light scrim visible. */
+@media (hover: none) {
+  .carousel__overlay {
+    background: linear-gradient(
+      to top,
+      rgb(from var(--color-surface-dark) r g b / 0.55),
+      rgb(from var(--color-surface-dark) r g b / 0) 45%
+    );
+    align-items: flex-end;
+    padding-bottom: 12px;
+  }
+  .carousel__cta { opacity: 1; transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .carousel__slide-image,
+  .carousel__frame:hover .carousel__slide-image,
+  .carousel__frame:focus-visible .carousel__slide-image {
+    transition: none;
+    transform: none;
+  }
+}
+
+/* Persistent controls bar below the frame: always visible, a single pill
+   container (not overlaid on the image) holding the prev arrow, dots, and
+   next arrow together, so they read as one control rather than three. */
+.carousel__controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: fit-content;
+  margin: 16px auto 0;
+  padding: 8px 20px;
+  border-radius: 999px;
+  background: var(--color-surface-light);
+}
+
+/* The visible arrow stays 20px, but a transparent ::after extends its
+   clickable area outward: 8px on the outer sides (nothing to bump into),
+   4px on the side facing the dots (half the 8px gap, meeting the nearest
+   dot's own 4px expansion exactly, so the hit areas are contiguous). */
+.carousel__arrow {
+  position: relative;
+  flex: 0 0 auto;
+  width: 20px;
+  height: 20px;
+  color: var(--color-frame);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  line-height: 1;
+  transition: color 200ms ease;
+}
+
+.carousel__arrow::after {
+  content: '';
+  position: absolute;
+  top: -8px;
+  bottom: -8px;
+}
+
+.carousel__arrow--prev::after {
+  left: -8px;
+  right: -4px;
+}
+
+.carousel__arrow--next::after {
+  left: -4px;
+  right: -8px;
+}
+
+.carousel__arrow:hover,
+.carousel__arrow:focus-visible {
+  color: var(--color-accent);
 }
 
 .carousel__dots {
@@ -845,14 +938,23 @@ ul {
   justify-content: center;
   align-items: center;
   gap: 8px;
-  margin-top: 12px;
 }
 
+/* Same trick for dots: the visible mark stays 6-8px, a transparent ::after
+   extends the hit area by 4px each side (half the 8px dot gap, so adjacent
+   dots' expanded areas meet without overlapping). */
 .carousel__dot {
+  position: relative;
   width: 6px;
   height: 6px;
   border-radius: 50%;
   background: var(--color-frame);
+}
+
+.carousel__dot::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
 }
 
 .carousel__dot--active {

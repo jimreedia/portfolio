@@ -1,25 +1,42 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { assetUrl } from '../lib/caseStudies'
+import { saveHomeScrollPosition } from '../lib/homeScroll'
 
 const SWIPE_THRESHOLD = 50
 
-export default function Carousel({ images, title }) {
-  const [index, setIndex] = useState(0)
+export default function Carousel({ images, title, url }) {
+  const count = images.length
+  const slides = count > 1 ? [images[count - 1], ...images, images[0]] : images
+
+  const [index, setIndex] = useState(count > 1 ? 1 : 0)
   const [animate, setAnimate] = useState(true)
   const [touchStartX, setTouchStartX] = useState(null)
 
-  const count = images.length
-  const slides = [...images, images[0]]
+  const realIndex = count > 1 ? ((index - 1) % count + count) % count : 0
 
   const goNext = () => {
     setAnimate(true)
     setIndex((i) => i + 1)
   }
 
+  const goPrev = () => {
+    setAnimate(true)
+    setIndex((i) => i - 1)
+  }
+
+  const goTo = (i) => {
+    setAnimate(true)
+    setIndex(i + 1)
+  }
+
   const handleTransitionEnd = () => {
-    if (index === count) {
+    if (index === slides.length - 1) {
       setAnimate(false)
-      setIndex(0)
+      setIndex(1)
+    } else if (index === 0) {
+      setAnimate(false)
+      setIndex(count)
     }
   }
 
@@ -27,14 +44,19 @@ export default function Carousel({ images, title }) {
   const handleTouchEnd = (e) => {
     if (touchStartX === null) return
     const delta = e.changedTouches[0].clientX - touchStartX
-    if (Math.abs(delta) > SWIPE_THRESHOLD) goNext()
+    if (delta < -SWIPE_THRESHOLD) goNext()
+    else if (delta > SWIPE_THRESHOLD) goPrev()
     setTouchStartX(null)
   }
 
   return (
     <div className="carousel">
-      <div
+      <Link
+        to={url}
+        state={{ fromHome: true }}
         className="carousel__frame"
+        aria-label={`View case study: ${title}`}
+        onClick={saveHomeScrollPosition}
         onTouchStart={handleTouchStart}
         onTouchEnd={handleTouchEnd}
       >
@@ -57,25 +79,45 @@ export default function Carousel({ images, title }) {
             </div>
           ))}
         </div>
+        <span className="carousel__overlay">
+          <span className="carousel__cta">View Case Study →</span>
+        </span>
+      </Link>
 
-        <button
-          type="button"
-          className="carousel__arrow carousel__arrow--next"
-          onClick={goNext}
-          aria-label={`Next image for ${title}`}
-        >
-          ›
-        </button>
-      </div>
+      {count > 1 && (
+        <div className="carousel__controls">
+          <button
+            type="button"
+            className="carousel__arrow carousel__arrow--prev"
+            onClick={goPrev}
+            aria-label={`Previous image for ${title}`}
+          >
+            ‹
+          </button>
 
-      <div className="carousel__dots">
-        {images.map((_, i) => (
-          <span
-            key={i}
-            className={`carousel__dot ${i === index % count ? 'carousel__dot--active' : ''}`}
-          />
-        ))}
-      </div>
+          <div className="carousel__dots">
+            {images.map((_, i) => (
+              <button
+                key={i}
+                type="button"
+                className={`carousel__dot ${i === realIndex ? 'carousel__dot--active' : ''}`}
+                onClick={() => goTo(i)}
+                aria-label={`Go to image ${i + 1} of ${count}`}
+                aria-current={i === realIndex}
+              />
+            ))}
+          </div>
+
+          <button
+            type="button"
+            className="carousel__arrow carousel__arrow--next"
+            onClick={goNext}
+            aria-label={`Next image for ${title}`}
+          >
+            ›
+          </button>
+        </div>
+      )}
     </div>
   )
 }

@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { getMore, assetUrl } from '../lib/caseStudies'
+import { saveHomeScrollPosition } from '../lib/homeScroll'
 
 export default function MoreCaseStudies() {
   const caseStudies = getMore()
@@ -10,7 +11,13 @@ export default function MoreCaseStudies() {
         <h2 className="more-work__header">More Case Studies</h2>
         <div className="more-work__grid">
           {caseStudies.map((cs) => (
-            <Link key={cs.id} to={cs.url} className="more-work__card">
+            <Link
+              key={cs.id}
+              to={cs.url}
+              state={{ fromHome: true }}
+              className="more-work__card"
+              onClick={saveHomeScrollPosition}
+            >
               <div className="more-work__thumb">
                 <img src={assetUrl(cs.thumb)} alt="" loading="lazy" />
                 <span className="more-work__thumb-overlay">

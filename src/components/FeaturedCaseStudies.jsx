@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import Carousel from './Carousel'
 import { getFeatured } from '../lib/caseStudies'
 import { useColumnReveal } from '../lib/useColumnReveal'
+import { saveHomeScrollPosition } from '../lib/homeScroll'
 
 export default function FeaturedCaseStudies() {
   const caseStudies = getFeatured()
@@ -18,12 +19,19 @@ export default function FeaturedCaseStudies() {
             className={`featured-row ${i % 2 === 1 ? 'featured-row--reverse' : ''}`}
           >
             <div className="featured-row__carousel">
-              <Carousel images={cs.images} title={cs.title} />
+              <Carousel images={cs.images} title={cs.title} url={cs.url} />
             </div>
             <div className="featured-row__text">
               <h2 className="case-study__title">{cs.title}</h2>
               <p className="case-study__description">{cs.blurb}</p>
-              <Link to={cs.url} className="case-study__cta">View Case Study →</Link>
+              <Link
+                to={cs.url}
+                state={{ fromHome: true }}
+                className="case-study__cta"
+                onClick={saveHomeScrollPosition}
+              >
+                View Case Study →
+              </Link>
             </div>
           </div>
         ))}
