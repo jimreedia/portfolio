@@ -518,8 +518,25 @@ ul {
   99%, 100%  { transform: translateX(0); }
 }
 
+/* Red ghost: a rare glance. Rests looking right (LOOK.right, already baked
+   into the pupils' x), and once per 45s cycle dips to centre (18 units back,
+   so a negative translate) and returns. Slow cycle so it reads as occasional,
+   not a second clock next to orange's scan; placed mid-cycle so the first
+   glance lands ~20s after load. */
+.pacman__layer--red .pacman__pupils {
+  animation: pacman-pupil-glance 45s infinite;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes pacman-pupil-glance {
+  0%, 44%       { transform: translateX(0); }
+  44.7%, 49%    { transform: translateX(-18px); }
+  49.7%, 100%   { transform: translateX(0); }
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .pacman__layer--orange .pacman__pupils {
+  .pacman__layer--orange .pacman__pupils,
+  .pacman__layer--red .pacman__pupils {
     animation: none;
   }
 }
@@ -542,8 +559,10 @@ ul {
   transform: translateX(calc(clamp(0, calc((var(--p-tail) - 0.22) / 1.25), 1) * -80vw));
 }
 
-/* Once the chase is underway, lock the orange pupils forward (toward the run). */
-.pacman-chasing .pacman__layer--orange .pacman__pupils {
+/* Once the chase is underway, lock both ghosts' pupils at rest: orange
+   forward (toward the run), red looking back at its pursuer. */
+.pacman-chasing .pacman__layer--orange .pacman__pupils,
+.pacman-chasing .pacman__layer--red .pacman__pupils {
   animation: none;
   transform: translateX(0);
 }
