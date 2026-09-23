@@ -22,9 +22,15 @@ export default function Home() {
   // otherwise animate a scroll down from the top of the just-mounted page.
   useEffect(() => {
     const target = location.state?.scrollTo
-    if (!target) return
+    if (target === undefined || target === null) return
     if (target === 'top') {
       window.scrollTo({ top: 0, left: 0, behavior: 'instant' })
+      return
+    }
+    // A number is an exact scroll position (Back to all work, arriving
+    // directly from a homepage click) rather than a section id.
+    if (typeof target === 'number') {
+      window.scrollTo({ top: target, left: 0, behavior: 'instant' })
       return
     }
     const el = document.getElementById(target)

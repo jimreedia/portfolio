@@ -1,10 +1,11 @@
 import { useState } from 'react'
-import { Link, Navigate, useParams } from 'react-router-dom'
+import { Link, Navigate, useLocation, useParams } from 'react-router-dom'
 import { assetUrl, getById, getNeighbors } from '../lib/caseStudies'
+import { readHomeScrollPosition } from '../lib/homeScroll'
 import Lightbox from './Lightbox'
 
-// Return the visitor to the homepage section this case study is listed in, so
-// "back to all work" lands where they were browsing rather than at the top.
+// `scrollTo` is either a section id (scrolls to that section's top) or a
+// number (scrolls to that exact Y position) — see `backScrollTo` below.
 function backLink(label, scrollTo, extraClass = '') {
   return (
     <Link to="/" state={{ scrollTo }} className={`case-study__back ${extraClass}`}>
@@ -39,6 +40,7 @@ function toBlocks(section) {
 
 export default function CaseStudyPage() {
   const { id } = useParams()
+  const location = useLocation()
   const cs = getById(id)
   const [lightboxIndex, setLightboxIndex] = useState(null)
   const [playingVideoIds, setPlayingVideoIds] = useState(() => new Set())
@@ -76,6 +78,13 @@ export default function CaseStudyPage() {
 
   const { prev, next } = getNeighbors(id)
   const backSection = cs.featured ? 'featured-work' : 'more-work'
+  // Reached directly from a homepage click (not via Prev/Next below): return
+  // to the exact spot the visitor scrolled to, rather than the section top.
+  // `fromHome` resets on every navigation, so a Prev/Next hop away loses it
+  // and Back falls back to the section-top behavior, as intended.
+  const cameFromHome = location.state?.fromHome === true
+  const savedScrollY = cameFromHome ? readHomeScrollPosition() : null
+  const backScrollTo = savedScrollY !== null ? savedScrollY : backSection
   const meta = [
     ['Role', cs.role],
     ['Design Team', cs.team],
@@ -157,7 +166,7 @@ export default function CaseStudyPage() {
     <main className="case-study">
       <article className="case-study__inner">
         <header className="case-study__hero">
-          {backLink('← Back to all work', backSection)}
+          {backLink('← Back to all work', backScrollTo)}
           <h1 className="case-study__title">{cs.title}</h1>
           <p className="case-study__lead">{cs.description}</p>
         </header>
@@ -260,7 +269,7 @@ export default function CaseStudyPage() {
           </nav>
         )}
 
-        {backLink('← Back to all work', backSection, 'case-study__back--center')}
+        {backLink('← Back to all work', backScrollTo, 'case-study__back--center')}
       </article>
 
       {lightboxIndex !== null && (
