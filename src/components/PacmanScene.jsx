@@ -5,7 +5,7 @@
 // Three primary layers, each a top-level <g>, ready for scroll-linked animation:
 //   1. .pacman__layer--text   caption + leader line + PRODUCT / USER labels
 //                             (fades out on scroll)
-//   2. .pacman__layer--red    red ghost (exits left on scroll)
+//   2. .pacman__layer--red    red ghost (exits left on scroll); rare pupil glance
 //   3. .pacman__layer--orange orange ghost, chasing; its pupils scan left/right
 //
 // This step lays everything out in the static starting position only. The
