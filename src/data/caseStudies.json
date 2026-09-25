@@ -16,22 +16,22 @@
     ],
     "hero": {
       "src": "/assets/case-studies/agentic-ai-chat/observe-agent-home.webp",
-      "width": 1000,
-      "height": 614,
+      "width": 1744,
+      "height": 1124,
       "maxWidth": 800,
       "alt": "Observe Agent chat home screen, embedded in the observability product",
-      "caption": "The empty state had three getting-started prompts, not a blank box waiting for input."
+      "caption": "The empty state had three getting-started prompts, not just a blank box waiting for input."
     },
     "sections": [
       {
         "blocks": [
           {
             "type": "text",
-            "value": "Observe Agent is a conversational AI surface built into LinkedIn's observability tools: alerts, metrics, logs, and deployment history. I led end-to-end UX for the experience alongside the product engineers building it: the interaction model, the plugin and inline-artifact components other designers now build on, and the visual identity that signals a trustworthy, purpose-built tool rather than a generic bot."
+            "value": "Observe Agent is an AI agent designed for LinkedIn's observability tools (alerts, metrics, logs, and deployment history), not a general-purpose chatbot dropped on top of them. I led end-to-end UX for the experience alongside the product engineers building it: the interaction model, the contextual input, plugin, and inline-artifact components, and the visual identity that signals a trustworthy, purpose-built tool."
           },
           {
             "type": "text",
-            "value": "It ships to 10,000+ engineers and has cut the time it takes them to trace an incident (a service disruption, a spike in latency) back to its root cause."
+            "value": "It ships to 10,000+ engineers and has cut the time they spend tracing an incident (e.g., a service disruption or a latency spike) to its root cause."
           }
         ]
       },
@@ -40,20 +40,17 @@
         "blocks": [
           {
             "type": "text",
-            "value": "The people using this are Site Reliability Engineers and on-call engineers, almost always mid-incident: several tabs open across alerting, metrics, logs, and deployment history, under real time pressure. Before designing anything, I wrote down what that person actually needed from the agent, to align the team on the job to be done, not on what would be a fun AI feature to add."
+            "value": "The users are Site Reliability Engineers and on-call engineers, almost always mid-incident: several tabs open across alerting, metrics, logs, and deployment history, under real time pressure. Before designing anything, I wrote down a few things they actually needed from the agent, to align the team on the job to be done, not on what would be a fun AI feature to add."
           },
           {
             "type": "image",
             "src": "/assets/case-studies/agentic-ai-chat/user-needs.webp",
             "width": 1164,
             "height": 860,
+            "lightboxMaxWidth": 760,
             "maxWidth": 582,
             "alt": "User-needs statements from a Site Reliability Engineer persona, framed as \"I want to…\" jobs",
-            "caption": "The persona stated as jobs to do, not a bio: diagnose, drill into evidence, revisit later."
-          },
-          {
-            "type": "text",
-            "value": "That's the common thread: high-pressure, multi-tab work, split across tooling that doesn't talk to each other. Every decision after this had to earn its place against that reality."
+            "caption": "The persona is stated as jobs to do, not just a bio: diagnose, drill into evidence, revisit later."
           }
         ]
       },
@@ -67,11 +64,11 @@
           {
             "type": "image",
             "src": "/assets/case-studies/agentic-ai-chat/agent-in-context.webp",
-            "width": 1000,
-            "height": 614,
+            "width": 1948,
+            "height": 1168,
             "maxWidth": 800,
-            "alt": "The agent conversation shown alongside a logs explorer view, having just applied filters to that view on the engineer's behalf",
-            "caption": "It didn't just answer: it applied the filters itself in the Logs Explorer."
+            "alt": "The agent conversation shown alongside the Logs Explorer, having just applied filters to that view on the engineer's behalf",
+            "caption": "The agent didn't just answer questions: it also took actions, like applying filters in the Logs Explorer."
           }
         ]
       },
@@ -80,16 +77,35 @@
         "blocks": [
           {
             "type": "text",
-            "value": "Where the agent lived on screen was its own decision, not a default. I audited how side panels already behaved elsewhere in the product, full takeovers, modals, docked panels, and built a storyboard to argue the case: a **persistent side panel** that keeps the underlying page in view, narrow when it's supplying supplementary information, wider once the interaction turns into something closer to create-and-edit. A modal or a full-screen takeover would have solved for the chat and lost the page it's supposed to be chatting about."
+            "value": "Where the agent lived on screen was its own decision, not a default. I audited how panels already behaved elsewhere in the product (full-screen views, modals, docked panels) and built a storyboard to argue the case: a **persistent side panel** that keeps the underlying page in view, narrow for supporting information, wider once the interaction turns into something closer to create-and-edit, and resizable so users can drag it to whatever balance of panel and page suits their view. The panel isn't the only surface: the agent also has a full-page view, and a conversation started in either one can be picked up and continued in the other."
           },
           {
             "type": "image",
             "src": "/assets/case-studies/agentic-ai-chat/side-panel-principles.webp",
             "width": 1344,
             "height": 1058,
+            "lightboxMaxWidth": 840,
             "maxWidth": 672,
             "alt": "Storyboard of side-panel placement options, showing how the chat panel shares screen space with the existing application",
-            "caption": "The audit that argued for a side panel over a takeover, narrow or wide depending on the task."
+            "caption": "The audit that argued for a resizable side panel instead of a full-screen chat."
+          }
+        ]
+      },
+      {
+        "heading": "An Agent, Not a Chatbot: The Layers Above the Model",
+        "blocks": [
+          {
+            "type": "text",
+            "value": "The model underneath was never the design problem: any team can call a foundation LLM. What makes an agent useful to an SRE mid-incident is everything built on top of it. I think of Observe Agent as layers: context goes in (the alert, chart, or job an engineer pulls into the conversation), plugins reach into logs, metrics, alerts, and deployment history, and output comes back. Any assistant has that shape; what fills each layer is what makes this one an observability agent. The output layer is also where it stops being a chatbot: sources, inline charts, and links answer the question, but **actions**, like setting the filters in the Logs Explorer, change the product itself. The conversation spans both layers, as the history the agent reads from and the place its answers land."
+          },
+          {
+            "type": "image",
+            "src": "/assets/case-studies/agentic-ai-chat/agentic-ai-chat-agent-layers.webp",
+            "width": 1744,
+            "height": 900,
+            "lightboxMaxWidth": 1100,
+            "alt": "Layer diagram of Observe Agent: foundation LLMs at the base, a context layer, plugins bridging into an output layer of sources, inline artifacts, links and CTAs, and actions, with conversations spanning context and output",
+            "caption": "The model is the commodity: the domain-specific agent design lives in the layers above it."
           }
         ]
       },
@@ -98,7 +114,7 @@
         "blocks": [
           {
             "type": "text",
-            "value": "Underneath the chat itself, I spec'd three components everything else builds on: **plugins** for the agent's tools and skills, **contextual input** for pulling a page element, a chart, a job, an alert, into the conversation as a removable tag, and **inline artifacts** so a chart renders directly in the chat instead of linking out to it. That last one was the real tradeoff: it would have been simpler to answer in text and link to the real dashboard, but that hands the engineer another tab to lose their place in. Rendering the answer where the question was asked cost more design and engineering effort up front, and was worth it."
+            "value": "Inside those layers, I spec'd the three components everything else builds on: **plugins** for the agent's tools and skills, **contextual input** for pulling a page element (a chart, a job, an alert) into the conversation as a removable tag, and **inline artifacts** so a chart renders directly in the chat instead of linking out to it. That last one was the real tradeoff: answering in text with a link to the dashboard would have been simpler, but it sends the engineer off to another tab. Rendering the answer in place cost more effort up front, and was worth it."
           },
           {
             "type": "image",
@@ -106,26 +122,35 @@
             "width": 1744,
             "height": 902,
             "alt": "Interaction specs for chat input, plugins menu, contextual tags, and inline chart artifacts",
-            "caption": "Plugins, tags, and inline charts, spec'd once so the whole team builds the same grammar.",
+            "caption": "Plugins, tags, and inline charts, spec'd once so the whole team builds using the same grammar.",
             "unframed": true
+          },
+          {
+            "type": "image",
+            "src": "/assets/case-studies/agentic-ai-chat/agent-fullscreen.webp",
+            "width": 1708,
+            "height": 1168,
+            "maxWidth": 800,
+            "alt": "Observe Agent in its full-page view, answering with an inline metric chart and a recommendation that links to the Logs Explorer",
+            "caption": "The chart is the answer, rendered in place; the Logs Explorer link is for going deeper."
           }
         ]
       },
       {
-        "heading": "Branding",
+        "heading": "An Icon Built to Earn Trust",
         "blocks": [
           {
             "type": "text",
-            "value": "A generic bot icon would have undercut the one thing this needed to earn: trust from someone deciding whether to act on what the agent just told them mid-incident. I ran a comparison audit of the sparkle and bot iconography already in use elsewhere, then designed a mark that pairs a sparkle (AI) with the shape of a telescope (Observe), built out in variations for every channel it appears in, the product UI and Slack. That exploration reached further than the icon: an early concept named the Slack bot separately, O11y Copilot, before the team settled on one name, Observe Agent, everywhere it appears, so the identity stayed consistent in name as well as mark."
+            "value": "A generic bot icon would have undercut the one thing this needed to earn: trust from someone deciding whether to act on what the agent just told them mid-incident. I ran a comparison audit of sparkle and bot icons used in other apps, then designed a mark that pairs a sparkle (AI) with the shape of a telescope (Observe), with variations for each place it appears: the product UI and Slack."
           },
           {
             "type": "image",
             "src": "/assets/case-studies/agentic-ai-chat/icon-design.webp",
-            "width": 1332,
-            "height": 950,
+            "width": 1392,
+            "height": 964,
             "maxWidth": 666,
-            "alt": "Icon design work: a comparison audit of sparkle glyphs and the final telescope-plus-sparkle mark in its variations",
-            "caption": "An early concept split the name: O11y Copilot in Slack, before the team settled on one."
+            "alt": "Icon design work: a comparison audit of sparkle and Slack bot icons, the final telescope-plus-sparkle mark in two variations, and the mark in use in Slack and the web UI",
+            "caption": "An audit of AI icons led to a telescope-plus-sparkle mark, validated in Slack and the web UI."
           }
         ]
       },
@@ -134,11 +159,11 @@
         "blocks": [
           {
             "type": "text",
-            "value": "The classic UX toolkit didn't disappear designing this, it just changed shape. Personas became short need statements instead of a persona board, a storyboard audited screen real estate instead of a user flow, and the artifact the rest of the team actually built from wasn't a wireframe, it was the interaction spec for the plugin and inline-artifact primitives."
+            "value": "The classic UX toolkit didn't disappear on this project; it just changed shape. Personas became short need statements instead of a persona board, a storyboard audited screen real estate instead of a user flow, and the artifact the rest of the team actually built from wasn't a wireframe: it was the interaction spec for the three primitives."
           },
           {
             "type": "text",
-            "value": "What I'd revisit: the panel model assumes one conversation, one side panel, at a time. It hasn't been tested against an engineer running two or three investigations in parallel, which is closer to how a bad incident actually goes. I'd want real usage data before deciding whether the component set needs a second surface, not just a wider one."
+            "value": "What I'd revisit: the panel model assumes one conversation, one side panel, at a time. It hasn't been tested against an engineer running two or three investigations in parallel, which is closer to how a bad incident actually goes. I'd want real usage data before deciding whether it needs a way to run investigations side by side, not just a wider panel."
           }
         ]
       }

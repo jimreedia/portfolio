@@ -66,7 +66,7 @@ export default function CaseStudyPage() {
     blocks: toBlocks(section).map((block) => {
       if (block.type !== 'image') return block
       const lightboxIdx = lightboxImages.length
-      lightboxImages.push({ src: block.src, alt: block.alt, caption: block.caption, unframed: block.unframed })
+      lightboxImages.push({ src: block.src, alt: block.alt, caption: block.caption, unframed: block.unframed, lightboxMaxWidth: block.lightboxMaxWidth })
       return { ...block, lightboxIdx }
     }),
   }))
@@ -95,6 +95,8 @@ export default function CaseStudyPage() {
   // site's 800px column while that's being evaluated case by case; `unframed`
   // (opt out) drops the standard border/radius for alpha-transparent
   // composites, where a frame would draw a rectangle around empty canvas.
+  // `lightboxMaxWidth` (opt in, a number) does the same for the Lightbox, for
+  // sparse diagrams that feel oversized at full viewer size.
   const mediaModifiers = (block) =>
     block?.unframed ? ' case-study__media--unframed' : ''
 

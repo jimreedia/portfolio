@@ -326,6 +326,27 @@ actual (slightly different) final dimensions. Captions added in the earlier cont
 pass already carried the banners' story-weight content, so they didn't need to change.
 Verified with `npm run build` and screenshots after each swap.
 
+**Second pass (2026-09-24), branch `fix/refine-case-study-agentic-ai-chat-pass-2`.** Jim
+re-exported `observe-agent-home` (1744×1168), `agent-in-context` (1948×1168), and
+`icon-design` (1392×964) at 2x. The icon image now shows one name everywhere, so the
+O11y Copilot naming beat was cut from Branding (Jim: not compelling for this story). New
+decision section **An Agent, Not a Chatbot: Designing the Layers Above the Model**, placed
+before Three Primitives, with the agent-layers diagram (`agentic-ai-chat-agent-layers.webp`,
+1744×900, full column width, default frame, slide title kept as Jim exported it). Brief:
+`case studies/LinkedIn Agent/agent-layers-case-study-handoff.md`. Supporting edits: the intro
+now calls it an agent designed for the domain, not a general-purpose chatbot, and Three Primitives opens
+"Inside those layers." Every caption was checked with the one-line render check, inline and in the
+Lightbox. On mobile (390px), the diagram's small box text is too small to read, but its labels are
+readable. Later the same day: added `agent-fullscreen.webp` (1708×1168) to Three Primitives
+as the shipped inline artifact, and a sentence in the side panel section on the full-page
+view (the same container as the hero; a conversation continues across either surface). Added
+a per-image `lightboxMaxWidth` field (user-needs 760, side-panel-principles 840, agent-layers
+1100). Full review pass: Branding renamed to **An Icon Built to Earn Trust** (principle 4: no
+bare labels), and the Reflection's "second surface" line reworded, since a full-page surface
+now exists. Open image flags: homepage carousel `agentic-ai-chat-2` shows lorem ipsum plugin
+descriptions, and the chat date in `agent-in-context` and `agentic-ai-chat-3` (April 3)
+doesn't match the log dates (April 6).
+
 ### Genomic Data Platform — done (2026-09-14)
 
 Source review done first, per principle 10: myportfolio original checked (its text is a
