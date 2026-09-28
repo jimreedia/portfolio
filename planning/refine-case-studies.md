@@ -428,6 +428,39 @@ original #12 PR and never wired in). Verified with `npm run build` (clean) and
 Playwright screenshots (desktop, mobile, and the Lightbox, including both `unframed`
 images) since `chromium-cli` wasn't available in this environment.
 
+**Second pass (2026-09-25 to 09-28), branch `fix/refine-case-study-genomic-data-platform-pass-2`.**
+Persona section retitled **The Research Scientist as the Key Persona**, rebuilt on the
+original page's "evidence-based personas" language and the persona's goal (biomarkers for
+pharmaceutical or clinical cures); the "one persona" framing and the pain-point quote (already
+on the image) came out. "Cohorts nest like folders" was wrong (Jim): the section is now
+**Cohorts to Refine, Compare, and Save**, and the interviews paragraph is active voice and
+matches the original's "digital workflows." Cut the Figma prototype canvas (`prototype.webp`
+deleted): it showed effort, not decisions. The customer-call section became **Comparing
+Multiple Cohorts at Once**: the takeaway from LaFramboise is comparing several cohorts, not
+gene expression; the Comparisons view leads, Marker Frequency is one of six analyses, and the
+Genes heat map moved last as the drill-down. Testing section (renamed **What User Testing
+Changed**, since it now has three findings) dropped the "a bar chart couldn't hold six variant
+types" claim and added the shipped **Molecular Breakdown** grouped bar chart
+(`molecular-breakdown.webp`, new, source Figma `Illumina-Cohorts` node 3151:2082), tested as
+the drill-down after spotting a gene in the radar charts. Cross-product paragraph no longer
+says the science is "nothing alike": all three visualize gene or protein expression, and the
+proteomics volcano plot could have served Cohorts but never made the roadmap. **Reflection
+rewritten** around data availability: scientists compare affected against unaffected, matched
+healthy cohorts were the hard part, so offering disease and healthy data sets mattered
+(Shriners, one of the heaviest users, compared their own scoliosis sets against healthy
+sets in the platform), and Jim's data marketplace proposal that never made the backlog. The
+old Reflection (four-cohort limit, 1000 Genomes representativeness) was cut: comparisons were
+mostly two cohorts, case/control. Images re-exported at 1744px by Jim: `survival-comparison`,
+`gene-heatmap`, `marker-frequency-comparison`, `radar-charts`, `proteomics`, `spatial`, plus
+the new `molecular-breakdown`. **Width rule:** dense UI screenshots go full width, and sparse
+diagrams, slides, and icon sheets stay narrower. So `maxWidth: 800` was removed from all 7
+here, and from Agentic AI Chat's `observe-agent-home`, `agent-in-context`, and
+`agent-fullscreen` (done on this branch). Deferred to a future PR: re-exporting `personas`,
+`card-sort`, `user-interviews`, `storyboards`, `customer-feedback`, and `user-study` (see
+backlog). Jim confirmed "Shriners" (not "Shriners Children's") and the Reflection's "If I
+revisited it" sentence. On mobile (390px), the cross-product and Reflection paragraphs end on
+one-word lines ("roadmap.", "platform."), left as is.
+
 ### AI Recommendations — done (2026-09-14)
 
 Source review done first, per principle 10: myportfolio original checked (a close
