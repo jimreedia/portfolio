@@ -268,71 +268,82 @@
     ],
     "hero": {
       "src": "/assets/case-studies/ai-recommendations/recommendations-panel.webp",
-      "width": 1000,
-      "height": 638,
-      "alt": "The CLAIRE recommendations panel in the mapping canvas, each suggestion explained and one already applied to the mapping",
-      "caption": "Each recommendation explains why it's shown, and applies without leaving the mapping."
+      "width": 1280,
+      "height": 874,
+      "alt": "The mapping designer with the recommendations panel alongside the canvas: each suggestion explained with a Show Me link, two marked applied, and a lightbulb on a link in the canvas",
+      "caption": "Each recommendation explains itself, and developers apply it without leaving the mapping."
     },
     "sections": [
       {
         "blocks": [
-          { "type": "text", "value": "As **Principal User Experience Designer** at Informatica, I designed CLAIRE Recommendations: an AI feature that predicts and suggests the next data transformation a developer needs, trained on anonymized mapping patterns across customer tenants. I partnered with machine learning engineers and UX researchers to shape the interaction model across both the desktop client and the newer cloud product." },
-          { "type": "text", "value": "The recommendations only work if developers trust them and don't have to leave their flow to use them. That meant designing them to appear inline in the canvas instead of a separate list, and building a way to prove the model was actually getting better instead of just declaring it was." }
+          { "type": "text", "value": "As **Principal User Experience Designer** at Informatica, I designed an AI feature that predicts and suggests the next data transformation a developer needs, trained on anonymized mapping patterns across customer tenants. I partnered with machine learning engineers and UX researchers to shape the interaction model across both the desktop client and the newer cloud product." },
+          { "type": "text", "value": "The recommendations only work if developers trust them and don't have to leave their flow to use them. That meant designing them to appear inline in the canvas first, with a side panel alongside for the explanation and history the canvas had no room for, and building a way to prove the model was actually getting better instead of just declaring it was." }
         ]
       },
       {
         "heading": "How the Model Learns What to Recommend",
         "blocks": [
-          { "type": "text", "value": "A mapping is a data transformation workflow that moves data from a source to a target through a sequence of user-specified transformations. The model analyzes matching sequences across anonymized mappings from multiple customer tenants and, based on prior usage patterns, predicts the **“next set”** of transforms a developer is likely to add." },
-          { "type": "image", "src": "/assets/case-studies/ai-recommendations/mapping-designers.webp", "width": 1744, "height": 546, "unframed": true, "alt": "The mapping designer shown in both the desktop client and the cloud product", "caption": "The same model runs in both surfaces developers use: desktop and the newer cloud product." }
-        ]
-      },
-      {
-        "heading": "Inline, Not a Separate Panel",
-        "blocks": [
-          { "type": "text", "value": "I advocated for surfacing recommendations directly in the canvas instead of a separate list to cross-reference, the way predictive text suggests the next word without asking you to open a menu. An early concept tested this literally: a recommended step rendered as a dashed placeholder right where it would go, accepted or dismissed on the spot instead of checked against a sidebar." },
-          { "type": "image", "src": "/assets/case-studies/ai-recommendations/inline-concept.webp", "width": 1744, "height": 1024, "unframed": true, "alt": "A higher-fidelity concept rendering showing a recommended transform as a dashed placeholder directly in the mapping canvas", "caption": "A recommendation as a dashed placeholder in the canvas: accept or dismiss it in place." },
-          { "type": "image", "src": "/assets/case-studies/ai-recommendations/predictive-text-analogy.webp", "width": 900, "height": 506, "maxWidth": 480, "alt": "A messaging app suggesting the next words inline, used as an analogy for inline transformation recommendations", "caption": "The comparison that made the case: work like predictive text, not a list." },
-          { "type": "image", "src": "/assets/case-studies/ai-recommendations/prediction-icon.webp", "width": 505, "height": 505, "maxWidth": 252, "unframed": true, "alt": "The transformation menu with AI-recommended options marked by a distinct lightbulb icon", "caption": "One lightbulb icon set recommended transformations apart from the defaults." }
-        ]
-      },
-      {
-        "heading": "From Napkin Sketch to Shipped Interaction",
-        "blocks": [
-          { "type": "text", "value": "The inline concept above is where the idea landed, not where it started. Early sketches worked through several ways a recommendation could attach to a step: a dashed placeholder, a dropdown of ranked options, or a badge you click into. A storyboard settled the remaining details: recommendations surface as a card with a **“Show Me”** action that jumps to the step in question, can be accepted or dismissed inline, and dismissed recommendations stay reachable under their own tab instead of disappearing for good." },
-          { "type": "image", "src": "/assets/case-studies/ai-recommendations/concept-sketches.webp", "width": 887, "height": 292, "maxWidth": 700, "alt": "Hand sketches exploring where and how recommendations could appear in the mapping canvas", "caption": "Early sketches tried several ways to attach a recommendation: placeholder, dropdown, badge." },
-          { "type": "image", "src": "/assets/case-studies/ai-recommendations/storyboard.webp", "width": 1025, "height": 469, "unframed": true, "alt": "An eight-frame storyboard walking through when recommendations surface, how they are explained, and how they are accepted, dismissed, or recovered", "caption": "The storyboard that settled it: a “Show Me” card, accept or dismiss in place, recoverable later." },
-          { "type": "image", "src": "/assets/case-studies/ai-recommendations/animated-prototype.webp", "width": 1280, "height": 800, "alt": "An animated prototype showing a recommendation appearing and being accepted in the mapping canvas", "caption": "An animated prototype carried the interaction to engineering before any of it was built." },
-          { "type": "image", "src": "/assets/case-studies/ai-recommendations/branded-exploration.webp", "width": 633, "height": 463, "alt": "Visual explorations applying Informatica's CLAIRE AI branding to the recommendations panel", "caption": "CLAIRE, Informatica's AI brand, applied to the shipped panel: the swirl mark and lightbulb icon." }
+          { "type": "text", "value": "A mapping is a data transformation workflow that moves data from a source to a target through a sequence of user-specified transformations. The model analyzes matching sequences across anonymized mappings from multiple customer tenants and, based on prior usage patterns, **predicts the “next set”** of transformations a developer is likely to add. Developers built mappings in two designers, the desktop client and the newer cloud product, so the recommendations had to fit one mental model across both." },
+          { "type": "image", "src": "/assets/case-studies/ai-recommendations/mapping-designers.webp", "width": 1744, "height": 546, "unframed": true, "alt": "The mapping designer shown in both the desktop client and the cloud product", "caption": "Desktop and cloud mapping designers: different products, one mental model for developers." }
         ]
       },
       {
         "heading": "Two Personas, One Canvas",
         "blocks": [
           { "type": "text", "value": "My user research pointed to the **Data Integration Developer** as the primary persona. Gartner's research introduced a second: the **Citizen Developer**, a non-technical subject-matter expert who needs to build integrations without writing code. Both had to work in the same mapping canvas, part of why the recommendations couldn't afford to ask either of them to learn something new." },
-          { "type": "image", "src": "/assets/case-studies/ai-recommendations/personas.webp", "width": 594, "height": 420, "alt": "The two target personas: the Data Integration Developer and the non-technical Citizen Developer", "caption": "Two personas, one canvas: the Data Integration Developer and the non-technical Citizen Developer." }
+          { "type": "image", "src": "/assets/case-studies/ai-recommendations/personas.webp", "width": 1188, "height": 854, "maxWidth": 594, "alt": "The two target personas, the Data Integration Developer and the non-technical Citizen Developer, from Gartner research, beside an illustration of the mapping designer and its field mapping", "caption": "Two personas, one canvas: the Data Integration Developer and the non-technical Citizen Developer." }
         ]
       },
       {
-        "heading": "A Precision Method Cross-Functional Teams Agreed to Ship",
+        "heading": "Inline in the Canvas: Ghost Shape or Menu",
         "blocks": [
-          { "type": "text", "value": "A recommendation is only worth showing if it's actually right, so I designed a simple method to measure that: track what the model predicted against what the developer actually picked, a true positive if they match, a false positive if they don't. The harder part was convincing the cross-functional teams who owned the model and the tracking pipeline to build the instrumentation for it, since it added engineering work with no visible feature to point to. Once it shipped, false positives fed back into the model so it adjusted toward what developers were actually choosing." },
-          { "type": "image", "src": "/assets/case-studies/ai-recommendations/precision-model.webp", "width": 923, "height": 422, "maxWidth": 640, "alt": "A diagram contrasting a true-positive and a false-positive prediction, feeding user selections back to improve the model", "caption": "True positive: prediction matches choice. False positive: it doesn't, and retrains the model." },
-          { "type": "text", "value": "During research, one customer put the payoff plainly: “Since the last upgrade they added this function that's pretty cool.” (Keri-Ann Bowen, ETL Developer, University of Maryland)" }
+          { "type": "text", "value": "I advocated for surfacing recommendations in the canvas first, right where the developer is already working. The comparison I used was predictive text: the suggestion shows up where you're typing, not somewhere else on the screen." },
+          { "type": "image", "src": "/assets/case-studies/ai-recommendations/predictive-text-analogy.webp", "width": 898, "height": 506, "maxWidth": 480, "lightboxMaxWidth": 600, "alt": "A messaging app suggesting the next words inline, used as an analogy for recommendations that appear where the developer is working", "caption": "Like predictive text, the suggestion appears right where you're already working." },
+          { "type": "text", "value": "Inline still left the interaction model open, so I explored several. The most literal was a “ghost shape”: the recommended step drawn with a dashed outline right where it would go, accepted or dismissed in place. The one we chose was a menu: a lightbulb appears in the canvas automatically, prompting the developer to open a list of transformations with the recommended ones at the top. The menu won because it offered more. Developers still had every standard transformation below the recommendations, not just the ones the model surfaced." },
+          { "type": "image", "src": "/assets/case-studies/ai-recommendations/inline-concept.webp", "width": 1744, "height": 1024, "unframed": true, "alt": "Concept renderings of recommendation interaction models in the mapping canvas: dashed ghost shapes with accept and dismiss buttons, a stacked set of options, and a transformation menu with recommended items at the top", "caption": "Higher-fidelity explorations: ghost shapes, stacked options, and the menu we chose." },
+          { "type": "image", "src": "/assets/case-studies/ai-recommendations/prediction-icon.webp", "width": 505, "height": 505, "maxWidth": 252, "unframed": true, "alt": "The transformation menu with AI-recommended options marked by a distinct lightbulb icon", "caption": "The menu: recommended transformations at the top, every standard one still below." },
+          { "type": "text", "value": "I specified every state engineering needed: with and without a recommendation, on a link or a standalone shape, default and hover, and spacing when several links leave one shape." },
+          { "type": "image", "src": "/assets/case-studies/ai-recommendations/interaction-behaviors.webp", "width": 771, "height": 721, "maxWidth": 680, "alt": "An annotated interaction spec comparing link and shape states with and without a recommendation: no button by default, a menu button on hover, an orange lightbulb when a recommendation exists that turns into the menu button on hover, and spacing for multiple links from a router", "caption": "The spec for every state: when the lightbulb shows, when it becomes a menu, and where." },
+          { "type": "text", "value": "Inline shipped first, on my recommendation. A side panel followed, and it earned its place by doing what the canvas had no room for: explaining why each recommendation was shown, which is what made it credible; a **“Show Me”** action that took the developer straight to the configuration being recommended; and a running record of what had already been applied." }
+        ]
+      },
+      {
+        "heading": "From Napkin Sketch to Shipped Interaction",
+        "blocks": [
+          { "type": "text", "value": "The same exploration started on paper, at lower fidelity: the ghost shape, the menu, and a few variations on each. A storyboard worked out how the side panel and the in-canvas cues fit together: new recommendations appear automatically in the panel as cards, each with a “Show Me” action that jumps to the recommendation in context; lightbulbs mark recommended values in place, with the explanation in a tooltip; and dismissed recommendations stay reachable under their own tab instead of disappearing for good." },
+          { "type": "image", "src": "/assets/case-studies/ai-recommendations/concept-sketches.webp", "width": 926, "height": 378, "maxWidth": 780, "unframed": true, "alt": "Hand sketches of recommendation interactions in the mapping canvas: a dashed ghost shape between source and target, a menu of recommended Lookups opened from a button on a link, a stacked set of options, and several button styles", "caption": "The same exploration in sketch form: ghost shapes, a menu, and stacked options." },
+          { "type": "image", "src": "/assets/case-studies/ai-recommendations/storyboard.webp", "width": 1744, "height": 798, "unframed": true, "alt": "An eight-frame storyboard walking through when recommendations surface, how they are explained, and how they are accepted, dismissed, or recovered", "caption": "The storyboard worked out how the side panel and the in-canvas cues fit together." },
+          { "type": "image", "src": "/assets/case-studies/ai-recommendations/animated-prototype.webp", "width": 1280, "height": 800, "alt": "An animated prototype showing a recommendation appearing and being accepted in the mapping canvas", "caption": "An animated prototype carried the interaction to engineering before any of it was built." },
+          { "type": "image", "src": "/assets/case-studies/ai-recommendations/branded-exploration.webp", "width": 1744, "height": 747, "alt": "Visual explorations applying Informatica's CLAIRE AI branding to the recommendations panel", "caption": "CLAIRE, Informatica's AI brand, applied to the shipped panel: the swirl mark and lightbulb icon." }
+        ]
+      },
+      {
+        "heading": "Teaching the Feature Where It Lives",
+        "blocks": [
+          { "type": "text", "value": "Introducing the feature followed the same rule as the feature itself: put it where developers already work. Instead of pointing developers to release notes, I designed an in-app “What's New” message that appeared inside the mapping designer: a short looping animation of a transformation being added right on the canvas, with the recommended ones at the top of the menu. In the first week after release, 1,145 developers saw it, and 85% of views ended in a click on one of its buttons." },
+          { "type": "image", "src": "/assets/case-studies/ai-recommendations/whats-new-message.webp", "width": 598, "height": 601, "maxWidth": 598, "alt": "An in-app What's New message titled Add transformations directly on the mapping canvas, animating a hover on a link that opens the transformation menu with recommended options at the top, then adds a recommended Lookup between source and target", "caption": "An in-app “What's New” loop showed the feature in the canvas, where developers would use it." },
+          { "type": "text", "value": "In customer interviews after release, one developer put it plainly: “Since the last upgrade they added this function that's pretty cool.” (Keri-Ann Bowen, ETL Developer, University of Maryland)" }
+        ]
+      },
+      {
+        "heading": "Influencing the Team to Prioritize a Precision Method",
+        "blocks": [
+          { "type": "text", "value": "A recommendation is only worth showing if it's actually right, so I designed a simple method to measure that: track what the model predicted against what the developer actually picked, a true positive if they match, a false positive if they don't. The machine learning engineers saw the value right away. My part was proactively influencing the team to make building the instrumentation a high priority. Once it shipped, false positives fed back into the model so it adjusted toward what developers were actually choosing." },
+          { "type": "image", "src": "/assets/case-studies/ai-recommendations/precision-model.webp", "width": 1280, "height": 656, "maxWidth": 640, "lightboxMaxWidth": 800, "alt": "A diagram contrasting a true-positive and a false-positive prediction, feeding user selections back to improve the model", "caption": "The precision method I designed: a match is a true positive, a miss retrains the model." }
         ]
       },
       {
         "heading": "Convincing Leadership to Modernize the Whole Product",
         "blocks": [
           { "type": "text", "value": "The recommendations panel highlighted how dated the rest of the product's visual design had gotten by comparison. I worked with UX partners to redesign the look and feel, then made the case to executive leadership that modernizing the UI was worth the investment on its own, not just as a backdrop for the AI feature." },
-          { "type": "image", "src": "/assets/case-studies/ai-recommendations/visual-redesign.webp", "width": 1000, "height": 673, "alt": "The modernized visual design language applied to the mapping designer", "caption": "The modernized visual language I argued for: worth shipping on its own, not just a backdrop." }
+          { "type": "image", "src": "/assets/case-studies/ai-recommendations/visual-redesign.webp", "width": 1744, "height": 1175, "alt": "The modernized visual design language applied to the mapping designer", "caption": "The modernized visual language I argued for: worth shipping on its own, not just a backdrop." }
         ]
       },
       {
         "heading": "Reflection",
         "blocks": [
-          { "type": "text", "value": "The classic toolkit didn't disappear on this project, it just carried different weight. The sketches and storyboard weren't there to document a process, they settled a real interaction question (where does a prediction live, and what happens when it's wrong) before any model output existed to design around. The artifact that mattered most wasn't a wireframe, it was the true-positive/false-positive diagram: it doubled as a spec and as the argument that got other teams to build the tracking." },
-          { "type": "text", "value": "What I'd revisit: the false-positive loop closes on individual choices, one developer, one mapping, but it doesn't distinguish a developer following a genuinely better approach from one working around something the recommendation got wrong. I'd want a way to separate those before trusting the retrained model as much as the first one." }
+          { "type": "text", "value": "The classic toolkit didn't disappear on this project, it just carried different weight. The sketches and storyboard weren't there to document a process, they settled a real interaction question (where does a prediction live, and what happens when it's wrong) before any model output existed to design around. The artifact that reached furthest beyond the design team was the true-positive/false-positive diagram: it doubled as a spec and as the case for building the tracking early." },
+          { "type": "text", "value": "What I'd revisit: the model treated every mismatch as its own mistake. But a developer can pass over a good recommendation for reasons that have nothing to do with it, like habit or a team convention, and the model still learns from that choice. I'd want a way to tell a wrong recommendation apart from a right one that simply wasn't picked, so the model retrains toward best practices, not just habits." }
         ]
       }
     ]

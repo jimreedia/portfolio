@@ -516,6 +516,63 @@ study image assets" backlog item into Done too.
 Verified with `npm run build` (clean) and Playwright screenshots (desktop, mobile, and
 the Lightbox, including the animated prototype frame).
 
+**Second pass (2026-09-28 to 09-29), branch `fix/refine-case-study-ai-recommendations-pass-2`.**
+Corrections from Jim that change the story:
+- **Ghost shape vs. menu.** The dashed placeholder is Jim's "ghost shape" concept. It was
+  explored, not shipped. The shipped interaction is a menu: an orange lightbulb appears on a
+  link or shape automatically, and opens a list with recommended transformations at the top and
+  every standard one below (the reason the menu won). `inline-concept` and `concept-sketches`
+  both show the full exploration (ghost shapes, stacked options, the menu), not just the ghost
+  shape. Section renamed **Inline in the Canvas: Ghost Shape or Menu**.
+- **Both inline and side panel shipped.** Inline shipped first, on Jim's recommendation. The
+  side panel followed for what the canvas had no room for: explanation (credibility), the
+  "Show Me" CTA, and a record of what was applied. The storyboard is mostly the panel story.
+- **Desktop and cloud were different products** with one user mental model, not the same model.
+- **The ML engineers saw the value of precision tracking right away.** Jim's part was
+  influencing the team to prioritize it, not a hard sell. Heading now **Influencing the Team to
+  Prioritize a Precision Method**. "Convince" kept in the description, blurb, and the
+  leadership heading (Jim's call).
+- **Shipped lightbulb color is orange.** Teal remains in several concept images; captions
+  don't name a color, so left as is.
+- **The animated prototype was the engineers' build reference**, so its caption stands.
+
+Added: **Teaching the Feature Where It Lives**, the WalkMe "What's New" message Jim designed
+(source `case studies/AI Recommendations/WalkMe/`: `inline tx 2.mp4`, `WalkMe-stats.jpeg`,
+`WalkMe-screenshot.png`). The video copy is final. Stats: 1,145 users, 1,446 views, 85.3% of views
+ended in a button click, Aug 5 to Sep 3 2019, with nearly all views in the Aug 26 week, hence
+"first week after release". The 85% likely counts both "Got it!" and "Close", so the copy says
+"a click on one of its buttons," not adoption. `whats-new-message.webp` is a 598×601
+animated crop of the dialog (7 frames, one 9.6s pass, 1x; no higher-res source exists yet,
+replace if one turns up). Also added the **interaction-behaviors spec** (source `job
+search/presentations/data-integration-recommended-transformations/Interaction behaviors.png`,
+the fuchsia-annotation version, chosen over the desaturated "alt" for legibility at 1x;
+771×721 is the largest that exists). The **affordances** slide was skipped (duplicates
+`concept-sketches` and `inline-concept`). The **icon** matrix was held back: optional, as a
+replacement for `branded-exploration`, only with a sentence on why orange won.
+
+Moved: **Two Personas** now precedes the inline section (its "couldn't ask either of them to
+learn something new" line argues for inline). The Keri-Ann Bowen quote moved from the precision
+section to the end of the WalkMe section, with the lead-in now "In customer interviews after
+release" (the `customer interviews/` recordings are Sep 2019 to Jan 2020, post-release, and
+show the shipped menu).
+
+Copy: hero caption made active; "transforms" → "transformations"; a desktop/cloud sentence
+added so the mapping-designers image is explained; the spec sentence sits directly above its
+image; the Reflection's diagram line no longer implies wireframes matter less, and "what I'd
+revisit" was rewritten in plain terms (Jim confirmed it). Non-breaking spaces keep
+"predicts the “next set”" and "not just habits." from breaking badly. Alt text corrected on
+the hero (panel is beside the canvas, two applied), `concept-sketches`, and `personas`.
+
+Images: Jim re-exported `recommendations-panel` (1280, the largest available), `concept-sketches`
+(926, stacked-paper, now `unframed`, `maxWidth` 780), `predictive-text-analogy` (898 at
+`maxWidth` 480, `lightboxMaxWidth` 600), `personas` (1188, `maxWidth` 594), `precision-model`
+(1280 at `maxWidth` 640, `lightboxMaxWidth` 800; near-opaque edge flattened onto white),
+`storyboard`, `branded-exploration`, `visual-redesign` (all 1744). `branded-exploration` had
+been recorded as 633×463 while the file was 990×424, now fixed. Below 2x, limited by the source: `animated-prototype` (1280),
+`whats-new-message` (598), `interaction-behaviors` (771, `maxWidth` 680). All 14 recorded sizes
+match their files, and every `unframed` flag matches a real transparent edge. Verified with
+`npm run build` and the Playwright one-line caption check (14/14, inline and Lightbox).
+
 ---
 
 ## More (listed)
