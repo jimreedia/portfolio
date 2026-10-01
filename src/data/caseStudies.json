@@ -351,91 +351,92 @@
   {
     "id": "operational-insights",
     "title": "Operational Insights",
-    "description": "Built for the Monday-morning glance, not an analysis session: big numbers first, deeper analysis one click down. It shipped, and the response from users was that it finally had the right kinds of metrics.",
+    "description": "A new monitoring product built for the Monday-morning check: big numbers at a glance, deeper analysis one click down. It shipped, and customers said it had \"the right kinds of metrics.\"",
     "blurb": "A data-monitoring dashboard built for the quick daily glance: big actionable numbers first, deep analysis one click away. Shipped, with customers calling out \"the right kinds of metrics.\"",
     "tags": ["Data Platforms", "Enterprise"],
     "url": "/case-study/operational-insights",
     "featured": false,
     "role": "Principal User Experience Designer, Informatica",
-    "team": "One UX designer (Jim Reed) and one UX researcher",
+    "team": "One UX researcher",
     "thumb": "/assets/case-studies/homepage-assets/operational-insights.webp",
     "hero": {
       "src": "/assets/case-studies/operational-insights/overview.webp",
-      "width": 1000,
-      "height": 908,
-      "maxWidth": 800,
-      "alt": "The Operational Insights dashboard: job status fast-facts above rows-processed and job-count charts and a data-volume heat map",
-      "caption": "Built around one idea: the Monday-morning check is a glance, not an analysis session."
+      "width": 1744,
+      "height": 1648,
+      "alt": "The Operational Insights overview dashboard: job-status fast facts above the two key metrics, top secure agents, and a data-volume heat map",
+      "caption": "The Monday-morning check: fast facts first, then key metrics, with detail views a click away."
     },
     "sections": [
       {
         "blocks": [
-          { "type": "text", "value": "Small teams, typically five or fewer developers and one manager, both build data-integration jobs and monitor the daily flow of data through them. I designed the monitoring experience around how those teams actually check in on their work: **the \"Monday-morning check\" is a glance, not an analysis session**, and treating it like one is what most dashboards get wrong." }
+          { "type": "text", "value": "As **Principal User Experience Designer** at Informatica, I designed a new product for monitoring data-integration operations. A UX researcher and I interviewed and observed users as they walked us through their workflows. One key finding: small teams, typically five or fewer developers and one manager, both build data-integration jobs and monitor the daily flow of data. I designed the overview dashboard to give those teams a quick look at their operations, what I called the\u00a0**\"Monday\u2011morning\u00a0check.\"**" }
         ]
       },
       {
         "heading": "Big Numbers, Not Pie Charts",
         "blocks": [
-          { "type": "text", "value": "Field observation was clear: the first look is about **large, actionable numbers**, like Rows Processed and Number of Jobs, not the pie and donut charts that fill most dashboards. I built the fast-facts row around that finding and pushed status breakdowns into a small stacked column riding along beside each number, rather than giving them a chart of their own." },
-          { "type": "image", "src": "/assets/case-studies/operational-insights/big-numbers-sketches.webp", "width": 1014, "height": 456, "alt": "Hand sketches labeled Fast Facts and Insights, next to a series of higher-fidelity comps showing the same running, scheduled, succeeded, and failed counts", "caption": "The concept on paper before it was pixels: fast facts and insights, worked out in sketches first." },
-          { "type": "text", "value": "Those sketches carried straight through several rounds of higher-fidelity comps into what shipped." },
-          { "type": "image", "src": "/assets/case-studies/operational-insights/key-metrics.webp", "width": 876, "height": 654, "alt": "Rows Processed and Number of Jobs shown as a large value beside a small bar chart, with a hover tooltip breaking a bar into succeeded, warning, and failed counts", "caption": "Two fast facts, status folded into a stacked column instead of its own chart.", "maxWidth": 480 }
+          { "type": "text", "value": "Observing users made one thing clear: the first look is about **large, actionable numbers**, or \"fast facts,\" not the pie and donut charts common to most dashboards. I built the fast-facts row around\u00a0that\u00a0finding." },
+          { "type": "image", "src": "/assets/case-studies/operational-insights/big-numbers-sketches.webp", "width": 1744, "height": 803, "alt": "Hand sketches labeled Fast Facts and Insights, next to three higher-fidelity mockups of the job-status fast facts, two with insight or alert cards beside them", "caption": "Turning what users told us into fast facts and insight cards, from sketches to mockups.", "lightboxMaxWidth": 1000 },
+          { "type": "text", "value": "The fast-facts concept carried through several rounds of higher-fidelity mockups into what shipped. The insight cards beside it, alerts for jobs that ran longer or processed fewer rows than usual, were well received by product management but didn't make it to the top of the\u00a0roadmap." },
+          { "type": "text", "value": "The interviews also surfaced two **key metrics**: Rows Processed and Number of Jobs. Each shows its total beside a miniature chart, and hovering over a column reveals the detail behind\u00a0it." },
+          { "type": "image", "src": "/assets/case-studies/operational-insights/key-metrics.webp", "width": 960, "height": 717, "alt": "Rows Processed and Number of Jobs shown as a large value beside a small bar chart, with a hover tooltip breaking a bar into succeeded, warning, and failed counts", "caption": "Two key metrics: Number of Jobs stacks its columns to break each count down by status.", "maxWidth": 480, "lightboxMaxWidth": 540 }
         ]
       },
       {
         "heading": "Every Fast Fact Is a Doorway",
         "blocks": [
-          { "type": "text", "value": "Every fast fact needed a next step. From a single number, a user drops into **detailed analysis views**, a filtered job list, scheduled tasks by runtime environment, without losing the thread back to where they started." },
-          { "type": "image", "src": "/assets/case-studies/operational-insights/big-numbers.webp", "width": 1010, "height": 496, "alt": "The job-status fast-facts row with arrows connecting the Failed and Scheduled tiles to a filtered job list and a scheduled-tasks chart", "caption": "From a number to the list behind it: Failed and Scheduled tiles open their own detail views." }
+          { "type": "text", "value": "Every fast fact needed a next step. From a single number, a user drops into **detail views**, such as a filtered list of failed jobs or scheduled tasks by runtime environment, without losing the thread back to where they started." },
+          { "type": "image", "src": "/assets/case-studies/operational-insights/big-numbers.webp", "width": 1744, "height": 856, "alt": "The job-status fast-facts row with arrows connecting the Failed and Scheduled tiles to a filtered job list and a scheduled-tasks chart", "caption": "From a number to the analysis behind it, such as the Failed and Scheduled detail views.", "lightboxMaxWidth": 1100 }
         ]
       },
       {
         "heading": "Time Series for the Second Glance",
         "blocks": [
-          { "type": "text", "value": "The second glance is analytical, not a glance at all. **Time-series charts**, a line for Rows Processed, stacked columns for Number of Jobs, correlate both against the projects and folders they belong to, over whatever date range the operator picks." },
-          { "type": "image", "src": "/assets/case-studies/operational-insights/analysis-views.webp", "width": 1000, "height": 810, "alt": "An analysis screen with a multi-series line chart of rows processed by project above a stacked-column chart of job counts by day", "caption": "Not every question fits a fast fact: the second glance correlates rows against jobs, by project." }
+          { "type": "text", "value": "The second glance goes deeper. **Time-series charts** of the two key metrics, lines for Rows Processed and stacked columns for Number of Jobs, correlate both against the projects and folders they belong to, over whatever date range the user picks." },
+          { "type": "image", "src": "/assets/case-studies/operational-insights/analysis-views.webp", "width": 1744, "height": 1418, "alt": "An analysis screen with a multi-series line chart of rows processed by project above a stacked-column chart of job counts over a week", "caption": "Not every question fits a single number: detail views chart the key metrics by project." }
         ]
       },
       {
         "heading": "Customers Were Already Building This by Hand",
         "blocks": [
-          { "type": "text", "value": "Field visits turned up teams **piecing together their own monitoring** out of spreadsheets, ad-hoc dashboards, and a Slack channel wired to post automated status updates. I treated every one of those workarounds as a feature request already validated by the customer who built it." },
-          { "type": "image", "src": "/assets/case-studies/operational-insights/customer-solutions.webp", "width": 994, "height": 587, "alt": "A collage of customer-built monitoring: ad-hoc dashboards, an email summary of processed-rows statistics, and an automated Slack channel of task-flow updates", "caption": "What customers built for themselves first: spreadsheets, dashboards, a Slack status channel." }
+          { "type": "text", "value": "Customer interviews revealed that teams were **piecing together their own monitoring** using emailed reports, ad-hoc dashboards, and a Slack channel where their tools posted job updates all day. Those workarounds generated ideas for visualization and reporting features, and one bigger idea." },
+          { "type": "image", "src": "/assets/case-studies/operational-insights/customer-solutions.webp", "width": 1040, "height": 598, "alt": "A collage of customer-built monitoring: ad-hoc dashboards, an email summary of processed-rows statistics, and an automated Slack channel of task-flow updates", "caption": "What customers built for themselves first: emailed reports, dashboards, a Slack status channel." }
         ]
       },
       {
-        "heading": "What I Tried Based on What I Heard From Customers",
+        "heading": "Bringing the Fast Facts Into Slack",
         "blocks": [
-          { "type": "text", "value": "Those workarounds were the pitch. Customers already had a Slack channel they checked all day, so instead of asking them to open another dashboard, I proposed bringing the same fast facts and anomaly alerts there. I took the idea to product management and designed a prototype: a bot, CLAIRE, that posted alerts straight into the channel and could restart a stuck agent or explain an anomaly on request, right where the team was already talking. It demoed well. It did not make the next roadmap." },
-          { "type": "image", "src": "/assets/case-studies/operational-insights/slack-app.gif", "width": 1024, "height": 640, "alt": "A Slack conversation in the Data Integration channel: teammates asking the CLAIRE bot about anomalies and to restart a stuck agent, with the bot posting a rows-processed chart in response", "caption": "CLAIRE, a Slack bot prototype for the same alerts and answers: demoed well, never shipped.", "unframed": true }
+          { "type": "text", "value": "Customers already had a Slack channel they checked all day, so instead of asking them to open another dashboard, I proposed bringing the same fast facts and anomaly alerts there. I took the idea to product management and designed a prototype: a bot that posted alerts straight into the channel and performed actions on request, such as restarting a stuck agent or explaining an anomaly, right where the team was already talking. It demoed well. It did not make the next\u00a0roadmap." },
+          { "type": "image", "src": "/assets/case-studies/operational-insights/slack-app.webp", "width": 1744, "height": 1090, "alt": "A Slack conversation in the Data Integration channel: teammates asking the CLAIRE bot about anomalies and to restart a stuck agent, with the bot posting a rows-processed chart in response", "caption": "CLAIRE, a Slack bot prototype that brings alerts and answers to where the team already talks." }
         ]
       },
       {
-        "heading": "Company Logos, Not at This Scale",
+        "heading": "Connector Names Over Company Logos",
         "blocks": [
-          { "type": "text", "value": "An early comp put customer logos, Salesforce, AWS, Oracle, Workday, on the Top Targets and Top Sources bar charts in place of plain text labels. Product marketing loved how it looked in the demo. I dropped it: Informatica has hundreds of connector types, many with no logo at all, and plenty of customers connect to systems that were never going to get an icon. A design that only works for the six connectors in a demo does not belong in the shipped product." },
-          { "type": "image", "src": "/assets/case-studies/operational-insights/connector-logos.webp", "width": 1000, "height": 909, "alt": "Top Targets and Top Sources bar charts with company logos, Salesforce, AWS, Oracle, Workday, Azure, standing in for connector names", "caption": "Striking in the demo, unworkable at scale: company logos standing in for connector names." }
+          { "type": "text", "value": "An early mockup put company logos, such as Salesforce, AWS, Oracle, and Workday, on the Top Targets and Top Sources bar charts in place of plain text labels. It was a popular idea with product marketers, but it wouldn't scale well because Informatica supports hundreds of connector types and custom connections never come with a logo. The shipped product labels each connector by name instead, a design that works for every connector, custom ones\u00a0included." },
+          { "type": "image", "src": "/assets/case-studies/operational-insights/connector-logos.webp", "width": 1280, "height": 1212, "alt": "An early dashboard mockup with company logos, such as Salesforce, AWS, Oracle, and Workday, in place of connector names on the Top Targets and Top Sources bar charts", "caption": "An early mockup where I tried company logos in place of connector names in the charts." }
         ]
       },
       {
         "heading": "Blue for Real, Green for Predicted",
         "blocks": [
-          { "type": "text", "value": "Predictive features needed a way to keep actual values from blurring together with the forecast. A plain **color code** did it: blue for what happened, green for what the model predicts. I added a \"How was this prediction made?\" link alongside it, so operators could interrogate the forecast instead of just trusting it." },
-          { "type": "image", "src": "/assets/case-studies/operational-insights/ai-predictions.webp", "width": 1000, "height": 800, "alt": "A rows-processed line chart in blue above a green shaded area chart labeled Projected Rows Processed, powered by CLAIRE", "caption": "Blue for what happened, green for the model's prediction, plus a way to ask how it was made." }
+          { "type": "text", "value": "I determined that predictive features needed visual cues to keep actual values from blurring together with the forecast. A semantic **color code** did it: blue for what happened, green for what the model predicts. I added a \"How was this prediction made?\" link beside it, so developers could question the forecast, not just trust it." },
+          { "type": "image", "src": "/assets/case-studies/operational-insights/ai-predictions.webp", "width": 1280, "height": 1028, "alt": "A rows-processed line chart in blue above a green shaded area chart labeled Projected Rows Processed, powered by CLAIRE, with a pointer on the How was this prediction made? link", "caption": "Blue for what happened, green for the model's prediction, plus a way to ask how it was made." }
         ]
       },
       {
         "heading": "What Shipped, and What Users Said",
         "blocks": [
-          { "type": "text", "value": "Post-launch, I ran feedback sessions with people using the live product. The design held up. One user put it plainly: **\"I really like Operational Insights. It's got the right kinds of metrics.\"**" },
-          { "type": "image", "src": "/assets/case-studies/operational-insights/research.webp", "width": 1010, "height": 700, "alt": "A recorded customer call showing the live dashboard, captioned with the quote about it having the right kinds of metrics", "caption": "Nick Marty, an Informatica user, after launch: the dashboard finally had the right metrics." }
+          { "type": "text", "value": "After launch, I spoke with customers to learn whether the design was meeting their needs. The best reaction came on a call with Nick Marty, an Informatica user, with the live dashboard shared on screen: **\"I really like Operational Insights. It's got the right kinds of metrics.\"**" },
+          { "type": "image", "src": "/assets/case-studies/operational-insights/research.webp", "width": 1744, "height": 1227, "alt": "A video call with the shipped Operational Insights dashboard on an Informatica user's screen, next to the quote: I really like Operational Insights. It's got the right kinds of metrics.", "caption": "The shipped product on a user's own screen: fast facts first, connectors labeled by name." }
         ]
       },
       {
         "heading": "Reflection",
         "blocks": [
-          { "type": "text", "value": "The Slack app stayed a prototype, not a shipped feature. Customers had already proven the concept by building rougher versions of it themselves. If I revisit this work, that is the extension I would push from concept to production first." },
-          { "type": "text", "value": "Trust in the AI prediction mattered as much as reading it correctly. The \"How was this prediction made?\" link was our answer, but I never got to measure whether it actually changed how much operators trusted the forecast. That is the open question I would go back and answer." }
+          { "type": "text", "value": "Talking with Informatica customers sparked more ideas than one release could hold. Part of my role was to explore the strongest ones early and give product management real options, knowing the roadmap would decide which shipped first." },
+          { "type": "text", "value": "Of those, the Slack bot is the one I would push to production first. Customers had already proven the concept by building rougher versions of it themselves. With today's LLMs, it would be even\u00a0more\u00a0powerful." },
+          { "type": "text", "value": "Trust in the AI prediction mattered as much as reading it correctly. The \"How was this prediction made?\" link was our answer, but the prediction UI hadn't shipped while I was there, so I never saw whether it changed how much teams trusted the forecast. That is the open question I would go back and answer." }
         ]
       }
     ]
