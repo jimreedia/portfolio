@@ -624,7 +624,7 @@ original draft were added after Jim asked why they were missing: a sketch/ideati
 (`connector-logos.webp`) — both were sitting unused in the raw `production images/`
 folder because only already-wired images were checked the first time (principle 10).
 `slack-app.gif` is the one exception left un-re-exported (animated, Jim's call) and
-flagged `unframed`.
+flagged `unframed` (superseded in pass 2: now an animated WebP, framed normally).
 
 **Visual treatment, applies site-wide now, not just here**: every image gets a 1px
 `--color-text-muted-light` (#888888) border + 6px radius by default (chosen to match
@@ -636,6 +636,58 @@ something reads better smaller (`key-metrics.webp` at 480, the hero here tested 
 a capped image's caption automatically matches its width (`mediaMaxWidth()` in
 `CaseStudyPage.jsx` applies to both). Body text is 16px, inline captions 14px (down/up
 respectively from 17/13, so the two feel closer in weight, per principle 12).
+
+**Second pass (2026-09-29 to 10-01), branch `fix/refine-case-study-operational-insights-pass-2`.**
+Source review turned up files the pilot never checked, in `case studies/Operational Insights/`
+(the PSD folder, not `production images/`): `image16.png`, the *shipped* dashboard live on
+Nick Marty's screen during a June 10, 2020 call (the only shipped-product image; it's the base
+of `research`), `big-numbers/Jim-Reed-presentation.001.png` (1920px source for `big-numbers`),
+and the Jan 2019 overview mockup that is `connector-logos`' source. The shipped screen also
+labels connectors in plain text ("ODBC"), real evidence for the logos decision.
+
+Corrections from Jim that change the story:
+- **Three explored ideas didn't ship:** the Slack bot (Jim confirmed "took it to product
+  management", "demoed well", "did not make the next roadmap"), the insight/alert cards in the
+  sketches and mockups (well received by product management, never reached the top of the
+  roadmap), and the prediction UI (hadn't shipped when Jim left). The Reflection now opens by
+  framing this as part of a principal designer's role, not an apology: customers sparked more
+  ideas than one release could hold, and exploring them gave product management real options.
+- **Captions don't talk about what shipped** (Jim, twice). Ship status lives in the paragraph;
+  captions carry user value or the design idea. The research caption stating it's the shipped
+  product is fine.
+- **Fast facts vs. key metrics are different things.** Fast facts are the job-status numbers
+  (Success, Failed, Running, Scheduled); key metrics are Rows Processed and Number of Jobs (the
+  original page's "the right kinds of metrics" framing). Key metrics now get their own
+  paragraph; the stacked columns add a status dimension to Number of Jobs, not a folded-away chart.
+- **Nick Marty is "an Informatica user,"** matching the original banner; Kiewit isn't named in
+  the copy (visible in the screenshot, which Jim is fine with).
+
+Copy: the "glance, not an analysis session" contrast was cut (the product does support
+analysis); invented flourishes from the pilot removed ("what most dashboards get wrong," "a
+feature request already validated by the customer," "The design held up," "finally"); "comps"
+→ "mockups"; "Field visits" → "Customer interviews"; "spreadsheets" → "emailed reports" (none
+pictured); "operators" → developers/teams; examples marked with "such as" (drill-down views, bot
+actions, logos); one term, "detail views"; "second glance" kept where it means the analysis
+views. Headings: "Bringing the Fast Facts Into Slack" (was "What I Tried Based on What I Heard
+From Customers") and "Connector Names Over Company Logos" (was "Company Logos, Not at This
+Scale", too negative). Reflection adds Jim's view that the Slack bot would be even more
+powerful with today's LLMs. Non-breaking spaces fix widows at 390-1440px.
+
+Images: all re-exported by Jim. 2x: `overview` (1744, `maxWidth` 800 removed, full width like
+the other pass-2 heroes), `big-numbers-sketches` (1744, `lightboxMaxWidth` 1000), `big-numbers`
+(1744, `lightboxMaxWidth` 1100), `analysis-views` (1744), `research` (1744, quote kept baked in
+by Jim's choice so it reads in the Lightbox; caption says something else), `key-metrics` (960 at
+`maxWidth` 480, `lightboxMaxWidth` 540). Below 2x: `connector-logos` and `ai-predictions` (1280,
+source limit; `ai-predictions` now has a cursor on the "How was this prediction made?" link) and
+`customer-solutions` (1040, low-res customer captures, Jim's call). **Slack animation rebuilt**:
+`slack-app.gif` replaced by `slack-app.webp`, 1744×1090, 11 frames from Jim's PNG exports of
+`Slack-app.psd` (each frame a smart object embedding a 2560×1600 original), blank first frame
+dropped, GIF timings kept (18.2s loop), Pillow lossy q90 (290 KB; lossless was 440 KB with no
+visible difference). The PSD's outline layer was hidden, so `unframed` is gone. **Edge
+transparency:** several exports came out RGBA with alpha 222-255 on the outer 1px only
+(likely resampling at export); fixed by exporting with transparency off or trimming 2px. All
+final images are opaque and match their recorded sizes. Verified with `npm run build`, the
+one-line caption check (10/10, inline and Lightbox), and a widow scan of every paragraph.
 
 ### Developer Experience — done (2026-09-16)
 
