@@ -16,4 +16,4 @@ Branch naming: `type/kebab-slug`, matching the task.
 
 Examples already in this repo: `feature/homepage-redesign`, `fix/vite-base`, `docs/add-planning-notes`, `chore/ignore-docs-build-output`.
 
-Worktrees live in `../worktrees/<branch-slug>`, a sibling directory to the repo (e.g. `../worktrees/chore-ignore-docs-build-output`).
+Worktrees live in `../worktrees/<kebab-slug>`, a sibling directory to the repo, named after the branch without its type prefix (e.g. `chore/ignore-docs-build-output` → `../worktrees/ignore-docs-build-output`).
