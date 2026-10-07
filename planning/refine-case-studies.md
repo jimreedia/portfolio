@@ -728,6 +728,9 @@ deploy target named in the storyboard was a design bet, never checked against re
 usage data after launch, so the reflection states that plainly as an open question
 rather than claiming it held up; and moving into the PM seat blurred the line between
 advocating for developer experience and trading it off against roadmap deadlines.
+**Corrected in pass 2 (2026-10-07):** both premises were wrong. Jim tested the five-minute
+deploy in person with developers and demoed it live on stage, and he was acting PM
+throughout, not moving into the role partway. See the second-pass entry below.
 
 **No adoption or video-view metric added.** Nothing in the myportfolio source or the
 image folder states one; the "eight services" catalog-size figure above is the one real
@@ -787,6 +790,66 @@ oEmbed thumbnail as the poster, placed in "Lo-Fi Wireframes and Motion Prototype
 after the wireframes image. See that backlog item for the full account, including a
 known gap: this sandboxed environment's network gets Cloudflare-blocked on
 `player.vimeo.com`, so actual playback needs verifying in a real browser.
+
+**Second pass (2026-10-02 to 10-07), branch `fix/refine-case-study-developer-experience-pass-2`.**
+Jim wanted hi-fi screens after the wireframes. Source review of `case studies/Predix/app
+manager/` (outside `production images/`) found no hi-fi console matching the wireframe:
+`app_Events.png` is the beta console (2015, dark sidebar, teal), `Predix-console.png` is a
+mockup (Jim), and `io_Console_Dash_4.0.png` is an earlier green direction. Jim confirmed the
+catalog image is a screenshot of the launched site. So instead of a wireframe-to-hi-fi
+side-by-side, a new section, **From Beta to General Release**, pairs the beta console with the
+launched catalog. Jim's account: the beta got catalog and console to developers as soon as
+possible for feedback; at the same time he led the UX team with product marketing to rebrand the
+platform, closely followed by a visual redesign. The MVP/Gartner sentence moved here from the
+PM section.
+
+Corrections from Jim that change the story:
+- **The five-minute deploy was tested**, in person with developers, and Jim deployed an app live
+  on stage in under five minutes at Industrial Internet for Developers. The storyboard caption
+  no longer calls it "a design target, not a measured result," the storyboards paragraph says
+  it was tested, and the stage demo closes the PM section. Still not in the intro or
+  description (suggested, Jim's call).
+- **Acting PM throughout, not a role switch.** Jim chose to stay a product designer. "From
+  Design to Product Management" became **Taking the Product to Customers** ("After launch, I
+  represented the product..."); description and blurb now say "where I led design and product
+  management"; the Reflection says "Taking on the PM role."
+- **Reflection is lessons learned, not regrets** (Jim's ask): leading a team of designers and
+  developers, PM empathy (choosing 10 features from 100 with capacity for 10, an illustration,
+  not real numbers), positive team feedback, storytelling helping define features. The old
+  instrumentation regret is gone.
+
+Copy: intro "cloud platform's services" → "industrial cloud platform", "The job" → "The design
+goal". Persona section retitled **A Persona to Test Ideas Against** (was "One Persona, Not a
+Committee of Them"; Jim saw no value in the one-vs-many theme), reframed around generating and
+validating ideas against Elaine's needs. Wireframe/motion sentences combined under "Before
+anything was built". Adoption section reordered: finished community page first, then the video
+storyboard, introduced as "a quick storyboard to guide the shoot" (alt and caption now say
+storyboard, not shot list); "hands-on coding-tip videos" → "coding videos". Captions rewritten
+where they repeated their paragraph (community, conference) or talked about shipping (catalog,
+now about the rebrand); hero caption → "Show, don't tell: an app to try, a tutorial to learn
+from, and a showcase app built on the platform."
+
+Images, all re-exported by Jim: `hero` (1415×1198, `maxWidth` 800),
+`catalog-console-wireframes` (1744×1001, still `unframed` for its transparent gutter,
+`lightboxMaxWidth` 1014 to match the five-minute storyboard), `beta-console` (new; first a Pillow
+conversion of `app_Events.png`, then Jim's 1428×976 re-export with browser chrome), `launched-catalog` (renamed from `shipped-catalog`, 1428×1092),
+`community-video` (1600×1362, `maxWidth` 800), `video-storyboard` (renamed from
+`video-shot-list`, 967×520, `lightboxMaxWidth` 880), `conference-conversation` (unchanged file,
+`lightboxMaxWidth` 880). Beta console and catalog are source-limited below 2x. `persona-storyboard`
+(1744×984) and `five-minute-storyboard` (1744×978) re-exported at 2x, still `unframed` (genuine
+stacked-paper composites), both `lightboxMaxWidth` 1014 so all three in the wireframe/storyboard
+run keep the Lightbox size Jim approved. Still below 2x: `video-storyboard` (967 vs 1280),
+`conference-conversation` (1024 vs 1400). **Edge transparency** showed up again
+(alpha 242-254 on 1px edges of `catalog-console-wireframes`, `beta-console`, `video-storyboard`);
+Jim re-exported `beta-console` and `video-storyboard` opaque, the wireframes' 251 top row is still
+there (invisible). Verified with `npm run build`, no console errors, every caption one line inline
+and in the Lightbox at 1440, and a widow scan (clean at desktop; a few one-word last lines remain
+at 390px).
+
+Open: the five-minute live demo isn't in the intro or description yet; the motion video caption
+repeats the paragraph's "before anything was built" point (suggested "Hover and active states for
+the docs navigation, worked out in After Effects"); speed words ("quickly", "fast", "as soon as
+possible") still repeat across the page.
 
 ### Machine Learning for Operators — done (2026-09-16)
 
