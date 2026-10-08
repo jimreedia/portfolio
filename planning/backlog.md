@@ -38,6 +38,8 @@ is lower-priority or longer-horizon.
 
 ## In Progress
 
+- [ ] Blur personal info in the Additive Manufacturing site-visit photo, prioritized ahead of the content pass (found 2026-10-08 during the Additive Manufacturing second pass) — branch: fix/blur-site-visit-pii. The whiteboard panel of `public/assets/case-studies/additive-manufacturing/site-visit.webp` showed two engineers' surnames and phone numbers, legible at native size, live on production in a public repo. Blurred only the surname + phone number on each "Responsible Engineer" line (first name "Marques" and initial "M." left legible, per Jim); the rest of the board (Mat'l, Current Part, Estimated Completion, Up Next) is untouched so the finding still reads. Gaussian blur (radius 7) over two rectangles with a 1.5px feathered mask, re-encoded WebP q90 (matches the original's file size, so likely its original quality), still 1024×512, RGB with no alpha, so no `caseStudies.json` change. Not in scope: git history (two older versions, `site-visit.webp` since #43 and `user-research.png` #27–#43, stay reachable; rewriting `main`/`gh-pages` judged not worth it), the companion Keynote deck's slide 6, and jimreed.net, which Jim is checking himself. The image's caption ("engineer names, phone numbers, estimated completion") still describes the now-blurred details; that copy gets reworded in the content pass on fix/refine-case-study-additive-manufacturing-pass-2.
+
 ## Done
 
 - [x] Visual design refinement from a colleague's review (feedback received 2026-10-07), homepage only, done 2026-10-08 (branch `fix/visual-design-refinement-home`). Their comments, close to verbatim, each needing a decision before any change:
