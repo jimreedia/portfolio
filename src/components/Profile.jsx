@@ -1,8 +1,8 @@
 import { assetUrl } from '../lib/caseStudies'
 
 const BULLETS = [
-  'Product Designer with 15+ years in complex enterprise domains',
-  'Led 0→1 design for AI, genomics, and data platform products',
+  'Product Designer with 12+ years in complex enterprise B2B domains',
+  'Experienced in leading 0→1 design for AI, genomics, and data platform products',
   'Collaborates closely with engineers, data scientists, and domain experts',
   'Based in San Francisco',
 ]

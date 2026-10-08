@@ -121,6 +121,13 @@ These are hardcoded in the rules today and each is really one of the six ideas a
 >    `--color-text-muted-light` so it pairs with `--color-text-muted-dark`, matching
 >    the `--color-text-primary-light` / `-dark` pair. 8 usages, no value change.
 >
+> **Superseded (2026-10-08):** decision 1 reversed. A colleague's review asked why
+> the About bar differed from the header/footer; the navy had no real rationale (it
+> began as a placeholder), so Profile is now `--color-surface-light` and
+> `--color-surface-navy` is removed. More Case Studies moved to `--color-surface-mid`,
+> and `--color-text-muted-mid` (`#636363`) was added for muted text on mid. See the
+> visual design refinement item in `backlog.md` (branch `fix/visual-design-refinement-home`).
+>
 > **All 6 settled. No visible design changes — this is a pure tokenization/cleanup
 > pass.** See "Implementation plan" at the bottom.
 
