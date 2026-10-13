@@ -347,6 +347,33 @@ now exists. Open image flags: homepage carousel `agentic-ai-chat-2` shows lorem 
 descriptions, and the chat date in `agent-in-context` and `agentic-ai-chat-3` (April 3)
 doesn't match the log dates (April 6).
 
+**Third pass (2026-10-10), branch `fix/refine-case-study-agentic-ai-chat-pass-3`.** Driven by
+outside feedback (`feedback/website feedback.eml`): too wordy, but keep the storytelling;
+the primitives spec image was too small to read. Three Primitives → **Four Components to Help
+Developers Move Fast** (Conversations added, matching the layers diagram; first titled
+"Four Components: Conversations, Plugins, Context, and Inline Artifacts", shortened 2026-10-13
+because it wrapped). Tried an `h3` subhead plus a sentence per component first; Jim preferred
+one intro paragraph (keeping the inline-artifact tradeoff) and letting four per-component
+images carry it, each with its component name baked in as a title. Layers paragraph →
+intro sentence + 4-item list. Cuts dropped clauses rather than re-voicing. Images come from
+`production images/LinkedIn Agent/components/`, one PNG per component, converted to
+1744px WebP. `Conversations.png` came in at 2700×1178, RGBA but fully opaque (alpha 255
+throughout), and was downscaled to 1744×761. All four share
+one canvas width, set by the widest spec (Context), so they render at the same scale and
+their UI text matches across images (Jim's call, 2026-10-10; he finds it legible). To make
+the set more legible later, tighten the Context layout and narrow the shared canvas, rather
+than cropping each image on its own. **Workflow (settled 2026-10-12):** Jim exports at a plain 2x
+from his own frame (keeping his composition) and I resize to 1744 wide; a Figma `1744w`
+export produced a fractional height (760.9px) and a semi-transparent bottom row. All four
+images are in (1744×761, 618, 652, 700); `interaction-specs` is retired. Settled: Context
+typo fixed; Plugins lorem ipsum stays (spec image, not content design); `agent-fullscreen`
+stays as the closing "components in context" image, with the Inline Artifacts caption naming
+the pieces and the screenshot caption showing them together. **Line edits (2026-10-13):** body at about 490 words
+(from 744). Components intro reopens on the original page's "To help developers move
+fast," and describes inline artifacts as rendering in place instead of linking out (Jim
+found "tradeoff" confusing). "Need statements" → "jobs to be done." Lightbox caps:
+user-needs 700, agent-layers 1000, all four component specs 1170 (kept equal).
+
 ### Genomic Data Platform — done (2026-09-14)
 
 Source review done first, per principle 10: myportfolio original checked (its text is a

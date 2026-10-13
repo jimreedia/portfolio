@@ -3,7 +3,7 @@
     "id": "agentic-ai-chat",
     "title": "Agentic AI Chat",
     "description": "An AI agent embedded in LinkedIn's observability tools, now used by 10,000+ engineers to find an incident's root cause faster.",
-    "blurb": "Embedded with product engineers, I led end-to-end UX for a conversational AI agent now used across observability tools by 10,000+ LinkedIn engineers. I set the UX principles for LLM interactions, spec'd the contextual input, plugins, and inline artifact components the team builds on, and designed a custom icon system that signals a trusted, purpose-built tool. The result is faster incident triage and lower cognitive load for engineers in the middle of an incident.",
+    "blurb": "Embedded with product engineers, I led end-to-end UX for a conversational AI agent now used across observability tools by 10,000+ LinkedIn engineers. I set the UX principles for LLM interactions, spec'd the conversation, plugin, context, and inline artifact components the team builds on, and designed a custom icon system that signals a trusted, purpose-built tool. The result is faster incident triage and lower cognitive load for engineers in the middle of an incident.",
     "tags": ["AI", "Enterprise"],
     "url": "/case-study/agentic-ai-chat",
     "featured": true,
@@ -19,18 +19,18 @@
       "width": 1744,
       "height": 1124,
       "alt": "Observe Agent chat home screen, embedded in the observability product",
-      "caption": "The empty state had three getting-started prompts, not just a blank box waiting for input."
+      "caption": "The empty state has three getting-started prompts, not just a blank box waiting for input."
     },
     "sections": [
       {
         "blocks": [
           {
             "type": "text",
-            "value": "Observe Agent is an AI agent designed for LinkedIn's observability tools (alerts, metrics, logs, and deployment history), not a general-purpose chatbot dropped on top of them. I led end-to-end UX for the experience alongside the product engineers building it: the interaction model, the contextual input, plugin, and inline-artifact components, and the visual identity that signals a trustworthy, purpose-built tool."
+            "value": "Observe Agent is an AI agent built for LinkedIn's observability tools (alerts, metrics, logs, and deployment history). I led end-to-end UX alongside the product engineers building it: the interaction model, the core components, and the visual identity."
           },
           {
             "type": "text",
-            "value": "It ships to 10,000+ engineers and has cut the time they spend tracing an incident (e.g., a service disruption or a latency spike) to its root cause."
+            "value": "It ships to 10,000+ engineers, who use it to trace incidents like service disruptions and latency spikes to their root cause faster."
           }
         ]
       },
@@ -39,17 +39,17 @@
         "blocks": [
           {
             "type": "text",
-            "value": "The users are Site Reliability Engineers and on-call engineers, almost always mid-incident: several tabs open across alerting, metrics, logs, and deployment history, under real time pressure. Before designing anything, I wrote down a few things they actually needed from the agent, to align the team on the job to be done, not on what would be a fun AI feature to add."
+            "value": "The users are Site Reliability Engineers and on-call engineers, almost always mid-incident: tabs open across alerting, metrics, logs, and deployment history, under real time pressure. Before designing anything, I wrote down what they needed from the agent, to align the team on the job to be done."
           },
           {
             "type": "image",
             "src": "/assets/case-studies/agentic-ai-chat/user-needs.webp",
             "width": 1164,
             "height": 860,
-            "lightboxMaxWidth": 760,
+            "lightboxMaxWidth": 700,
             "maxWidth": 582,
             "alt": "User-needs statements from a Site Reliability Engineer persona, framed as \"I want to…\" jobs",
-            "caption": "The persona is stated as jobs to do, not just a bio: diagnose, drill into evidence, revisit later."
+            "caption": "The persona is stated as jobs to be done, not a bio: diagnose, drill into details, revisit later."
           }
         ]
       },
@@ -58,7 +58,7 @@
         "blocks": [
           {
             "type": "text",
-            "value": "The agent had to feel native to the product, not bolted onto it: sitting beside the same logs and metrics views engineers already use, and not just reading context from them. Ask it to show errors during lunch, and it sets the filters in the view itself, rather than telling the engineer where to click or sending them off to a separate destination to do it themselves."
+            "value": "The agent had to feel native to the product, not bolted onto it. It sits beside the logs and metrics views engineers already use, and acts on them: ask it to show errors during lunch, and it sets the filters in the view itself instead of telling the engineer where to click."
           },
           {
             "type": "image",
@@ -66,7 +66,7 @@
             "width": 1948,
             "height": 1168,
             "alt": "The agent conversation shown alongside the Logs Explorer, having just applied filters to that view on the engineer's behalf",
-            "caption": "The agent didn't just answer questions: it also took actions, like applying filters in the Logs Explorer."
+            "caption": "The agent doesn't just answer questions: it also takes actions, like applying filters in the Logs Explorer."
           }
         ]
       },
@@ -75,7 +75,7 @@
         "blocks": [
           {
             "type": "text",
-            "value": "Where the agent lived on screen was its own decision, not a default. I audited how panels already behaved elsewhere in the product (full-screen views, modals, docked panels) and built a storyboard to argue the case: a **persistent side panel** that keeps the underlying page in view, narrow for supporting information, wider once the interaction turns into something closer to create-and-edit, and resizable so users can drag it to whatever balance of panel and page suits their view. The panel isn't the only surface: the agent also has a full-page view, and a conversation started in either one can be picked up and continued in the other."
+            "value": "I audited how panels already behaved across the product (full-screen views, modals, docked panels) and built a storyboard to argue for a **persistent side panel** that keeps the page in view: narrow for supporting information, wider for create-and-edit, and resizable to whatever balance suits the user."
           },
           {
             "type": "image",
@@ -94,34 +94,70 @@
         "blocks": [
           {
             "type": "text",
-            "value": "The model underneath was never the design problem: any team can call a foundation LLM. What makes an agent useful to an SRE mid-incident is everything built on top of it. I think of Observe Agent as layers: context goes in (the alert, chart, or job an engineer pulls into the conversation), plugins reach into logs, metrics, alerts, and deployment history, and output comes back. Any assistant has that shape; what fills each layer is what makes this one an observability agent. The output layer is also where it stops being a chatbot: sources, inline charts, and links answer the question, but **actions**, like setting the filters in the Logs Explorer, change the product itself. The conversation spans both layers, as the history the agent reads from and the place its answers land."
+            "value": "Any team can call a foundation LLM; the model was never the design problem. What makes an agent useful mid-incident is everything built on top of it, and I think of Observe Agent as layers:"
+          },
+          {
+            "type": "list",
+            "items": [
+              "**Context** goes in: the alert, chart, or log an engineer pulls into the conversation.",
+              "**Plugins** are the agent's tools, reaching into logs, metrics, alerts, and deployment history.",
+              "**Output** comes back as knowledge sources, inline charts, links, and **actions** (like setting Logs Explorer filters) that change the product itself. Actions are where it stops being a chatbot.",
+              "**Conversations** span input and output: the evidence the agent reads, and where it reports back."
+            ]
           },
           {
             "type": "image",
             "src": "/assets/case-studies/agentic-ai-chat/agentic-ai-chat-agent-layers.webp",
             "width": 1744,
             "height": 900,
-            "lightboxMaxWidth": 1100,
+            "lightboxMaxWidth": 1000,
             "alt": "Layer diagram of Observe Agent: foundation LLMs at the base, a context layer, plugins bridging into an output layer of sources, inline artifacts, links and CTAs, and actions, with conversations spanning context and output",
             "caption": "The model is the commodity: the domain-specific agent design lives in the layers above it."
           }
         ]
       },
       {
-        "heading": "Three Primitives: Plugins, Context, and Inline Artifacts",
+        "heading": "Four Components to Help Developers Move Fast",
         "blocks": [
           {
             "type": "text",
-            "value": "Inside those layers, I spec'd the three components everything else builds on: **plugins** for the agent's tools and skills, **contextual input** for pulling a page element (a chart, a job, an alert) into the conversation as a removable tag, and **inline artifacts** so a chart renders directly in the chat instead of linking out to it. That last one was the real tradeoff: answering in text with a link to the dashboard would have been simpler, but it sends the engineer off to another tab. Rendering the answer in place cost more effort up front, and was worth it."
+            "value": "I spec'd the four components everything else builds on: **conversations**; **plugins** for the agent's tools and skills; **context**, such as a chart or a log and the data behind it; and **inline artifacts**, which render answers in place instead of linking out."
           },
           {
             "type": "image",
-            "src": "/assets/case-studies/agentic-ai-chat/interaction-specs.webp",
+            "src": "/assets/case-studies/agentic-ai-chat/component-conversations.webp",
             "width": 1744,
-            "height": 902,
-            "alt": "Interaction specs for chat input, plugins menu, contextual tags, and inline chart artifacts",
-            "caption": "Plugins, tags, and inline charts, spec'd once so the whole team builds using the same grammar.",
-            "unframed": true
+            "height": 761,
+            "lightboxMaxWidth": 1170,
+            "alt": "Annotated spec of the conversation component: timestamp, user message, agent message, copy and feedback tools, and chat input",
+            "caption": "One conversation pattern, so a thread started in the side panel continues in the full-page view."
+          },
+          {
+            "type": "image",
+            "src": "/assets/case-studies/agentic-ai-chat/component-plugins.webp",
+            "width": 1744,
+            "height": 618,
+            "lightboxMaxWidth": 1170,
+            "alt": "Annotated spec of the plugin flow: hovering the plugin menu button, choosing from the plugin menu, and the chosen plugin added to the chat input as a removable tag",
+            "caption": "Picking a plugin points the agent at a specific tool, shown as a tag the engineer can remove."
+          },
+          {
+            "type": "image",
+            "src": "/assets/case-studies/agentic-ai-chat/component-context.webp",
+            "width": 1744,
+            "height": 652,
+            "lightboxMaxWidth": 1170,
+            "alt": "Annotated spec of adding context: hovering the intelligence icon on a metric chart card shows \"Add to Observe Agent chat,\" and the chart then appears in the chat input as a removable tag",
+            "caption": "Any chart joins the chat with the data behind it, so the engineer doesn't have to describe it."
+          },
+          {
+            "type": "image",
+            "src": "/assets/case-studies/agentic-ai-chat/component-inline-artifacts.webp",
+            "width": 1744,
+            "height": 700,
+            "lightboxMaxWidth": 1170,
+            "alt": "Annotated spec of an agent answer with inline artifacts: code snippets, a Metrics Explorer link badge, and an inline metric chart",
+            "caption": "The pieces of an answer: code snippets, link badges, and charts, rendered right in the chat."
           },
           {
             "type": "image",
@@ -129,7 +165,7 @@
             "width": 1708,
             "height": 1168,
             "alt": "Observe Agent in its full-page view, answering with an inline metric chart and a recommendation that links to the Logs Explorer",
-            "caption": "The chart is the answer, rendered in place; the Logs Explorer link is for going deeper."
+            "caption": "All together in the product: the chart answers in place, a Logs Explorer link goes deeper."
           }
         ]
       },
@@ -138,7 +174,7 @@
         "blocks": [
           {
             "type": "text",
-            "value": "A generic bot icon would have undercut the one thing this needed to earn: trust from someone deciding whether to act on what the agent just told them mid-incident. I ran a comparison audit of sparkle and bot icons used in other apps, then designed a mark that pairs a sparkle (AI) with the shape of a telescope (Observe), with variations for each place it appears: the product UI and Slack."
+            "value": "A generic bot icon would have undercut what this needed most: trust from an engineer deciding whether to act on the agent's answer mid-incident. I audited the sparkle and bot icons other apps use, then designed a mark pairing a sparkle (AI) with a telescope (Observe)."
           },
           {
             "type": "image",
@@ -156,11 +192,11 @@
         "blocks": [
           {
             "type": "text",
-            "value": "The classic UX toolkit didn't disappear on this project; it just changed shape. Personas became short need statements instead of a persona board, a storyboard audited screen real estate instead of a user flow, and the artifact the rest of the team actually built from wasn't a wireframe: it was the interaction spec for the three primitives."
+            "value": "The classic UX toolkit didn't disappear here; it changed shape. Personas became jobs to be done, a storyboard audited screen real estate instead of mapping a user flow, and what the team built from wasn't just a wireframe, but also a component spec."
           },
           {
             "type": "text",
-            "value": "What I'd revisit: the panel model assumes one conversation, one side panel, at a time. It hasn't been tested against an engineer running two or three investigations in parallel, which is closer to how a bad incident actually goes. I'd want real usage data before deciding whether it needs a way to run investigations side by side, not just a wider panel."
+            "value": "What I'd revisit: the panel model assumes one conversation at a time, untested against an engineer running parallel investigations, which is closer to how a bad incident actually goes. I'd want usage data before deciding whether that calls for side-by-side investigations or just a wider panel."
           }
         ]
       }
