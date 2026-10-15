@@ -1295,6 +1295,24 @@ reading better narrower next to the journey map and persona card in the same sec
 verified its caption still renders on one line at the un-narrowed default column width
 (captions don't inherit `maxWidth`, per principle 7).
 
+**Pass 2 (2026-10-13 to 2026-10-15, done), notes** (branch
+fix/refine-case-study-additive-manufacturing-pass-2; companion Keynote deck at
+`~/Projects/job search/presentations/Additive/`, which builds up to the donut decision
+while the page leads with it):
+- **No specific locations in the text, this page only** (Jim, 2026-10-13): the facility
+  names in the product's sample data (Lichtenfels, Grapevine, Shanghai, GE Additives Plant
+  1, etc.) stay out of prose, captions, and alt text; screenshots may still show them. The
+  one exception is the research site, the **Additive Technology Center (ATC), West Chester,
+  Ohio**, named because it's where Jim did the contextual research.
+- **Browser-chrome URLs:** `mvp-dashboard.webp` (new this pass, 1744×1308) shows a URL in
+  its browser frame; it should read **`predix.io`** (Predix's real domain, where its apps
+  ran), not `ge.com`. Jim plans to add a `predix.io` URL to the other framed dashboard
+  screenshots too, for consistency. Done (`https://additive.predix.io`, re-exported 2×):
+  `mvp-dashboard` (1744×1308), `donut-vs-printer` (was `oee-dashboard`, 1744×1212, 2026-10-14), `dashboard-fleet`
+  (hero, 1744×1226, 2026-10-14). Still blank: `dashboard-machine`.
+- **Mockup chronology (Jim, 2026-10-15):** the donut mockups came first; `dashboard-machine` (the job-level view with its 58% Availability ring) is an early-round mockup from before the number-and-color redesign, not a deliberate keep of the ring. Its caption says so.
+- **Shipping timeline (Jim, 2026-10-15):** the donut version **shipped**; real users of the shipped dashboard misread the ring as print progress, and the number-and-color redesign shipped in a later release. The page says "once it shipped" / "feedback from users of the shipped dashboard" rather than "user testing." No post-launch metric is known; don't estimate one (Jim asked about estimating; declined in favour of real figures only).
+
 ### Analytics & Big Data — done (2026-09-18)
 
 Source review done first, per principle 10: myportfolio original checked (short, four

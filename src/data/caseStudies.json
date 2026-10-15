@@ -558,6 +558,87 @@
     ]
   },
   {
+    "id": "additive-manufacturing",
+    "title": "Additive Manufacturing",
+    "description": "A monitoring dashboard that turns each 3D printer's sensor data into one Availability Score. Once it shipped, users read the first release's donut charts as print progress, not availability, so I replaced them with a number, a color, and a day-over-day trend\u00a0arrow.",
+    "blurb": "A monitoring dashboard that gives additive manufacturing teams a clear Availability Score for every 3D printer and across the whole fleet.",
+    "tags": ["Enterprise"],
+    "url": "/case-study/additive-manufacturing",
+    "featured": false,
+    "role": "Senior Staff UX Interaction Designer, GE Digital",
+    "team": "Another visual designer, with user discovery done alongside the lead engineer and architect",
+    "thumb": "/assets/case-studies/homepage-assets/additive-manufacturing.webp",
+    "hero": {
+      "src": "/assets/case-studies/additive-manufacturing/dashboard-fleet.webp",
+      "width": 1744,
+      "height": 1226,
+      "alt": "The Additive Console's fleet-wide Availability view: an aggregate 58% score with nine ranked facility cards below it",
+      "caption": "One Availability Score for the whole fleet, with every facility's own score ranked below."
+    },
+    "sections": [
+      {
+        "blocks": [
+          { "type": "text", "value": "GE Additive's customers run fleets of industrial metal 3D printers, and the business goal behind this product was simple: keep every printer **printing for as much of its available time as possible**. As Senior Staff UX Interaction Designer at GE Digital, I designed the **Additive Console**, a monitoring dashboard built around that goal. It gathers each printer's sensor data into one number, an **Availability Score**, calculated per machine and rolled up per facility and across the whole fleet." }
+        ]
+      },
+      {
+        "heading": "Why the Donut Chart Had to Go",
+        "blocks": [
+          { "type": "text", "value": "The business goal picked the score: of the three factors in Overall Equipment Effectiveness (availability, performance, and quality), availability measures how much of the time a printer is actually printing. The first release showed it as a **donut chart**, matching the dashboard's visual language, but that's also the ring the printers use on their touchscreens for build progress, so the score read as progress, not\u00a0availability." },
+          { "type": "image", "src": "/assets/case-studies/additive-manufacturing/donut-vs-printer.webp", "width": 1744, "height": 1212, "alt": "The Additive Console's overview, a grid of OEE donut charts per facility, with a printer's own progress donut overlaid in the corner", "caption": "Users found the clash: facility scores used the same ring printers show for build\u00a0progress." },
+          { "type": "text", "value": "Feedback from users of the shipped dashboard surfaced the mix-up directly, and the next release's fix was blunt: drop the ring for **a number, a color indicator, and an arrow for the day-over-day trend**, none of which the printers' touchscreens\u00a0use." },
+          { "type": "image", "maxWidth": 600, "lightboxMaxWidth": 600, "src": "/assets/case-studies/additive-manufacturing/donut-comparison.webp", "width": 1200, "height": 688, "alt": "Side-by-side options labeled \"donut\" and \"not donut\": a circular gauge versus a large percentage with an up arrow and a color bar", "caption": "The redesigned solution, at right: a number, color bar, and trend arrow that can't be read as\u00a0progress." }
+        ]
+      },
+      {
+        "heading": "An MVP in One Sprint, Then Built for Additive",
+        "blocks": [
+          { "type": "text", "value": "Before any of that, the dashboard started from an MVP, not a blank page. Each printer already streamed its sensor data through a Predix Edge device, and in one sprint the team and I turned it into a card per machine, using existing UI patterns for monitoring Industrial Internet edge devices. Every value was there, but nothing answered a manager's real question: **\"How are my printers\u00a0doing?\"** The next step was refining it for the additive use\u00a0case." },
+          { "type": "image", "src": "/assets/case-studies/additive-manufacturing/mvp-dashboard.webp", "width": 1744, "height": 1308, "alt": "The MVP dashboard: stacked per-machine summary cards, each with job progress, a 30-day utilization bar chart, and raw sensor tag values", "caption": "Before learning from users, a one-sprint MVP showed the data, not yet the value in it." }
+        ]
+      },
+      {
+        "heading": "Watching Builds Get Tracked by Hand",
+        "blocks": [
+          { "type": "text", "value": "To refine the MVP for how additive teams actually work, I did **contextual research at the Additive Technology Center (ATC) in West Chester, Ohio**. I observed the manufacturing process and interviewed operators, process engineers, and reliability engineers at their machines, not in a conference room. Builds were still tracked by hand on whiteboards. The dashboard needed to make build status live and shared, so no one had to walk the floor to read\u00a0it." },
+          { "type": "image", "src": "/assets/case-studies/additive-manufacturing/site-visit.webp", "width": 1744, "height": 872, "alt": "Site-visit photos of engineers reviewing a hand-written production whiteboard, standing at a control center, and operating a metal 3D printer", "caption": "During my observation, I discovered build status was tracked by hand on shop-floor whiteboards." },
+          { "type": "image", "maxWidth": 320, "lightboxMaxWidth": 480, "src": "/assets/case-studies/additive-manufacturing/onsite-selfie.webp", "width": 960, "height": 1278, "alt": "A selfie at the facility, wearing safety glasses in front of a jet engine on display", "caption": "Contextual research meant safety glasses and a jet engine, not just a conference room." }
+        ]
+      },
+      {
+        "heading": "A Journey Map and Personas Before Any Sketches",
+        "blocks": [
+          { "type": "text", "value": "That research shaped three artifacts. A journey map identified **two MVP opportunities**: availability dashboards for managers and mobile build status for operators. Three personas made those users concrete. Only then did I sketch, starting from a persona's\u00a0view." },
+          { "type": "image", "src": "/assets/case-studies/additive-manufacturing/journey-map.webp", "width": 1744, "height": 836, "alt": "A journey map with a top row of part-manufacturing steps and a lower band of horizontal functions, each tied to a role", "caption": "The journey map flagged two MVP opportunities: dashboards for managers, mobile for operators." },
+          { "type": "image", "src": "/assets/case-studies/additive-manufacturing/personas.webp", "width": 1744, "height": 912, "alt": "Three persona cards: Charlize, Fleet Manager; Joy, Process Engineer; and Stacey, Operator, each with a time horizon, a quote, a goal, and a challenge", "caption": "Three personas, three time horizons: from a year of fleet trends down to a single build." },
+          { "type": "image", "maxWidth": 480, "src": "/assets/case-studies/additive-manufacturing/concept-sketch.webp", "width": 720, "height": 510, "alt": "A hand-drawn sketch of a browser dashboard showing per-machine availability percentages, beside a smiling user", "caption": "Sketching for a persona: a human in the frame kept the team focused on customer value." }
+        ]
+      },
+      {
+        "heading": "One Score, From the Fleet Down to One Job",
+        "blocks": [
+          { "type": "text", "value": "The fleet view at the top of this page was the entry point. Clicking a facility drilled down to a Builds table of every machine's current job; clicking a machine drilled down again, to one job's Availability and progress, tracked against time elapsed and remaining. One score, followed from the whole fleet down to **one job on one printer**: the clear read the MVP's per-machine cards had been\u00a0missing." },
+          { "type": "image", "src": "/assets/case-studies/additive-manufacturing/dashboard-facility.webp", "width": 1002, "height": 613, "alt": "The Additive Console's Builds table for one facility: every machine's job at that site, with status and progress bars", "caption": "One facility: every machine's current build, sorted by status and\u00a0start\u00a0time." },
+          { "type": "image", "src": "/assets/case-studies/additive-manufacturing/dashboard-machine.webp", "width": 1000, "height": 721, "alt": "A drill-down to one machine's current print job, CL-3031, with an Availability ring, a progress bar, and a job list", "caption": "An early-round mockup, before the redesign: one machine's current job, with its Availability\u00a0ring." }
+        ]
+      },
+      {
+        "heading": "Mobile for On-Call Operators",
+        "blocks": [
+          { "type": "text", "value": "In user interviews, operators said they wanted to **monitor builds from home** and come in only if a build stopped. My early sketch, hand-drawn green and red bars on a phone, carried into the mockup almost as drawn: a **Builds** list, color-coded by\u00a0status." },
+          { "type": "image", "src": "/assets/case-studies/additive-manufacturing/mobile.webp", "width": 1024, "height": 512, "alt": "Side by side: a hand holding a phone with a sketch-style \"My Machines\" list with green and red progress bars, and a phone mockup of a color-coded Builds list", "caption": "Off shift, an operator can check every build's state on a phone, green and red at a glance." }
+        ]
+      },
+      {
+        "heading": "Reflection",
+        "blocks": [
+          { "type": "text", "value": "The donut chart wasn't a bad guess. It matched the rest of the dashboard's visual system, and that's exactly why it was risky: a data visualization component that looks right in a style guide can still fail next to the one screen operators already trust for another metric. Customers caught it after launch, but it's worth asking whether checking it against the printer's own UI earlier, before the first mockup, would have caught it before it\u00a0shipped." },
+          { "type": "text", "value": "Then again, that's what shipping early is for. Putting out an MVP in one sprint, then shipping each round and listening to the people using it, meant the team learned from working software instead of debating mockups, and could adjust quickly. Get something real in front of users, learn, adjust: that loop is what turns each round into more customer\u00a0value." }
+        ]
+      }
+    ]
+  },
+  {
     "id": "machine-learning-for-operators",
     "title": "Machine Learning for Operators",
     "description": "A guided model-training wizard, shipped inside GE's Predix-powered AI Workbench, that let operations engineers, not data scientists, build the machine-learning models behind a plant's production forecasts.",
@@ -706,85 +787,6 @@
         "blocks": [
           { "type": "text", "value": "The **EMERGENCY button** sits in the top navigation bar on every screen, deliberately impossible to miss. I never got to test whether that was too easy to trigger by accident, a real risk for a control that's exposed at all times rather than tucked behind a confirmation." },
           { "type": "text", "value": "The failed-send **Retry** button assumed a person calm enough to notice a failure and tap a button to fix it. I'd want to revisit that assumption directly with people in an actual bad-connection, high-stress moment: an automatic retry with backoff might serve them better than asking for one more deliberate action." }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "additive-manufacturing",
-    "title": "Additive Manufacturing",
-    "description": "A monitoring dashboard that replaced a wall of misread donut charts with one clear Availability Score, ranked across GE Additive's fleet from Lichtenfels to Shanghai.",
-    "blurb": "A monitoring dashboard that gives additive manufacturing teams a clear Availability Score for every 3D printer and across the whole facility.",
-    "tags": ["Enterprise"],
-    "url": "/case-study/additive-manufacturing",
-    "featured": false,
-    "role": "Senior Staff UX Interaction Designer, GE Digital",
-    "team": "Another visual designer, with user discovery done alongside the lead engineer and architect",
-    "thumb": "/assets/case-studies/homepage-assets/additive-manufacturing.webp",
-    "hero": {
-      "src": "/assets/case-studies/additive-manufacturing/dashboard-fleet.webp",
-      "width": 1000,
-      "height": 721,
-      "alt": "The Additive Console's fleet-wide Availability view: an aggregate 58% score with nine ranked facility cards below it",
-      "caption": "One fleet-wide number, 58%, ranked nine facilities beneath it, Lichtenfels at 69% to 9%."
-    },
-    "sections": [
-      {
-        "blocks": [
-          { "type": "text", "value": "Customers running industrial 3D laser printers needed a clear read on how their machines were performing. I designed a console that gathers each printer's **sensor data** into one number, an Availability Score, calculated per machine and rolled up per facility." }
-        ]
-      },
-      {
-        "heading": "Drilling From the Fleet Down to One Job",
-        "blocks": [
-          { "type": "text", "value": "The fleet view above, **Availability: GE Additives Company**, was the entry point, not the whole story. Clicking into a facility, Lichtenfels for example, dropped down to a Builds table: every machine's current job at that site, sorted by status and start time. Clicking into any one of those machines dropped down again, to a single job's own Availability ring and progress bar, tracked against its own Time Elapsed and Time Remaining. One score at the top, the same idea followed all the way down from the whole fleet, to one facility, to **one job on one printer**." },
-          { "type": "image", "src": "/assets/case-studies/additive-manufacturing/dashboard-facility.webp", "width": 1002, "height": 613, "alt": "The Additive Console's Builds table for Lichtenfels: every machine's job at that site, with status and progress bars", "caption": "One facility, Lichtenfels: every machine's job, sorted by status and start time." },
-          { "type": "image", "src": "/assets/case-studies/additive-manufacturing/dashboard-machine.webp", "width": 1000, "height": 721, "alt": "A drill-down to one machine's current print job, CL-3031 at GE Additives Plant 1, with an Availability ring, a progress bar, and a job list", "caption": "One click down: a single machine's current job, tracked by its own Availability ring and bar." }
-        ]
-      },
-      {
-        "heading": "Why the Donut Chart Had to Go",
-        "blocks": [
-          { "type": "text", "value": "The first version of the Availability Score used a **donut chart**, the same ring shape GE Additive's own printers show on their touchscreens for build progress. It wasn't an accident, the ring matched the dashboard's existing visual language. But next to a printer showing 48% printed in that same ring, an 85% Availability Score in another ring read the same way: as progress, not health. User testing surfaced the mix-up directly, and the fix was blunt: drop the ring, ship **a number and a color indicator**, a shape no printer on the floor uses for anything." },
-          { "type": "image", "src": "/assets/case-studies/additive-manufacturing/donut-comparison.webp", "width": 600, "height": 320, "alt": "Side-by-side options labeled \"donut\" and \"not donut\": a circular progress gauge versus a large percentage with an up arrow", "caption": "An OEE ring at 85% read the same as a printer's own 48%-done progress donut: health, not print." },
-          { "type": "image", "src": "/assets/case-studies/additive-manufacturing/oee-dashboard.webp", "width": 1002, "height": 713, "alt": "The Additive Console's Availability Overview, a grid of OEE donut charts per facility, with a printer's own progress donut overlaid in the corner", "caption": "Each facility's OEE donut used the same ring shape a printer's touchscreen uses for build progress." }
-        ]
-      },
-      {
-        "heading": "Sketches, a Journey Map, and a Persona Named Stacey",
-        "blocks": [
-          { "type": "text", "value": "Before any of that, the shape of the product came from three artifacts. A hand-sketched concept already showed the Availability Score as **a number with a color underline**, not a donut, proof the simplest version was right from the start even though a later comp drifted from it. A journey map laid out every role from part order to ship (design, build, finish, quality) plus the horizontal functions like fleet monitoring, and flagged **Monitor Fleet** and **Manage Operations** as the MVP opportunities. And a persona, **Stacey, the Operator**, made the target user concrete: comfortable with computers but not an expert, responsible for loading, unloading, and monitoring builds, and needing, above everything else, to know accurately when a part will finish." },
-          { "type": "image", "maxWidth": 480, "src": "/assets/case-studies/additive-manufacturing/concept-sketch.webp", "width": 720, "height": 510, "alt": "A hand-drawn sketch of a browser dashboard showing per-machine availability percentages, beside a smiling user", "caption": "The earliest concept already used a number and color, before a later comp detoured through a donut." },
-          { "type": "image", "src": "/assets/case-studies/additive-manufacturing/journey-map.webp", "width": 1128, "height": 540, "alt": "A journey map with a top row of part-manufacturing steps and a lower band of horizontal functions, each tied to a role", "caption": "The journey map flagged Fleet Monitoring and Operations Management as the MVP opportunities." },
-          { "type": "image", "unframed": true, "src": "/assets/case-studies/additive-manufacturing/persona-stacey.webp", "width": 868, "height": 523, "alt": "A persona card for Stacey, Operator, with a photo, goals, responsibilities, and a challenge about knowing when a part will be finished", "caption": "Stacey, the Operator, needs one thing above all: to know accurately when a part will finish." }
-        ]
-      },
-      {
-        "heading": "Watching Builds Get Tracked by Hand",
-        "blocks": [
-          { "type": "text", "value": "**Contextual research at a facility producing aircraft-engine parts** grounded the work: I watched the manufacturing process and talked with operators, process engineers, and reliability engineers in place, not in a conference room. Builds were still tracked the old way, on whiteboards in the DMLM cell: material spec, the responsible engineer's name and phone number, estimated completion, written by hand and erased and rewritten as jobs moved. That's the gap the console needed to close, the same information, live and shared, without anyone walking the floor to read a whiteboard." },
-          { "type": "image", "src": "/assets/case-studies/additive-manufacturing/site-visit.webp", "width": 1024, "height": 512, "alt": "Site-visit photos of engineers reviewing a hand-written production whiteboard, standing at a control center, and operating a metal 3D printer", "caption": "Builds were tracked by hand on whiteboards: engineer names, phone numbers, estimated completion." },
-          { "type": "image", "maxWidth": 420, "src": "/assets/case-studies/additive-manufacturing/onsite-selfie.webp", "width": 600, "height": 799, "alt": "A selfie at the facility, wearing safety glasses in front of a jet engine on display", "caption": "Contextual research meant safety glasses and a jet engine, not just a conference room." }
-        ]
-      },
-      {
-        "heading": "Mobile for On-Call Operators",
-        "blocks": [
-          { "type": "text", "value": "Operators work **on call**, so the design extended to mobile: the same green/red build state, pocket-sized. The early sketch, a hand holding a phone with hand-drawn progress bars, shipped close to as drawn: a **Builds** list on the phone, color-coded by status, so an operator could check a machine from off shift without opening a laptop." },
-          { "type": "image", "src": "/assets/case-studies/additive-manufacturing/mobile.webp", "width": 1024, "height": 512, "alt": "Side by side: a hand holding a phone with a sketch-style \"My Machines\" list with green and red progress bars, and a phone mockup of the shipped color-coded Builds list", "caption": "The on-call sketch, hand-drawn green and red bars, shipped close to as drawn: a Builds list." }
-        ]
-      },
-      {
-        "heading": "One Score, From Lichtenfels to Shanghai",
-        "blocks": [
-          { "type": "text", "value": "The shipped console gives GE Additive's whole fleet one **Availability Score**, then ranks every facility beneath it, from Lichtenfels to Grapevine to Shanghai: the clear productivity read operators had been missing, without a donut in sight." }
-        ]
-      },
-      {
-        "heading": "Reflection",
-        "blocks": [
-          { "type": "text", "value": "The donut chart wasn't a bad guess. It matched the rest of the dashboard's visual system, and that's exactly why it was risky: a component that looks right in a style guide can still fail next to the one screen operators already trust for that same shape of information. Testing caught it before ship, but it's worth asking whether checking it against the printer's own UI earlier, before the first comp, would have caught it before a whole design round was spent building it." },
-          { "type": "text", "value": "The whiteboards I saw on-site are the other open question. A responsible engineer's name and phone number, an estimated completion, penciled in by hand and erased when the job moved. The console replaced the fleet-wide view, but I don't know if it ever gave operators a place for that same kind of ownership and ETA note, or whether the whiteboard is still there next to the machine." }
         ]
       }
     ]
