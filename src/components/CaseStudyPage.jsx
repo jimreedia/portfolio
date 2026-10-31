@@ -86,8 +86,8 @@ export default function CaseStudyPage() {
   const savedScrollY = cameFromHome ? readHomeScrollPosition() : null
   const backScrollTo = savedScrollY !== null ? savedScrollY : backSection
   const meta = [
-    ['Role', cs.role],
-    ['Design Team', cs.team],
+    ['Role and Responsibilities', cs.role],
+    ['Team', cs.team],
   ].filter(([, value]) => value)
 
   // `maxWidth` (opt in, a number) caps display width for images that read
@@ -195,7 +195,7 @@ export default function CaseStudyPage() {
             {meta.map(([label, value]) => (
               <div className="case-study__meta-item" key={label}>
                 <dt>{label}</dt>
-                <dd>{value}</dd>
+                <dd>{renderInline(value)}</dd>
               </div>
             ))}
           </dl>

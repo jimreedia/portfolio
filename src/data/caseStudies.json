@@ -7,8 +7,8 @@
     "tags": ["AI", "Enterprise"],
     "url": "/case-study/agentic-ai-chat",
     "featured": true,
-    "role": "Product Designer, LinkedIn",
-    "team": "Embedded with product engineers",
+    "role": "As an embedded **Product Designer at LinkedIn**, I led the end-to-end UX design including the interaction model, core component specs, UX principles for LLM interactions, and a custom icon\u00a0system.",
+    "team": "Product engineers, software architects, engineering\u00a0managers",
     "images": [
       "/assets/case-studies/homepage-assets/agentic-ai-chat-1.webp",
       "/assets/case-studies/homepage-assets/agentic-ai-chat-2.webp",
@@ -26,11 +26,7 @@
         "blocks": [
           {
             "type": "text",
-            "value": "Observe Agent is an AI agent built for LinkedIn's observability tools (alerts, metrics, logs, and deployment history). I led end-to-end UX alongside the product engineers building it: the interaction model, the core components, and the visual identity."
-          },
-          {
-            "type": "text",
-            "value": "It ships to 10,000+ engineers, who use it to trace incidents like service disruptions and latency spikes to their root cause faster."
+            "value": "Observe Agent is an AI agent built for LinkedIn's **observability tools** (alerts, metrics, logs, and deployment history). It ships to 10,000+ engineers, who use it to trace incidents like service disruptions and latency spikes to their root cause faster."
           }
         ]
       },
@@ -39,7 +35,7 @@
         "blocks": [
           {
             "type": "text",
-            "value": "The users are Site Reliability Engineers and on-call engineers, almost always mid-incident: tabs open across alerting, metrics, logs, and deployment history, under real time pressure. Before designing anything, I wrote down what they needed from the agent, to align the team on the job to be done."
+            "value": "The users are **Site Reliability Engineers** and on-call engineers, almost always mid-incident: tabs open across alerting, metrics, logs, and deployment history, under real time pressure. Before designing anything, I wrote down what they needed from the agent, to align the team on what\u00a0to\u00a0build."
           },
           {
             "type": "image",
@@ -210,8 +206,8 @@
     "tags": ["Data Platforms", "Enterprise"],
     "url": "/case-study/genomic-data-platform",
     "featured": true,
-    "role": "Senior Staff Interaction Designer, Illumina",
-    "team": "UX researchers, bioinformatics subject-matter experts, product stakeholders",
+    "role": "As a **Senior Staff Interaction Designer at Illumina**, I led the UX design for a platform of apps, including personas, card sorting, prototype testing, and a shared component\u00a0system.",
+    "team": "Senior executive leaders, bioinformatician product owners, software engineers, UX\u00a0researchers",
     "images": [
       "/assets/case-studies/homepage-assets/genomic-data-platform-1.webp",
       "/assets/case-studies/homepage-assets/genomic-data-platform-2.webp",
@@ -295,8 +291,8 @@
     "tags": ["AI", "Data Platforms"],
     "url": "/case-study/ai-recommendations",
     "featured": true,
-    "role": "Principal User Experience Designer, Informatica",
-    "team": "Machine learning engineers, UX researchers, UX partners, executive leadership",
+    "role": "As a **Principal User Experience Designer at Informatica**, I designed the interaction models across desktop and cloud, the state specs, an in-app What's New message, and a precision-tracking\u00a0method.",
+    "team": "Product managers, machine learning engineers, software engineers, UX researchers, visual\u00a0designer",
     "images": [
       "/assets/case-studies/homepage-assets/ai-recommendations-1.webp",
       "/assets/case-studies/homepage-assets/ai-recommendations-2.webp",
@@ -312,7 +308,7 @@
     "sections": [
       {
         "blocks": [
-          { "type": "text", "value": "As **Principal User Experience Designer** at Informatica, I designed an AI feature that predicts and suggests the next data transformation a developer needs, trained on anonymized mapping patterns across customer tenants. I partnered with machine learning engineers and UX researchers to shape the interaction model across both the desktop client and the newer cloud product." },
+          { "type": "text", "value": "I designed an AI feature that predicts and suggests the next data transformation a developer needs, trained on anonymized mapping patterns across customer tenants. I partnered with machine learning engineers and UX researchers to shape the interaction model across both the desktop client and the newer cloud product." },
           { "type": "text", "value": "The recommendations only work if developers trust them and don't have to leave their flow to use them. That meant designing them to appear inline in the canvas first, with a side panel alongside for the explanation and history the canvas had no room for, and building a way to prove the model was actually getting better instead of just declaring it was." }
         ]
       },
@@ -371,7 +367,7 @@
       {
         "heading": "Convincing Leadership to Modernize the Whole Product",
         "blocks": [
-          { "type": "text", "value": "The recommendations panel highlighted how dated the rest of the product's visual design had gotten by comparison. I worked with UX partners to redesign the look and feel, then made the case to executive leadership that modernizing the UI was worth the investment on its own, not just as a backdrop for the AI feature." },
+          { "type": "text", "value": "The recommendations panel highlighted how dated the rest of the product's visual design had gotten by comparison. I worked with UX partners to redesign the look and feel, then made the case to product management that modernizing the UI was worth the investment on its own, not just as a backdrop for the AI\u00a0feature." },
           { "type": "image", "src": "/assets/case-studies/ai-recommendations/visual-redesign.webp", "width": 1744, "height": 1175, "alt": "The modernized visual design language applied to the mapping designer", "caption": "The modernized visual language I argued for: worth shipping on its own, not just a backdrop." }
         ]
       },
@@ -392,8 +388,8 @@
     "tags": ["Data Platforms", "Enterprise"],
     "url": "/case-study/operational-insights",
     "featured": false,
-    "role": "Principal User Experience Designer, Informatica",
-    "team": "One UX researcher",
+    "role": "As a **Principal User Experience Designer at Informatica**, I led the design of the dashboards and conceptual prototypes, and partnered with a UX researcher on user\u00a0research.",
+    "team": "Product manager, software engineers, UX\u00a0researcher",
     "thumb": "/assets/case-studies/homepage-assets/operational-insights.webp",
     "hero": {
       "src": "/assets/case-studies/operational-insights/overview.webp",
@@ -405,7 +401,7 @@
     "sections": [
       {
         "blocks": [
-          { "type": "text", "value": "As **Principal User Experience Designer** at Informatica, I designed a new product for monitoring data-integration operations. A UX researcher and I interviewed and observed users as they walked us through their workflows. One key finding: small teams, typically five or fewer developers and one manager, both build data-integration jobs and monitor the daily flow of data. I designed the overview dashboard to give those teams a quick look at their operations, what I called the\u00a0**\"Monday\u2011morning\u00a0check.\"**" }
+          { "type": "text", "value": "I designed a new product for monitoring data-integration operations. A UX researcher and I interviewed and observed users as they walked us through their workflows. One key finding: small teams, typically five or fewer developers and one manager, both build data-integration jobs and monitor the daily flow of data. I designed the overview dashboard to give those teams a quick look at their operations, what I called the\u00a0**\"Monday\u2011morning\u00a0check.\"**" }
         ]
       },
       {
@@ -485,8 +481,8 @@
     "tags": ["Data Platforms", "Enterprise"],
     "url": "/case-study/developer-experience",
     "featured": false,
-    "role": "Senior Staff UX Interaction Designer and acting Technical Product Manager, GE Digital",
-    "team": "Agile product team of developers and designers",
+    "role": "As a **Senior Staff UX Interaction Designer and acting Technical Product Manager at GE Digital**, I led design and product management, including usability testing, the roadmap, and developer\u00a0adoption.",
+    "team": "Senior executive leaders, developers, designers, product\u00a0marketing",
     "thumb": "/assets/case-studies/homepage-assets/developer-experience.webp",
     "hero": {
       "src": "/assets/case-studies/developer-experience/hero.webp",
@@ -499,7 +495,7 @@
     "sections": [
       {
         "blocks": [
-          { "type": "text", "value": "I led design and product management for a new web portal and administration console for an industrial cloud platform, **built from scratch with an agile team**. The design goal was to get a software developer from a first visit to a running application as quickly as possible. I later deployed a base app live on stage in under five minutes." }
+          { "type": "text", "value": "This product is a new web portal and administration console for an industrial cloud platform, **built from scratch with an agile team**. The design goal was to get a software developer from a first visit to a running application as quickly as possible. I later deployed a base app live on stage in under five minutes." }
         ]
       },
       {
@@ -565,8 +561,8 @@
     "tags": ["Enterprise"],
     "url": "/case-study/additive-manufacturing",
     "featured": false,
-    "role": "Senior Staff UX Interaction Designer, GE Digital",
-    "team": "Another visual designer, with user discovery done alongside the lead engineer and architect",
+    "role": "As a **Senior Staff UX Interaction Designer at GE Digital**, I led all UX activities, including contextual research, journey mapping, personas, dashboard and mobile design, and post-launch\u00a0iteration.",
+    "team": "Product owner, lead engineer, software architect, another visual\u00a0designer",
     "thumb": "/assets/case-studies/homepage-assets/additive-manufacturing.webp",
     "hero": {
       "src": "/assets/case-studies/additive-manufacturing/dashboard-fleet.webp",
@@ -578,7 +574,7 @@
     "sections": [
       {
         "blocks": [
-          { "type": "text", "value": "GE Additive's customers run fleets of industrial metal 3D printers, and the business goal behind this product was simple: keep every printer **printing for as much of its available time as possible**. As Senior Staff UX Interaction Designer at GE Digital, I designed the **Additive Console**, a monitoring dashboard built around that goal. It gathers each printer's sensor data into one number, an **Availability Score**, calculated per machine and rolled up per facility and across the whole fleet." }
+          { "type": "text", "value": "GE Additive's customers run fleets of industrial metal 3D printers, and the business goal behind this product was simple: keep every printer **printing for as much of its available time as possible**. I designed the **Additive Console**, a monitoring dashboard built around that goal. It gathers each printer's sensor data into one number, an **Availability Score**, calculated per machine and rolled up per facility and across the whole fleet." }
         ]
       },
       {
@@ -646,8 +642,8 @@
     "tags": ["AI", "Enterprise"],
     "url": "/case-study/machine-learning-for-operators",
     "featured": false,
-    "role": "Senior Staff UX Interaction Designer, GE Digital",
-    "team": "Product managers and international scrum teams across California, Bangalore, and New York; UX researchers",
+    "role": "As a **Senior Staff UX Interaction Designer at GE Digital**, I researched at customer sites, ran co-design sessions, and designed the guided model-training tool and data\u00a0library.",
+    "team": "Product managers, data scientists, UX researchers, scrum teams in California, Bangalore, and New\u00a0York",
     "thumb": "/assets/case-studies/homepage-assets/machine-learning-for-operators.webp",
     "hero": {
       "src": "/assets/case-studies/machine-learning-for-operators/dashboard.webp",
@@ -721,8 +717,8 @@
     "tags": ["Mobile", "Enterprise"],
     "url": "/case-study/mobile-emergency-system",
     "featured": false,
-    "role": "Principal Product Designer, BlackBerry AtHoc",
-    "team": "User experience designers and developers for iOS, Android, backend, and web UI",
+    "role": "As a **Principal Product Designer at BlackBerry AtHoc**, I designed the visual language and cross-platform interactions, and maintained a shared design-pattern\u00a0library.",
+    "team": "Product owners, UX designers, and developers for iOS, Android, backend, and web\u00a0UI",
     "thumb": "/assets/case-studies/homepage-assets/mobile-emergency-system.webp",
     "hero": {
       "src": "/assets/case-studies/mobile-emergency-system/app-comps.webp",
@@ -736,7 +732,7 @@
     "sections": [
       {
         "blocks": [
-          { "type": "text", "value": "As **Principal Product Designer** at BlackBerry AtHoc, I designed a next-generation 911 service that let dispatchers, emergency operators, responders, and citizens share critical information (text, geolocation, photos, video) during an incident, across **iOS, Android, and desktop**. Every screen was built around one goal: make a genuinely complex, multi-party system feel simple to use under stress." }
+          { "type": "text", "value": "I designed a next-generation 911 service that let dispatchers, emergency operators, responders, and citizens share critical information (text, geolocation, photos, video) during an incident, across **iOS, Android, and desktop**. Every screen was built around one goal: make a genuinely complex, multi-party system feel simple to use under stress." }
         ]
       },
       {
@@ -799,8 +795,8 @@
     "tags": ["Data Platforms", "Enterprise"],
     "url": "/case-study/analytics-big-data",
     "featured": false,
-    "role": "Senior Staff UX Interaction Designer, GE Digital",
-    "team": "Subject-matter experts and stakeholders in collaborative design sessions",
+    "role": "As a **Senior Staff UX Interaction Designer at GE Digital**, I ran user research and collaborative design sessions, and designed the Orchestration Editor and Data Explorer\u00a0concept.",
+    "team": "Product manager, software engineers, interaction and visual designers, subject-matter\u00a0experts",
     "thumb": "/assets/case-studies/homepage-assets/analytics-big-data.webp",
     "hero": {
       "src": "/assets/case-studies/analytics-big-data/data-explorer.webp",
