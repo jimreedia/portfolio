@@ -50,14 +50,15 @@ wider (up to ~920px) on desktop ≥ 1024px. Top padding clears the 64px sticky n
 - **Lead:** the case study `description`, 22px / 19px mobile, `--color-text-muted`.
 - **Cover image:** `hero` (or `images[0]`), sits directly on the page background — no frame, shadow, radius, or crop. Native size, centered, bleeds past the column on desktop.
 - **Meta block:** a single-column `<dl>` between two hairline rules:
-  - **Role** — `role`
-  - **Design Team** — `team`
+  - **Role and Responsibilities** — `role`, one first-person sentence with the title and company in `**bold**`
+  - **Team** — `team`
   - Labels in DM Mono 12px uppercase; values in Plus Jakarta Sans 15px.
   - Rows are omitted when their value is empty.
-  - Decided 2026-09-11: the label is "Design Team," not "Team" — `team` only ever
-    describes design/research headcount (e.g. "One UX designer and one UX researcher"),
-    never the full cross-functional team (PM, eng, QA, stakeholders), and the bare
-    "Team" label invited that wrong reading.
+  - Decided 2026-10-30, replacing the 2026-09-11 "Design Team" label: `team` now lists
+    the full cross-functional team by function (PM, engineering, design, research,
+    subject-matter experts, leadership), without headcounts. Research participants
+    and other users don't count as team. Stays at two sections; no Tools, Timeline, or
+    Impact, based on a review of 20 other designers' case study pages.
 
 ### 2. Narrative sections (images woven into the text)
 
